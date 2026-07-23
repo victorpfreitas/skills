@@ -19,8 +19,7 @@ Mais sobre o trabalho em [madebyhuman.com.br/victor](https://madebyhuman.com.br/
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
 | [`shotlist-builder`](./producao-ia/shotlist-builder) | Produção IA | A partir de um roteiro completo, monta o shotlist de produção com prompts Seedance por cena. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
-| [`roteirista`](./roteiro/roteirista) | Roteiro | Roteirista para curta, longa, série, Reels, comerciais e documentários — cena, diálogo, escaleta e arco de personagem. |
-| [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Constrói o roteiro em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
+| [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
 
 ## Instalação
 
