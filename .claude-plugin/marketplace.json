@@ -1,0 +1,27 @@
+{
+  "name": "victorpfreitas",
+  "owner": {
+    "name": "Victor Freitas",
+    "url": "https://madebyhuman.com.br/victor"
+  },
+  "description": "Claude Code Skills usados em produção por Victor Freitas (Made by Human) para direção criativa com IA generativa — roteiro, direção cinematográfica e produção de imagem/vídeo/voz.",
+  "plugins": [
+    {
+      "name": "victorpfreitas-skills",
+      "source": "./",
+      "description": "Skills de direção criativa, roteiro e produção com IA generativa usados em produção por Victor Freitas.",
+      "category": "creative-direction",
+      "keywords": [
+        "creative-direction",
+        "screenwriting",
+        "cinematography",
+        "ai-video",
+        "ai-image",
+        "voiceover",
+        "roteiro",
+        "direcao"
+      ],
+      "skills": ["./direcao", "./producao-ia", "./roteiro"]
+    }
+  ]
+}
