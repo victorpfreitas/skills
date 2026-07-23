@@ -17,7 +17,6 @@ Mais sobre o trabalho em [madebyhuman.com.br/victor](https://madebyhuman.com.br/
 | [`diretor-cinematografico`](./direcao/diretor-cinematografico) | Direção | Decupagem, shot list, câmera, lente, luz, cor e blocking — traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
 | [`nano-banana-prompter`](./producao-ia/nano-banana-prompter) | Produção IA | Gera prompts cinematográficos para Nano Banana 2 (Gemini Image) — storyboards, grids de imagem, composições de foto/cinema. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
-| [`shotlist-builder`](./producao-ia/shotlist-builder) | Produção IA | A partir de um roteiro completo, monta o shotlist de produção com prompts Seedance por cena. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
 | [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
 
