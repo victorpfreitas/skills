@@ -1,14 +1,14 @@
 # skills
 
-Claude Code Skills que uso em produção como diretor criativo trabalhando com IA generativa.
+O método que uso em produção pra dirigir IA generativa — roteiro, cinematografia e voz, condensados em skills reutilizáveis.
 
-## Por que isso existe
+## A ideia
 
 IA generativa não substitui direção — ela precisa de alguém guiando o processo: decidindo o enquadramento, o tom do roteiro, a luz da cena, o timbre da voz. Sem direção, um modelo gera conteúdo genérico. Com direção, ele vira ferramenta de produção real.
 
-Esses skills são o método que uso pra dirigir esse processo com o Claude Code — não prompts soltos, mas o raciocínio de roteirista, diretor de fotografia e produtor condensado em skills reutilizáveis. Publico aqui o que uso de verdade, não uma versão de vitrine.
+Este repositório é esse método, aberto. Não são prompts soltos — é o raciocínio de roteirista, diretor de fotografia e produtor que uso todo dia, escrito como skills reutilizáveis. O que está aqui é o que eu de fato uso, não uma versão de vitrine.
 
-Mais sobre o trabalho em [madebyhuman.com.br/victor](https://madebyhuman.com.br/victor).
+Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex e outros).
 
 ## Skills
 
@@ -20,16 +20,18 @@ Mais sobre o trabalho em [madebyhuman.com.br/victor](https://madebyhuman.com.br/
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
 | [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
 
-## Instalação
+## Como usar
 
-Este repositório é um [Claude Code Plugin Marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Adicione uma vez e os skills ficam disponíveis — e se atualizam sozinhos a cada mudança no repo.
+**No Claude Code**, o repo é também um plugin marketplace — instala uma vez e atualiza sozinho a cada mudança:
 
 ```
 /plugin marketplace add victorpfreitas/skills
 /plugin install victorpfreitas-skills@victorpfreitas
 ```
 
-Depois de instalado, os skills disparam automaticamente pelo contexto da conversa (ex.: "monta a decupagem dessa cena", "cria um roteiro para Reels"), sem precisar chamar por nome.
+Depois de instalado, os skills disparam pelo contexto da conversa (ex.: "monta a decupagem dessa cena", "formata esse roteiro pro elevenlabs"), sem precisar chamar por nome.
+
+**Em qualquer outro agente** (Codex, etc.), basta apontar para a pasta do skill desejado ou colar o conteúdo do `SKILL.md` — são arquivos Markdown puros, sem dependência de nenhuma plataforma.
 
 ## Licença
 
@@ -37,4 +39,4 @@ MIT — veja [LICENSE](./LICENSE).
 
 ---
 
-Victor Freitas, Made by Human · [madebyhuman.com.br/victor](https://madebyhuman.com.br/victor)
+Um método de [Victor Freitas](https://madebyhuman.com.br/victor) — [@victorpfreitas](https://x.com/victorpfreitas) — direção criativa com IA na **[Made by Human](https://madebyhuman.com.br/victor)**.
