@@ -22,6 +22,20 @@ Leia os arquivos relevantes conforme o prompt que está construindo:
 | `references/CAMERA_LANGUAGE.md` | Para construir o **bloco `camera:`** — movimentos, lentes, câmera × emoção |
 | `references/ACTION_LANGUAGE.md` | Para descrever **ações de personagem**, microexpressões, beats de performance |
 | `references/AUDIO_PATTERNS.md` | Para construir o **bloco `audio:`** — SFX, ambiente sonoro, diálogo |
+| `references/TROUBLESHOOTING.md` | Quando o resultado sair fraco: rosto distorcendo, câmera não move, drift entre clipes |
+
+Para decisões mais profundas de câmera × emoção ou estilo de diretor de referência, use a skill `diretor-cinematografico` antes de voltar aqui pra gerar o prompt.
+
+---
+
+## Antes do Clip Map: leia a intenção da cena
+
+Antes de quebrar a cena em clipes, identifique a função dramática dela: o que muda do início pro fim, e o que a câmera precisa provar pra essa mudança ficar visível. Um Clip Map sem essa leitura vira uma lista mecânica de planos.
+
+- **Pedido genérico:** "plano cinematográfico épico de uma mulher lendo uma carta, emocionante, luz linda"
+- **Prompt dirigido:** ela baixa a carta e as mãos ficam paradas enquanto a câmera faz um push-in lento; luz de janela suave atrás dela mantém o rosto neutro; quase silêncio, só o range de uma cadeira. A ficha cai nas mãos paradas, não numa palavra.
+
+A diferença não é adjetivo a mais, é decidir **um** beat visível e **um** movimento de câmera que sirvam a essa intenção.
 
 ---
 
@@ -57,6 +71,8 @@ TOTAL: [N] clips · Duração estimada editada: ~[X]s
 ```
 
 Depois pergunte: **"Confirmo o Clip Map ou quer ajustar antes de gerar os prompts?"**
+
+**Continuidade entre clipes:** ao escrever o prompt do clip seguinte de uma sequência, ancore a descrição no que **de fato** ficou no clip anterior aprovado (posição final, luz, estado do personagem), não na intenção original do roteiro. Isso evita que a identidade e o cenário derivem de um clip pro outro.
 
 ---
 
