@@ -1,8 +1,8 @@
 # skills
 
-![victorpfreitas/skills](.github/social-preview.png)
+<img src=".github/social-preview.png" alt="victorpfreitas/skills">
 
-O método que uso em produção pra dirigir IA generativa: roteiro, cinematografia e voz, condensados em skills reutilizáveis.
+Este repositório reúne as skills que uso no dia a dia de produção com IA generativa: direção de câmera, roteiro e voz. Cada uma nasceu de um caso real, não de teoria, e só entrou aqui depois de testada em conversa real. São blocos de conhecimento prontos pra plugar no Claude Code e levar pra qualquer projeto que peça o mesmo nível de controle criativo que eu uso no meu.
 
 ## Sumário
 
