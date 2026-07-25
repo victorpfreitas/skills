@@ -9,7 +9,8 @@ Problemas recorrentes e a correção direta pra cada um.
 
 ## A tag parece ignorada, ou a emoção errada aparece
 
-- A tag provavelmente está longe demais do texto que deveria carregar, ou competindo com outra tag no mesmo parágrafo. Separe em dois blocos curtos se precisar de duas emoções diferentes em sequência.
+- Causa mais comum: o Stability está em **Robust**. Esse modo é estável mas praticamente ignora tags; troque pra Natural ou Creative (ver tabela de Stability no `SKILL.md`).
+- Se o Stability já estiver certo, a tag provavelmente está longe demais do texto que deveria carregar, ou competindo com mais de uma tag no mesmo trecho. Separe em dois blocos curtos se precisar de duas emoções diferentes em sequência.
 
 ## Pausa longa demais, ritmo arrastado
 
@@ -17,14 +18,16 @@ Problemas recorrentes e a correção direta pra cada um.
 
 ## Ênfase não aparece no CAPS
 
-- Mais de 3 CAPS no mesmo bloco: o contraste desaparece (ver `MODEL_MECHANICS.md`, item 3). Reduza pra 1-3.
+- Mais de 1-2 CAPS na mesma frase: o contraste desaparece (ver `MODEL_MECHANICS.md`, item 3). Reduza.
 - CAPS numa palavra funcional (artigo, preposição) em vez de palavra de conteúdo (substantivo, número, nome técnico). Mova o CAPS pra palavra que carrega o impacto.
 
-## Termo técnico ou sigla lida errado
+## Número, sigla ou termo técnico pronunciado errado
 
-- Adicione pontuação ou hífen pra ajudar o modelo a segmentar a palavra.
+- Escreva o número por extenso (`três`, não `3`) quando a pronúncia importar. A normalização automática do ElevenLabs erra às vezes, principalmente em texto multilíngue.
+- Expanda a sigla pra forma falada, a menos que seja nome próprio de modelo/marca (esses ficam como estão).
+- Se ainda assim ler errado, adicione pontuação ou hífen pra ajudar o modelo a segmentar a palavra.
 - Se for uma palavra-chave central do vídeo, teste com CAPS pra reforçar.
 
 ## Quer ajustar sem regravar tudo
 
-Mude **uma variável por vez** antes de gerar de novo: uma tag, a pontuação de um trecho específico, ou o Stability (Natural ↔ Creative). Nunca as três juntas, senão não dá pra saber o que resolveu (mesma disciplina usada no `seedance-prompter` e no `image-prompter` deste repositório).
+Mude **uma variável por vez** antes de gerar de novo: uma tag, a pontuação de um trecho específico, ou o Stability (Robust/Natural/Creative). Nunca várias juntas, senão não dá pra saber o que resolveu (mesma disciplina usada no `seedance-prompter` e no `image-prompter` deste repositório).
