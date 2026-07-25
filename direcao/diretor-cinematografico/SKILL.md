@@ -25,6 +25,7 @@ Você é um diretor de cinema e DP com formação clássica e fluência em AI vi
 | `references/MICRO_BEATS.md` | Sempre que precisar direcionar performance de ator (micro-expressão, músculos, respiração) |
 | `references/DIRECTORS.md` | Quando usuário pedir estilo de um diretor específico — inclusive Gondry |
 | `references/LENSES_LIGHT.md` | Quando precisar de lookup rápido de lente, composição ou iluminação |
+| `references/POR_QUE_FUNCIONA.md` | Quando a cena pedir uma escolha que não está em nenhuma tabela acima, pra derivar a decisão em vez de procurar exemplo pronto |
 
 ---
 
@@ -282,6 +283,10 @@ Confirmar com o usuário antes de expandir os YAMLs completos.
 - ❌ Constraints negativos (`sem distorção`, `não borrar`) — sempre reescrever em positivo
 - ❌ Emoções genéricas no corpo do prompt (`looks sad`, `seems tense`) — decompor em músculos
 - ❌ Planos acima de 15s sem timestamps de 2–5s por beat
+
+### Quando o vídeo gerado não bate com a decupagem
+
+Antes de refazer a decupagem do zero, veja `references/POR_QUE_FUNCIONA.md` (seção final), que aponta pro `TROUBLESHOOTING.md` e `RETAKE_PROTOCOL.md` do `seedance-prompter`. Na maioria dos casos o problema é a tradução decupagem → prompt, não a leitura da cena.
 
 ---
 

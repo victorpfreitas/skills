@@ -42,6 +42,7 @@ quebrar a história em blocos — elas alimentam as opções que você vai ofere
 | `references/pesquisa-real.md` | A história se ancora em caso real, lenda documentada, ou evento histórico |
 | `references/dialogo-tom.md` | Sempre, no início de qualquer projeto novo — trava a "assinatura de tom" antes do primeiro bloco |
 | `references/formato-serie.md` | Projeto é série/antologia com fórmula repetível por episódio |
+| `references/TROUBLESHOOTING.md` | O ritmo das perguntas travou (usuário monossilábico, opções repetitivas, quer voltar atrás) |
 
 Não precisa ler todas em todo projeto — leia só as que o projeto pede. Um curta
 realista sem elemento fantástico, por exemplo, pula worldbuilding.md inteiro.
