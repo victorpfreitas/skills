@@ -1,5 +1,7 @@
 # skills
 
+![victorpfreitas/skills](.github/social-preview.png)
+
 O método que uso em produção pra dirigir IA generativa: roteiro, cinematografia e voz, condensados em skills reutilizáveis.
 
 ## Sumário
