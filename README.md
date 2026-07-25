@@ -25,7 +25,7 @@ Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex 
 | Skill | Categoria | O que faz |
 | --- | --- | --- |
 | [`diretor-cinematografico`](./direcao/diretor-cinematografico) | Direção | Decupagem, shot list, câmera, lente, luz, cor e blocking. Traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
-| [`nano-banana-prompter`](./producao-ia/nano-banana-prompter) | Produção IA | Gera prompts cinematográficos para Nano Banana 2 (Gemini Image): storyboards, grids de imagem, composições de foto/cinema. |
+| [`image-prompter`](./producao-ia/image-prompter) | Produção IA | Gera prompts cinematográficos de imagem e decide qual modelo usar entre Nano Banana 2, Seedream 5.0 Pro e GPT Image 2. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
 | [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
@@ -42,10 +42,12 @@ skills/
       SKILL.md
       reference/                       → câmera×emoção, diretores, lentes, micro-beats
   producao-ia/
-    nano-banana-prompter/SKILL.md
+    image-prompter/
+      SKILL.md
+      references/                      → um arquivo por modelo: Nano Banana 2, Seedream 5.0 Pro, GPT Image 2
     seedance-prompter/
       SKILL.md
-      references/                      → estilo, câmera, ação, áudio, troubleshooting
+      references/                      → estilo, câmera, ação, áudio, troubleshooting, mecânica do modelo, retake
     elevenlabs-voiceover/SKILL.md
   roteiro/
     roteirista-interativo/
