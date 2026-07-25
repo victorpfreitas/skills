@@ -19,3 +19,6 @@ jobs:
 
       - name: Validate marketplace.json and SKILL.md frontmatter
         run: claude plugin validate .
+
+      - name: Check for broken references between SKILL.md files
+        run: bash scripts/check-references.sh
