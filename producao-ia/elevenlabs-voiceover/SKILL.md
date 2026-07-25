@@ -1,6 +1,14 @@
 ---
 name: elevenlabs-voiceover
-description: Use esta skill sempre que Victor precisar transformar um roteiro em voice-over formatado para ElevenLabs Eleven v3. Trigger em qualquer pedido como "cria o voice over", "formata pra ElevenLabs", "preciso das tags do eleven v3", "gera o voice over com tags", "formata o roteiro pro elevenlabs", ou quando há um roteiro de vídeo pronto e precisa virar áudio narrado. A skill aplica tags emocionais v3 ([excited], [curious], [laughs], etc.), ênfase em CAPS, ellipses para pausas e retorna o texto pronto pra colar no ElevenLabs — no tom de voz do Victor: animado, direto, casual, sem parecer roteirizado.
+description: >
+  Use esta skill sempre que Victor precisar transformar um roteiro em voice-over
+  formatado para ElevenLabs Eleven v3. Trigger em qualquer pedido como "cria o
+  voice over", "formata pra ElevenLabs", "preciso das tags do eleven v3", "gera
+  o voice over com tags", "formata o roteiro pro elevenlabs", ou quando há um
+  roteiro de vídeo pronto e precisa virar áudio narrado. A skill aplica tags
+  emocionais v3 ([excited], [curious], [laughs], etc.), ênfase em CAPS, ellipses
+  para pausas e retorna o texto pronto pra colar no ElevenLabs, no tom de voz do
+  Victor: animado, direto, casual, sem parecer roteirizado.
 ---
 
 # Skill: ElevenLabs Voice-Over — Tom Victor Freitas
@@ -36,27 +44,46 @@ Você é especialista em formatar roteiros para o ElevenLabs Eleven v3, no tom d
 - `[sarcastic]` — quando ironiza algo óbvio ou exagerado
 - `[impressed]` — ao revelar um resultado forte
 
-### Pausas e ritmo
-- `…` — pausa curta, respiração natural entre ideias
-- `—` — pausa média, separação de conceitos
+Duas tags compatíveis no mesmo trecho podem ser combinadas quando fazem sentido juntas (ex.: `[curious] [impressed]` numa revelação forte), mas isso é o limite. Mais que duas tags empilhadas no mesmo trecho vira imprevisível (ver `MODEL_MECHANICS.md`).
+
+### Pausas e ritmo — granularidade por tipo de traço
+- `…` — pausa curta, respiração natural entre ideias, ou hesitação
+- `-` (hífen com espaço) — pausa breve entre palavras
+- `–` (travessão curto com espaço) — pausa um pouco mais longa
+- `—` (travessão longo/em dash com espaço) — pausa média, separação de conceitos
 - Linha em branco entre blocos — pausa maior, mudança de seção
 
 ### Ênfase
-- `CAPS` numa palavra ou trecho — ênfase forte, não grite tudo
-- Use com moderação: 1–3 por bloco de texto
+- `CAPS` numa palavra — ênfase forte, não grite tudo
+- Use com moderação: **1–2 palavras por frase**, não por bloco inteiro. Excesso de CAPS treina o modelo a tratar maiúscula como ruído, e o efeito de ênfase desaparece.
+
+### Números e abreviações
+- Escreva números por extenso quando a pronúncia importar (`três rankings`, não `3 rankings`). A normalização automática do ElevenLabs geralmente acerta, mas não é garantida, especialmente em texto multilíngue.
+- Expanda siglas e abreviações que tenham forma falada própria. Nome de modelo ou marca (`Seedance`, `R9`) fica como está — não é abreviação, é nome próprio.
 
 ### O que NÃO usar no v3
 - `<break time="x.xs" />` — não funciona no v3
-- Muitas tags seguidas no mesmo trecho — soa artificial
+- Mais de duas tags empilhadas no mesmo trecho — soa artificial
 - `[whispering]` — não é o tom do Victor
+- Tags que não combinam com o tom estabelecido da voz (ex.: `[giggles]`, `[mischievously]`) — uma voz séria/direta não responde bem a tags brincalhonas, o resultado sai dissonante
 
 ---
 
 ## Configuração recomendada no ElevenLabs
 
 - **Modelo:** Eleven v3
-- **Stability:** Natural (ou Creative para máxima expressividade)
+- **Stability:** Natural por padrão. Veja a tabela abaixo antes de trocar.
 - **Voz:** IVC do Victor ou voz próxima do tom dele na voice library
+
+### Os 3 modos de Stability — o que cada um faz
+
+| Modo | Efeito | Quando usar |
+|---|---|---|
+| **Creative** | Entrega mais emocional e expressiva, responde forte às tags — mas pode alucinar som (suspiro ou risada que você não pediu) | Momentos de pico emocional (revelação, hook) onde vale o risco pela expressividade |
+| **Natural** | Equilíbrio entre expressividade e consistência, responde bem às tags mantendo previsibilidade | Padrão pra praticamente todo voice-over do Victor |
+| **Robust** | Estável e consistente, mas quase ignora as tags (é essencialmente o comportamento do v2) | Nunca use se o voice-over depende de tags emocionais. Só cabe se o objetivo for narração neutra sem nenhuma variação de tom |
+
+Se as tags parecerem não fazer efeito nenhum no áudio gerado, o Stability provavelmente está em Robust: essa é a causa mais comum desse sintoma.
 
 ---
 
