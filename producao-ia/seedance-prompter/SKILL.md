@@ -23,6 +23,8 @@ Leia os arquivos relevantes conforme o prompt que está construindo:
 | `references/ACTION_LANGUAGE.md` | Para descrever **ações de personagem**, microexpressões, beats de performance |
 | `references/AUDIO_PATTERNS.md` | Para construir o **bloco `audio:`** — SFX, ambiente sonoro, diálogo |
 | `references/TROUBLESHOOTING.md` | Quando o resultado sair fraco: rosto distorcendo, câmera não move, drift entre clipes |
+| `references/MODEL_MECHANICS.md` | Para entender **por que** as regras críticas existem, quando o caso não está coberto pelos exemplos |
+| `references/RETAKE_PROTOCOL.md` | Para decidir a próxima tentativa quando o resultado não é perfeito nem lixo |
 
 Para decisões mais profundas de câmera × emoção ou estilo de diretor de referência, use a skill `diretor-cinematografico` antes de voltar aqui pra gerar o prompt.
 
@@ -45,6 +47,8 @@ A diferença não é adjetivo a mais, é decidir **um** beat visível e **um** m
 Quando o usuário envia **2+ imagens separadas** → modo R2V:
 - Primeira imagem = `@Image1`, segunda = `@Image2`, até `@Image9`
 - Use as tags diretamente no prompt para ancorar personagem, cena ou objeto
+- Antes de escrever o prompt, atribua **um papel primário** a cada referência (`@Image1` = identidade do personagem, `@Image2` = ambiente, `@Image3` = objeto-chave etc.). Não descreva em texto o que a própria imagem já mostra, isso cria uma instrução concorrente com a referência (ver `MODEL_MECHANICS.md`, item 4)
+- Toda referência usada precisa ser própria, licenciada ou de domínio público
 
 ### Grid como storyboard
 Quando o usuário envia **uma imagem em grade** (2×2, 3×3, 1×3, etc.):
