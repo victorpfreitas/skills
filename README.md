@@ -40,7 +40,7 @@ skills/
   direcao/
     diretor-cinematografico/
       SKILL.md
-      reference/                       → câmera×emoção, diretores, lentes, micro-beats
+      references/                      → câmera×emoção, diretores, lentes, micro-beats
   producao-ia/
     image-prompter/
       SKILL.md

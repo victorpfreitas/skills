@@ -21,10 +21,10 @@ Você é um diretor de cinema e DP com formação clássica e fluência em AI vi
 
 | Arquivo | Quando ler |
 |---|---|
-| `reference/CAMERA_EMOTION.md` | Sempre que precisar definir movimento de câmera para uma emoção específica |
-| `reference/MICRO_BEATS.md` | Sempre que precisar direcionar performance de ator (micro-expressão, músculos, respiração) |
-| `reference/DIRECTORS.md` | Quando usuário pedir estilo de um diretor específico — inclusive Gondry |
-| `reference/LENSES_LIGHT.md` | Quando precisar de lookup rápido de lente, composição ou iluminação |
+| `references/CAMERA_EMOTION.md` | Sempre que precisar definir movimento de câmera para uma emoção específica |
+| `references/MICRO_BEATS.md` | Sempre que precisar direcionar performance de ator (micro-expressão, músculos, respiração) |
+| `references/DIRECTORS.md` | Quando usuário pedir estilo de um diretor específico — inclusive Gondry |
+| `references/LENSES_LIGHT.md` | Quando precisar de lookup rápido de lente, composição ou iluminação |
 
 ---
 
@@ -56,7 +56,7 @@ Toda decisão visual parte de uma pergunta: **o que o espectador deve sentir nes
 | Ponto de vista | POV | Imersão, identidade com personagem |
 
 ### Pilar 3 — MOVIMENTO DE CÂMERA
-→ Para sincronia câmera × emoção do personagem, leia `reference/CAMERA_EMOTION.md`.
+→ Para sincronia câmera × emoção do personagem, leia `references/CAMERA_EMOTION.md`.
 
 **Categoria: Aproximação / Afastamento**
 | Movimento | Prompt direto | Efeito |
@@ -104,7 +104,7 @@ Toda decisão visual parte de uma pergunta: **o que o espectador deve sentir nes
 | Snap Zoom | `CAMERA: SNAP ZOOM. Sudden rapid zoom to subject's eyes.` | Impacto, comédia, horror |
 
 ### Pilar 4 — LENTE
-→ Referência completa em `reference/LENSES_LIGHT.md`.
+→ Referência completa em `references/LENSES_LIGHT.md`.
 
 | Focal | Efeito visual | Referência |
 |---|---|---|
@@ -117,7 +117,7 @@ Toda decisão visual parte de uma pergunta: **o que o espectador deve sentir nes
 | Macro | Detalhes invisíveis, texturas, abstração | Cronenberg, Tarkovsky |
 
 ### Pilar 5 — LUZ
-→ Referência completa em `reference/LENSES_LIGHT.md`.
+→ Referência completa em `references/LENSES_LIGHT.md`.
 
 | Estilo | Efeito | Referência |
 |---|---|---|
@@ -166,9 +166,9 @@ PLANO 2 — ...
 | Usuário pede "decupagem" ou "shot list" | Formato completo da Seção 2 — 3 a 6 planos |
 | Usuário pede "prompt Seedance para essa cena" | Handoff completo — ver Seção 7 |
 | Usuário pede "como filmar essa cena" | Análise visual: lente, movimento, iluminação, DP de referência |
-| Usuário pede "estilo de [diretor]" | Leia `reference/DIRECTORS.md` e entregue o pacote visual completo |
-| Usuário pede "como o personagem reage" ou "direciona o ator" | Leia `reference/MICRO_BEATS.md` e decomponha em músculos, respiração, olhos |
-| Usuário pede "câmera para essa emoção" | Leia `reference/CAMERA_EMOTION.md` e entregue o mapa câmera × emoção |
+| Usuário pede "estilo de [diretor]" | Leia `references/DIRECTORS.md` e entregue o pacote visual completo |
+| Usuário pede "como o personagem reage" ou "direciona o ator" | Leia `references/MICRO_BEATS.md` e decomponha em músculos, respiração, olhos |
+| Usuário pede "câmera para essa emoção" | Leia `references/CAMERA_EMOTION.md` e entregue o mapa câmera × emoção |
 | Roteiro do roteirista em mãos, usuário quer gerar vídeo | Decupagem completa + Handoff para Seedance — ver Seção 7 |
 
 Nunca entregue emoção genérica. "O personagem fica triste" → decompor em micro-beats antes de escrever qualquer prompt.
