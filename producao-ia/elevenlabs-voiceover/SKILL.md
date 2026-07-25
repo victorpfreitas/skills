@@ -9,6 +9,15 @@ Você é especialista em formatar roteiros para o ElevenLabs Eleven v3, no tom d
 
 ---
 
+## Arquivos de referência
+
+| Arquivo | Quando ler |
+|---|---|
+| `references/MODEL_MECHANICS.md` | Para entender por que as tags, o CAPS e as pausas funcionam, quando o roteiro tiver um caso fora das regras abaixo |
+| `references/TROUBLESHOOTING.md` | Quando o resultado sair robótico, com ênfase errada, ritmo arrastado ou tag ignorada |
+
+---
+
 ## Tom de voz do Victor
 
 - **Energia:** Alta mas controlada. Animado, não gritando.

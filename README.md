@@ -40,7 +40,7 @@ skills/
   direcao/
     diretor-cinematografico/
       SKILL.md
-      references/                      → câmera×emoção, diretores, lentes, micro-beats
+      references/                      → câmera×emoção, diretores, lentes, micro-beats, por que funciona
   producao-ia/
     image-prompter/
       SKILL.md
@@ -48,11 +48,13 @@ skills/
     seedance-prompter/
       SKILL.md
       references/                      → estilo, câmera, ação, áudio, troubleshooting, mecânica do modelo, retake
-    elevenlabs-voiceover/SKILL.md
+    elevenlabs-voiceover/
+      SKILL.md
+      references/                      → mecânica do modelo, troubleshooting
   roteiro/
     roteirista-interativo/
       SKILL.md
-      references/                      → personagem, diálogo, worldbuilding, cenários
+      references/                      → personagem, diálogo, worldbuilding, cenários, troubleshooting
 ```
 
 ## Como usar
