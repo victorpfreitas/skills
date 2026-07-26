@@ -27,9 +27,13 @@ Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex 
 | Skill | Categoria | O que faz |
 | --- | --- | --- |
 | [`diretor-cinematografico`](./direcao/diretor-cinematografico) | Direção | Decupagem, shot list, câmera, lente, luz, cor e blocking. Traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
+| [`pesquisa-de-conteudo`](./producao-ia/pesquisa-de-conteudo) | Produção IA | Valida se uma ideia de vídeo tem demanda e sugere um ângulo, antes de roteirizar. |
 | [`image-prompter`](./producao-ia/image-prompter) | Produção IA | Gera prompts cinematográficos de imagem e decide qual modelo usar entre Nano Banana 2, Seedream 5.0 Pro e GPT Image 2. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
+| [`trilha-sonora-prompter`](./producao-ia/trilha-sonora-prompter) | Produção IA | Traduz o tom emocional de uma cena em prompt de geração de música, para trilhas separadas dos clipes de vídeo. |
+| [`montagem-prompter`](./producao-ia/montagem-prompter) | Produção IA | Decide ritmo de corte, transições, sincronia com a trilha e legenda ao montar os clipes gerados num vídeo final. |
+| [`thumbnail-titulo-otimizado`](./producao-ia/thumbnail-titulo-otimizado) | Produção IA | Gera e pontua thumbnail e título, fechando o loop gerar → pontuar → ajustar antes de publicar. |
 | [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
 
 ## Estrutura do repositório
@@ -44,6 +48,8 @@ skills/
       SKILL.md
       references/                      → câmera×emoção, diretores, lentes, micro-beats, por que funciona
   producao-ia/
+    pesquisa-de-conteudo/
+      SKILL.md
     image-prompter/
       SKILL.md
       references/                      → um arquivo por modelo: Nano Banana 2, Seedream 5.0 Pro, GPT Image 2
@@ -53,6 +59,12 @@ skills/
     elevenlabs-voiceover/
       SKILL.md
       references/                      → mecânica do modelo, troubleshooting
+    trilha-sonora-prompter/
+      SKILL.md
+    montagem-prompter/
+      SKILL.md
+    thumbnail-titulo-otimizado/
+      SKILL.md
   roteiro/
     roteirista-interativo/
       SKILL.md
