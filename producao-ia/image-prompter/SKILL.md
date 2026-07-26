@@ -2,17 +2,15 @@
 name: image-prompter
 description: >
   Master prompt generator for AI image models: Nano Banana 2 (Gemini 3.1 Flash Image),
-  Seedream 5.0 Pro (ByteDance) and GPT Image 2 (OpenAI). Use this skill whenever the user
-  wants to create prompts for any of these models, generate cinematic images, create
-  storyboards, design image grids (1x3, 2x2, 3x3, etc.), craft prompts with director/photographer
-  compositions, or just asks to "gerar uma imagem" / "criar um prompt de imagem" without naming
-  a model. Trigger on: "nano banana", "nano banana 2", "NB2", "seedream", "seedream 5", "seedream pro",
-  "gpt image", "gpt image 2", "prompt for image", "cinematic prompt", "storyboard grid", "image grid",
-  "prompt cinematográfico", "prompt para nano banana", "prompt para seedream", "prompt para gpt image",
-  "gerar prompt de imagem", "qual modelo de imagem usar", or any request involving photography/cinema-style
-  AI image prompts. Always use this skill, even for vague requests like "create a beautiful prompt" or
-  "I need a cinematic scene", to guarantee professional, production-grade outputs and, when relevant,
-  route to the right model for the job.
+  Seedream 5.0 Pro (ByteDance) and GPT Image 2 (OpenAI). Use whenever the user wants
+  prompts for any of these models, cinematic images, storyboards, image grids (1x3,
+  2x2, 3x3), director/photographer-style compositions, or just says "gerar uma
+  imagem" / "criar um prompt de imagem" without naming a model. Trigger on: "nano
+  banana", "NB2", "seedream", "gpt image", "prompt for image", "cinematic prompt",
+  "storyboard grid", "prompt cinematográfico", "gerar prompt de imagem", "qual
+  modelo de imagem usar", or any photography/cinema-style AI image request. Use
+  even for vague requests like "create a beautiful prompt", to guarantee
+  production-grade output and route to the right model.
 ---
 
 # Image Prompter: Nano Banana 2 · Seedream 5.0 Pro · GPT Image 2
