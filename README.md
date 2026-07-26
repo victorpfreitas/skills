@@ -28,10 +28,11 @@ Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex 
 | --- | --- | --- |
 | [`diretor-cinematografico`](./direcao/diretor-cinematografico) | Direção | Decupagem, shot list, câmera, lente, luz, cor e blocking. Traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
 | [`pesquisa-de-conteudo`](./producao-ia/pesquisa-de-conteudo) | Produção IA | Valida se uma ideia de vídeo tem demanda e sugere um ângulo, antes de roteirizar. |
+| [`biblia-personagem`](./producao-ia/biblia-personagem) | Produção IA | Cria personagem novo ou documenta um já existente numa bíblia de consistência visual entre gerações de imagem/vídeo. |
 | [`image-prompter`](./producao-ia/image-prompter) | Produção IA | Gera prompts cinematográficos de imagem e decide qual modelo usar entre Nano Banana 2, Seedream 5.0 Pro e GPT Image 2. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
-| [`trilha-sonora-prompter`](./producao-ia/trilha-sonora-prompter) | Produção IA | Traduz o tom emocional de uma cena em prompt de geração de música, para trilhas separadas dos clipes de vídeo. |
+| [`trilha-sonora-prompter`](./producao-ia/trilha-sonora-prompter) | Produção IA | Traduz o tom emocional de uma cena em prompt de trilha pronto pro Suno, com o vidIQ como alternativa direto na conversa. |
 | [`montagem-prompter`](./producao-ia/montagem-prompter) | Produção IA | Decide ritmo de corte, transições, sincronia com a trilha e legenda ao montar os clipes gerados num vídeo final. |
 | [`thumbnail-titulo-otimizado`](./producao-ia/thumbnail-titulo-otimizado) | Produção IA | Gera e pontua thumbnail e título, fechando o loop gerar → pontuar → ajustar antes de publicar. |
 | [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
@@ -50,6 +51,9 @@ skills/
   producao-ia/
     pesquisa-de-conteudo/
       SKILL.md
+    biblia-personagem/
+      SKILL.md
+      references/                      → criação de personagem novo, template de CHARACTER BLOCK, cenários/props, consistência multimodelo, troubleshooting
     image-prompter/
       SKILL.md
       references/                      → um arquivo por modelo: Nano Banana 2, Seedream 5.0 Pro, GPT Image 2
@@ -61,6 +65,7 @@ skills/
       references/                      → mecânica do modelo, troubleshooting
     trilha-sonora-prompter/
       SKILL.md
+      references/                      → fórmula de style prompt, meta tags de estrutura e campo Exclude do Suno
     montagem-prompter/
       SKILL.md
     thumbnail-titulo-otimizado/
