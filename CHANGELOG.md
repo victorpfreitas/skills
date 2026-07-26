@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.4 (2026-07-26)
+
+- Adiciona **`biblia-personagem`** em `producao-ia/`: generaliza o padrão de fonte-de-verdade de personagens/cenários/props usado na skill de campanha `livelo` pra qualquer projeto novo — cria personagem do zero (workflow de perguntas) ou documenta um já existente, com regras de consistência entre Nano Banana 2, Seedream 5.0 Pro, GPT Image 2 e Seedance 2.0. Inclui 4 reference files: criação de personagem novo, template de CHARACTER BLOCK, catalogação de cenários/props, consistência multimodelo e troubleshooting.
+- Reescreve `trilha-sonora-prompter` com o **Suno** como saída padrão (era só `vidiq_generate_music`, que Victor não usa no dia a dia): novo `references/SUNO.md` com a fórmula de style prompt, meta tags de estrutura e o campo Exclude. O `vidiq_generate_music` continua documentado como alternativa pra gerar direto na conversa.
+
 ## v0.3 (2026-07-26)
 
 - Adiciona 4 skills novas em `producao-ia/`, fechando as pontas antes e depois do fluxo existente (roteiro → direção → geração):
