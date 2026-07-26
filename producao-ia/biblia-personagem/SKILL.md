@@ -2,18 +2,15 @@
 name: biblia-personagem
 description: >
   Use esta skill sempre que Victor precisar criar um personagem novo com consistência
-  visual entre gerações de imagem/vídeo, ou documentar um personagem já decidido numa
-  bíblia completa de produção. Trigger em qualquer pedido como "cria um personagem novo
-  pra essa campanha", "preciso de um personagem fixo pra série", "monta a bíblia desse
-  personagem", "cria o character sheet", "documenta esse personagem pra manter
-  consistência", "esse personagem tá saindo diferente a cada geração", "cria o mascote
-  da marca", "personagem fixo tipo MIB Divisão Brasil", ou qualquer pedido envolvendo um
-  personagem (mascote, protagonista de série, avatar de marca) que vai aparecer em
-  várias gerações de imagem/vídeo e precisa parecer sempre a mesma entidade. Generaliza
-  o padrão usado na skill de campanha `livelo` (fonte de verdade de personagens,
-  cenários e props) pra qualquer projeto novo, e cobre também a criação de um
-  personagem do zero, não só a documentação de um já pronto. Sempre combinar com
-  `image-prompter` (imagem) ou `seedance-prompter` (vídeo) na hora de gerar.
+  visual entre gerações de imagem/vídeo, ou documentar um já decidido numa bíblia de
+  produção. Trigger em: "cria um personagem novo pra essa campanha", "personagem fixo
+  pra série", "monta a bíblia desse personagem", "character sheet", "documenta esse
+  personagem pra manter consistência", "esse personagem tá saindo diferente a cada
+  geração", "cria o mascote da marca", ou qualquer personagem (mascote, protagonista
+  de série, avatar de marca) que apareça em várias gerações e precise parecer sempre
+  a mesma entidade. Generaliza o padrão da skill de campanha `livelo` pra qualquer
+  projeto novo, e cobre também criar o personagem do zero, não só documentar um
+  pronto. Sempre combinar com `image-prompter` ou `seedance-prompter` na hora de gerar.
 ---
 
 # Bíblia de Personagem
