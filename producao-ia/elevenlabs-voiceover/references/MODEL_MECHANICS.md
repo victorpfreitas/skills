@@ -1,27 +1,27 @@
-# Por que as tags e a formatação funcionam
+# Why the tags and formatting work
 
-O `SKILL.md` diz quais tags usar e quando. Este arquivo explica o porquê, útil quando o roteiro tiver um caso que as regras não cobrem literalmente.
+`SKILL.md` tells you which tags to use and when. This file explains why, useful when the script has a case the rules don't literally cover.
 
-## 1. A tag condiciona só o trecho local, não o texto inteiro
+## 1. A tag conditions only the local passage, not the whole text
 
-Uma tag como `[excited]` afeta a entrega vocal do trecho logo depois dela, não o parágrafo inteiro nem o áudio como um todo. É por isso que a tag precisa ficar no início do trecho que deveria carregar aquela emoção. Uma tag solta no meio de um bloco, sem um trecho claro pra condicionar, se dilui e não muda a entrega.
+A tag like `[excited]` affects the vocal delivery of the passage right after it, not the whole paragraph or the entire audio. That's why the tag needs to sit at the start of the passage that should carry that emotion. A tag dropped in the middle of a block, without a clear passage to condition, dilutes and doesn't change the delivery.
 
-## 2. Empilhar tags demais faz o modelo misturar entregas incompatíveis
+## 2. Stacking too many tags makes the model blend incompatible deliveries
 
-Duas tags compatíveis no mesmo trecho (`[curious] [impressed]`) ainda dá pro modelo compor uma entrega coerente, é uma combinação, não uma disputa. O problema aparece a partir da terceira tag no mesmo trecho: o modelo não tem mais uma direção clara de qual emoção prevalece, e o resultado soa artificial, sem nenhuma das entregas pretendidas de fato aparecer. É por isso que a regra do `SKILL.md` limita a no máximo duas tags por trecho.
+Two compatible tags in the same passage (`[curious] [impressed]`) still let the model compose a coherent delivery — it's a combination, not a conflict. The problem starts at the third tag in the same passage: the model no longer has a clear sense of which emotion should dominate, and the result sounds artificial, without any of the intended deliveries actually coming through. That's why the `SKILL.md` rule caps it at two tags per passage.
 
-## 3. CAPS cria ênfase pelo contraste, não pelo volume
+## 3. CAPS creates emphasis through contrast, not volume
 
-Ênfase em CAPS funciona porque destaca uma palavra em relação ao resto da frase que não está em CAPS. Se muitas palavras da mesma frase estiverem em CAPS, o contraste desaparece e a frase toda soa "gritada" no sentido prosódico, sem nenhuma palavra se destacar de fato, e o modelo passa a tratar a maiúscula como ruído, não como sinal. É por isso que a regra é 1-2 CAPS por frase: menos que isso, sem ênfase suficiente; mais que isso, ênfase nenhuma.
+CAPS emphasis works because it highlights one word relative to the rest of the sentence that isn't in CAPS. If too many words in the same sentence are in CAPS, the contrast disappears and the whole sentence sounds "shouted" in a prosodic sense, without any single word actually standing out — and the model starts treating capitalization as noise instead of signal. That's why the rule is 1-2 CAPS per sentence: fewer than that, not enough emphasis; more than that, no emphasis at all.
 
-## 4. Pausas com reticências imitam padrão real de fala hesitante ou reflexiva
+## 4. Ellipsis pauses mimic real hesitant or reflective speech patterns
 
-`…` funciona porque reproduz o jeito como as pessoas realmente pausam pra pensar ou respirar no meio de uma ideia. Pausa longa demais (um parágrafo inteiro tratado como uma respiração só) soa artificial porque ninguém fala assim. É por isso que `<break time="x.xs" />` não funciona bem no v3: é uma pausa mecânica, não uma pausa que nasce do texto e da pontuação.
+`…` works because it reproduces the way people actually pause to think or breathe in the middle of an idea. A pause that's too long (treating an entire paragraph as a single breath) sounds artificial because nobody talks that way. That's why `<break time="x.xs" />` doesn't work well in v3: it's a mechanical pause, not one that emerges from the text and its punctuation.
 
-## 5. A pontuação carrega parte do sinal prosódico
+## 5. Punctuation carries part of the prosodic signal
 
-Vírgula, ponto final, reticências e travessão têm pesos de pausa diferentes pro modelo. Escrever um trecho corrido sem pontuação variada tira controle de ritmo do texto, o modelo não tem onde "respirar" mesmo que a ideia peça uma pausa ali.
+Commas, periods, ellipses, and dashes carry different pause weights for the model. Writing a passage as a run-on without varied punctuation removes rhythm control from the text — the model has nowhere to "breathe" even if the idea calls for a pause there.
 
-## 6. Stability troca responsividade à tag por previsibilidade
+## 6. Stability trades tag responsiveness for predictability
 
-O parâmetro Stability não é "mais ou menos emoção", é o quanto o modelo se permite desviar do padrão de voz treinado pra obedecer uma tag. Robust mantém a voz o mais perto possível do padrão, então basicamente ignora a tag (é por isso que o comportamento lembra o v2, que não tinha tags). Creative permite o desvio máximo, por isso responde mais forte às tags, mas o mesmo mecanismo que permite a tag "torcer" a entrega também permite ela alucinar um som que ninguém pediu. Natural é o meio-termo: desvia o suficiente pra tag fazer efeito, sem soltar a mão do padrão de voz.
+The Stability parameter isn't "more or less emotion" — it's how much the model is allowed to deviate from its trained voice pattern in order to obey a tag. Robust keeps the voice as close as possible to the baseline, so it basically ignores the tag (which is why the behavior resembles v2, which had no tags). Creative allows maximum deviation, so it responds more strongly to tags, but the same mechanism that lets a tag "bend" the delivery also lets it hallucinate a sound nobody asked for. Natural is the middle ground: it deviates enough for the tag to take effect, without letting go of the voice pattern entirely.

@@ -1,33 +1,33 @@
 # Troubleshooting: ElevenLabs Eleven v3
 
-Problemas recorrentes e a correção direta pra cada um.
+Recurring problems and the direct fix for each one.
 
-## Soa robótico apesar das tags
+## Sounds robotic despite the tags
 
-- Geralmente falta variação de pontuação e pausa dentro do bloco, não só tag emocional. Releia o trecho procurando frases corridas sem `…`, vírgula ou quebra.
-- Confirme que a tag está no início do trecho que deveria carregá-la, não solta no meio de um parágrafo maior (ver `MODEL_MECHANICS.md`, item 1).
+- Usually it's missing punctuation and pause variation within the block, not just an emotional tag. Reread the passage looking for run-on sentences without `…`, commas, or line breaks.
+- Confirm the tag is at the start of the passage it should carry, not dropped in the middle of a larger paragraph (see `MODEL_MECHANICS.md`, item 1).
 
-## A tag parece ignorada, ou a emoção errada aparece
+## The tag seems ignored, or the wrong emotion shows up
 
-- Causa mais comum: o Stability está em **Robust**. Esse modo é estável mas praticamente ignora tags; troque pra Natural ou Creative (ver tabela de Stability no `SKILL.md`).
-- Se o Stability já estiver certo, a tag provavelmente está longe demais do texto que deveria carregar, ou competindo com mais de uma tag no mesmo trecho. Separe em dois blocos curtos se precisar de duas emoções diferentes em sequência.
+- Most common cause: Stability is set to **Robust**. This mode is stable but practically ignores tags — switch to Natural or Creative (see the Stability table in `SKILL.md`).
+- If Stability is already correct, the tag is probably too far from the text it should carry, or competing with more than one tag in the same passage. Split into two short blocks if you need two different emotions in sequence.
 
-## Pausa longa demais, ritmo arrastado
+## Pause too long, dragging rhythm
 
-- Excesso de `…` no mesmo trecho, ou linhas em branco demais separando blocos pequenos. Reduza pra uma pausa por ideia, não por frase.
+- Too many `…` in the same passage, or too many blank lines separating small blocks. Cut it down to one pause per idea, not per sentence.
 
-## Ênfase não aparece no CAPS
+## Emphasis doesn't come through in CAPS
 
-- Mais de 1-2 CAPS na mesma frase: o contraste desaparece (ver `MODEL_MECHANICS.md`, item 3). Reduza.
-- CAPS numa palavra funcional (artigo, preposição) em vez de palavra de conteúdo (substantivo, número, nome técnico). Mova o CAPS pra palavra que carrega o impacto.
+- More than 1-2 CAPS in the same sentence: the contrast disappears (see `MODEL_MECHANICS.md`, item 3). Reduce it.
+- CAPS on a function word (article, preposition) instead of a content word (noun, number, technical name). Move the CAPS to the word that carries the impact.
 
-## Número, sigla ou termo técnico pronunciado errado
+## Number, acronym, or technical term mispronounced
 
-- Escreva o número por extenso (`três`, não `3`) quando a pronúncia importar. A normalização automática do ElevenLabs erra às vezes, principalmente em texto multilíngue.
-- Expanda a sigla pra forma falada, a menos que seja nome próprio de modelo/marca (esses ficam como estão).
-- Se ainda assim ler errado, adicione pontuação ou hífen pra ajudar o modelo a segmentar a palavra.
-- Se for uma palavra-chave central do vídeo, teste com CAPS pra reforçar.
+- Spell out the number (`three`, not `3`) when pronunciation matters. ElevenLabs' automatic normalization is sometimes wrong, especially in multilingual text.
+- Expand the acronym to its spoken form, unless it's a proper noun for a model/brand name (those stay as-is).
+- If it still reads wrong, add punctuation or a hyphen to help the model segment the word.
+- If it's a central keyword of the video, try CAPS to reinforce it.
 
-## Quer ajustar sem regravar tudo
+## Want to adjust without regenerating everything
 
-Mude **uma variável por vez** antes de gerar de novo: uma tag, a pontuação de um trecho específico, ou o Stability (Robust/Natural/Creative). Nunca várias juntas, senão não dá pra saber o que resolveu (mesma disciplina usada no `seedance-prompter` e no `image-prompter` deste repositório).
+Change **one variable at a time** before generating again: one tag, the punctuation of a specific passage, or the Stability mode (Robust/Natural/Creative). Never change several at once, or you won't know what actually fixed it (the same discipline used when iterating on prompts for other AI generation tools).

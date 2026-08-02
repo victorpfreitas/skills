@@ -1,37 +1,40 @@
-# Template do CHARACTER BLOCK
+# CHARACTER BLOCK Template
 
-O CHARACTER BLOCK é o parágrafo fixo, em inglês, colado word-for-word em todo prompt que use o personagem. Nunca resumir ou parafrasear — o modelo é mais sensível a variação de texto do que parece, e cada reformulação é uma chance de desviar do visual aprovado.
+The CHARACTER BLOCK is the fixed paragraph, in English, pasted word-for-word into every prompt that uses the character. Never summarize or paraphrase — the model is more sensitive to text variation than it seems, and every rewording is a chance to drift away from the approved look.
 
 ---
 
-## Estrutura do bloco
+## Block structure
 
 ```
-CHARACTER CONSTRUCTION — @TAG_DO_PERSONAGEM — CRITICAL, DO NOT REINTERPRET:
+CHARACTER CONSTRUCTION — @CHARACTER_TAG — CRITICAL, DO NOT REINTERPRET:
 
-[1. FORMA GERAL] O que define a silhueta: tipo de figura, proporção, o que é humano
-vs. o que é elemento não-humano (prop vestível, adereço, traço não-realista).
+[1. OVERALL FORM] What defines the silhouette: type of figure, proportion,
+what is human vs. what is a non-human element (wearable prop, accessory,
+non-realistic trait).
 
-[2. TRAÇO INEGOCIÁVEL] O elemento que nunca muda entre gerações — declarado com
-ênfase (CAPS ou "CRITICAL"), com detalhe suficiente pra não sobrar espaço de
-interpretação (material, posição exata, relevo/acabamento, cor exata).
+[2. NON-NEGOTIABLE TRAIT] The element that never changes across generations —
+declared with emphasis (CAPS or "CRITICAL"), with enough detail to leave no
+room for interpretation (material, exact position, relief/finish, exact
+color).
 
-[3. VARIANTE ATUAL] O que é específico desta variante/versão (roupa, acessório,
-contexto) — só entra aqui o que MUDA; o que é compartilhado com outras variantes
-fica no bloco base, citado por referência ("same as @TAG_BASE").
+[3. CURRENT VARIANT] What is specific to this variant/version (outfit,
+accessory, context) — only what CHANGES goes here; whatever is shared with
+other variants stays in the base block, cited by reference ("same as
+@BASE_TAG").
 
-[4. VISTA TRASEIRA, SE RELEVANTE] Se o personagem aparece de costas em alguma
-cena, declarar explicitamente o que essa vista mostra — é comum o modelo assumir
-uma vista traseira genérica quando isso não é especificado.
+[4. BACK VIEW, IF RELEVANT] If the character appears from behind in any
+scene, explicitly declare what that view shows — the model commonly defaults
+to a generic back view when this isn't specified.
 
 Reproduce exactly as @image reference. Do not reinterpret.
-[Adendo específico do traço inegociável, se fizer sentido repetir: ex. "Do not
-make [o traço] smaller/simplified/flat."]
+[Trait-specific addendum, if worth repeating: e.g. "Do not
+make [the trait] smaller/simplified/flat."]
 ```
 
 ---
 
-## Exemplo 1 — mascote com prop vestível (padrão Livelo)
+## Example 1 — mascot with a wearable prop (pattern generalized from the Livelo campaign)
 
 ```
 CHARACTER CONSTRUCTION — @CHAR_PONTO — CRITICAL, DO NOT REINTERPRET:
@@ -54,11 +57,11 @@ Reproduce exactly as @image reference. Do not reinterpret. Do not make the block
 smaller or head-sized only.
 ```
 
-Note o que faz esse bloco funcionar: a forma geral é definida ANTES da roupa (senão o modelo assume proporção humana comum e trata o bloco como acessório pequeno); o traço inegociável (o símbolo em relevo) tem posição, acabamento e escala descritos, não só citado; a vista traseira é documentada porque o personagem aparece de costas em algumas cenas e a estrutura interna do bloco é parte da identidade.
+Note what makes this block work: the overall form is defined BEFORE the outfit (otherwise the model assumes a common human proportion and treats the block as a small accessory); the non-negotiable trait (the raised symbol) has its position, finish, and scale described, not just named; the back view is documented because the character appears from behind in some scenes and the block's internal structure is part of the identity.
 
 ---
 
-## Exemplo 2 — personagem humano realista (protagonista de série, ex. estilo "agente")
+## Example 2 — realistic human character (series protagonist, e.g. "agent" style)
 
 ```
 CHARACTER CONSTRUCTION — @AGENTE_MIB_BR — CRITICAL, DO NOT REINTERPRET:
@@ -82,13 +85,13 @@ Reproduce exactly as @image reference. Do not reinterpret facial structure, skin
 tone, or the eyebrow scar.
 ```
 
-Esse exemplo mostra que o padrão do CHARACTER BLOCK generaliza pra personagem humano realista, sem prop vestível — o traço inegociável aqui é a cicatriz (um detalhe pequeno mas específico o bastante pra não ser "esquecido" pelo modelo entre gerações), e a variante (óculos presente/ausente) é tratada como estado a declarar por cena, não característica fixa.
+This example shows the CHARACTER BLOCK pattern generalizes to a realistic human character with no wearable prop — here the non-negotiable trait is the scar (a small but specific enough detail that the model won't "forget" it across generations), and the variant (glasses present/absent) is treated as a per-shot state to declare, not a fixed characteristic.
 
 ---
 
-## Variantes — herdar o bloco base
+## Variants — inherit the base block
 
-Quando existem múltiplas variantes do mesmo personagem, não reescreva o bloco inteiro pra cada uma — declare o que é compartilhado uma vez, e cada variante só acrescenta a diferença:
+When multiple variants of the same character exist, don't rewrite the whole block for each one — declare what's shared once, and each variant only adds the difference:
 
 ```
 CHARACTER CONSTRUCTION — @SRA_PONTO_RESORT — CRITICAL, DO NOT REINTERPRET:
@@ -102,4 +105,4 @@ ACCESSORY: wide-brim straw hat resting on top of the block.
 Reproduce exactly as @image reference. Do not make the block head-sized only.
 ```
 
-Isso mantém a família de personagens consistente entre si e reduz o tamanho de cada bloco individual.
+This keeps the character family consistent with itself and reduces the size of each individual block.

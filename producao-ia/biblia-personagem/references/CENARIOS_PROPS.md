@@ -1,48 +1,49 @@
-# Cenários e Props — Catalogação
+# Locations and Props — Cataloguing
 
-Quando o personagem vive dentro de um universo recorrente (série, campanha com várias peças), cenários e props recebem o mesmo tratamento do personagem: tag única + descrição fixa, nunca texto livre reinventado a cada prompt.
+When the character lives inside a recurring universe (series, multi-piece campaign), locations and props get the same treatment as the character: unique tag + fixed description, never free-form text reinvented on every prompt.
 
 ---
 
-## Cenário (`@LOC_...`)
+## Location (`@LOC_...`)
 
-Cada cenário catalogado precisa responder, numa descrição compacta (não um parágrafo longo — cenário tem menos risco de drift que personagem, então cabe em 2-4 linhas):
+Every catalogued location needs to answer, in a compact description (not a long paragraph — locations carry less drift risk than characters, so 2-4 lines is enough):
 
-- **Elementos fixos obrigatórios** — o que precisa estar sempre presente pra o cenário ser reconhecível (um objeto, uma cor de parede, uma vista específica).
-- **Tom de luz/clima** — se o cenário tem uma atmosfera padrão (ex.: "sempre golden hour", "sempre céu dramático pré-chuva"), declarar aqui pra não variar cena a cena sem motivo.
-- **Identidade local**, se relevante ao projeto — um detalhe que ancora o cenário num lugar real ou numa cultura específica, quando isso for parte da narrativa (ex.: skyline reconhecível, elemento arquitetônico local).
+- **Mandatory fixed elements** — what must always be present for the location to be recognizable (an object, a wall color, a specific view).
+- **Light/mood tone** — if the location has a default atmosphere (e.g. "always golden hour", "always dramatic pre-storm sky"), declare it here so it doesn't vary scene to scene without reason.
+- **Local identity**, if relevant to the project — a detail that anchors the location in a real place or a specific culture, when that's part of the narrative (e.g. a recognizable skyline, a local architectural element).
 
 Template:
 
 ```
-`@LOC_NOME` — [1 linha de identificação do lugar]
-[Elementos fixos obrigatórios, em prosa corrida]. **Tom:** [luz/clima padrão].
+`@LOC_NAME` — [1-line identification of the place]
+[Mandatory fixed elements, in running prose]. **Tone:** [default light/mood].
 ```
 
 ## Props (`@PROP_...`)
 
-Prop recorrente (objeto que aparece em várias cenas, às vezes carregando peso narrativo) segue o mesmo padrão:
+A recurring prop (an object that appears across several scenes, sometimes carrying narrative weight) follows the same pattern:
 
 ```
-`@PROP_NOME` — [1 linha de identificação]
-[Material, cor, textura, detalhe que não pode variar]. [Regra de uso, se houver
-uma: ex. "sempre em múltiplos, nunca um só" ou "exclusivo de tal personagem"].
+`@PROP_NAME` — [1-line identification]
+[Material, color, texture, detail that cannot vary]. [Usage rule, if there is
+one: e.g. "always in multiples, never a single one" or "exclusive to a
+specific character"].
 ```
 
-Regra de props narrativos (aqueles que carregam informação da história, não só decoração): declarar explicitamente o texto/detalhe exato que aparece neles (uma manchete, um símbolo, uma data) — prop narrativo com texto errado ou ilegível quebra a história tanto quanto o personagem sair diferente.
+Rule for narrative props (ones that carry story information, not just decoration): explicitly declare the exact text/detail that appears on them (a headline, a symbol, a date) — a narrative prop with wrong or illegible text breaks the story just as much as the character coming out different.
 
-## Quando NÃO catalogar
+## When NOT to catalogue
 
-Cenário ou prop que aparece uma vez só, sem função recorrente, não precisa de tag — isso é overhead sem benefício. Catalogar só o que se repete entre peças/episódios/gerações.
+A location or prop that appears only once, with no recurring function, doesn't need a tag — that's overhead with no benefit. Only catalogue what repeats across pieces/episodes/generations.
 
-## Inventário rápido
+## Quick inventory
 
-Fechar a bíblia com uma tabela de referência única (personagens + cenários + props), pro time conseguir escanear rapidamente o que existe sem reler o documento inteiro:
+Close the bible with a single reference table (characters + locations + props), so the team can quickly scan what exists without rereading the whole document:
 
 ```
-| Tag | Tipo | Descrição rápida |
+| Tag | Type | Quick description |
 |---|---|---|
-| @NOME | Personagem | ... |
-| @LOC_NOME | Cenário | ... |
-| @PROP_NOME | Prop | ... |
+| @NAME | Character | ... |
+| @LOC_NAME | Location | ... |
+| @PROP_NAME | Prop | ... |
 ```

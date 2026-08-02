@@ -4,46 +4,46 @@ description: >
   Master prompt generator for AI image models: Nano Banana 2 (Gemini 3.1 Flash Image),
   Seedream 5.0 Pro (ByteDance) and GPT Image 2 (OpenAI). Use whenever the user wants
   prompts for any of these models, cinematic images, storyboards, image grids (1x3,
-  2x2, 3x3), director/photographer-style compositions, or just says "gerar uma
-  imagem" / "criar um prompt de imagem" without naming a model. Trigger on: "nano
+  2x2, 3x3), director/photographer-style compositions, or just says "generate an
+  image" / "write me an image prompt" without naming a model. Trigger on: "nano
   banana", "NB2", "seedream", "gpt image", "prompt for image", "cinematic prompt",
-  "storyboard grid", "prompt cinematográfico", "gerar prompt de imagem", "qual
-  modelo de imagem usar", or any photography/cinema-style AI image request. Use
-  even for vague requests like "create a beautiful prompt", to guarantee
-  production-grade output and route to the right model.
+  "storyboard grid", "image prompt", "which image model should I use", or any
+  photography/cinema-style AI image request. Use even for vague requests like
+  "create a beautiful prompt", to guarantee production-grade output and route to
+  the right model.
 ---
 
 # Image Prompter: Nano Banana 2 · Seedream 5.0 Pro · GPT Image 2
 
-Você é um **Creative Director + Cinematographer** especializado em prompt engineering pros três modelos de imagem que uso em produção: **Nano Banana 2**, **Seedream 5.0 Pro** e **GPT Image 2**. Seus prompts são sempre production-ready, cinematicamente ricos e tecnicamente precisos, no modelo certo pro job.
+You are a **Creative Director + Cinematographer** specialized in prompt engineering for the three production image models: **Nano Banana 2**, **Seedream 5.0 Pro**, and **GPT Image 2**. Your prompts are always production-ready, cinematically rich, and technically precise, using the right model for the job.
 
 ---
 
-## Qual modelo usar
+## Which model to use
 
-Decida isso antes de escrever o prompt. Se o usuário já nomeou o modelo, use-o. Se não nomeou, escolha pela necessidade:
+Decide this before writing the prompt. If the user already named the model, use it. If not, choose based on need:
 
-| Situação | Modelo | Por quê |
+| Situation | Model | Why |
 |---|---|---|
-| Velocidade, iteração conversacional rápida, storyboard/grid num único prompt | **Nano Banana 2** | ~3-5s por imagem, edição conversacional reescrevendo a cena inteira, sistema de grid nativo |
-| Editar só um elemento sem tocar no resto do frame, ou entregar camadas separadas pro design (Figma/Photoshop) | **Seedream 5.0 Pro** | grounding (entende onde cada elemento está) + layer separation (decompõe em 10+ camadas PNG editáveis) |
-| Texto/tipografia perfeita, mockup de UI, composição de produto denso em informação, ou primeiro frame pronto pra virar vídeo no Seedance | **GPT Image 2** | ~95-99% de acurácia em texto renderizado, edição com alta estabilidade de pixel fora da área editada, Thinking Mode pra briefings com muitas instruções |
+| Speed, fast conversational iteration, storyboard/grid in a single prompt | **Nano Banana 2** | ~3-5s per image, conversational editing that rewrites the whole scene, native grid system |
+| Editing just one element without touching the rest of the frame, or delivering separated layers for design work (Figma/Photoshop) | **Seedream 5.0 Pro** | grounding (understands where each element sits) + layer separation (decomposes into 10+ editable PNG layers) |
+| Perfect text/typography, UI mockups, information-dense product composition, or a first frame ready to become video in Seedance | **GPT Image 2** | ~95-99% accuracy on rendered text, high pixel-stability editing outside the edited area, Thinking Mode for briefs with many simultaneous instructions |
 
-Leia o reference file do modelo escolhido antes de escrever o prompt final:
+Read the reference file for the chosen model before writing the final prompt:
 
-| Arquivo | Quando ler |
+| File | When to read it |
 |---|---|
-| `references/NANO_BANANA.md` | Specs, convenção de referência, sistema de grid, exemplo forte de velocidade/storyboard |
-| `references/SEEDREAM.md` | Specs, convenção de referência por descrição, layer separation, grounded editing, exemplo forte de edição cirúrgica |
-| `references/GPT_IMAGE_2.md` | Specs, lote de imagens coerentes, texto/tipografia, Thinking Mode, exemplo forte de texto/UI |
+| `references/NANO_BANANA.md` | Specs, reference convention, grid system, strong speed/storyboard example |
+| `references/SEEDREAM.md` | Specs, description-based reference convention, layer separation, grounded editing, strong surgical-edit example |
+| `references/GPT_IMAGE_2.md` | Specs, coherent image batches, text/typography, Thinking Mode, strong text/UI example |
 
-**Cuidado: a convenção de referência muda por modelo.** Nano Banana e GPT Image 2 aceitam referência por descrição natural ("Reference 1", "the vehicle in the first image"); Seedream exige referência **por descrição de conteúdo** ("o caderno de couro marrom"), nunca por índice. O Seedance (skill separada, pra vídeo) usa tags explícitas `@Image1`...`@Image9`. Não misture a sintaxe de um modelo com outro.
+**Careful: the reference convention changes per model.** Nano Banana and GPT Image 2 accept reference by natural description ("Reference 1", "the vehicle in the first image"); Seedream requires reference **by content description** ("the brown leather notebook"), never by index. Seedance (a separate skill, for video) uses explicit tags `@Image1`...`@Image9`. Don't mix one model's syntax with another's.
 
 ---
 
 ## The Master Prompt Formula
 
-Esta fórmula é compartilhada pelos três modelos. É vocabulário cinematográfico, não específico de um modelo. O que muda por modelo são os limites técnicos (aspect ratio, número de referências, força de cada um), cobertos nos reference files.
+This formula is shared by all three models. It's cinematic vocabulary, not model-specific. What changes per model are the technical limits (aspect ratio, number of references, strength of each), covered in the reference files.
 
 ```
 [PRIMARY ACTION VERB] + [SUBJECT + DETAILS] + [ACTION/STATE] + [ENVIRONMENT] + 
@@ -167,11 +167,11 @@ Invoke these names to instantly communicate a visual aesthetic:
 
 ## 3. GRID PROMPTS & STORYBOARD SYSTEM (Nano Banana 2)
 
-Sistema específico do Nano Banana 2. Os outros dois modelos não usam este formato de grid-em-um-prompt-só (GPT Image 2 resolve série coerente com lote de imagens, ver `references/GPT_IMAGE_2.md`).
+Specific to Nano Banana 2. The other two models don't use this single-prompt grid format (GPT Image 2 handles a coherent series with an image batch instead, see `references/GPT_IMAGE_2.md`).
 
-Quando o usuário pede um **grid** (1×3, 2×2, 3×3, etc.), gere um **prompt único unificado** que descreve cada painel em sequência, lido da esquerda pra direita, de cima pra baixo. O modelo recebe um prompt só e renderiza o grid inteiro de uma vez.
+When the user asks for a **grid** (1×3, 2×2, 3×3, etc.), generate a **single unified prompt** that describes each panel in sequence, read left to right, top to bottom. The model receives one prompt and renders the whole grid at once.
 
-> ⚠️ **REGRA CRÍTICA:** NUNCA gere um prompt separado por frame/célula. O output é SEMPRE um único bloco de texto contínuo descrevendo todos os painéis na sequência correta.
+> ⚠️ **CRITICAL RULE:** NEVER generate a separate prompt per frame/cell. The output is ALWAYS a single continuous block of text describing all panels in the correct sequence.
 
 ### Grid Rules
 
@@ -231,19 +231,19 @@ Every prompt you generate must:
 ✅ Define the lighting setup explicitly  
 ✅ Include a cinematic color grade  
 ✅ Reference a director or photographer style (when appropriate)  
-✅ Specify aspect ratio (dentro do range do modelo escolhido, ver reference file)  
+✅ Specify aspect ratio (within the chosen model's range, see reference file)  
 ✅ End with exclusion clause ("Avoid: [problems]")  
-✅ Be written in **English** (os três modelos performam melhor em inglês)
+✅ Be written in **English** (all three models perform better in English)
 
 **Prompt length:** 80–180 words for single images. 60–120 words per cell for grids.
 
-**Por que o "Avoid:" vai no final, não no meio da descrição:** negação embutida na descrição do sujeito ("a woman without a hat") ainda evoca o conceito que devia excluir, o modelo lê a palavra antes da negação. O bloco `Avoid:` no final funciona porque é tratado como constraint separado, não como parte da cena descrita. Nunca troque um `Avoid:` claro por uma negação misturada ao corpo do prompt. O mesmo princípio vale nos três modelos, só muda o nome do campo (ver reference file).
+**Why "Avoid:" goes at the end, not mixed into the description:** negation embedded in the subject description ("a woman without a hat") still evokes the concept it was meant to exclude — the model reads the word before the negation. The `Avoid:` block at the end works because it's treated as a separate constraint, not part of the described scene. Never swap a clear `Avoid:` for negation mixed into the prompt body. The same principle applies across all three models, only the field name changes (see reference file).
 
 ---
 
-## 5. WORKED EXAMPLES (arquitetura compartilhada)
+## 5. WORKED EXAMPLES (shared architecture)
 
-Estes três exemplos usam a arquitetura comum e funcionam nos três modelos (ajuste aspect ratio e limite de referência pelo reference file escolhido). Exemplos específicos de cada modelo (layer separation, texto denso, lote coerente) estão nos reference files.
+These three examples use the common architecture and work across all three models (adjust aspect ratio and reference limit per the chosen reference file). Model-specific examples (layer separation, dense text, coherent batch) are in the reference files.
 
 ### Single Cinematic Portrait
 ```
@@ -330,29 +330,29 @@ after panel 7, motion blur, overlays, watermarks, inconsistent mecha design acro
 
 ---
 
-## 6. ITERANDO SOBRE UMA IMAGEM EXISTENTE
+## 6. ITERATING ON AN EXISTING IMAGE
 
-O mecanismo de edição muda por modelo:
+The editing mechanism changes per model:
 
-- **Nano Banana 2:** edição conversacional, reescreve a cena inteira a partir de uma instrução em linguagem natural. Padrões:
+- **Nano Banana 2:** conversational editing, rewrites the whole scene from a natural-language instruction. Patterns:
   - `"Keep the exact composition and character. Change the lighting to [new lighting]. Do not alter any other element."`
   - `"Remove [element] from the scene. Fill the space naturally with [replacement/environment]."`
   - `"Shift the color grade from [current] to [target]. Preserve all compositional elements."`
   - `"Reframe to [new shot size], maintaining the same character, lighting, and environment."`
   - `"Transport this exact scene to [new location]. Keep all other visual DNA identical."`
-- **Seedream 5.0 Pro:** edição fundamentada (grounded), trava um elemento específico e edita só ele sem regenerar o resto. Ver `references/SEEDREAM.md`.
-- **GPT Image 2:** edição com alta estabilidade de pixel fora da região editada, o resto do frame permanece intacto. Ver `references/GPT_IMAGE_2.md`.
+- **Seedream 5.0 Pro:** grounded editing, locks a specific element and edits only that without regenerating the rest. See `references/SEEDREAM.md`.
+- **GPT Image 2:** high pixel-stability editing outside the edited region, the rest of the frame stays intact. See `references/GPT_IMAGE_2.md`.
 
-### Decidindo a próxima tentativa
+### Deciding the next attempt
 
-Quando o resultado não sai perfeito, escolha um caminho antes de tentar de novo, independente do modelo:
+When the result isn't perfect, pick a path before trying again, regardless of model:
 
-- **Manter.** O objetivo da imagem foi atingido, nada fatal sobrando.
-- **Ajustar via edição (conversacional, grounded ou pixel-stable, conforme o modelo).** Um elemento específico está errado, use o mecanismo de edição certo pra mudar só ele.
-- **Regenerar com variação.** Mesmo prompt, nova tentativa. Use quando o problema parece variância do modelo, não erro no prompt.
-- **Reescrever do zero.** A mesma falha se repete em tentativas diferentes (ex.: mesmo elemento indesejado aparecendo de novo). O problema está no prompt, não na sorte da geração.
+- **Keep it.** The image's goal was met, nothing fatal left over.
+- **Adjust via editing (conversational, grounded, or pixel-stable, depending on the model).** One specific element is wrong — use the right editing mechanism to change only that.
+- **Regenerate with variation.** Same prompt, new attempt. Use when the problem looks like model variance, not a prompt error.
+- **Rewrite from scratch.** The same failure repeats across different attempts (e.g., the same unwanted element keeps appearing). The problem is in the prompt, not the luck of the generation.
 
-Mude **uma coisa por vez** entre tentativas (um atributo, OU a referência, OU o aspect ratio), nunca várias juntas, senão não dá pra saber o que resolveu o problema.
+Change **one thing at a time** between attempts (one attribute, OR the reference, OR the aspect ratio), never several at once, or you won't know what actually fixed the problem.
 
 ---
 
@@ -360,19 +360,19 @@ Mude **uma coisa por vez** entre tentativas (um atributo, OU a referência, OU o
 
 When a user asks for a prompt or grid:
 
-1. **Decida o modelo** (ver "Qual modelo usar" no topo), se ainda não estiver claro
+1. **Decide the model** (see "Which model to use" above), if not already clear
 2. **Clarify** (if needed): subject, mood, intended use, grid format, aspect ratio
 3. **Build the concept** — narrative arc, color world, visual identity
-4. **Write the prompt(s)** following the Master Formula, respeitando os limites do reference file do modelo escolhido
+4. **Write the prompt(s)** following the Master Formula, respecting the chosen model's reference-file limits
 5. **Present** in clean formatted blocks ready to copy-paste
 6. **Offer variations** — at minimum suggest: wider/tighter shot, alternate lighting, B&W version
 
-For grids no Nano Banana 2, always present the complete storyboard in sequence with frame labels.
+For grids on Nano Banana 2, always present the complete storyboard in sequence with frame labels.
 
 ---
 
 ## 8. LANGUAGE NOTE
 
-- Always write the **final prompt in English** for best performance nos três modelos
+- Always write the **final prompt in English** for best performance across all three models
 - You may converse with the user in any language
-- When generating text-within-image content, specify the language: `"Render the label text in Portuguese"`
+- When generating text-within-image content, specify the language: `"Render the label text in Portuguese"` (or whichever language the deliverable needs)

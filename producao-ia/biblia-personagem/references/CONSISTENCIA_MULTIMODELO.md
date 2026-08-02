@@ -1,32 +1,32 @@
-# Consistência entre Modelos
+# Consistency Across Models
 
-Um personagem geralmente precisa aparecer em mais de um modelo — imagem de referência num modelo, produção em outro, vídeo animado a partir da imagem. O problema: **cada modelo cita uma imagem de referência de personagem de um jeito diferente**, e misturar a sintaxe de um modelo com outro é uma causa comum de drift. Isso já é uma nota do `image-prompter`; aqui ela é aplicada especificamente ao caso de personagem recorrente.
+A character usually needs to appear in more than one model — reference image in one model, production in another, video animated from the image. The problem: **every model cites a character reference image differently**, and mixing one model's syntax with another is a common cause of drift. This is already a note in `image-prompter`; here it's applied specifically to the recurring-character case.
 
 ---
 
-## Convenção de referência por modelo
+## Reference convention by model
 
-| Modelo | Como cita a imagem de referência do personagem |
+| Model | How it cites the character's reference image |
 |---|---|
-| **Nano Banana 2** | Descrição natural ("Reference 1", "the character in the first image") — aceita até 5 personagens + 14 objetos por prompt. |
-| **Seedream 5.0 Pro** | Referência **por descrição de conteúdo** ("o personagem de terno preto"), nunca por índice numérico — até 10 referências. |
-| **GPT Image 2** | Descrição natural, similar ao Nano Banana — até 16 referências, boa transferência de personagem entre edições em lote. |
-| **Seedance 2.0** (vídeo) | Tags explícitas `@Image1`, `@Image2`... — quando o usuário sobe imagens em sequência, cada uma vira uma tag numerada usada no prompt de vídeo (modo R2V). |
+| **Nano Banana 2** | Natural description ("Reference 1", "the character in the first image") — accepts up to 5 characters + 14 objects per prompt. |
+| **Seedream 5.0 Pro** | Reference **by content description** ("the character in the black suit"), never by numeric index — up to 10 references. |
+| **GPT Image 2** | Natural description, similar to Nano Banana — up to 16 references, good character transfer across batch edits. |
+| **Seedance 2.0** (video) | Explicit tags `@Image1`, `@Image2`... — when the user uploads images in sequence, each one becomes a numbered tag used in the video prompt (R2V mode). |
 
-Nunca escreva `@Image1` num prompt de Nano Banana/Seedream/GPT Image 2 — essa sintaxe é exclusiva do Seedance. E nunca peça "reference 1" num prompt de Seedream — ele precisa da descrição de conteúdo, não de índice.
+Never write `@Image1` in a Nano Banana/Seedream/GPT Image 2 prompt — that syntax is exclusive to Seedance. And never ask for "reference 1" in a Seedream prompt — it needs the content description, not an index.
 
-## O CHARACTER BLOCK é o que não muda
+## The CHARACTER BLOCK is what stays the same
 
-A parte que atravessa todos os modelos sem alteração é o **CHARACTER BLOCK** em si (ver `CHARACTER_BLOCK_TEMPLATE.md`) — a descrição fixa do personagem. O que muda entre modelos é só **como a imagem de referência é citada** ao lado desse bloco. Fluxo recomendado:
+The part that carries across every model unchanged is the **CHARACTER BLOCK** itself (see `CHARACTER_BLOCK_TEMPLATE.md`) — the fixed character description. What changes between models is only **how the reference image is cited** alongside that block. Recommended flow:
 
-1. Gere a imagem de referência oficial do personagem uma vez (normalmente no Nano Banana, pela velocidade de iteração).
-2. Ao gerar em outro modelo de imagem (Seedream, GPT Image 2), inclua o CHARACTER BLOCK completo + cite a referência na sintaxe daquele modelo especificamente.
-3. Ao animar em Seedance, suba a imagem de referência aprovada, trate-a como `@Image1`, e ainda assim inclua o CHARACTER BLOCK no prompt de vídeo — a tag de imagem ajuda o modelo a ancorar visualmente, mas o bloco de texto continua sendo o que declara os traços inegociáveis que a imagem sozinha pode não deixar claro em todo ângulo/movimento.
+1. Generate the character's official reference image once (usually in Nano Banana, for iteration speed).
+2. When generating in another image model (Seedream, GPT Image 2), include the full CHARACTER BLOCK + cite the reference in that specific model's syntax.
+3. When animating in Seedance, upload the approved reference image, treat it as `@Image1`, and still include the CHARACTER BLOCK in the video prompt — the image tag helps the model anchor visually, but the text block is still what declares the non-negotiable traits that the image alone might not make clear from every angle/movement.
 
-## Continuidade entre clipes de vídeo (Seedance)
+## Continuity across video clips (Seedance)
 
-Quando o personagem aparece em vários clipes seguidos de uma sequência, ancore o próximo clipe no que **de fato** ficou no clipe anterior aprovado (o frame final, a pose, o estado do figurino), não na intenção original do CHARACTER BLOCK sozinha — mesma regra de continuidade que o `seedance-prompter` já aplica a clipes em sequência, só que aqui o "estado observado" é o do personagem especificamente (verificar se um acessório saiu de lugar, se a pose final do clipe anterior bate com a inicial do próximo).
+When the character appears across several consecutive clips of a sequence, anchor the next clip on what **actually** ended up in the previous approved clip (the final frame, the pose, the outfit's state), not on the original CHARACTER BLOCK intent alone — the same continuity rule `seedance-prompter` already applies to sequential clips, except here the "observed state" is specifically the character's (check whether an accessory shifted, whether the previous clip's final pose matches the next one's starting pose).
 
-## Erro mais comum: aplicar regra de um modelo em outro
+## Most common mistake: applying one model's rule to another
 
-Se um prompt de personagem sair estranho, o primeiro diagnóstico é: a sintaxe de referência usada bate com o modelo de destino? Um prompt escrito pensando em Nano Banana (referência por descrição solta) colado sem ajuste num prompt de Seedream frequentemente falha porque o Seedream exige que a referência seja descrita por conteúdo específico, não genérico.
+If a character prompt comes out looking wrong, the first diagnosis is: does the reference syntax used match the target model's convention? A prompt written with Nano Banana in mind (reference by loose description) pasted unchanged into a Seedream prompt frequently fails because Seedream requires the reference to be described by specific content, not generically.

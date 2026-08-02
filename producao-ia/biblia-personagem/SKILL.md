@@ -1,97 +1,100 @@
 ---
 name: biblia-personagem
 description: >
-  Use esta skill sempre que Victor precisar criar um personagem novo com consistência
-  visual entre gerações de imagem/vídeo, ou documentar um já decidido numa bíblia de
-  produção. Trigger em: "cria um personagem novo pra essa campanha", "personagem fixo
-  pra série", "monta a bíblia desse personagem", "character sheet", "documenta esse
-  personagem pra manter consistência", "esse personagem tá saindo diferente a cada
-  geração", "cria o mascote da marca", ou qualquer personagem (mascote, protagonista
-  de série, avatar de marca) que apareça em várias gerações e precise parecer sempre
-  a mesma entidade. Generaliza o padrão da skill de campanha `livelo` pra qualquer
-  projeto novo, e cobre também criar o personagem do zero, não só documentar um
-  pronto. Sempre combinar com `image-prompter` ou `seedance-prompter` na hora de gerar.
+  Use this skill whenever a new character needs to be created with visual
+  consistency across image/video generations, or an already-decided character
+  needs to be documented in a production bible. Trigger on: "create a new
+  character for this campaign", "recurring character for a series", "build
+  this character's bible", "character sheet", "document this character to
+  keep it consistent", "this character keeps coming out different every
+  generation", "create the brand mascot", or any character (mascot, series
+  protagonist, brand avatar) that appears across multiple generations and
+  needs to always read as the same entity. Generalizes the campaign-specific
+  pattern from the `livelo` skill into a reusable pattern for any new
+  project, and also covers designing the character from scratch, not just
+  documenting one that already exists. Always combine with `image-prompter`
+  or `seedance-prompter` when it's time to actually generate.
 ---
 
-# Bíblia de Personagem
+# Character Bible
 
-Você é **co-diretor de arte** responsável por manter um personagem visualmente idêntico em toda geração de imagem ou vídeo, não importa quantas vezes ele for recriado, por qual modelo, ou em qual cenário. Uma bíblia de personagem é o documento de referência único que qualquer prompt de imagem/vídeo consulta antes de descrever esse personagem — nunca se descreve o personagem de improviso.
+You are the **co-art-director** responsible for keeping a character visually identical across every image or video generation, no matter how many times it's recreated, by which model, or in which scene. A character bible is the single reference document that every image/video prompt consults before describing that character — the character is never described off-the-cuff.
 
-Esta skill cobre dois modos de trabalho:
+This skill covers two modes of work:
 
-- **Criar um personagem novo** — Victor tem só uma ideia solta ("quero um mascote pra essa campanha", "preciso de um agente fixo pra série") e a bíblia nasce junto com o design.
-- **Documentar um personagem já decidido** — o visual já existe (referência de imagem, descrição informal, personagem de uma campanha anterior) e falta consolidar numa bíblia formal antes de escalar produção.
+- **Creating a new character** — the user only has a loose idea ("I want a mascot for this campaign", "I need a recurring agent for a series") and the bible is born alongside the design.
+- **Documenting an already-decided character** — the look already exists (a reference image, an informal description, a character from a previous campaign) and it just needs to be consolidated into a formal bible before scaling production.
 
 ---
 
-## Arquivos de referência
+## Reference files
 
-| Arquivo | Quando ler |
+| File | When to read it |
 |---|---|
-| `references/CRIANDO_PERSONAGEM_NOVO.md` | Sempre que o personagem ainda não existe — workflow de perguntas pra desenhar a identidade visual do zero |
-| `references/CHARACTER_BLOCK_TEMPLATE.md` | Na hora de escrever a ficha formal de qualquer personagem — template do bloco word-for-word + dois exemplos preenchidos (mascote vestível e humano realista) |
-| `references/CENARIOS_PROPS.md` | Quando o personagem precisar de cenários e props catalogados junto (série, campanha) — como taggear e documentar sem depender de descrição livre |
-| `references/CONSISTENCIA_MULTIMODELO.md` | Antes de gerar em mais de um modelo (Nano Banana, Seedream, GPT Image 2, Seedance) — cada um lê referência de personagem de um jeito diferente |
-| `references/TROUBLESHOOTING.md` | Quando o personagem sair diferente entre gerações — sintoma → causa → correção |
+| `references/CRIANDO_PERSONAGEM_NOVO.md` | Whenever the character doesn't exist yet — a question-driven workflow for designing the visual identity from scratch |
+| `references/CHARACTER_BLOCK_TEMPLATE.md` | When writing the formal sheet for any character — the word-for-word block template plus two filled-in examples (wearable mascot and realistic human) |
+| `references/CENARIOS_PROPS.md` | When the character needs catalogued locations and props alongside it (series, campaign) — how to tag and document them without falling back on free-form description |
+| `references/CONSISTENCIA_MULTIMODELO.md` | Before generating across more than one model (Nano Banana, Seedream, GPT Image 2, Seedance) — each one reads character references differently |
+| `references/TROUBLESHOOTING.md` | When the character comes out different across generations — symptom → cause → fix |
 
 ---
 
-## Regra #1 — nunca descrever o personagem em texto livre
+## Rule #1 — never describe the character in free-form text
 
-Descrição solta ("um cara vestindo uma roupa preta") faz o modelo reinterpretar o personagem a cada geração. A bíblia existe pra impedir isso. Sempre:
+A loose description ("a guy wearing a black outfit") makes the model reinterpret the character on every generation. The bible exists to prevent that. Always:
 
-- Dar ao personagem uma **tag única** (`@NOME_PERSONAGEM`), nunca se refira a ele só pelo nome comum na hora de montar o prompt.
-- Escrever um **CHARACTER BLOCK** fixo (ver `CHARACTER_BLOCK_TEMPLATE.md`) e colar **word-for-word** em todo prompt que use esse personagem — nunca resumir, nunca parafrasear.
-- Fechar com a frase `"Reproduce exactly as @image reference. Do not reinterpret."` quando houver imagem de referência do personagem já aprovada.
+- Give the character a **unique tag** (`@CHARACTER_NAME`) — never refer to it by common name alone when assembling a prompt.
+- Write a fixed **CHARACTER BLOCK** (see `CHARACTER_BLOCK_TEMPLATE.md`) and paste it **word-for-word** into every prompt that uses that character — never summarize, never paraphrase.
+- Close with the phrase `"Reproduce exactly as @image reference. Do not reinterpret."` whenever an approved reference image of the character exists.
 
-## Regra #2 — todo traço distintivo precisa de uma frase que force a distinção
+## Rule #2 — every distinguishing trait needs a sentence that forces the distinction
 
-Um personagem quase-genérico (silhueta humana comum, roupa comum) vaza pra "qualquer pessoa parecida" já na segunda geração. A bíblia precisa nomear explicitamente **o que nunca pode variar** — um símbolo, uma proporção incomum, uma cor exclusiva, uma textura de material — e repetir isso em CAPS ou com "CRITICAL, DO NOT REINTERPRET" no bloco. Ver exemplos em `CHARACTER_BLOCK_TEMPLATE.md`.
+A near-generic character (common human silhouette, common clothing) drifts into "any similar-looking person" by the second generation. The bible needs to explicitly name **what can never vary** — a symbol, an unusual proportion, an exclusive color, a material texture — and repeat it in CAPS or with "CRITICAL, DO NOT REINTERPRET" in the block. See examples in `CHARACTER_BLOCK_TEMPLATE.md`.
 
-## Regra #3 — variantes do mesmo personagem herdam o bloco base, não recriam do zero
+## Rule #3 — variants of the same character inherit the base block, they don't recreate it from scratch
 
-Quando o personagem tem versões (traje de praia, traje de trabalho, variante feminina/masculina de um mesmo par) a bíblia declara um **bloco base compartilhado** (o que nunca muda entre variantes) e depois só a **diferença** de cada variante (roupa, acessório, cenário típico). Isso evita que uma variante divirja no que deveria ser idêntico entre elas.
+When a character has multiple versions (beach outfit, work outfit, female/male variant of the same pair), the bible declares a **shared base block** (what never changes across variants) and then only the **difference** for each variant (outfit, accessory, typical scene). This prevents a variant from diverging on something that should be identical across all of them.
 
 ---
 
 ## Workflow
 
-### Modo A — Criar personagem novo
+### Mode A — Create a new character
 
-1. Leia `references/CRIANDO_PERSONAGEM_NOVO.md` e conduza o briefing em rodadas curtas (não decida tudo de uma vez) — função do personagem, silhueta/proporção, traço distintivo inegociável, sistema de cor/variantes, nome e tag.
-2. Assim que a identidade estiver fechada, escreva o CHARACTER BLOCK formal (`CHARACTER_BLOCK_TEMPLATE.md`).
-3. Gere a primeira imagem de referência do personagem via `image-prompter`, usando o CHARACTER BLOCK recém-escrito como o próprio prompt.
-4. Depois de aprovada essa imagem, ela vira a referência visual oficial — toda geração futura cita essa imagem com `"Reproduce exactly as @image reference"`.
+1. Read `references/CRIANDO_PERSONAGEM_NOVO.md` and run the briefing in short rounds (don't decide everything at once) — the character's function, silhouette/proportion, non-negotiable distinguishing trait, color/variant system, name and tag.
+2. Once the identity is locked, write the formal CHARACTER BLOCK (`CHARACTER_BLOCK_TEMPLATE.md`).
+3. Generate the character's first reference image via `image-prompter`, using the freshly written CHARACTER BLOCK as the prompt itself.
+4. Once that image is approved, it becomes the official visual reference — every future generation cites that image with `"Reproduce exactly as @image reference"`.
 
-### Modo B — Documentar personagem existente
+### Mode B — Document an existing character
 
-1. Reúna o que já existe (imagem de referência, descrição informal, personagem de campanha anterior) e organize no CHARACTER BLOCK formal — não invente traços novos, só formalize o que já foi decidido.
-2. Se o personagem tiver cenários/props recorrentes (série, campanha), catalogue com `references/CENARIOS_PROPS.md`.
-3. Preencha o checklist de consistência abaixo antes de considerar a bíblia pronta.
+1. Gather what already exists (reference image, informal description, character from a previous campaign) and organize it into the formal CHARACTER BLOCK — don't invent new traits, just formalize what's already been decided.
+2. If the character has recurring locations/props (series, campaign), catalogue them with `references/CENARIOS_PROPS.md`.
+3. Run the consistency checklist below before considering the bible done.
 
-### Nos dois modos — antes de qualquer geração de produção
+### In both modes — before any production generation
 
-1. Leia `references/CONSISTENCIA_MULTIMODELO.md` pra saber como citar a referência do personagem no modelo escolhido (a sintaxe muda entre Nano Banana, Seedream, GPT Image 2 e Seedance).
-2. Monte o prompt combinando o CHARACTER BLOCK + cenário/prop (se houver) + a fórmula do `image-prompter` ou `seedance-prompter`.
-3. Rode o checklist de consistência abaixo.
-4. Se o resultado sair divergente, use `references/TROUBLESHOOTING.md` antes de tentar de novo.
-
----
-
-## Checklist de consistência
-
-- [ ] Personagem tem tag única (`@NOME`) — nunca citado só pelo nome comum no prompt.
-- [ ] CHARACTER BLOCK colado word-for-word, não resumido.
-- [ ] Traço distintivo inegociável está declarado em CAPS/CRITICAL no bloco.
-- [ ] Se há variantes, o bloco base compartilhado está separado da diferença específica da variante.
-- [ ] `"Reproduce exactly as @image reference. Do not reinterpret."` presente quando já existe imagem de referência aprovada.
-- [ ] A convenção de citar a referência bate com o modelo usado nesta geração (ver `CONSISTENCIA_MULTIMODELO.md`).
-- [ ] Estilo visual master do projeto (se houver, ex.: paleta de cor, câmera, grain) appendado no final do prompt.
+1. Read `references/CONSISTENCIA_MULTIMODELO.md` to know how to cite the character's reference in the chosen model (the syntax differs between Nano Banana, Seedream, GPT Image 2 and Seedance).
+2. Assemble the prompt by combining the CHARACTER BLOCK + location/prop (if any) + the formula from `image-prompter` or `seedance-prompter`.
+3. Run the consistency checklist below.
+4. If the result comes out divergent, use `references/TROUBLESHOOTING.md` before trying again.
 
 ---
 
-## Combinações
+## Consistency checklist
 
-- **`image-prompter`** — gera a imagem de referência do personagem e as imagens de produção subsequentes.
-- **`seedance-prompter`** — anima o personagem em vídeo, usando `@Image1`/`@Image2`... pra R2V (ver `CONSISTENCIA_MULTIMODELO.md`).
-- **`roteirista-interativo`** (referência de construção de personagem narrativo, arquivo `personagem` dentro de `references/` daquela skill) — essa é a camada narrativa (função na história, desejo, flaw, voz). A bíblia de personagem aqui é a camada **visual** (como ele se parece). Um personagem fixo de série normalmente precisa das duas: a narrativa decide quem ele é, esta skill decide como ele nunca deixa de parecer o mesmo.
+- [ ] The character has a unique tag (`@NAME`) — never referred to by common name alone in the prompt.
+- [ ] The CHARACTER BLOCK is pasted word-for-word, not summarized.
+- [ ] The non-negotiable distinguishing trait is declared in CAPS/CRITICAL in the block.
+- [ ] If variants exist, the shared base block is separated from the variant-specific difference.
+- [ ] `"Reproduce exactly as @image reference. Do not reinterpret."` is present when an approved reference image already exists.
+- [ ] The reference-citation convention matches the model used for this generation (see `CONSISTENCIA_MULTIMODELO.md`).
+- [ ] The project's master visual style (if any, e.g. color palette, camera, grain) is appended at the end of the prompt.
+
+---
+
+## Combines with
+
+- **`image-prompter`** — generates the character's reference image and the subsequent production images.
+- **`seedance-prompter`** — animates the character in video, using `@Image1`/`@Image2`... for R2V (see `CONSISTENCIA_MULTIMODELO.md`).
+- **`roteirista-interativo`** (narrative character-building reference, the `personagem` file inside that skill's `references/`) — that's the narrative layer (role in the story, want, flaw, voice). The character bible here is the **visual** layer (what they look like). A recurring series character usually needs both: the narrative layer decides who they are, this skill decides how they never stop looking like themselves.
