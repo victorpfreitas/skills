@@ -1,19 +1,38 @@
-# Por que bloco a bloco funciona, e o que fazer quando o ritmo trava
+# Why block-by-block works, and what to do when the rhythm stalls
 
-## Por que isso funciona melhor que entregar um rascunho completo
+## Why this works better than delivering a complete draft
 
-Escolher entre opções concretas é cognitivamente mais fácil que editar ou criticar um texto já pronto: reagir a "isso ou aquilo" é rápido, articular o que está errado num parágrafo inteiro exige mais esforço e normalmente só aparece depois que a frustração já apareceu. Decidir bloco a bloco também gera investimento real: cada escolha foi feita por Victor, não é uma sugestão que ele aceitou passivamente, então o que falta é sempre "o que ainda não foi decidido", nunca "o que preciso consertar". E reescrever um rascunho inteiro descarta o que já estava bom só pra consertar o que não estava, exatamente o desperdício que a regra de nunca reescrever bloco travado existe pra evitar.
+Choosing between concrete options is cognitively easier than editing or
+critiquing a finished text: reacting to "this or that" is fast, while
+articulating what's wrong with an entire paragraph takes more effort and
+usually only surfaces after the frustration has already set in. Deciding
+block by block also builds real investment: every choice was made by the
+user, not a suggestion they passively accepted, so what's left is always
+"what hasn't been decided yet", never "what needs fixing". And rewriting an
+entire draft throws away what was already good just to fix what wasn't —
+exactly the waste that the "never rewrite a locked block" rule exists to
+prevent.
 
-## Sinais de que o ritmo está errado, e a correção
+## Signs the rhythm is off, and how to fix it
 
-**Usuário responde monossilábico ou "qualquer uma".**
-Sinal de que os blocos estão pequenos ou numerosos demais pro momento. Agrupe 2 blocos numa rodada só, ou ofereça direto uma opção "combinada" já pronta em vez de sub-dividir mais.
+**User responds in one word, or "whatever works".**
+A sign the blocks are too small or too numerous for the moment. Group 2
+blocks into a single round, or offer a ready-made "combined" option directly
+instead of subdividing further.
 
-**Opções ficaram parecidas mesmo seguindo a regra de especificidade.**
-Normalmente é sintoma de fundação mal resolvida (Seção 1: tom, personagem, mundo). Volte e aperte a assinatura de tom antes de seguir quebrando blocos, opção genérica quase sempre vem de regra interna fraca, não de falta de criatividade na hora de propor.
+**Options ended up looking similar even while following the specificity
+rule.**
+This is usually a symptom of a poorly settled foundation (Section 1: tone,
+character, world). Go back and tighten the tone signature before continuing
+to break things into blocks — a generic option almost always comes from a
+weak internal rule, not from a lack of creativity in proposing it.
 
-**Usuário quer voltar e mudar um bloco já travado.**
-Não é uma falha do processo, é normal. Antes de mudar, aponte o que depende daquele bloco (efeito cascata nos blocos seguintes), não mude silenciosamente sem avisar o que isso derruba.
+**User wants to go back and change an already-locked block.**
+This isn't a process failure, it's normal. Before changing it, point out
+what depends on that block (the cascading effect on the following blocks) —
+don't silently change it without flagging what that knocks down.
 
-**Ritmo muito lento pro projeto** (ex.: cena de 20s virando 8 rodadas de pergunta).
-Reduza o número de blocos, combine blocos adjacentes numa única rodada de perguntas.
+**Pace is too slow for the project** (e.g., a 20-second scene turning into 8
+rounds of questions).
+Reduce the number of blocks, combine adjacent blocks into a single round of
+questions.

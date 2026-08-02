@@ -2,19 +2,19 @@
 
 ## Specs
 
-- **Aspect ratio:** faixa extremamente flexível, 1:16 a 16:1. Presets comuns: 1:1, 4:3, 3:4, 4:5, 16:9, 9:16, 2:3, 3:2, 21:9
-- **Resolução:** nativa 2K, upscale até 4K pra impressão ou trabalho digital de alto padrão
-- **Referências:** até 10 imagens
-- **Texto:** renderiza em 14 idiomas (incluindo árabe e outros com suporte RTL), com letterform nativo correto
-- **Forças:** edição cirúrgica sem regenerar o resto do frame, camadas editáveis, infográfico denso, fotorealismo de pele e luz
+- **Aspect ratio:** extremely flexible range, 1:16 to 16:1. Common presets: 1:1, 4:3, 3:4, 4:5, 16:9, 9:16, 2:3, 3:2, 21:9
+- **Resolution:** native 2K, upscale up to 4K for print or high-end digital work
+- **References:** up to 10 images
+- **Text:** renders in 14 languages (including Arabic and other RTL-supported scripts), with correct native letterforms
+- **Strengths:** surgical editing without regenerating the rest of the frame, editable layers, dense infographics, photorealistic skin and light
 
-## Convenção de referência (diferente do Nano Banana e do Seedance)
+## Reference convention (different from Nano Banana and Seedance)
 
-Referências são endereçadas **por descrição de conteúdo**, nunca por índice. Escreva "o caderno de couro marrom", não "a primeira referência" ou "Reference 1", principalmente quando o conjunto de referências muda de uma tentativa pra outra e o índice deixaria de bater com o conteúdo certo.
+References are addressed **by content description**, never by index. Write "the brown leather notebook", not "the first reference" or "Reference 1" — especially when the reference set changes from one attempt to another and the index would no longer match the right content.
 
-## Diferencial 1: layer separation
+## Strength 1: layer separation
 
-Seedream consegue decompor uma imagem gerada em 10+ camadas PNG transparentes editáveis, prontas pra abrir em Figma ou Photoshop. Peça isso explicitamente no prompt quando o objetivo final é um arquivo de design, não só uma imagem:
+Seedream can decompose a generated image into 10+ editable transparent PNG layers, ready to open in Figma or Photoshop. Ask for this explicitly in the prompt when the final goal is a design file, not just an image:
 
 ```
 Generate a product hero shot of a matte ceramic teapot on a linen tablecloth, 

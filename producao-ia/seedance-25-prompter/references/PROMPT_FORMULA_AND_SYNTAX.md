@@ -1,24 +1,24 @@
-# Fórmula Central do Prompt e Sintaxe Especial — Seedance 2.5
+# Core Prompt Formula and Special Syntax — Seedance 2.5
 
-**Leia este arquivo no início de toda tarefa.** É a base sobre a qual todos os outros arquivos de referência se apoiam.
+**Read this file at the start of every task.** It's the foundation all the other reference files build on.
 
 ---
 
-## 1. Fórmula central
+## 1. Core formula
 
 ```
 Subject + Action or Event + Scene and Environment (Optional) + Visual Style (Optional) + Camera Movement/Cut (Optional) + Audio (Optional)
 ```
 
-- **Subject + Action or Event** — quem/o quê faz o quê. É a base do vídeo, nunca omita.
-- **Scene and Environment** — local, horário, clima, relação espacial, estado do fundo.
-- **Visual Style** — luz, cor, materiais, textura de imagem, humor geral.
-- **Camera Movement/Cut** — tamanho de plano, ângulo, movimento, foco, transições.
-- **Audio** — diálogo, timbre de voz, ambiente, SFX, música.
+- **Subject + Action or Event** — who/what does what. This is the backbone of the video, never omit it.
+- **Scene and Environment** — location, time of day, weather, spatial relationships, background state.
+- **Visual Style** — light, color, materials, image texture, overall mood.
+- **Camera Movement/Cut** — shot size, angle, movement, focus, transitions.
+- **Audio** — dialogue, voice timbre, ambience, SFX, music.
 
-Elementos opcionais podem ser omitidos. Parâmetros de geração (duração, aspect ratio, resolução) **não** entram no corpo do prompt — são configurados na página de geração ou via API.
+Optional elements can be omitted. Generation parameters (duration, aspect ratio, resolution) do **not** go in the prompt body — they're configured on the generation page or via the API.
 
-### Template básico
+### Basic template
 ```
 <Subject> performs <primary action or event> in <scene and environment>.
 The visuals feature <visual style>.
@@ -26,55 +26,55 @@ Use <shot size, camera angle, camera movement, or cuts>.
 Audio includes <dialogue, ambience, sound effects, or music>.
 ```
 
-### Exemplo
+### Example
 ```
 A ceramic artist finishes a pale blue cup in a studio at dawn, lifts it from the wheel, and places it in the center of a wooden shelf. Soft morning light enters through the window. The wet clay has a delicate sheen, and the workbench remains tidy. Begin with a medium shot of the wheel-throwing process, slowly push in toward the cup's surface texture, then cut to a frontal view of the shelf. Retain the low hum of the pottery wheel, the friction of clay, and subtle indoor ambience.
 ```
 
 ---
 
-## 2. Fórmula de produção completa (formato longo)
+## 2. Full production formula (long form)
 
-Para prompts de produção mais robustos, use esta estrutura em 4 blocos:
+For more robust production prompts, use this 4-block structure:
 
 ```
 Complete prompt = [Creatives Description] + [One-sentence Summary] + [Specific Plot Description] + [Global Supplement (Ending)]
 ```
 
-- **Creatives Description** — número da referência (na ordem do upload) + propósito específico (qual é personagem/timbre/ação/cena). Omita se não houver referência.
+- **Creatives Description** — reference number (in upload order) + specific purpose (which character/timbre/action/scene it is). Omit if there's no reference.
 - **One-sentence Summary** — Subject + Location + Event + Theme/Style + Special Camera Movement.
-- **Specific Plot Description** — escrito em timeline/storyline. Cada bloco de storyboard/período de tempo contém:
-  - ➕ **Descrição positiva**: conteúdo específico da imagem + movimento de câmera + ação + diálogo + SFX
-  - ➖ **Descrição reversa (negative prompt)**: elementos indesejados (ex.: "no subtitles", "no bgm")
-- **Global Supplement (Ending)** — reforce no final os elementos e detalhes visuais que precisam estar presentes durante todo o vídeo (posição de câmera, características de ambiente/cena, som/atmosfera geral, luz). Também é onde repetir restrições globais (sem legenda, sem BGM).
+- **Specific Plot Description** — written as a timeline/storyline. Each storyboard block/time period contains:
+  - ➕ **Positive description**: specific image content + camera movement + action + dialogue + SFX
+  - ➖ **Reverse description (negative prompt)**: unwanted elements (e.g. "no subtitles", "no bgm")
+- **Global Supplement (Ending)** — reinforce at the end the elements and visual details that need to be present throughout the whole video (camera position, environment/scene characteristics, overall sound/atmosphere, light). This is also where you repeat global restrictions (no subtitles, no BGM).
 
 ---
 
-## 3. Sintaxe especial
+## 3. Special syntax
 
-Prompts podem ser escritos inteiramente em linguagem natural. Quando precisar distinguir música, SFX, diálogo e legenda de forma explícita, use:
+Prompts can be written entirely in natural language. When you need to explicitly distinguish music, SFX, dialogue, and subtitles, use:
 
-| Conteúdo | Sintaxe | Exemplo |
+| Content | Syntax | Example |
 |---|---|---|
-| Música | `()` | `(Soft, rhythmic piano music plays in the background)` |
-| Efeitos sonoros | `<>` | `<A bell rings in the distance>` |
-| Diálogo | `{}` | `{Hello, welcome back.}` |
-| Legenda/subtitle | `【】` | `【Chapter One: Departure】` |
+| Music | `()` | `(Soft, rhythmic piano music plays in the background)` |
+| Sound effects | `<>` | `<A bell rings in the distance>` |
+| Dialogue | `{}` | `{Hello, welcome back.}` |
+| Subtitle | `【】` | `【Chapter One: Departure】` |
 
-### Reforço de idioma do diálogo
+### Reinforcing dialogue language
 
-Quando o diálogo não é em chinês, especifique o idioma antes da fala:
+When the dialogue isn't in Chinese, specify the language before the line:
 ```
 The girl says softly in Japanese: {もう大丈夫です}
 ```
 
-Se o texto do diálogo está em inglês mas o modelo fala em chinês, ou se precisa de uma variante regional específica, reforce o idioma antes da fala:
+If the dialogue text is in English but the model speaks in Chinese, or you need a specific regional variant, reinforce the language before the line:
 
 ```
 Dialogue Language + Regional Variety or Accent + Delivery Style + Speaker + {Dialogue}
 ```
 
-Exemplos:
+Examples:
 ```
 Dialogue language: American English. The girl says in natural, conversational American English: {I thought you weren't coming.}
 
@@ -83,43 +83,43 @@ Dialogue language: authentic Los Angeles English. The young man says in natural 
 
 ---
 
-## 4. Negative Prompts — mudança crítica em relação ao 2.0
+## 4. Negative Prompts — critical change relative to 2.0
 
-**No Seedance 2.0, negação era ignorada — a regra era descrever só o positivo.** No 2.5 isso mudou: todo exemplo oficial do guia usa um bloco `[Negative Prompts]` explícito, e a ByteDance cita como melhoria oficial "🔇 remove irrelevant subtitles and BGM" — otimização direta de resposta a negative prompts.
+**In Seedance 2.0, negation was ignored — the rule was to describe only the positive.** In 2.5 that changed: every official example in the guide uses an explicit `[Negative Prompts]` block, and ByteDance cites as an official improvement "🔇 remove irrelevant subtitles and BGM" — a direct optimization for negative-prompt responsiveness.
 
-Use o bloco no final do prompt:
+Use the block at the end of the prompt:
 ```
 [Negative Prompts]: No exaggerated crying, no fast cuts, no large body movements, no extra dialogue, no BGM, no runny nose, no premature dropping of tears.
 ```
 
-Boas práticas pro bloco de negative prompt:
-- Liste a partir de **[som] + [legenda] + [comportamento] + [pontos fáceis de colapsar]**.
-- Seja específico ao que a cena realmente arrisca errar (não uma lista genérica copiada de outra cena).
-- Combine com os "Prohibited items" do formato de produção longa (seção 2) quando escrever vídeos de 30s+.
+Best practices for the negative prompt block:
+- List from **[sound] + [subtitles] + [behavior] + [points prone to collapse]**.
+- Be specific to what the scene actually risks getting wrong (not a generic list copied from another scene).
+- Combine with the long-form production format's "Prohibited items" (section 2) when writing 30s+ videos.
 
-Isso não invalida totalmente boas práticas de descrição positiva — continue descrevendo o que quer que apareça primeiro. O negative prompt é um reforço complementar, não substituto da descrição positiva.
-
----
-
-## 5. Idiomas suportados
-
-O 2.5 ampliou fortemente o suporte a idiomas — não precisa mais traduzir para chinês/inglês. Prioridade de otimização: chinês, inglês, espanhol, indonésio, malaio. Cobertura completa também para: tailandês, árabe, português, vietnamita, japonês, coreano. Escreva o prompt no idioma mais natural para o conteúdo (ex.: diálogo em português quando fizer sentido para o público).
+This doesn't fully invalidate good positive-description practice — keep describing what you want to appear first. The negative prompt is a complementary reinforcement, not a substitute for the positive description.
 
 ---
 
-## 6. Checklist de pré-submissão (oficial ByteDance)
+## 5. Supported languages
 
-- O prompt declara claramente o sujeito e a ação/evento primário?
-- Toda referência declara o que usar e o que não usar?
-- Todo personagem/produto/prop distinto está nomeado e vinculado a uma referência?
-- As referências são selecionadas por cena, não forçadas a aparecer todas ao mesmo tempo?
-- Cada estágio de um vídeo longo tem apenas uma mudança primária e um end state claro?
-- Número de personagens, roupa, posse de props e relações espaciais permanecem consistentes?
-- Para edição de vídeo: o prompt define o "sole editing master", escopo de edição, quantidade de alvo e conteúdo a preservar?
-- Emoções abstratas e termos de cinematografia vêm acompanhados de cues diretamente visíveis/audíveis?
-- First/last frame e múltiplos keyframes têm um papel por imagem, e first/last usam o mesmo aspect ratio?
-- Para storyboard: o prompt declara qual estrutura herdar? Para blockout: identificou coarse vs fine e especificou o que herdar (temporal, estrutural, material, estilo)?
-- Video editing, first/last-frame e video extension seguem as regras de trava automática de aspect ratio/duração?
-- Para video extension: verificou a imagem de fronteira, tendência de movimento e continuidade de áudio?
-- Para one-click video: o prompt define papéis de material, ordem de imagem, quantidade de movimento, estilo de edição e áudio?
-- Para transição sem costura: o prompt define o papel dos dois vídeos, ação de gatilho, processo de transição e estado de chegada?
+2.5 significantly expanded language support — you no longer need to translate to Chinese/English. Optimization priority: Chinese, English, Spanish, Indonesian, Malay. Full coverage also for: Thai, Arabic, Portuguese, Vietnamese, Japanese, Korean. Write the prompt in whichever language is most natural for the content (e.g. dialogue in Portuguese when it makes sense for the audience).
+
+---
+
+## 6. Pre-submission checklist (official ByteDance)
+
+- Does the prompt clearly state the subject and the primary action/event?
+- Does every reference declare what to use and what not to use?
+- Is every distinct character/product/prop named and linked to a reference?
+- Are references selected per scene, rather than forced to all appear at once?
+- Does each stage of a long video have only one primary change and a clear end state?
+- Do character count, clothing, prop ownership, and spatial relationships stay consistent?
+- For video editing: does the prompt define the "sole editing master," edit scope, target quantity, and content to preserve?
+- Are abstract emotions and cinematography terms accompanied by directly visible/audible cues?
+- Do first/last frame and multiple keyframes each have one role per image, and do first/last use the same aspect ratio?
+- For storyboard: does the prompt declare which structure to inherit? For blockout: did you identify coarse vs fine and specify what to inherit (temporal, structural, material, style)?
+- Do video editing, first/last-frame, and video extension follow the automatic aspect-ratio/duration lock rules?
+- For video extension: did you check the boundary frame, motion trend, and audio continuity?
+- For one-click video: does the prompt define material roles, image order, amount of motion, editing style, and audio?
+- For seamless transition: does the prompt define the role of both videos, the trigger action, the transition process, and the arrival state?
