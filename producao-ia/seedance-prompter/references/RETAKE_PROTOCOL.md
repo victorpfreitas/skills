@@ -1,23 +1,23 @@
-# Protocolo de retake
+# Retake protocol
 
-O `TROUBLESHOOTING.md` diz o que corrigir quando algo sai errado. Este arquivo é sobre como decidir a próxima tentativa quando o resultado não é perfeito nem lixo, que é o caso mais comum em produção real.
+`TROUBLESHOOTING.md` covers what to fix when something goes wrong. This file is about how to decide the next attempt when the result is neither perfect nor garbage, which is the most common case in real production.
 
-## 1. Vereditos de triagem
+## 1. Triage verdicts
 
-A cada take, escolha um:
+For each take, pick one:
 
-- **Manter.** O objetivo principal da cena foi atingido, nada fatal sobrando.
-- **Corrigir na pós.** O problema é de cor, texto, som ou corte, resolve fora do modelo.
-- **Editar sem regenerar.** A composição está boa, só um elemento precisa mudar (use os padrões de edição conversacional, quando o modelo suportar).
-- **Re-roll.** Mesmo prompt, seed nova. Use quando o problema parece variância de amostragem, não erro estrutural do prompt.
-- **Reescrever.** A mesma falha se repete em takes diferentes. O problema é no prompt, não na sorte da geração. Volte ao `MODEL_MECHANICS.md` e ao `TROUBLESHOOTING.md` pra diagnosticar antes de tentar de novo.
+- **Keep.** The scene's main goal was hit, nothing fatal left over.
+- **Fix in post.** The problem is color, text, sound, or cut — solve it outside the model.
+- **Edit without regenerating.** The composition is good, only one element needs to change (use conversational editing patterns, when the model supports them).
+- **Re-roll.** Same prompt, new seed. Use when the problem looks like sampling variance, not a structural prompt error.
+- **Rewrite.** The same failure repeats across different takes. The problem is in the prompt, not in generation luck. Go back to `MODEL_MECHANICS.md` and `TROUBLESHOOTING.md` to diagnose before trying again.
 
-## 2. Regra de uma variável por retake
+## 2. One-variable-per-retake rule
 
-Mude uma coisa por vez: uma cláusula do prompt, OU a seed, OU o modo (T2V/I2V/R2V), OU uma referência. Nunca várias ao mesmo tempo. Mudar tudo junto tira a possibilidade de saber o que resolveu (ou piorou) o resultado.
+Change one thing at a time: one prompt clause, OR the seed, OR the mode (T2V/I2V/R2V), OR one reference. Never several at once. Changing everything together removes any way of knowing what fixed (or worsened) the result.
 
-## 3. Orçamento de tentativas
+## 3. Attempt budget
 
-Defina quantas tentativas fazem sentido antes de começar (referência: 3 a 5 takes por clip). Se passar da metade do orçamento sem progresso na mesma falha, pare de repetir a mesma estratégia. Troque de abordagem: outro modo de geração, quebrar a cena em clipes menores, ou reescrever o prompt do zero em vez do quinto re-roll.
+Decide how many attempts make sense before you start (reference: 3 to 5 takes per clip). If you're past half the budget with no progress on the same failure, stop repeating the same strategy. Switch approach: a different generation mode, break the scene into smaller clips, or rewrite the prompt from scratch instead of a fifth re-roll.
 
-Duas falhas iguais em takes seguidos já é sinal pra reescrever, não pra tentar um terceiro re-roll.
+Two identical failures in consecutive takes is already a signal to rewrite, not to try a third re-roll.

@@ -1,91 +1,101 @@
-# Construção de Personagem — Referência
+# Character Building — Reference
 
-Use este framework quando o projeto tiver um personagem novo pra criar (protagonista
-fixo de uma série, ou personagem central de um curta). Não use pra personagens
-secundários/figurantes de uma cena só — aí basta uma frase de função narrativa.
+Use this framework when the project has a new character to create (a
+series' fixed protagonist, or the central character of a short). Don't use
+it for secondary characters/extras in a single scene — a one-line
+narrative-function note is enough for those.
 
-A lógica é a mesma da skill principal: perguntar em rodadas pequenas, travar cada
-resposta, nunca inventar tudo de uma vez achando que está "ajudando".
-
----
-
-## A ordem importa
-
-Construa nesta sequência — cada camada restringe a próxima, o que torna as perguntas
-seguintes mais fáceis de responder (menos "poderia ser qualquer coisa"):
-
-```
-1. Função narrativa   -- por que ele existe na história?
-2. Desejo x Necessidade -- o que ele quer vs o que precisa (raramente é a mesma coisa)
-3. Flaw              -- o que atrapalha ele conseguir o que precisa
-4. Voz               -- como ele fala (ritmo, vocabulário, o que ele evita dizer)
-5. Físico/tique       -- um traço físico ou gesto que carrega a personalidade sem fala
-6. Relação com o conflito -- como o flaw dele especificamente entra em atrito com o
-   tipo de conflito da história (isso é o que gera humor/drama recorrente)
-```
-
-**Por que Desejo ≠ Necessidade importa:** desejo é o que o personagem diria que quer
-("ser levado a sério", "resolver o caso"). Necessidade é o que a história realmente
-exige dele character para crescer ou sobreviver ("aceitar que não precisa controlar
-tudo"). Quando os dois colidem, a história tem tração automática — não precisa forçar
-conflito externo o tempo todo.
-
-**Por que o Flaw precisa ser específico ao tipo de conflito:** um flaw genérico
-("é orgulhoso") gera piadas genéricas. Um flaw como "a mente é mais rápida que o
-corpo" (caso do Victor em MIB Divisão Brasil) gera um tipo específico e repetível de
-comédia física — todo episódio pode explorar essa mesma fissura de formas diferentes.
+The logic is the same as the main skill: ask in small rounds, lock each
+answer, never invent everything at once thinking you're "helping".
 
 ---
 
-## Perguntas por camada (exemplos de opções concretas)
+## Order matters
 
-Nunca pergunte "qual é o flaw dele?" em aberto. Ofereça opções que já sugerem a
-textura, ancoradas no gênero/tom já estabelecido no projeto:
+Build in this sequence — each layer constrains the next, which makes the
+following questions easier to answer (less "it could be anything"):
 
-**Função narrativa:**
-- Protagonista que carrega a história inteira / Guia que reage ao mundo estranho ao
-  redor / Figura fixa numa antologia (a entidade/situação muda, ele não)
+```
+1. Narrative function -- why does this character exist in the story?
+2. Want vs. Need -- what they want vs. what they need (rarely the same thing)
+3. Flaw -- what gets in the way of them getting what they need
+4. Voice -- how they speak (rhythm, vocabulary, what they avoid saying)
+5. Physicality/tic -- a physical trait or gesture that carries personality
+   without dialogue
+6. Relationship to the conflict -- how their flaw specifically clashes with
+   the type of conflict in the story (this is what generates recurring
+   humor/drama)
+```
 
-**Desejo x Necessidade** (ofereça pares, não separado):
-- "Quer ser levado a sério / precisa aceitar que não controla tudo"
-- "Quer resolver sozinho / precisa aprender a pedir ajuda"
-- "Quer escapar da rotina / precisa fazer as pazes com ela"
+**Why Want ≠ Need matters:** the want is what the character would say they
+want ("to be taken seriously", "to solve the case"). The need is what the
+story actually requires of them to grow or survive ("accept that they can't
+control everything"). When the two collide, the story has automatic
+traction — you don't need to force external conflict all the time.
 
-**Flaw** (sempre em relação ao tipo de história):
-- Para comédia física: "corpo trai a confiança", "reflexos bons, julgamento ruim"
-- Para drama psicológico: "confunde controle com segurança", "evita silêncio a
-  qualquer custo"
-- Para horror: "racionaliza o que deveria assustar", "nunca admite que está com medo"
-
-**Voz** (dê 2-3 registros contrastantes, não uma escala):
-- Frases curtas e secas / Fala rápido demais quando nervoso / Nunca termina a frase
-  quando está prestes a admitir algo
-
-**Físico/tique:**
-- Pergunte se existe algo que já é "marca registrada" (como os óculos brancos do
-  Victor) — objetos/gestos fixos são ótimos porque criam reconhecimento em série
-
-**Relação com o conflito:**
-- Última pergunta, mais aberta: "quando a coisa aperta, o flaw dele piora a situação
-  ou sem querer ele acerta por acidente?" — isso define se o personagem é do tipo
-  que "erra e aprende" ou "erra e sobrevive por sorte/ironia" (ver dialogo-tom.md
-  para como isso conecta com o tom geral da história)
+**Why the Flaw needs to be specific to the type of conflict:** a generic
+flaw ("they're proud") produces generic jokes. A flaw like "the mind is
+faster than the body" produces a specific, repeatable type of physical
+comedy — every episode can explore that same crack in a different way.
 
 ---
 
-## Ficha final (formato de registro)
+## Questions per layer (examples of concrete options)
 
-Depois de fechar as rodadas, condense num bloco curto pra reutilizar em todos os
-roteiros futuros desse personagem — isso evita ter que reconstruir do zero a cada
-episódio novo:
+Never ask "what's their flaw?" as an open question. Offer options that
+already suggest the texture, anchored in the genre/tone already established
+for the project:
+
+**Narrative function:**
+- Protagonist who carries the whole story / Guide who reacts to the strange
+  world around them / Fixed figure in an anthology (the entity/situation
+  changes, they don't)
+
+**Want vs. Need** (offer pairs, not separately):
+- "Wants to be taken seriously / needs to accept they don't control
+  everything"
+- "Wants to solve it alone / needs to learn to ask for help"
+- "Wants to escape the routine / needs to make peace with it"
+
+**Flaw** (always relative to the type of story):
+- For physical comedy: "the body betrays the confidence", "good reflexes,
+  bad judgment"
+- For psychological drama: "confuses control with safety", "avoids silence
+  at any cost"
+- For horror: "rationalizes what should be terrifying", "never admits
+  they're scared"
+
+**Voice** (give 2-3 contrasting registers, not a scale):
+- Short, dry lines / Talks too fast when nervous / Never finishes the
+  sentence when about to admit something
+
+**Physicality/tic:**
+- Ask whether there's something that's already a "trademark" (like a fixed
+  pair of glasses, a specific gesture) — fixed objects/gestures are great
+  because they create recognition across episodes
+
+**Relationship to the conflict:**
+- Last question, more open-ended: "when things get tight, does their flaw
+  make the situation worse, or do they accidentally get it right without
+  meaning to?" — this defines whether the character is the type who "fails
+  and learns" or "fails and survives by luck/irony" (see dialogo-tom.md for
+  how this connects to the story's overall tone)
+
+---
+
+## Final sheet (recording format)
+
+Once the rounds are locked, condense into a short block to reuse across all
+future scripts for this character — this avoids rebuilding from scratch for
+every new episode:
 
 ```
-PERSONAGEM: [nome]
-FUNÇÃO: [papel na história/série]
-DESEJO: [o que ele busca conscientemente]
-NECESSIDADE: [o que a história exige dele]
-FLAW: [a fissura específica, ligada ao tipo de conflito da história]
-VOZ: [registro de fala, 1 linha]
-FÍSICO/MARCA: [tique, objeto, gesto fixo]
-ARCO DE TEMPORADA (se série): [como o flaw evolui ao longo dos episódios, se evolui]
+CHARACTER: [name]
+FUNCTION: [role in the story/series]
+WANT: [what they consciously pursue]
+NEED: [what the story requires of them]
+FLAW: [the specific crack, tied to the story's type of conflict]
+VOICE: [speech register, 1 line]
+PHYSICALITY/TRADEMARK: [tic, object, fixed gesture]
+SEASON ARC (if a series): [how the flaw evolves across episodes, if it does]
 ```
