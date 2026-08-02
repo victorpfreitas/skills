@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5 (2026-08-02)
+
+- Adiciona **`seedance-25-prompter`** em `producao-ia/`, skill nova e separada de `seedance-prompter` (2.0) para o Dreamina Seedance 2.5. O 2.5 diverge estruturalmente do 2.0 — sintaxe nova de prompt (`()`/`<>`/`{}`/`【】`), negative prompts passam de proibidos para recomendados, limites de referência sobem de 9 imagens/3 vídeos para até 50 materiais, e surgem workflows sem equivalente no 2.0 (video editing, video extension, seamless transitions entre vídeos, blockout, vídeo longo nativo de 30–180s). `seedance-prompter` (2.0) permanece intocado. Inclui 12 reference files extraídos dos guias oficiais ByteDance/Dreamina.
+
 ## v0.4 (2026-07-26)
 
 - Adiciona **`biblia-personagem`** em `producao-ia/`: generaliza o padrão de fonte-de-verdade de personagens/cenários/props usado na skill de campanha `livelo` pra qualquer projeto novo — cria personagem do zero (workflow de perguntas) ou documenta um já existente, com regras de consistência entre Nano Banana 2, Seedream 5.0 Pro, GPT Image 2 e Seedance 2.0. Inclui 4 reference files: criação de personagem novo, template de CHARACTER BLOCK, catalogação de cenários/props, consistência multimodelo e troubleshooting.
