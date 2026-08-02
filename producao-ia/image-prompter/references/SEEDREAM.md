@@ -24,9 +24,9 @@ highlights/reflections, steam, foreground shadow, each as an independent
 transparent PNG layer ready for compositing.
 ```
 
-## Diferencial 2: edição fundamentada (grounded editing)
+## Strength 2: grounded editing
 
-O modelo entende onde cada elemento está no frame e o que ele é. Isso permite travar um elemento específico e editar só ele, sem regenerar a cena inteira:
+The model understands where each element sits in the frame and what it is. This lets you lock a specific element and edit only that, without regenerating the whole scene:
 
 ```
 In the reference image, keep the woman, the chair, and the window light 
@@ -35,23 +35,23 @@ black steel thermos, same scale and position. Do not alter anything else
 in the frame.
 ```
 
-## Estrutura de prompt recomendada: SPACE
+## Recommended prompt structure: SPACE
 
-Ordem sugerida (o modelo tem um reasoning engine que interpreta razoavelmente bem fora de ordem, mas os 5 elementos precisam estar presentes):
+Suggested order (the model has a reasoning engine that interprets out-of-order prompts reasonably well, but all 5 elements need to be present):
 
-1. **S**ubject: sujeito e ação
-2. **P**alette & style: paleta e estilo visual
-3. **A**rrangement: composição espacial
-4. **C**amera & light: ângulo, lente, direção e qualidade de luz
-5. **E**xtra detail: material, textura, texto exato quando houver
+1. **S**ubject: subject and action
+2. **P**alette & style: color palette and visual style
+3. **A**rrangement: spatial composition
+4. **C**amera & light: angle, lens, direction and quality of light
+5. **E**xtra detail: material, texture, exact text when there is any
 
-**Evite adjetivo subjetivo** ("elegante", "bonito"). Substitua por descritor observável: temperatura de cor, acabamento de material, direção de sombra. É a mesma lógica de "específico > vago" que já usamos no `seedance-prompter`, só que o Seedream pune ainda mais o adjetivo vazio.
+**Avoid subjective adjectives** ("elegant", "beautiful"). Replace them with an observable descriptor: color temperature, material finish, shadow direction. This is the same "specific > vague" logic used in `seedance-prompter`, except Seedream punishes empty adjectives even harder.
 
-## Texto no prompt
+## Text in the prompt
 
-Cite o texto exato entre aspas, nunca implique. Declare o idioma-alvo, um estilo de fonte simples ("bold sans-serif", "thin serif") e a posição. Gere a 2K pra tipografia nítida.
+Quote the exact text, never imply it. State the target language, a simple font style ("bold sans-serif", "thin serif"), and the position. Generate at 2K for crisp typography.
 
-## Exemplo forte: edição cirúrgica com camadas
+## Strong example: surgical edit with layers
 
 ```
 Subject: a minimalist skincare bottle on a marble surface, morning light 

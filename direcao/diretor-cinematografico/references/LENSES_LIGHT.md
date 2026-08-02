@@ -1,104 +1,104 @@
-# Lentes, Luz e Cor — Referência Rápida
+# Lenses, Light and Color — Quick Reference
 
 ---
 
-## 1. Lentes — Focal Length
+## 1. Lenses — Focal Length
 
-A lente é o ponto de vista emocional da câmera.
+The lens is the camera's emotional point of view.
 
-| Focal | Distância focal | Efeito visual | Referência |
+| Focal length | Distance | Visual effect | Reference |
 |---|---|---|---|
-| 14–20mm | Ultra wide | Distorção, grandeza, desorientação | Aronofsky em *Pi*, GoPro/FPV |
-| 24–28mm | Wide | Natural, ambiental, documental | Lubezki em *The Revenant* |
-| 35mm | Semi wide | Olho humano quase natural, humanista | Deakins em *Blade Runner 2049* |
-| 50mm | Normal | Neutro, transparente, invisible camera | Bresson, Kubrick em *Eyes Wide Shut* |
-| 85mm | Tele suave | Flateia o rosto, intimidade, romance | Retratos cinematográficos |
-| 135–200mm | Tele | Compressão de espaço, tensão, isolamento | Fincher em *Zodiac*, Park Chan-wook |
-| Macro | Extremo close | Detalhes invisíveis, texturas, abstração | Cronenberg, Tarkovsky |
+| 14–20mm | Ultra wide | Distortion, grandeur, disorientation | Aronofsky in *Pi*, GoPro/FPV |
+| 24–28mm | Wide | Natural, environmental, documentary | Lubezki in *The Revenant* |
+| 35mm | Semi wide | Near-natural human eye, humanist | Deakins in *Blade Runner 2049* |
+| 50mm | Normal | Neutral, transparent, invisible camera | Bresson, Kubrick in *Eyes Wide Shut* |
+| 85mm | Soft tele | Flattens the face, intimacy, romance | Cinematic portraits |
+| 135–200mm | Tele | Spatial compression, tension, isolation | Fincher in *Zodiac*, Park Chan-wook |
+| Macro | Extreme close | Invisible detail, textures, abstraction | Cronenberg, Tarkovsky |
 
-**Regra de uso rápido**:
-- Cena de ação ou escala épica → wide (24–35mm)
-- Diálogo íntimo → 50mm
-- Emoção intensa no rosto → 85mm
-- Tensão, isolamento, compressão espacial → 135mm+
-- Objeto, detalhe, textura → macro ou 85mm F1.4
+**Quick rule of thumb**:
+- Action or epic scale → wide (24–35mm)
+- Intimate dialogue → 50mm
+- Intense facial emotion → 85mm
+- Tension, isolation, spatial compression → 135mm+
+- Object, detail, texture → macro or 85mm F1.4
 
 ---
 
-## 2. Abertura e Bokeh
+## 2. Aperture and Bokeh
 
-| Abertura | Profundidade de campo | Uso |
+| Aperture | Depth of field | Use |
 |---|---|---|
-| F1.2 – F1.4 | Rasa — fundo completamente desfocado | Close-up emocional, insert de objeto |
-| F2.0 – F2.8 | Média rasa — background soft | Diálogo two-shot, cenas noturnas |
-| F4 – F5.6 | Média — sujeito e fundo parcialmente definidos | Wide shots diurnos |
-| F8 – F11 | Profunda — tudo em foco | Paisagem, cenas de escala épica |
+| F1.2 – F1.4 | Shallow — background completely defocused | Emotional close-up, object insert |
+| F2.0 – F2.8 | Medium-shallow — soft background | Dialogue two-shot, night scenes |
+| F4 – F5.6 | Medium — subject and background partially defined | Daytime wide shots |
+| F8 – F11 | Deep — everything in focus | Landscape, epic-scale scenes |
 
 ---
 
-## 3. Enquadramento — Shot Size
+## 3. Framing — Shot Size
 
-| Nome | O que inclui | Efeito |
+| Name | What it includes | Effect |
 |---|---|---|
-| Extreme Wide (EWS) | Personagem minúsculo no ambiente | Escala, isolamento, estabelecimento épico |
-| Wide Shot (WS) | Corpo inteiro + ambiente ao redor | Contextualização, relação personagem-espaço |
-| Medium Wide (MWS) | Corpo do joelho para cima | Movimento com contexto |
-| Medium Shot (MS) | Cintura para cima | Diálogos, neutralidade |
-| Medium Close-Up (MCU) | Peito para cima | Engajamento emocional |
-| Close-Up (CU) | Ombros ao topo da cabeça | Emoção, foco no rosto |
-| Extreme Close-Up (ECU) | Testa ao queixo — ou detalhe único | Intensidade máxima, micro-expressão |
+| Extreme Wide (EWS) | Character tiny within the environment | Scale, isolation, epic establishing |
+| Wide Shot (WS) | Full body + surrounding environment | Context, character-space relationship |
+| Medium Wide (MWS) | Knee up | Movement with context |
+| Medium Shot (MS) | Waist up | Dialogue, neutrality |
+| Medium Close-Up (MCU) | Chest up | Emotional engagement |
+| Close-Up (CU) | Shoulders to top of head | Emotion, facial focus |
+| Extreme Close-Up (ECU) | Forehead to chin — or a single detail | Maximum intensity, micro-expression |
 
 ---
 
-## 4. Iluminação — Por Intenção Dramática
+## 4. Lighting — By Dramatic Intent
 
-| Estilo | Descrição | Efeito | Referência |
+| Style | Description | Effect | Reference |
 |---|---|---|---|
-| High-key | Iluminação flat, sombras mínimas | Leveza, comédia, comercial | Wes Anderson, publicidade |
-| Low-key | Grandes áreas de sombra, luz focalizada | Tensão, noir, mistério | Fincher, Villeneuve |
-| Chiaroscuro | Contraste extremo luz/sombra | Drama, conflito interno, poder | Caravaggio → Storaro → Park Chan-wook |
-| Motivated lighting | Luz que vem de fonte real (janela, abajur) | Naturalidade, imersão | Lubezki em *Roma*, Deakins |
-| Backlight / Rim light | Luz vem de trás do sujeito | Silhueta, separação do fundo, heroísmo | Roger Deakins |
-| Practical lights | Lâmpadas do ambiente na cena | Realismo sujo, textura urbana | *Blade Runner 2049*, *Heat* |
-| Golden Hour | Luz solar rasante, quente | Nostalgia, beleza, efemeridade | Lubezki em *The Tree of Life* |
-| Neon / Color light | Gel colorido ou neon | Estética, alienação pop | Wong Kar-wai, Nicolas Winding Refn |
-| Bi-color tension | Quente + frio simultâneo na mesma cena | Conflito, dualidade, instabilidade | Park Chan-wook |
+| High-key | Flat lighting, minimal shadows | Levity, comedy, commercial | Wes Anderson, advertising |
+| Low-key | Large shadow areas, focused light | Tension, noir, mystery | Fincher, Villeneuve |
+| Chiaroscuro | Extreme light/shadow contrast | Drama, internal conflict, power | Caravaggio → Storaro → Park Chan-wook |
+| Motivated lighting | Light from a real source (window, lamp) | Naturalness, immersion | Lubezki in *Roma*, Deakins |
+| Backlight / Rim light | Light comes from behind the subject | Silhouette, background separation, heroism | Roger Deakins |
+| Practical lights | Lamps within the environment lighting the scene | Gritty realism, urban texture | *Blade Runner 2049*, *Heat* |
+| Golden Hour | Low, warm sunlight | Nostalgia, beauty, transience | Lubezki in *The Tree of Life* |
+| Neon / Color light | Colored gel or neon | Aesthetic, pop alienation | Wong Kar-wai, Nicolas Winding Refn |
+| Bi-color tension | Warm + cold simultaneously in the same scene | Conflict, duality, instability | Park Chan-wook |
 
 ---
 
-## 5. Temperatura de Cor
+## 5. Color Temperature
 
-| Tom | Kelvin | Sensação |
+| Tone | Kelvin | Feeling |
 |---|---|---|
-| Tungsten quente | 2700–3200K | Intimidade, perigo, aconchego torto |
-| Neutro daylight | 5500–6500K | Natural, documental, transparente |
-| Frio azul | 7000–10000K | Alienação, tecnologia, isolamento |
-| Dois tons simultâneos | Quente + frio | Conflito, tensão, Park Chan-wook |
+| Warm tungsten | 2700–3200K | Intimacy, danger, crooked coziness |
+| Neutral daylight | 5500–6500K | Natural, documentary, transparent |
+| Cool blue | 7000–10000K | Alienation, technology, isolation |
+| Two tones at once | Warm + cold | Conflict, tension, Park Chan-wook |
 
 ---
 
-## 6. Film Stocks de Referência
+## 6. Reference Film Stocks
 
-| Stock | Características | Vibe |
+| Stock | Characteristics | Vibe |
 |---|---|---|
-| **Cinestill 800T** | Grain tungsten, halos nos highlights, quente e sujo | Noturno urbano, intimidade perigosa |
-| Kodak Vision3 500T | Grain médio, latitude ampla, tons de pele quentes | Cinema contemporâneo naturalista |
-| Kodak Portra 400 | Grain fino, pele suave, tons pastéis | Editorial, romance, nostalgia suave |
-| Fujifilm Velvia 50 | Saturação extrema, verde vibrante | Natureza, cor expressionista |
-| Ilford HP5 | P&B, grain expressivo, contraste médio | Documentário, street photography |
-| Super 8 / Kodachrome | Grain grosso, cores degradadas, vinheta | Memória afetiva, Gondry, anos 70 |
+| **Cinestill 800T** | Tungsten grain, highlight halation, warm and gritty | Urban night, dangerous intimacy |
+| Kodak Vision3 500T | Medium grain, wide latitude, warm skin tones | Contemporary naturalistic cinema |
+| Kodak Portra 400 | Fine grain, soft skin, pastel tones | Editorial, romance, gentle nostalgia |
+| Fujifilm Velvia 50 | Extreme saturation, vibrant green | Nature, expressionist color |
+| Ilford HP5 | B&W, expressive grain, medium contrast | Documentary, street photography |
+| Super 8 / Kodachrome | Coarse grain, degraded colors, vignette | Affective memory, Gondry, the 1970s |
 
 ---
 
-## 7. Paletas por Diretor — Lookup Rápido
+## 7. Director Palettes — Quick Lookup
 
-| Diretor | Paleta principal |
+| Director | Main palette |
 |---|---|
-| Fincher | Teal + âmbar dessaturado, pretos profundos |
-| Villeneuve | Mono-cromático por filme (laranja Dune, cinza Arrival) |
-| Park Chan-wook | Vermelho + azul saturados, pele contra cor primária |
-| Deakins | Uma cor dominante por locação, paleta restrita |
-| Lubezki | Tons quentes de pele, verde orgânico, céu natural |
-| Gondry | Polaroid envelhecido, azul doméstico, vermelho coração |
-| Doyle | Neon oversaturado, amarelo-verde Hong Kong |
-| **Victor Freitas** | Cinestill 800T + Park Chan-wook + Leica SL2-S |
+| Fincher | Desaturated teal + amber, deep blacks |
+| Villeneuve | Monochromatic per film (orange Dune, gray Arrival) |
+| Park Chan-wook | Saturated red + blue, skin against primary color |
+| Deakins | One dominant color per location, restrained palette |
+| Lubezki | Warm skin tones, organic green, natural sky |
+| Gondry | Aged Polaroid, domestic blue, heartbreak red |
+| Doyle | Oversaturated neon, Hong Kong yellow-green |
+| *Your project's preset (example)* | e.g. Cinestill 800T + Park Chan-wook palette + a reference camera body — see `SKILL.md` §6 for a full example |

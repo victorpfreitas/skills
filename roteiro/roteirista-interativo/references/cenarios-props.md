@@ -1,75 +1,80 @@
-# Cenários e Props — Referência
+# Settings and Props — Reference
 
-Use pra decidir onde a cena acontece e quais objetos aparecem nela. A ideia central
-aqui é economia: poucos props, cada um com função narrativa — não decoração.
+Use this to decide where the scene happens and what objects appear in it.
+The core idea here is economy: few props, each with a narrative function —
+never decoration.
 
-O exemplo que já validou esse princípio nesta conversa: o celular do Victor aparece
-no Bloco 1 (checando algo, sem função aparente ainda), reaparece no Bloco 6 como o
-gatilho da escalada (o bipe de notificação). Um prop introduzido cedo e pago depois
-é sempre mais forte que um objeto novo aparecendo só quando a trama precisa dele.
+An example that has validated this principle: a character's phone appears in
+Block 1 (checking something, with no apparent function yet), and reappears
+in Block 6 as the trigger for the escalation (the notification beep). A prop
+introduced early and paid off later is always stronger than a new object
+appearing only when the plot needs it.
 
 ---
 
-## Cenário
+## Setting
 
-**Perguntas pra fechar o cenário (antes de escrever qualquer bloco):**
+**Questions to lock down the setting (before writing any block):**
 
 ```
-1. Espaço real ou fictício? Se real (cidade, bairro, tipo de lugar), tem uma base
-   documentada (caso real, lenda local, textura específica) que vale pesquisar? --
-   ver pesquisa-real.md
-2. O espaço é neutro ou já carrega tensão antes de qualquer coisa acontecer?
-   (um terreno baldio à noite já é diferente de uma sala de reunião)
-3. O espaço muda ao longo da história, ou permanece o mesmo enquanto a situação
-   escala em volta dele? Ambas funcionam, mas mudam o ritmo de produção (mais
-   locações = mais complexidade de filmagem/geração)
-4. Existe um limiar físico na cena -- porta, cerca, linha no chão -- que pode
-   marcar visualmente uma virada (cruzar o limiar = ponto de não-volta)?
+1. Is the space real or fictional? If real (a city, a neighborhood, a type
+   of place), does it have a documented basis (a real case, a local legend,
+   a specific texture) worth researching? -- see pesquisa-real.md
+2. Is the space neutral, or does it already carry tension before anything
+   happens? (a vacant lot at night is already different from a meeting room)
+3. Does the space change over the course of the story, or stay the same
+   while the situation escalates around it? Both work, but they change the
+   production rhythm (more locations = more filming/generation complexity)
+4. Is there a physical threshold in the scene -- a door, a fence, a line on
+   the ground -- that could visually mark a turning point (crossing the
+   threshold = point of no return)?
 ```
 
-**Erro comum a evitar:** cenário "porque sim" (escolhido só porque parece bonito).
-Se o espaço não tem nenhuma função na tensão ou no tema, ainda pode ser usado, mas
-vale perguntar a Victor se ele quer investir na pesquisa/textura ou preferir algo
-mais genérico e rápido de produzir.
+**Common mistake to avoid:** a setting chosen "just because" (picked only
+because it looks nice). If the space has no function in the tension or the
+theme, it can still be used, but it's worth asking the user whether they
+want to invest in research/texture or prefer something more generic and
+faster to produce.
 
 ---
 
 ## Props
 
-**Regra de ouro:** cada prop introduzido cedo (Bloco 1-3) deve ter uma função de
-pagamento depois (Bloco 5-8), ou não deveria estar na cena. Props sem pagamento
-competem por atenção visual sem construir a história.
+**Golden rule:** every prop introduced early (Block 1-3) should have a
+payoff later (Block 5-8), or it shouldn't be in the scene. Props without a
+payoff compete for visual attention without building the story.
 
-**Perguntas pra cada prop candidato:**
+**Questions for each candidate prop:**
 
 ```
-1. Esse objeto aparece só uma vez, ou tem potencial de callback?
-2. Se tem potencial de callback, ONDE ele deveria reaparecer -- e o que muda quando
-   reaparece (mesmo uso, uso invertido, uso quebrado/danificado)?
-3. O objeto é algo que o personagem já carregaria naturalmente (celular, óculos,
-   equipamento de trabalho), ou é algo que precisa ser introduzido/explicado?
-   Objetos "naturais" custam menos tempo de tela pra estabelecer.
+1. Does this object appear only once, or does it have callback potential?
+2. If it has callback potential, WHERE should it reappear -- and what
+   changes when it does (same use, inverted use, broken/damaged use)?
+3. Is the object something the character would naturally already be
+   carrying (a phone, glasses, work equipment), or something that needs to
+   be introduced/explained? "Natural" objects cost less screen time to
+   establish.
 ```
 
-**Padrão de callback mais forte (o que usamos no MIB):** o mesmo objeto muda de
-função entre a primeira e a segunda aparição. Celular = ferramenta banal no Bloco 1,
-celular = gatilho de perigo no Bloco 6. Isso é mais forte do que introduzir um objeto
-novo especificamente pra ser o gatilho, porque a plateia já tinha visto o objeto sem
-saber que ele importava.
+**The strongest callback pattern:** the same object changes function
+between its first and second appearance. Phone = mundane tool in Block 1,
+phone = danger trigger in Block 6. This is stronger than introducing a new
+object specifically to be the trigger, because the audience had already seen
+the object without knowing it mattered.
 
 ---
 
-## Ficha final (formato de registro)
+## Final sheet (recording format)
 
 ```
-CENÁRIO PRINCIPAL: [local, dia/noite]
-BASE REAL (se houver): [caso/lenda/referência documentada]
-TENSÃO INERENTE DO ESPAÇO: [o que já é estranho/carregado antes da trama começar]
+MAIN SETTING: [location, day/night]
+REAL-WORLD BASIS (if any): [documented case/legend/reference]
+INHERENT TENSION OF THE SPACE: [what's already strange/charged before the plot starts]
 
-PROPS COM CALLBACK:
-- [objeto] -- introduzido no Bloco [x] como [função inicial] -- paga no Bloco [y]
-  como [função final/transformada]
+PROPS WITH A CALLBACK:
+- [object] -- introduced in Block [x] as [initial function] -- pays off in Block [y]
+  as [final/transformed function]
 
-PROPS DE CENA ÚNICA: [objetos sem callback, usados só uma vez -- liste só se
-relevantes pra produção/geração de imagem]
+SINGLE-SCENE PROPS: [objects with no callback, used only once -- list only if
+relevant for production/image generation]
 ```
