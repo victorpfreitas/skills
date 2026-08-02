@@ -2,7 +2,7 @@
 
 *Leia isso em [Português](./README.md).*
 
-<img src=".github/social-preview.png" alt="victorpfreitas/skills">
+<img src=".github/social-preview-en.png" alt="victorpfreitas/skills">
 
 This repository collects the skills I use day-to-day for generative AI production: camera direction, screenwriting, and voice. Each one came out of a real production case, not theory, and only made it in here after being tested in a real conversation. They're ready-to-plug knowledge blocks for whatever LLM you use, built to carry the same level of creative control I use on my own work into any project that needs it.
 
