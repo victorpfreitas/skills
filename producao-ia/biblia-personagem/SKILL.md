@@ -32,7 +32,7 @@ This skill covers two modes of work:
 | File | When to read it |
 |---|---|
 | `references/CREATING_NEW_CHARACTER.md` | Whenever the character doesn't exist yet — a question-driven workflow for designing the visual identity from scratch |
-| `references/CHARACTER_BLOCK_TEMPLATE.md` | When writing the formal sheet for any character — the word-for-word block template plus two filled-in examples (wearable mascot and realistic human) |
+| `references/CHARACTER_BLOCK_TEMPLATE.md` | When writing the formal sheet for any character — the word-for-word block template, two filled-in examples (wearable mascot and realistic human), and the Voice & Movement Lock for characters that appear in video or speak |
 | `references/SCENES_PROPS.md` | When the character needs catalogued locations and props alongside it (series, campaign) — how to tag and document them without falling back on free-form description |
 | `references/MULTIMODEL_CONSISTENCY.md` | Before generating across more than one model (Nano Banana, Seedream, GPT Image 2, Seedance) — each one reads character references differently |
 | `references/TROUBLESHOOTING.md` | When the character comes out different across generations — symptom → cause → fix |
@@ -50,6 +50,8 @@ A loose description ("a guy wearing a black outfit") makes the model reinterpret
 ## Rule #2 — every distinguishing trait needs a sentence that forces the distinction
 
 A near-generic character (common human silhouette, common clothing) drifts into "any similar-looking person" by the second generation. The bible needs to explicitly name **what can never vary** — a symbol, an unusual proportion, an exclusive color, a material texture — and repeat it in CAPS or with "CRITICAL, DO NOT REINTERPRET" in the block. See examples in `CHARACTER_BLOCK_TEMPLATE.md`.
+
+**A lock excludes as much as it includes.** "Warm fair skin" is weak on its own — every generation is free to interpret "warm" differently. "Warm fair skin — never pale porcelain, never tan" is a lock, because it also names the two wrong answers the model reaches for most often. Write the exclusion alongside every trait that has drifted before, not just the ones that seem obviously ambiguous. This applies to voice and movement exactly as much as it applies to appearance — see "Voice & Movement Lock" in `CHARACTER_BLOCK_TEMPLATE.md`.
 
 ## Rule #3 — variants of the same character inherit the base block, they don't recreate it from scratch
 
@@ -88,6 +90,7 @@ When a character has multiple versions (beach outfit, work outfit, female/male v
 - [ ] The non-negotiable distinguishing trait is declared in CAPS/CRITICAL in the block.
 - [ ] If variants exist, the shared base block is separated from the variant-specific difference.
 - [ ] `"Reproduce exactly as @image reference. Do not reinterpret."` is present when an approved reference image already exists.
+- [ ] If the character appears in video or speaks, the Voice & Movement Lock exists and its lines get pasted verbatim into video prompts — not re-described per shot.
 - [ ] The reference-citation convention matches the model used for this generation (see `MULTIMODEL_CONSISTENCY.md`).
 - [ ] The project's master visual style (if any, e.g. color palette, camera, grain) is appended at the end of the prompt.
 
@@ -96,5 +99,6 @@ When a character has multiple versions (beach outfit, work outfit, female/male v
 ## Combines with
 
 - **`image-prompter`** — generates the character's reference image and the subsequent production images.
-- **`seedance-prompter`** — animates the character in video, using `@Image1`/`@Image2`... for R2V (see `MULTIMODEL_CONSISTENCY.md`).
-- **`roteirista-interativo`** (narrative character-building reference, the `character.md` file inside that skill's `references/`) — that's the narrative layer (role in the story, want, flaw, voice). The character bible here is the **visual** layer (what they look like). A recurring series character usually needs both: the narrative layer decides who they are, this skill decides how they never stop looking like themselves.
+- **`seedance-prompter`** / **`seedance-25-prompter`** — animates the character in video, using `@Image1`/`@Image2`... for R2V (see `MULTIMODEL_CONSISTENCY.md`). When the character has a **Voice & Movement Lock**, paste its `SPEECH`/`MOVEMENT`/`STILLNESS` lines verbatim into the dialogue and action parts of the Seedance prompt — don't re-describe the performance from scratch.
+- **`diretor-cinematografico`** — when a shot needs actor direction (`references/MICRO_BEATS.md`), the character's `MOVEMENT`/`STILLNESS` lock is the starting point for that character's baseline physicality; the director skill adds the scene-specific emotional beat on top of it.
+- **`roteirista-interativo`** (narrative character-building reference, the `character.md` file inside that skill's `references/`) — that's the narrative layer (role in the story, want, flaw, voice). The character bible here is the **visual and performance** layer (what they look like, sound like, move like). A recurring series character usually needs both: the narrative layer decides who they are, this skill decides how they never stop looking, sounding, and moving like themselves.

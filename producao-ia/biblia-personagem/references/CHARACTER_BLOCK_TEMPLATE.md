@@ -78,14 +78,59 @@ DISTINGUISHING MARK — CRITICAL: a thin vertical scar above the left eyebrow,
 approximately 2cm, visible in close-up and medium shots. Never omit in any shot
 where the face is visible at medium distance or closer.
 
-VOICE/POSTURE CUE (for video, not stills): moves deliberately, minimal wasted
-gesture, hands typically at rest or in pockets unless actively gesturing.
-
 Reproduce exactly as @image reference. Do not reinterpret facial structure, skin
 tone, or the eyebrow scar.
 ```
 
-This example shows the CHARACTER BLOCK pattern generalizes to a realistic human character with no wearable prop — here the non-negotiable trait is the scar (a small but specific enough detail that the model won't "forget" it across generations), and the variant (glasses present/absent) is treated as a per-shot state to declare, not a fixed characteristic.
+This example shows the CHARACTER BLOCK pattern generalizes to a realistic human character with no wearable prop — here the non-negotiable trait is the scar (a small but specific enough detail that the model won't "forget" it across generations), and the variant (glasses present/absent) is treated as a per-shot state to declare, not a fixed characteristic. Since this character appears in video, its full speech/movement/stillness lock is written separately below — see "Voice & Movement Lock."
+
+---
+
+## Voice & Movement Lock — for characters that appear in video or speak
+
+The CHARACTER BLOCK above locks how a character *looks*. It says nothing about how they sound or move — and without that, every video prompt that uses the character reinvents its performance from scratch, which drifts exactly like an unlocked visual trait does. If the character will only ever appear in stills, skip this section entirely.
+
+Write three short, quotable descriptors — each one should be copy-pasteable, verbatim, straight into a `seedance-prompter`/`seedance-25-prompter` dialogue or action line, or into `diretor-cinematografico`'s micro-beat direction (`references/MICRO_BEATS.md`). Vague adjectives ("confident," "cool") don't survive that trip — they get reinterpreted every time. Physical, audible specifics do.
+
+```
+VOICE & MOVEMENT LOCK — @CHARACTER_TAG:
+
+SPEECH: [register/pace/cadence + a locked exclusion]. Example: "speaks in
+short, unhurried sentences, never trails off mid-thought, never raises
+volume even when angry — anger shows in pace, not pitch."
+
+MOVEMENT: [how it moves through space + what its hands/body do while
+idle]. Example: "deliberate economy of motion, no wasted gesture, hands
+default to stillness at the sides or in pockets, never fidgets."
+
+STILLNESS: [what it does when nothing is being asked of it — often more
+revealing than the movement line]. Example: "when waiting, weight
+settles fully onto one leg, gaze holds on whatever it's looking at
+without wandering, never checks a phone or looks away first."
+```
+
+**The lock works the same way the visual trait does — name what it excludes, not just what it includes.** "Speaks quietly" is weak — every character can be made to speak quietly for one line. "Never raises volume even when angry — anger shows in pace, not pitch" is a lock, because it tells the model what to do *instead* when the obvious choice (shouting) would break the character. Write the "never" clause for every field, the same as `SPEECH`/`MOVEMENT`/`STILLNESS` do above.
+
+### Example — filled in for @AGENTE_MIB_BR (continuing from Example 2 above)
+
+```
+VOICE & MOVEMENT LOCK — @AGENTE_MIB_BR:
+
+SPEECH: measured, low register, sentences end firmly with no trailing
+uptalk. Never explains twice — says a thing once, waits. Never swears,
+never raises volume; irritation shows as a longer pause before
+answering, not as tone.
+
+MOVEMENT: deliberate, minimal wasted gesture, weight centered and
+grounded. Never rushes even under pressure — pace of movement stays
+constant regardless of the scene's urgency.
+
+STILLNESS: hands at rest or in pockets, chin level, gaze tracks
+whatever's relevant without darting. Never crosses arms, never taps
+feet or fingers.
+```
+
+This is what makes the character sound and move the same way in a calm dialogue scene and in an action scene — the performance locks travel with the character exactly like the wardrobe does.
 
 ---
 

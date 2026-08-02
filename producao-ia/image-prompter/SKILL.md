@@ -39,6 +39,8 @@ Read the reference file for the chosen model before writing the final prompt:
 
 **Careful: the reference convention changes per model.** Nano Banana and GPT Image 2 accept reference by natural description ("Reference 1", "the vehicle in the first image"); Seedream requires reference **by content description** ("the brown leather notebook"), never by index. Seedance (a separate skill, for video) uses explicit tags `@Image1`...`@Image9`. Don't mix one model's syntax with another's.
 
+**Reference economy.** More reference images isn't more control past the point where they start disagreeing with each other — two shots of the same character's face at different lighting or crop give the model two versions to reconcile instead of one to trust. Attach the fewest references that carry what the prompt needs, and prefer one reference that already resolves a combination (e.g. an approved full-look shot with face, hair, and wardrobe already agreeing) over stacking a second reference on top of it "just in case." When a second reference of the same subject is genuinely needed, say explicitly what each one is for in the prompt.
+
 ---
 
 ## The Master Prompt Formula

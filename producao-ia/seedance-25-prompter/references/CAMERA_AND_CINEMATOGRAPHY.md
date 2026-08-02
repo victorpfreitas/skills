@@ -32,6 +32,26 @@ Can be used directly in the prompt. If the frame has multiple subjects, still de
 
 ---
 
+## 2.5. FOV in degrees — sharper than mm alone
+
+Seedance treats **field of view in degrees** as a snap value it locks onto; mm alone reads more like a suggestion. When precision matters — an extreme wide, an extreme tele, or a multi-shot sequence that needs the same lens held across cuts — write the degree first with mm in parentheses, from this ladder:
+
+| FOV | mm equivalent | Feel | Use for |
+|---|---|---|---|
+| 180° | fisheye | spherical bulge | POV, dream-state |
+| 107° | 14–16mm | architectural ultra-wide | vast interior, epic establishing |
+| 84° | 20–24mm | wide | full-body blocking, environmental establish |
+| 63° | 28–35mm | reportage wide | observational, documentary feel |
+| 47° | 40–50mm | eye-level neutral | universal medium, two-shot |
+| 29° | 75–85mm | portrait compression | isolated bust, tight coverage |
+| 18° | 100–135mm | portrait tight | identity-hold close-up |
+| 12° | 180–200mm | tele detail | hand insert, object close, texture |
+| 8° | 300–400mm | extreme long-lens | anchored-far observation |
+
+Example: `47° (50mm) eye-level neutral in shot 1, 18° (100mm) portrait tight in shot 2.` For a sequence held at an extreme FOV across several shots or stages, restate the same degree value at the start and end of the sequence — extreme FOV drifts fastest of any camera parameter.
+
+---
+
 ## 3. Uncommon cinematography terms
 
 For a niche term, one with inconsistent industry usage, or one the model might not recognize, keep the term and translate it into a directly observable visual change:
