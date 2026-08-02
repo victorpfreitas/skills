@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7 (2026-08-02)
+
+- Importa 6 técnicas concretas de quatro skills de terceiros analisadas (character-builder, cinema-director, banana-pro-director-30, story-bible-builder): **Dynamic Register** (4 tiers de energia de câmera) em `diretor-cinematografico/CAMERA_EMOTION.md`; tabela de **FOV em graus** em `LENSES_LIGHT.md` e nos dois `seedance-prompter`(s); **Voice & Movement Lock** em `biblia-personagem` — fecha o buraco real do pipeline entre `roteirista-interativo` (identidade narrativa) e `diretor-cinematografico`/seedance (execução visual), já que nenhuma skill guardava como um personagem específico soa ou se move de um jeito citável direto num prompt de vídeo; convenção de **"lock por exclusão"** (nomear a resposta errada junto da certa) formalizada em `biblia-personagem`; reforço de posicionamento antecipado pro maior risco de falha conhecido da cena em `seedance-25-prompter`; princípio de **economia de referência** em `MULTI_REFERENCE.md` e `image-prompter`.
+
 ## v0.6 (2026-08-02)
 
 - Traduz **todas as 11 skills do repositório** (SKILL.md + todos os `references/`) de português para inglês, e remove menções pessoais ao Victor/Made by Human do conteúdo interno das skills — elas agora leem como ferramentas de uso geral, para qualquer criador que queira reaproveitá-las. A atribuição de autoria continua no rodapé do README/LICENSE, só o conteúdo instrucional das skills foi generalizado. Isso substitui a nota da v0.5 de que "as skills continuam só em português" — essa era só a primeira etapa.
