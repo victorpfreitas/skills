@@ -1,20 +1,20 @@
-# Multi-Referência — Mapeamento e Seleção por Cena
+# Multi-Reference — Mapping and Per-Scene Selection
 
-**Leia este arquivo sempre que houver 2+ materiais de referência (imagem/vídeo/áudio), e obrigatoriamente quando houver múltiplos personagens/props/cenas.**
-
----
-
-## 1. Por que isso existe
-
-O 2.5 suporta até 50 materiais de referência (ver `PARAMETERS_AND_LIMITS.md`). Com esse volume, o objetivo **não é** colocar toda referência numa frase só — é definir a relação entre personagens, props, cenas, ações e áudio, e deixar claro quais materiais usar em cada cena.
-
-**Regra de ouro:** mapeamentos de material precisam estar escritos no prompt. Não confie só em labels de texto dentro das imagens, e não deixe o modelo inferir qual pessoa/prop/cena cada material representa.
-
-Ordem de trabalho: **Define Each Material's Role → Map Subjects → Group by Type → Create Subject Profiles → Select References by Scene**
+**Read this file whenever there are 2+ reference materials (image/video/audio), and always when there are multiple characters/props/scenes.**
 
 ---
 
-## 2. Template de papel de referência (caso simples)
+## 1. Why this exists
+
+2.5 supports up to 50 reference materials (see `PARAMETERS_AND_LIMITS.md`). At this volume, the goal is **not** to cram every reference into a single sentence — it's to define the relationship between characters, props, scenes, actions, and audio, and to make clear which materials to use in each scene.
+
+**Golden rule:** material mappings need to be written into the prompt. Don't rely solely on text labels inside the images, and don't let the model infer which person/prop/scene each material represents.
+
+Order of work: **Define Each Material's Role → Map Subjects → Group by Type → Create Subject Profiles → Select References by Scene**
+
+---
+
+## 2. Reference role template (simple case)
 
 ```
 @Image 1 defines <subject>'s <appearance, clothing, structure, or material>.
@@ -23,16 +23,16 @@ Ordem de trabalho: **Define Each Material's Role → Map Subjects → Group by T
 <Subject> completes <primary action or event> in <scene>.
 ```
 
-### Exemplo
+### Example
 ```
 @Image 1 defines the ceramic artist's facial features, hairstyle, and dark green apron. Do not use the image background.
 @Image 2 defines the wooden workbench, window placement, and morning light of the pottery studio. Do not use the people in the image.
 @Video 1 defines the pacing of throwing clay with both hands, lifting the cup, and placing it down. Do not use the person's identity, clothing, or scene from the video.
 ```
 
-Sempre que uma referência puder trazer algo indesejado (fundo, composição, outras pessoas), declare explicitamente "Do not use X".
+Whenever a reference could carry something unwanted (background, composition, other people), explicitly declare "Do not use X".
 
-### Múltiplas vistas do mesmo sujeito
+### Multiple views of the same subject
 ```
 @Image 1 defines the front view of the same folding desk lamp.
 @Image 2 defines the left-side structure of the same folding desk lamp.
@@ -41,12 +41,12 @@ Sempre que uma referência puder trazer algo indesejado (fundo, composição, ou
 All four images define one folding desk lamp. The output must contain only one lamp throughout.
 ```
 
-### Vídeo blockout como referência de movimento
-Quando um vídeo de referência já define movimento, câmera e sequência com precisão, declare só quais atributos herdar — não repita a ação inteira em texto (repetir pode competir com a própria referência). Um blockout video fornece principalmente movimento/estrutura espacial; o prompt ainda precisa definir sujeitos, cena, ação e estilo visual pretendidos (ver `KEYFRAMES_STORYBOARD_BLOCKOUT.md` para blockout completo).
+### Blockout video as a motion reference
+When a reference video already defines motion, camera, and sequence with precision, declare only which attributes to inherit — don't repeat the whole action in text (repeating it can compete with the reference itself). A blockout video primarily supplies motion/spatial structure; the prompt still needs to define the intended subjects, scene, action, and visual style (see `KEYFRAMES_STORYBOARD_BLOCKOUT.md` for full blockout coverage).
 
 ---
 
-## 3. Passo 1 — Nomeie e mapeie cada sujeito individualmente
+## 3. Step 1 — Name and map each subject individually
 
 ```
 <Character A> corresponds to @Image 1. Use only the appearance, hairstyle, and clothing.
@@ -55,11 +55,11 @@ Quando um vídeo de referência já define movimento, câmera e sequência com p
 <Scene A> references @Image 4. Use only the spatial layout, architecture, and lighting. Do not use the people in the image.
 ```
 
-**Nunca** escreva algo como "@Images 1 through 4 define four characters respectively" — isso não declara qual imagem corresponde a qual personagem.
+**Never** write something like "@Images 1 through 4 define four characters respectively" — this doesn't declare which image corresponds to which character.
 
 ---
 
-## 4. Passo 2 — Agrupe materiais por tipo
+## 4. Step 2 — Group materials by type
 
 ```
 [Characters]
@@ -82,9 +82,9 @@ Do not interchange the characters' appearances, clothing, actions, positions, or
 
 ---
 
-## 5. Passo 3 — Subject Profile centralizado
+## 5. Step 3 — Centralized Subject Profile
 
-Quando o mesmo personagem usa várias referências ao longo de múltiplas cenas, crie um perfil único pra ele evitar contaminação entre cenas:
+When the same character uses multiple references across multiple scenes, create a single profile for them to avoid cross-scene contamination:
 
 ```
 [Subject Profile: Conservator]
@@ -97,9 +97,9 @@ Do not use: other characters' clothing. Do not give this character <Record Board
 
 ---
 
-## 6. Passo 4 — Selecione referências por cena
+## 6. Step 4 — Select references per scene
 
-Não é preciso (nem desejável) usar todos os materiais ao mesmo tempo. Declare por cena quais materiais estão ativos:
+You don't need (nor is it desirable) to use every material at once. Declare per scene which materials are active:
 
 ```
 Scene 1 | Inspection in the Conservation Lab
@@ -113,15 +113,15 @@ Event: <Registrar> checks the number on <Record Board> beside the display case.
 End state: <Registrar> still holds <Record Board> with both hands. No other character enters the display-case area.
 ```
 
-O objetivo de multi-referência é ajudar o modelo a **escolher** o material certo para a cena atual — não fazer todo material aparecer ao mesmo tempo.
+The goal of multi-reference is to help the model **choose** the right material for the current scene — not to make every material appear at once.
 
 ---
 
-## 7. Checklist rápido antes de gerar
+## 7. Quick checklist before generating
 
-- [ ] Cada sujeito distinto tem nome + referência mapeada individualmente (nunca "as imagens definem X personagens")
-- [ ] Cada referência tem "use apenas X" e, quando relevante, "do not use Y"
-- [ ] Materiais agrupados por tipo ([Characters]/[Props]/[Scenes]/[Motion and Audio]) se houver 3+ referências
-- [ ] Subject Profile criado para personagens que aparecem em múltiplas cenas/estágios
-- [ ] Referências selecionadas por cena/estágio, não empilhadas todas juntas
-- [ ] Regra explícita de não-troca entre personagens quando há 2+ na mesma cena
+- [ ] Every distinct subject has a name + individually mapped reference (never "the images define X characters")
+- [ ] Every reference has "use only X" and, when relevant, "do not use Y"
+- [ ] Materials grouped by type ([Characters]/[Props]/[Scenes]/[Motion and Audio]) if there are 3+ references
+- [ ] Subject Profile created for characters appearing in multiple scenes/stages
+- [ ] References selected per scene/stage, not all stacked together
+- [ ] Explicit no-swap rule when there are 2+ characters in the same scene

@@ -1,89 +1,97 @@
-# Worldbuilding — Referência
+# Worldbuilding — Reference
 
-Use quando o projeto precisar de regras de mundo consistentes — qualquer coisa com
-elemento fantástico, sci-fi, institucional/secreto, ou uma "lógica interna" que vai
-se repetir em múltiplos episódios (ex: como os óculos filtram realidade e os graus
-de contato em MIB Divisão Brasil).
+Use this when the project needs consistent world rules — anything with a
+fantastical, sci-fi, or institutional/secret element, or an "internal logic"
+that will repeat across multiple episodes (e.g., how special glasses filter
+reality, and degrees of contact, in an MIB-style series).
 
-Se o projeto é um curta realista sem elemento especulativo, pule esta referência —
-não force worldbuilding onde a história não pede.
-
----
-
-## Por que isso vem antes dos blocos da escaleta
-
-Regras de mundo bem definidas geram opções de escaleta melhores depois. Se você já
-sabe que "luz é o que estabiliza a entidade", cada bloco seguinte tem restrição
-natural — as opções que você oferece no Bloco 5 (escalada) já nascem coerentes com
-o Bloco 2 (primeiro sinal), sem precisar inventar uma regra nova a cada cena.
-
-Sem essa etapa, é fácil cair no problema que já aconteceu nesta conversa: uma ideia
-("a luz ativa a transformação") que soa boa isoladamente mas não tinha uma regra de
-mundo por trás — só uma mecânica de cena avulsa. Regra de mundo é o que permite a
-mesma mecânica se repetir em episódios diferentes de forma reconhecível.
+If the project is a realistic short with no speculative element, skip this
+reference — don't force worldbuilding where the story doesn't call for it.
 
 ---
 
-## As perguntas fundamentais (nessa ordem)
+## Why this comes before the outline blocks
+
+Well-defined world rules produce better outline options later. If you
+already know that "light is what stabilizes the entity", every following
+block has a natural constraint — the options you offer in Block 5
+(escalation) are already coherent with Block 2 (first sign), without having
+to invent a new rule for each scene.
+
+Without this step, it's easy to fall into a problem that has come up before:
+an idea ("light triggers the transformation") that sounds good in isolation
+but has no world rule behind it — just a one-off scene mechanic. A world
+rule is what lets the same mechanic repeat across different episodes in a
+recognizable way.
+
+---
+
+## The fundamental questions (in this order)
 
 ```
-1. Que regra física/lógica governa o elemento fantástico?
-   -- (ex: "óculos traduzem a entidade pro cérebro humano de forma segura")
+1. What physical/logical rule governs the fantastical element?
+   -- (e.g., "special glasses translate the entity for the human brain
+   safely")
 
-2. Qual o custo ou limite dessa regra?
-   -- toda regra de mundo precisa de um limite, senão não gera tensão
-   -- (ex: "sem os óculos, o operador vê a forma real -- insuportável de processar")
+2. What's the cost or limit of that rule?
+   -- every world rule needs a limit, otherwise it doesn't generate tension
+   -- (e.g., "without the glasses, the operator sees the real form --
+   unbearable to process")
 
-3. Existe um sistema de classificação/hierarquia?
-   -- graus, níveis, categorias -- isso dá vocabulário reutilizável pra série
-   -- (ex: graus de contato 1º a 4º, cada um com implicação narrativa diferente)
+3. Is there a classification/hierarchy system?
+   -- degrees, levels, categories -- this gives the series reusable
+   vocabulary
+   -- (e.g., degrees of contact 1st to 4th, each with a different narrative
+   implication)
 
-4. Quem sabe dessa regra, e quem não sabe?
-   -- define o que pode ser dito em diálogo vs o que fica implícito
-   -- (ex: civis nunca sabem -- por isso o apagador de memória no final de cada
-   episódio)
+4. Who knows this rule, and who doesn't?
+   -- defines what can be said in dialogue vs. what stays implicit
+   -- (e.g., civilians never know -- hence the memory eraser at the end of
+   each episode)
 
-5. O que a instituição/sistema por trás disso quer, estruturalmente?
-   -- toda organização secreta tem um objetivo que nem sempre alinha com o
-   protagonista -- essa fricção é fonte de conflito recorrente
+5. What does the institution/system behind this want, structurally?
+   -- every secret organization has a goal that doesn't always align with
+   the protagonist -- that friction is a recurring source of conflict
 ```
 
 ---
 
-## Como transformar regra de mundo em opção de escaleta
+## Turning a world rule into an outline option
 
-Uma vez que a regra existe, ela vira gerador de opções concretas em vez de você
-inventar do zero a cada bloco. Exemplo prático (baseado no que já foi decidido em
-MIB Divisão Brasil):
+Once the rule exists, it becomes a generator of concrete options instead of
+you inventing from scratch for every block. Practical example (based on a
+decision already made in one project):
 
 ```
-REGRA DE MUNDO: "óculos filtram a forma real da entidade"
+WORLD RULE: "glasses filter the entity's real form"
 
-Isso gera perguntas de bloco automaticamente:
-- O que acontece se o filtro falhar? (óculos quebram, bateria acaba, ele tira sem
-  querer)
-- Quem mais usa esse filtro, e o que acontece se usarem errado?
-- Existe um "grau" de entidade que o filtro não consegue traduzir de jeito nenhum?
+This automatically generates block questions:
+- What happens if the filter fails? (glasses break, battery dies, they're
+  taken off by accident)
+- Who else uses this filter, and what happens if they use it wrong?
+- Is there a "degree" of entity the filter can't translate at all?
 ```
 
-Sempre que estiver perguntando um bloco de escalada ou virada, primeiro cheque: essa
-opção usa uma regra de mundo já estabelecida, ou está inventando uma mecânica nova
-isolada? Se for nova, pare e pergunte a Victor se isso deveria virar regra de mundo
-(reutilizável) ou é só um evento único daquele episódio.
+Whenever you're asking about an escalation or turning-point block, first
+check: does this option use an already-established world rule, or is it
+inventing an isolated new mechanic? If it's new, stop and ask the user
+whether it should become a world rule (reusable) or is just a one-off event
+for that episode.
 
 ---
 
-## Ficha final (formato de registro)
+## Final sheet (recording format)
 
 ```
-ELEMENTO FANTÁSTICO/CENTRAL: [o que é]
-REGRA GOVERNANTE: [como funciona, em 1-2 linhas]
-CUSTO/LIMITE: [o que a regra não permite, ou o que ela custa]
-SISTEMA DE CLASSIFICAÇÃO: [graus/níveis, se existir]
-QUEM SABE / QUEM NÃO SABE: [assimetria de informação no mundo]
-OBJETIVO DA INSTITUIÇÃO (se houver): [o que o sistema quer, estruturalmente]
+FANTASTICAL/CENTRAL ELEMENT: [what it is]
+GOVERNING RULE: [how it works, in 1-2 lines]
+COST/LIMIT: [what the rule doesn't allow, or what it costs]
+CLASSIFICATION SYSTEM: [degrees/levels, if any]
+WHO KNOWS / WHO DOESN'T: [information asymmetry in the world]
+INSTITUTION'S GOAL (if any): [what the system wants, structurally]
 ```
 
-Guarde essa ficha e reutilize — ela é a "constituição" do universo, e deve raramente
-mudar entre episódios. Se uma nova ideia contradiz a ficha, aponte o conflito a
-Victor antes de seguir, em vez de silenciosamente ignorar a regra antiga.
+Keep this sheet and reuse it — it's the "constitution" of the universe, and
+should rarely change between episodes. If a new idea contradicts the sheet,
+point out the conflict to the user before proceeding, instead of silently
+ignoring the existing rule.

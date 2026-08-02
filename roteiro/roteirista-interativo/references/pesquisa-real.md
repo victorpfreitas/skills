@@ -1,70 +1,77 @@
-# Pesquisa de Base Real — Referência
+# Real-World Research — Reference
 
-Use quando a história se ancora em algo real ou quase-real: um caso documentado
-(Varginha), uma lenda urbana com registros (Boitatá, Curupira), um evento histórico,
-um tipo de lugar/rotina reconhecível. Histórias com textura real são quase sempre
-mais fortes do que invenção genérica equivalente — e isso vale o tempo de pesquisar
-antes de propor opções de escaleta.
-
----
-
-## Por que pesquisar antes de inventar
-
-Quando o episódio de Varginha foi escrito, a pesquisa trouxe detalhes que nenhuma
-invenção genérica teria (pele oleosa e escura, três saliências na cabeça, cheiro de
-amônia, o ser "assustado, molhado, ferido" — não hostil de cara). Isso deu à escalada
-do conflito uma base emocional (medo virando ameaça) que uma criatura genérica de
-horror não teria naturalmente.
-
-A regra prática: **se a história menciona um caso/lenda com nome próprio, pesquise
-antes de escrever qualquer bloco que envolva a aparência, comportamento ou contexto
-desse elemento.** Não invente detalhes que a pesquisa real pode fornecer.
+Use this when the story anchors itself in something real or near-real: a
+documented case (like Varginha), an urban legend with records (Boitatá,
+Curupira), a historical event, a recognizable type of place/routine.
+Stories with real texture are almost always stronger than an equivalent
+generic invention — and that's worth the time it takes to research before
+proposing outline options.
 
 ---
 
-## Processo
+## Why research before inventing
+
+When the Varginha episode was written, the research surfaced details no
+generic invention would have produced (oily, dark skin, three protrusions
+on the head, the smell of ammonia, a being that was "scared, wet, hurt" —
+not hostile from the start). That gave the escalation of the conflict an
+emotional foundation (fear turning into threat) that a generic horror
+creature wouldn't naturally have.
+
+The practical rule: **if the story mentions a case/legend with a proper
+name, research it before writing any block that involves that element's
+appearance, behavior, or context.** Don't invent details that real research
+can provide.
+
+---
+
+## Process
 
 ```
-1. Pesquise o caso/lenda em si -- busque relatos de testemunhas, não só resumos
-   enciclopédicos. Relatos em primeira pessoa têm detalhes sensoriais (cheiro,
-   textura, som) que resumos genéricos cortam.
+1. Research the case/legend itself -- look for witness accounts, not just
+   encyclopedic summaries. First-person accounts have sensory details
+   (smell, texture, sound) that generic summaries cut out.
 
-2. Extraia 3-5 detalhes concretos e específicos -- não a história toda, só os
-   fragmentos com textura (ex: "pele com brilho oleoso", "três saliências na
-   cabeça", "cheiro de amônia ou ovo podre").
+2. Extract 3-5 concrete, specific details -- not the whole story, just the
+   fragments with texture (e.g., "oily-looking skin", "three protrusions on
+   the head", "smell of ammonia or rotten eggs").
 
-3. Use esses detalhes como base pra gerar as opções de escaleta -- não como
-   citação direta. Nunca copie um relato ou trecho de reportagem palavra por
-   palavra no roteiro -- reescreva com liberdade criativa a partir dos fatos.
+3. Use those details as the basis for generating outline options -- not as
+   a direct quote. Never copy a witness account or a news excerpt word for
+   word into the script -- rewrite it with creative freedom based on the
+   facts.
 
-4. Separe fato de especulação. Se o caso é controverso (existem versões
-   oficiais que negam), decida com Victor se a história vai tratar o caso como
-   "aconteceu de verdade" dentro da ficção ou manter a ambiguidade que existe
-   na vida real -- isso muda o tom de abertura do episódio.
+4. Separate fact from speculation. If the case is controversial (there are
+   official versions that deny it), decide with the user whether the story
+   will treat the case as "it really happened" within the fiction, or keep
+   the ambiguity that exists in real life -- this changes the episode's
+   opening tone.
 ```
 
 ---
 
-## O que não fazer
+## What not to do
 
-- Não misture fatos de casos diferentes como se fossem do mesmo caso (ex: não
-  atribua a Varginha um detalhe que veio de outro caso de ufologia) — isso quebra a
-  credibilidade pra quem conhece o caso original, e o público de Victor claramente
-  valoriza esse tipo de acurácia.
-- Não cite trechos longos de reportagem ou depoimento — extraia o fato, não o texto.
-- Não pesquise e ignore os resultados porque "já tinha uma ideia melhor" — se a
-  pesquisa contradiz a ideia inicial, mostre o achado a Victor e deixe ele decidir se
-  quer ajustar a história ou manter a licença criativa conscientemente.
+- Don't mix facts from different cases as if they were the same case (e.g.,
+  don't attribute a Varginha detail to a different ufology case) — this
+  breaks credibility for anyone who knows the original case, and audiences
+  interested in this kind of content clearly value that accuracy.
+- Don't quote long excerpts from news articles or testimony — extract the
+  fact, not the text.
+- Don't research and then ignore the results because "I already had a
+  better idea" — if the research contradicts the initial idea, show the
+  finding to the user and let them decide whether to adjust the story or
+  knowingly keep the creative license.
 
 ---
 
-## Ficha final (formato de registro por caso/episódio)
+## Final sheet (recording format per case/episode)
 
 ```
-CASO/LENDA: [nome]
-FONTE(S) CONSULTADA(S): [breve nota, não precisa link completo no roteiro]
-DETALHES CONCRETOS EXTRAÍDOS: [lista de 3-5 fragmentos sensoriais/factuais]
-NÍVEL DE LICENÇA CRIATIVA: [o que é fiel ao caso vs o que foi inventado pra
-ficção -- documentar isso ajuda se o projeto crescer e precisar responder perguntas
-do público sobre "isso é real?"]
+CASE/LEGEND: [name]
+SOURCE(S) CONSULTED: [brief note, no need for a full link in the script]
+CONCRETE DETAILS EXTRACTED: [list of 3-5 sensory/factual fragments]
+LEVEL OF CREATIVE LICENSE: [what's faithful to the case vs. what was
+invented for the fiction -- documenting this helps if the project grows and
+needs to answer audience questions like "is this real?"]
 ```
