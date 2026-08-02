@@ -6,8 +6,6 @@
 
 This repository collects the skills I use day-to-day for generative AI production: camera direction, screenwriting, and voice. Each one came out of a real production case, not theory, and only made it in here after being tested in a real conversation. They're ready-to-plug knowledge blocks for whatever LLM you use, built to carry the same level of creative control I use on my own work into any project that needs it.
 
-> **Note on language:** the skills themselves (`SKILL.md` and `references/`) are written in Brazilian Portuguese — that's the instruction layer, and it's how I actually work day to day. This README is translated so English-speaking readers can understand what's here and decide whether to use it; the skill content is not translated (yet). Any agent that reads Markdown instructions handles Portuguese fine regardless of which language you talk to it in. The one exception is the *generated output*: several skills (like the Seedance prompters) instruct the model to write the actual image/video prompt body in English, because these generation models respond better to it.
-
 ## Table of contents
 
 - [The idea](#the-idea)
