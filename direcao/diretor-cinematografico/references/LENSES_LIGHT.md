@@ -23,6 +23,24 @@ The lens is the camera's emotional point of view.
 - Tension, isolation, spatial compression → 135mm+
 - Object, detail, texture → macro or 85mm F1.4
 
+### FOV in degrees — a stronger anchor than mm alone
+
+AI video models read **field of view in degrees** as a much harder instruction than millimeters — degrees behave like a snap value, mm alone behaves like a suggestion the model is free to round off. When precision matters (a multi-shot sequence, an extreme wide or extreme tele), write the degree first with the mm equivalent in parentheses, picked from this ladder — avoid inventing an off-ladder value like "23°":
+
+| FOV | mm equivalent | Feel | Use for |
+|---|---|---|---|
+| 180° | fisheye | spherical bulge | POV, dream-state, hallucination |
+| 107° | 14–16mm | architectural ultra-wide | vast interior scale, epic establishing |
+| 84° | 20–24mm | wide | full-body group blocking, environmental establish |
+| 63° | 28–35mm | reportage wide | observational, walking-alongside, documentary feel |
+| 47° | 40–50mm | eye-level neutral | universal medium, two-shot, waist-up |
+| 29° | 75–85mm | portrait compression | isolated bust, tight coverage |
+| 18° | 100–135mm | portrait tight | identity-hold close-up, held emotional beat |
+| 12° | 180–200mm | tele detail | hand insert, object close, jewelry, texture |
+| 8° | 300–400mm | extreme long-lens | anchored-far observation, watchtower |
+
+Write it inline: `47° (50mm) eye-level neutral for shot 1, 18° (100mm) portrait tight for shot 2.` For a sequence held at an extreme FOV (8° or 107°+) across several shots, restate the same degree value at the top and close of the sequence — extreme FOV drifts fastest of any camera parameter across multiple generations.
+
 ---
 
 ## 2. Aperture and Bokeh

@@ -99,6 +99,12 @@ Best practices for the negative prompt block:
 
 This doesn't fully invalidate good positive-description practice — keep describing what you want to appear first. The negative prompt is a complementary reinforcement, not a substitute for the positive description.
 
+### When to also state a suppression early, not just at the end
+
+The `[Negative Prompts]` block at the end is the default and correct placement — that's how every official ByteDance example does it. But for the one or two suppressions that are the scene's single biggest known failure risk (unwanted subtitles on a talking-head shot, BGM appearing on a track that must stay diegetic-only, an extra character entering a scene that must stay empty), state that specific suppression **twice**: once near the top, right after the style/scene declaration, and again in the closing `[Negative Prompts]` block. Generation resolves early elements of the prompt first — a suppression that only shows up at the very end competes with everything else the model has already committed to by that point.
+
+Don't do this for the whole negative list — only for the risk that's actually live in this scene. A talking-head clip that has burned in unwanted captions on every retry earns an early, explicit `No on-screen text, no captions, no subtitles at any point in this shot.` right after the style line, in addition to repeating it in `[Negative Prompts]`. A scene with no history of that failure doesn't need the duplication — it's a targeted fix for a specific recurring drift, not a standing rule.
+
 ---
 
 ## 5. Supported languages

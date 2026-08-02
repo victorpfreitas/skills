@@ -51,6 +51,24 @@ Seedance responds to **camera as an emotional-state instruction**, not as aesthe
 
 > **Rule:** always specify the lens if the prompt has an emotional close-up or insert — Seedance defaults to a generic focal length if you don't declare it.
 
+### FOV in degrees — sharper than mm alone
+
+Seedance treats **field of view in degrees** as a snap value it locks onto; mm alone reads more like a suggestion it's free to round off. For a shot where the exact framing matters (an extreme wide, an extreme tele, or any multi-shot sequence that needs the same lens held across cuts), write the degree first with mm in parentheses, picked from the ladder below rather than an arbitrary value:
+
+| FOV | mm equivalent | Feel | Use for |
+|---|---|---|---|
+| 180° | fisheye | spherical bulge | POV, dream-state |
+| 107° | 14–16mm | architectural ultra-wide | vast interior, epic establishing |
+| 84° | 20–24mm | wide | full-body blocking, environmental establish |
+| 63° | 28–35mm | reportage wide | observational, documentary feel |
+| 47° | 40–50mm | eye-level neutral | universal medium, two-shot |
+| 29° | 75–85mm | portrait compression | isolated bust, tight coverage |
+| 18° | 100–135mm | portrait tight | identity-hold close-up |
+| 12° | 180–200mm | tele detail | hand insert, object close, texture |
+| 8° | 300–400mm | extreme long-lens | anchored-far observation |
+
+Example: `camera: 47° (50mm) eye-level neutral, dolly-in slow`.
+
 ---
 
 ## 4. Speed qualifiers

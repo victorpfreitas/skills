@@ -4,6 +4,32 @@
 
 ---
 
+## 0. Dynamic Register — how hot the camera runs
+
+The emotion map in §1 answers *which kind* of camera behavior a moment calls for. Dynamic Register answers a second, independent question: **how much energy does the whole scene carry, moment to moment?** Decide this first — it sets the ceiling for every other camera choice in the scene (cut rate, how far the frame tilts, how long anything holds still).
+
+Skipping this step is why AI video often reads as "medium-energy everywhere" — a quiet scene with too much motion, or an action beat that never commits to being violent. Naming the tier out loud fixes that before a single shot is written.
+
+| Tier | Name | Camera | Cant (Dutch tilt) | Cuts per scene | Frame stillness |
+|---|---|---|---|---|---|
+| **1** | Composed | Locked-off, or an extremely slow push/pull | 0° | 1–2 shots for the whole scene, or a single continuous take | Long held frames — stillness *is* the subject |
+| **2** | Elevated | Gentle handheld breathing, or slow deliberate dolly/crane | 3–10° | 3–5 shots, 2.5–4s each | Frames settle and hold before the next cut |
+| **3** | Kinetic | Heavy handheld — tracking, orbiting, pushing, operator weight readable | 12–25° | 4–6 shots, 1.5–2.5s each | Every frame is mid-move, but the eye can still land |
+| **4** | Violent | Punching in, ripping back, whip pans, hard surges | 25–45° | 4–6 shots, 1.5–2s each, plus internal surges within a shot | Nothing settles — the frame never lands |
+
+**How to pick the tier — read the scene, don't ask by default:**
+
+- **Toward Tier 1–2:** grief, memory, waiting, ritual, a quiet morning, solitude, a landscape, dialogue that matters, an object being handled carefully, a room before anyone arrives
+- **Toward Tier 3–4:** a beat drop, choreography, a chase, a fight, a crowd, a reveal, a crash, a named BPM, "hype," "chaotic," "go crazy"
+
+Only ask the user when the scene genuinely supports two tiers (a character walking into a room could be Tier 1 dread or Tier 4 arrival) — and when you do, offer the two that actually fit, not all four: *"reading this two ways — quiet and held, or hot and punching?"*
+
+**Register can be split deliberately.** A calm subject inside a violent camera (Tier 1 subject, Tier 4 camera) is a real, powerful choice — a character moving slowly while the world tears around them. When the user wants that split, state it explicitly in the prompt so the model doesn't average the two into a mush: name the subject's stillness and the camera's violence as two separate, simultaneous facts.
+
+**Why this matters for Seedance specifically:** the duration rule in `seedance-prompter/references/CAMERA_LANGUAGE.md` and `seedance-25-prompter/references/CAMERA_AND_CINEMATOGRAPHY.md` (short precise clips beat one long weak one) is easier to apply correctly once the tier is named — a Tier 1 scene wants fewer, longer clips; a Tier 4 scene wants more, shorter ones. Carry the tier into the handoff (§7) as part of the `camera:` block.
+
+---
+
 ## 1. Movement × emotion map
 
 | Focal character's emotion | Camera type | How to write it in the prompt (EN) |

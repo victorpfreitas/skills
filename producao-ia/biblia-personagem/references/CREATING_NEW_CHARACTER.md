@@ -21,7 +21,11 @@ Each layer constrains the next, so this order avoids overly open-ended questions
 4. Color/variant system -- if there will be more than one version (male/
                    female pair, work outfit/leisure outfit), decide now the
                    color code that distinguishes each variant
-5. Name and tag -- the character's name + the technical tag
+5. Voice & Movement -- (only if the character will appear in video or
+                   speak) how it sounds and moves, decided now while the
+                   rest of the identity is still fresh -- see "Voice &
+                   Movement Lock" in CHARACTER_BLOCK_TEMPLATE.md
+6. Name and tag -- the character's name + the technical tag
                    (@CHARACTER_NAME) that will appear in every prompt from
                    here on
 ```
@@ -45,6 +49,10 @@ Without that code defined up front, every new variant becomes an isolated decisi
 ## Name and tag
 
 The technical tag (`@CHARACTER_NAME`, uppercase, no spaces) is what goes into every prompt — decide it alongside the common name, not afterward. Recommended convention: `@[FUNCTION_OR_NAME]_[VARIANT_IF_ANY]`, e.g. `@CHAR_PONTO`, `@AGENTE_MIB_BR`.
+
+## Voice & Movement — skip for stills-only characters
+
+If the character will only ever appear in stills (a print mascot, a static brand avatar), skip this layer — it has nothing to anchor to. If the character will appear in video, speak, or act, decide it now rather than leaving it to whoever writes the first video prompt: ask how the character talks (pace, register, what it never says), how it moves (deliberate vs. jittery, what its hands do when idle), and what it does when nobody's asking anything of it (its stillness — often more revealing than its movement). See "Voice & Movement Lock" in `CHARACTER_BLOCK_TEMPLATE.md` for the write-up format.
 
 ## After the briefing
 

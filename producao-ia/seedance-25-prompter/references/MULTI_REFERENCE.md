@@ -117,7 +117,17 @@ The goal of multi-reference is to help the model **choose** the right material f
 
 ---
 
-## 7. Quick checklist before generating
+## 7. Reference economy — more isn't more control
+
+Being able to attach up to 50 materials (§ in `PARAMETERS_AND_LIMITS.md`) doesn't mean every scene should. Past the point where two references start disagreeing about the same thing, adding a third doesn't clarify — it gives the model more conflicting signal to average away. Two images of the same character's face taken under different lighting, at different crops, or in a different expression are a common way this happens by accident.
+
+**Attach the fewest references that carry what the prompt actually needs, and prefer one reference that already resolves a combination over two that have to be reconciled.** If a character's approved full-look shot already shows face, hair, and wardrobe agreeing with each other, that one image is a better reference for a follow-up shot than that same image *plus* a separate face-only reference — the second one just gives the model two versions of the same face to reconcile instead of one to trust.
+
+When a second reference of the same subject is genuinely needed (the first one drifted, or a detail is obscured in it), say explicitly what each one is for — *"the face and skin tone come from @Image 1; the wardrobe and hair styling come from @Image 2"* — so the model treats them as complementary instead of competing.
+
+---
+
+## 8. Quick checklist before generating
 
 - [ ] Every distinct subject has a name + individually mapped reference (never "the images define X characters")
 - [ ] Every reference has "use only X" and, when relevant, "do not use Y"
