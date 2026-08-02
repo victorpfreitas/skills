@@ -1,46 +1,46 @@
-# Suno — Style Prompt, Meta Tags e Exclude
+# Suno — Style Prompt, Meta Tags and Exclude
 
-Referência de sintaxe atual do Suno (v5.5) pra montar o prompt de trilha. Suno tem dois campos separados no modo Custom: **Style of Music** (como a música soa) e **Lyrics** (o que é cantado e a estrutura, via meta tags).
+Reference for Suno's current syntax (v5.5) for building a soundtrack prompt. Suno has two separate fields in Custom mode: **Style of Music** (how the music sounds) and **Lyrics** (what is sung and the structure, via meta tags).
 
 ---
 
-## Style of Music — fórmula
+## Style of Music — formula
 
 ```
-[Gênero/subgênero], [Tempo/energia/BPM], [Instrumentos-chave], [Estilo vocal], [Produção/clima], [Modificadores]
+[Genre/subgenre], [Tempo/energy/BPM], [Key instruments], [Vocal style], [Production/mood], [Modifiers]
 ```
 
-- **4 a 8 descritores**, nunca um parágrafo corrido — o Suno interpreta melhor tags separadas por vírgula do que prosa.
-- **Gênero e tipo de vocal logo no início** — são os descritores que mais ancoram o resultado.
-- Exemplo pra trilha de fundo tensa: `dark cinematic trailer score, mid-tempo building to fast, deep strings and pulsing sub-bass, instrumental, tense atmospheric production, slow crescendo`.
-- Exemplo pra trilha de abertura otimista: `upbeat indie pop, 120 BPM, acoustic guitar and claps, warm female vocal, bright polished production, feel-good`.
+- **4 to 8 descriptors**, never a running paragraph — Suno interprets comma-separated tags better than prose.
+- **Genre and vocal type right at the start** — these are the descriptors that most anchor the result.
+- Example for a tense background track: `dark cinematic trailer score, mid-tempo building to fast, deep strings and pulsing sub-bass, instrumental, tense atmospheric production, slow crescendo`.
+- Example for an upbeat opening track: `upbeat indie pop, 120 BPM, acoustic guitar and claps, warm female vocal, bright polished production, feel-good`.
 
-## Lyrics — meta tags de estrutura
+## Lyrics — structure meta tags
 
-Meta tags ficam entre colchetes, em linha própria, logo antes do trecho que afetam. Servem tanto pra estrutura de seção quanto pra instrução pontual de instrumento/dinâmica:
+Meta tags go in brackets, on their own line, right before the section they affect. They serve both for section structure and for pinpoint instrument/dynamic instructions:
 
-| Categoria | Tags comuns |
+| Category | Common tags |
 |---|---|
-| Estrutura | `[Intro]`, `[Verse]`, `[Pre-Chorus]`, `[Chorus]`, `[Bridge]`, `[Outro]` |
-| Instrumental/dinâmica | `[Guitar Solo]`, `[Build]`, `[Drop]`, `[Instrumental Break]`, `[Fade Out]` |
+| Structure | `[Intro]`, `[Verse]`, `[Pre-Chorus]`, `[Chorus]`, `[Bridge]`, `[Outro]` |
+| Instrumental/dynamics | `[Guitar Solo]`, `[Build]`, `[Drop]`, `[Instrumental Break]`, `[Fade Out]` |
 | Vocal | `[Whispered]`, `[Spoken]`, `[Ad-lib]` |
 
-Pra **trilha de fundo pura** (o caso mais comum vindo do `seedance-prompter`), normalmente não se preenche o campo Lyrics com letra nenhuma — só o style prompt + a palavra `instrumental` no final resolve. Meta tags de estrutura entram quando a peça precisa de seções marcadas (ex.: um jingle com hook cantado, ou uma trilha que precisa de um build/drop sincronizado com um momento específico do vídeo).
+For a **pure background track** (the most common case coming from `seedance-prompter`), the Lyrics field usually isn't filled with any lyrics at all — just the style prompt + the word `instrumental` at the end is enough. Structure meta tags come into play when the piece needs marked sections (e.g., a jingle with a sung hook, or a track that needs a build/drop synced to a specific moment in the video).
 
-## Exclusão — duas formas, confiabilidade diferente
+## Exclusion — two methods, different reliability
 
-- **Campo dedicado Exclude** (Custom Mode → Advanced Options, disponível em planos Pro/Premier): descreva em texto simples o que não quer (ex.: `choir, backing vocals, distorted guitar`). É a forma **mais confiável** de excluir algo.
-- **Inline no fim do style prompt**, quando o campo dedicado não está disponível: escreva a exclusão como frase, no final do prompt, nunca no início (o Suno processa os descritores positivos primeiro) — ex.: `..., warm acoustic production, instrumental, no vocals`.
-- Tags são **hints probabilísticos, não comandos** — o Suno segue na maioria das vezes mas pode ignorar. Se uma exclusão for ignorada, regenerar ou simplificar a frase (evitar tag complexa ou incomum) costuma resolver melhor do que insistir na mesma frase.
+- **Dedicated Exclude field** (Custom Mode → Advanced Options, available on Pro/Premier plans): describe in plain text what you don't want (e.g., `choir, backing vocals, distorted guitar`). This is the **most reliable** way to exclude something.
+- **Inline at the end of the style prompt**, when the dedicated field isn't available: write the exclusion as a phrase, at the end of the prompt, never at the start (Suno processes the positive descriptors first) — e.g., `..., warm acoustic production, instrumental, no vocals`.
+- Tags are **probabilistic hints, not commands** — Suno follows them most of the time but may ignore them. If an exclusion gets ignored, regenerating or simplifying the phrase (avoiding a complex or unusual tag) tends to work better than repeating the same phrase.
 
-## Vocal e Voices
+## Vocal and Voices
 
-Se a trilha precisar de um vocal específico consistente entre gerações (ex.: uma "voz de marca" recorrente), o recurso é **Voices** (antigo "Personas") — clona/fixa uma referência vocal pra reuso. Fora esse caso, deixar o estilo vocal só como descritor no style prompt (`warm female vocal`, `deep male baritone`) é suficiente.
+If the track needs a specific vocal that stays consistent across generations (e.g., a recurring "brand voice"), the feature to use is **Voices** (formerly "Personas") — it clones/locks in a vocal reference for reuse. Outside of that case, leaving the vocal style as just a descriptor in the style prompt (`warm female vocal`, `deep male baritone`) is enough.
 
-## Checklist antes de entregar o prompt
+## Checklist before delivering the prompt
 
-- [ ] Style prompt com 4-8 descritores, gênero e vocal no início, separados por vírgula.
-- [ ] `instrumental` presente no final quando não houver vocal.
-- [ ] Exclusão (se houver) no campo Exclude dedicado, ou no fim do style prompt — nunca no início.
-- [ ] Meta tags de estrutura só quando a peça realmente tiver seções/letra — trilha de fundo pura não precisa.
-- [ ] BPM/tempo do style prompt compatível com o ritmo de corte já decidido (ver `montagem-prompter`), se aplicável.
+- [ ] Style prompt with 4-8 descriptors, genre and vocal at the start, comma-separated.
+- [ ] `instrumental` present at the end when there is no vocal.
+- [ ] Exclusion (if any) in the dedicated Exclude field, or at the end of the style prompt — never at the start.
+- [ ] Structure meta tags only when the piece actually has sections/lyrics — a pure background track doesn't need them.
+- [ ] Style prompt BPM/tempo compatible with the already-decided cut rhythm (see `montagem-prompter`), if applicable.

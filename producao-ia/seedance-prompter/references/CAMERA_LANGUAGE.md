@@ -1,119 +1,119 @@
 # Camera Language Reference — Seedance 2.0
 
-**Leia este arquivo quando precisar construir o bloco `camera:` de qualquer prompt.**
+**Read this file when you need to build the `camera:` block of any prompt.**
 
 ---
 
-## 1. Vocabulário de movimentos
+## 1. Movement vocabulary
 
-| Movimento | Sintaxe Seedance | Quando usar |
+| Movement | Seedance syntax | When to use |
 |---|---|---|
-| Aproximação lenta | `dolly-in slow from [plano] to [plano]` | Revelação emocional, clímax |
-| Afastamento | `pull-back revealing [o que é revelado]` | Contexto, solidão, escala épica |
-| Acompanhamento traseiro | `rear steadicam chase locked [distância] behind subject at matching velocity` | Ação, perseguição, tensão |
-| Lateral suave | `smooth gimbal lateral tracking shot` | Apresentação de personagem, ambiente |
-| Arco de elevação | `crane up from eye level revealing [o que é revelado]` | Épico, contexto, fim de cena |
-| Arco circular | `smooth gimbal arc shot, starting [posição] → rising to [posição] → [resolução]` | Reveal de produto, abertura dramática |
-| Ângulo baixo | `low angle [altura]cm from ground, camera tilted upward [graus] degrees` | Poder, ameaça, grandiosidade |
-| Whip pan | `whip pan [graus] degrees revealing [o que corta para]` | Energia, corte rápido dentro do clip |
-| Rack focus | `rack focus from [foreground] to [subject]` | Desvio de atenção, revelação |
-| Bullet time | `bullet time 360° orbit around [ponto de impacto/sujeito]` | VFX, ação estilizada |
-| Documental | `handheld slight documentary shake, controlled stabilized motion` | Realismo, tension emocional |
-| Close extremo | `dolly-in slow from medium shot to extreme close-up, rack focus on eyes` | Emoção, intensidade |
+| Slow approach | `dolly-in slow from [shot] to [shot]` | Emotional reveal, climax |
+| Pull away | `pull-back revealing [what is revealed]` | Context, isolation, epic scale |
+| Rear tracking | `rear steadicam chase locked [distance] behind subject at matching velocity` | Action, chase, tension |
+| Smooth lateral | `smooth gimbal lateral tracking shot` | Character introduction, environment |
+| Rising arc | `crane up from eye level revealing [what is revealed]` | Epic, context, scene ending |
+| Circular arc | `smooth gimbal arc shot, starting [position] → rising to [position] → [resolution]` | Product reveal, dramatic opening |
+| Low angle | `low angle [height]cm from ground, camera tilted upward [degrees] degrees` | Power, threat, grandeur |
+| Whip pan | `whip pan [degrees] degrees revealing [what it cuts to]` | Energy, fast cut within the clip |
+| Rack focus | `rack focus from [foreground] to [subject]` | Redirected attention, reveal |
+| Bullet time | `bullet time 360° orbit around [point of impact/subject]` | VFX, stylized action |
+| Documentary | `handheld slight documentary shake, controlled stabilized motion` | Realism, emotional tension |
+| Extreme close | `dolly-in slow from medium shot to extreme close-up, rack focus on eyes` | Emotion, intensity |
 
 ---
 
-## 2. Câmera × Emoção (versão Seedance)
+## 2. Camera × Emotion (Seedance version)
 
-O Seedance responde a **camera como instrução de estado emocional**, não como estética. Use estas equivalências:
+Seedance responds to **camera as an emotional-state instruction**, not as aesthetics. Use these equivalences:
 
-| Emoção do personagem | Instrução de câmera |
+| Character's emotion | Camera instruction |
 |---|---|
-| Raiva / tensão | `handheld, jittery breathing rhythm, visible micro-tremors, irregular amplitude` |
-| Calma / controle | `smooth handheld breathing, barely perceptible micro-motion, steady rhythm` |
-| Tristeza / vulnerabilidade | `slow, low-position handheld, slightly downward drift, heavy breathing pace` |
-| Choque / revelação | `camera starts completely static — 0.5s freeze — then imperceptibly slow push-in` |
-| Ação / velocidade | `60fps, smooth velocity-matched tracking, motion blur within shutter angle only` |
-| Clímax / final | `top-shot, perfectly overhead, 0.5-second freeze frame, all movement ceases` |
+| Anger / tension | `handheld, jittery breathing rhythm, visible micro-tremors, irregular amplitude` |
+| Calm / control | `smooth handheld breathing, barely perceptible micro-motion, steady rhythm` |
+| Sadness / vulnerability | `slow, low-position handheld, slightly downward drift, heavy breathing pace` |
+| Shock / revelation | `camera starts completely static — 0.5s freeze — then imperceptibly slow push-in` |
+| Action / speed | `60fps, smooth velocity-matched tracking, motion blur within shutter angle only` |
+| Climax / ending | `top-shot, perfectly overhead, 0.5-second freeze frame, all movement ceases` |
 
 ---
 
 ## 3. Lens selection
 
-| Situação | Lente | Abertura |
+| Situation | Lens | Aperture |
 |---|---|---|
-| Close emocional extremo (rosto preenche o frame) | 85mm ou 100mm | F1.4 |
-| Diálogo dois personagens | 50mm | F2.0–F2.8 |
-| Wide / estabelecimento | 35mm | F4–F5.6 |
-| Insert de objeto / detalhe | 85mm com focus lock | F1.4 |
-| Macro (poros, gotas, tecido) | 45mm macro | F2.8 |
-| Épico / paisagem | 24mm anamorphic | F8 |
+| Extreme emotional close-up (face fills frame) | 85mm or 100mm | F1.4 |
+| Two-character dialogue | 50mm | F2.0–F2.8 |
+| Wide / establishing | 35mm | F4–F5.6 |
+| Object / detail insert | 85mm with focus lock | F1.4 |
+| Macro (pores, droplets, fabric) | 45mm macro | F2.8 |
+| Epic / landscape | 24mm anamorphic | F8 |
 
-> **Regra:** sempre especifique a lente se o prompt tiver close emocional ou insert — o Seedance default para focal genérico se você não declarar.
-
----
-
-## 4. Qualificadores de velocidade
-
-Use estes termos para modular o ritmo do movimento:
-
-```
-imperceptibly slow          → movimento quase invisível (≤10cm em 6s)
-very slow                   → dolly contemplativo
-slow                        → padrão cinematográfico
-controlled                  → propositado, sem hesitação
-matched velocity            → câmera = velocidade do sujeito (tracking)
-rapid                       → corte interno rápido entre ângulos
-```
+> **Rule:** always specify the lens if the prompt has an emotional close-up or insert — Seedance defaults to a generic focal length if you don't declare it.
 
 ---
 
-## 5. Ângulos de câmera — referência rápida
+## 4. Speed qualifiers
+
+Use these terms to modulate the pace of the movement:
 
 ```
-eye level                   → neutro, próximo, íntimo
-low angle (below waist)     → poder, ameaça, grandiosidade
-high angle (above eye)      → vulnerabilidade, controle da cena
-dutch angle (tilted)        → desorientação, psicológico
-overhead / bird's eye       → mapa, escala, fim épico
-POV (first-person)          → imersão, identificação
-over-the-shoulder (OTS)     → diálogo, tensão relacional
+imperceptibly slow          → near-invisible motion (≤10cm over 6s)
+very slow                   → contemplative dolly
+slow                        → standard cinematic pace
+controlled                  → deliberate, no hesitation
+matched velocity             → camera speed = subject speed (tracking)
+rapid                       → fast internal cutting between angles
 ```
 
 ---
 
-## 6. Blocos de câmera prontos para copiar
+## 5. Camera angles — quick reference
 
-### Reveal de produto / veículo
+```
+eye level                   → neutral, close, intimate
+low angle (below waist)     → power, threat, grandeur
+high angle (above eye)      → vulnerability, scene control
+dutch angle (tilted)        → disorientation, psychological
+overhead / bird's eye       → map, scale, epic ending
+POV (first-person)          → immersion, identification
+over-the-shoulder (OTS)     → dialogue, relational tension
+```
+
+---
+
+## 6. Ready-to-copy camera blocks
+
+### Product / vehicle reveal
 ```
 camera: smooth gimbal arc shot, starting low 30cm from ground → rising to hood level → pulling back to reveal full silhouette, 6-second controlled sweep.
 ```
 
-### Chase / perseguição
+### Chase
 ```
 camera: rear steadicam chase locked 2.5m behind subject at matching velocity, slight documentary breathing, irregular rhythm.
 ```
 
-### Clímax emocional
+### Emotional climax
 ```
 camera: dolly-in slow from medium shot to extreme close-up on eyes, rack focus pulling from background to face, 85mm, F1.4.
 ```
 
-### Ação multi-ângulo (Tipo C)
+### Multi-angle action (Type C)
 ```
 camera: rapid multi-angle system, interior close-up → exterior tracking → low ground shots, whip pans + speed ramp transitions between cuts.
 ```
 
-### Establshing épico
+### Epic establishing
 ```
 camera: crane up from eye level revealing full [cityscape/landscape/scene], starting tight → wide panorama in 5 seconds.
 ```
 
 ---
 
-## 7. Regras anti-fail
+## 7. Anti-fail rules
 
-- **Nunca use `zoom`** → sempre movimento físico de câmera (`dolly`, `pull`, `push`, `track`)
-- **`fixed_camera: true`** → desativa qualquer movimento; use só para estáticas puras
-- **Movimentos contraditórios** → não combine `static` com `dolly-in` no mesmo clip
-- **Shake vs. tremor** → `handheld breathing` (suave, intencional) ≠ `shaky cam` (caótico)
+- **Never use `zoom`** → always use physical camera movement (`dolly`, `pull`, `push`, `track`)
+- **`fixed_camera: true`** → disables any movement; use only for pure statics
+- **Contradictory movements** → don't combine `static` with `dolly-in` in the same clip
+- **Shake vs. tremor** → `handheld breathing` (soft, intentional) is not the same as `shaky cam` (chaotic)

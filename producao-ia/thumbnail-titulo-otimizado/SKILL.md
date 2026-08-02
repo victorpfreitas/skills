@@ -1,62 +1,62 @@
 ---
 name: thumbnail-titulo-otimizado
 description: >
-  Use esta skill sempre que Victor precisar gerar ou decidir a thumbnail e o título
-  finais de um vídeo antes de publicar. Trigger em qualquer pedido como "gera a
-  thumbnail desse vídeo", "cria títulos pra esse vídeo", "qual desses títulos é
-  melhor", "pontua essa thumbnail", "melhora essa thumbnail", "preciso do título
-  final", ou quando há um vídeo pronto e falta decidir a capa/nome antes de subir.
-  Usa as ferramentas vidIQ de gerar e pontuar thumbnail/título pra fechar o loop
-  gerar → pontuar → ajustar → só publicar quando a combinação estiver boa, em vez
-  de decidir no olho.
+  Use this skill whenever the user needs to generate or decide on the final
+  thumbnail and title of a video before publishing. Trigger on any request like
+  "generate a thumbnail for this video", "create titles for this video", "which
+  of these titles is better", "score this thumbnail", "improve this thumbnail",
+  "I need the final title", or whenever a video is ready and the cover/name
+  still needs to be decided before uploading. Uses the vidIQ thumbnail/title
+  generation and scoring tools to close the loop generate → score → refine →
+  only publish once the combination is good, instead of deciding by gut feel.
 ---
 
-# Thumbnail e Título Otimizados
+# Optimized Thumbnail and Title
 
-Você decide a capa e o nome de um vídeo com dado de CTR, não no olho. O objetivo é fechar o loop **gerar → pontuar → ajustar → publicar**, nunca gerar uma vez e aceitar de primeira.
+You decide a video's cover and name using CTR data, not gut feel. The goal is to close the loop **generate → score → refine → publish**, never generating once and accepting the first result.
 
 ---
 
 ## Workflow
 
-### 1. Título — gerar e pontuar
+### 1. Title — generate and score
 
-Chame `vidiq_generate_titles` com o `videoId` (se já existe no YouTube) ou `title`/`description` do vídeo. Passe:
-- `language: "pt-BR"` (a menos que o vídeo seja em outro idioma).
-- `type: "long"` ou `"short"` conforme o formato.
-- `previousTitles`, se Victor tiver títulos recentes do canal, pra evitar repetição de padrão.
+Call `vidiq_generate_titles` with the `videoId` (if it already exists on YouTube) or the video's `title`/`description`. Pass:
+- `language` set to the video's language (e.g. `"en"`), unless the video is in another language.
+- `type: "long"` or `"short"` depending on the format.
+- `previousTitles`, if the user has recent titles from the channel, to avoid repeating a pattern.
 
-A ferramenta já vem com score embutido, mas para comparar variações escritas por Victor (não só as geradas), rode `vidiq_score_title` uma a uma. Nunca decida por "gosto mais desse" sem olhar o score — mas também não escolha só pelo número mais alto se ele soar clickbait fora do que o vídeo entrega.
+The tool already returns a built-in score, but to compare variations written by the user (not just the generated ones), run `vidiq_score_title` one at a time. Never decide based on "I like this one better" without checking the score — but also don't just pick the highest number if it sounds like clickbait relative to what the video actually delivers.
 
-### 2. Thumbnail — gerar
+### 2. Thumbnail — generate
 
-Chame `vidiq_generate_thumbnail`. Sempre passe `title` (o título já escolhido no passo 1 — thumbnail e título são lidos juntos pelo espectador, não separadamente) e, quando existir, `subjectImage` (foto da pessoa que deve ser o rosto principal) e `referenceImages` (thumbnails de estilo pra emular, até 10).
+Call `vidiq_generate_thumbnail`. Always pass `title` (the title already chosen in step 1 — thumbnail and title are read together by the viewer, not separately) and, when available, `subjectImage` (a photo of the person who should be the main face) and `referenceImages` (style-reference thumbnails to emulate, up to 10).
 
-Sempre incluir o `imageUrl` retornado na resposta pro Victor poder abrir/salvar — o preview inline não é baixável.
+Always include the `imageUrl` returned in the response so the user can open/save it — the inline preview is not downloadable.
 
-### 3. Thumbnail — pontuar
+### 3. Thumbnail — score
 
-Chame `vidiq_score_thumbnail` com `videoId` + `title`, ou passando a imagem gerada em `image` se o vídeo ainda não estiver no YouTube. Leia o score e o feedback detalhado (pontos fortes e a melhorar).
+Call `vidiq_score_thumbnail` with `videoId` + `title`, or by passing the generated image in `image` if the video isn't on YouTube yet. Read the score and the detailed feedback (strengths and areas to improve).
 
-**Trate o score como estimativa, não veredito** — não regenerar só pra subir o número, e não liderar a resposta pro Victor com o número puro sem contexto.
+**Treat the score as an estimate, not a verdict** — don't regenerate just to bump the number up, and don't lead your response to the user with the raw number lacking context.
 
-### 4. Iterar — uma mudança por vez
+### 4. Iterate — one change at a time
 
-Se o score ou o feedback apontar problema específico, use `vidiq_refine_thumbnail` (não gere do zero de novo): passe a thumbnail atual em `sourceThumbnail` e descreva **uma mudança concreta** em `instructions` (ex.: "aumenta o texto", "muda o fundo pra um estádio"). Passar `feedback` do `vidiq_score_thumbnail` pro `vidiq_generate_thumbnail` também é válido quando o ajuste é maior que um refino pontual.
+If the score or feedback points to a specific problem, use `vidiq_refine_thumbnail` (don't regenerate from scratch): pass the current thumbnail in `sourceThumbnail` and describe **one concrete change** in `instructions` (e.g. "make the text bigger", "change the background to a stadium"). Passing `feedback` from `vidiq_score_thumbnail` into `vidiq_generate_thumbnail` is also valid when the adjustment is bigger than a single targeted refinement.
 
-Regra de iteração: uma variável por rodada — ou o texto, ou o fundo, ou a expressão do rosto, nunca várias ao mesmo tempo. Senão não dá pra saber o que melhorou o CTR.
+Iteration rule: one variable per round — either the text, or the background, or the facial expression, never several at once. Otherwise there's no way to know what actually improved CTR.
 
-### 5. Critério de parar
+### 5. Stopping criteria
 
-Não existe nota "perfeita" — pare de iterar quando:
-- O score estiver numa faixa boa pro nicho (não existe threshold universal; comparar com o score de vídeos de referência do próprio canal ajuda a calibrar o "bom o suficiente").
-- Ou depois de ~2-3 rodadas de refino sem ganho — nesse ponto o problema provavelmente é o conceito, não o ajuste fino, e vale voltar pro passo 2 com uma direção criativa diferente.
+There's no "perfect" score — stop iterating when:
+- The score is in a good range for the niche (there's no universal threshold; comparing against the score of reference videos from the same channel helps calibrate "good enough").
+- Or after ~2-3 rounds of refinement with no gain — at that point the problem is probably the concept, not the fine-tuning, and it's worth going back to step 2 with a different creative direction.
 
 ---
 
-## Regras críticas
+## Critical rules
 
-- Título e thumbnail nunca são avaliados isolados — sempre gerar/pontuar o título primeiro, ele entra como contexto de todo o resto.
-- Sempre devolver o `imageUrl` de qualquer thumbnail gerada ou refinada.
-- Nunca inventar um score — se a ferramenta falhar ou não retornar nota, diga isso, não estime um número.
-- Evitar refinar mais de 3 vezes seguidas sem checar se o conceito (não o detalhe) é o problema.
+- Title and thumbnail are never evaluated in isolation — always generate/score the title first, it feeds in as context for everything else.
+- Always return the `imageUrl` of any generated or refined thumbnail.
+- Never make up a score — if the tool fails or doesn't return a rating, say so, don't estimate a number.
+- Avoid refining more than 3 times in a row without checking whether the concept (not the detail) is the actual problem.

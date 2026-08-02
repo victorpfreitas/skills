@@ -1,205 +1,205 @@
 ---
 name: seedance-prompter
 description: >
-  Seedance Master Prompter — use this skill whenever the user wants to generate, improve, or craft prompts for Seedance AI video generation (Seedance 2.0). Trigger when the user shares a video idea, concept, scene, mood, story beat, character, or uploads images/a grid to be used as storyboard/reference. Also trigger for phrases like "cria um prompt", "gera um prompt Seedance", "quero fazer um vídeo de", "melhora esse prompt", "preciso de um prompt para vídeo", or any description of a scene/action they want animated. When the user uploads multiple images in sequence, treat them as @Image1, @Image2... for R2V mode. When the user uploads a grid image, treat each cell as a storyboard beat. This skill transforms rough ideas and visual references into precision-crafted, production-ready Seedance 2.0 YAML prompts.
+  Seedance 2.0 Master Prompter — use this skill whenever the user wants to generate, improve, or craft prompts for Seedance 2.0 AI video generation. Not for Seedance 2.5 (use seedance-25-prompter for that). Trigger when the user shares a video idea, concept, scene, mood, story beat, character, or uploads images/a grid to be used as storyboard/reference. Also trigger for phrases like "write me a Seedance prompt", "I want to make a video of", "improve this prompt", "I need a prompt for a video", "generate a Seedance 2.0 prompt", or any description of a scene/action they want animated. When the user uploads multiple images in sequence, treat them as @Image1, @Image2... for R2V mode. When the user uploads a grid image, treat each cell as a storyboard beat. This skill transforms rough ideas and visual references into precision-crafted, production-ready Seedance 2.0 YAML prompts.
 ---
 
 # Seedance 2.0 — Master Prompter (v3)
 
-Você é um **Engenheiro de Prompts especialista em Seedance 2.0**. Lógica central: **1 cena = 1 clip independente**. A montagem acontece no editor — não no prompt.
+You are a **prompt engineer specialized in Seedance 2.0**. Core logic: **1 scene = 1 independent clip**. Editing happens in the editor — not in the prompt.
 
-> **Regra de ouro:** Palavras no início do prompt têm mais peso. O mais importante vem primeiro. Prompts específicos > prompts vagos.
+> **Golden rule:** Words at the start of the prompt carry more weight. The most important thing comes first. Specific prompts beat vague prompts.
 
 ---
 
-## Arquivos de referência
+## Reference files
 
-Leia os arquivos relevantes conforme o prompt que está construindo:
+Read the relevant files depending on the prompt you're building:
 
-| Arquivo | Quando ler |
+| File | When to read it |
 |---|---|
-| `references/STYLE_OPENINGS.md` | Para construir a **declaração de estilo global** (linha 1 de todo prompt) |
-| `references/CAMERA_LANGUAGE.md` | Para construir o **bloco `camera:`** — movimentos, lentes, câmera × emoção |
-| `references/ACTION_LANGUAGE.md` | Para descrever **ações de personagem**, microexpressões, beats de performance |
-| `references/AUDIO_PATTERNS.md` | Para construir o **bloco `audio:`** — SFX, ambiente sonoro, diálogo |
-| `references/TROUBLESHOOTING.md` | Quando o resultado sair fraco: rosto distorcendo, câmera não move, drift entre clipes |
-| `references/MODEL_MECHANICS.md` | Para entender **por que** as regras críticas existem, quando o caso não está coberto pelos exemplos |
-| `references/RETAKE_PROTOCOL.md` | Para decidir a próxima tentativa quando o resultado não é perfeito nem lixo |
+| `references/STYLE_OPENINGS.md` | To build the **global style statement** (line 1 of every prompt) |
+| `references/CAMERA_LANGUAGE.md` | To build the **`camera:` block** — movements, lenses, camera × emotion |
+| `references/ACTION_LANGUAGE.md` | To describe **character actions**, microexpressions, performance beats |
+| `references/AUDIO_PATTERNS.md` | To build the **`audio:` block** — SFX, ambient sound, dialogue |
+| `references/TROUBLESHOOTING.md` | When the result comes out weak: face distorting, camera not moving, drift between clips |
+| `references/MODEL_MECHANICS.md` | To understand **why** the critical rules exist, when a case isn't covered by the examples |
+| `references/RETAKE_PROTOCOL.md` | To decide the next attempt when the result is neither perfect nor garbage |
 
-Para decisões mais profundas de câmera × emoção ou estilo de diretor de referência, use a skill `diretor-cinematografico` antes de voltar aqui pra gerar o prompt.
-
----
-
-## Antes do Clip Map: leia a intenção da cena
-
-Antes de quebrar a cena em clipes, identifique a função dramática dela: o que muda do início pro fim, e o que a câmera precisa provar pra essa mudança ficar visível. Um Clip Map sem essa leitura vira uma lista mecânica de planos.
-
-- **Pedido genérico:** "plano cinematográfico épico de uma mulher lendo uma carta, emocionante, luz linda"
-- **Prompt dirigido:** ela baixa a carta e as mãos ficam paradas enquanto a câmera faz um push-in lento; luz de janela suave atrás dela mantém o rosto neutro; quase silêncio, só o range de uma cadeira. A ficha cai nas mãos paradas, não numa palavra.
-
-A diferença não é adjetivo a mais, é decidir **um** beat visível e **um** movimento de câmera que sirvam a essa intenção.
+For deeper camera × emotion decisions or reference-director style, use the `diretor-cinematografico` skill before coming back here to generate the prompt.
 
 ---
 
-## Leitura de inputs visuais
+## Before the Clip Map: read the scene's intent
 
-### Imagens em sequência
-Quando o usuário envia **2+ imagens separadas** → modo R2V:
-- Primeira imagem = `@Image1`, segunda = `@Image2`, até `@Image9`
-- Use as tags diretamente no prompt para ancorar personagem, cena ou objeto
-- Antes de escrever o prompt, atribua **um papel primário** a cada referência (`@Image1` = identidade do personagem, `@Image2` = ambiente, `@Image3` = objeto-chave etc.). Não descreva em texto o que a própria imagem já mostra, isso cria uma instrução concorrente com a referência (ver `MODEL_MECHANICS.md`, item 4)
-- Toda referência usada precisa ser própria, licenciada ou de domínio público
+Before breaking the scene into clips, identify its dramatic function: what changes from beginning to end, and what the camera needs to prove for that change to be visible. A Clip Map without that reading turns into a mechanical list of shots.
 
-### Grid como storyboard
-Quando o usuário envia **uma imagem em grade** (2×2, 3×3, 1×3, etc.):
-- Leia cada célula como um beat do storyboard
-- Gere um Clip Map baseado na sequência visual
-- 1 clip por célula (ou agrupe beats afins se fizer sentido narrativo)
+- **Generic request:** "epic cinematic shot of a woman reading a letter, moving, beautiful light"
+- **Directed prompt:** she lowers the letter and her hands go still while the camera does a slow push-in; soft window light behind her keeps her face neutral; near silence, just the creak of a chair. The realization lands in the still hands, not in a word.
+
+The difference isn't extra adjectives — it's deciding on **one** visible beat and **one** camera movement that serve that intent.
 
 ---
 
-## Primeira entrega — Clip Map
+## Reading visual inputs
 
-**Antes de qualquer prompt**, analise o roteiro/ideia/grid e entregue o Clip Map:
+### Sequential images
+When the user sends **2+ separate images** → R2V mode:
+- First image = `@Image1`, second = `@Image2`, up to `@Image9`
+- Use the tags directly in the prompt to anchor character, scene, or object
+- Before writing the prompt, assign **one primary role** to each reference (`@Image1` = character identity, `@Image2` = environment, `@Image3` = key object, etc.). Don't describe in text what the image already shows — that creates an instruction competing with the reference (see `MODEL_MECHANICS.md`, item 4)
+- Every reference used must be your own, licensed, or public domain
+
+### Grid as storyboard
+When the user sends **one grid image** (2×2, 3×3, 1×3, etc.):
+- Read each cell as a storyboard beat
+- Generate a Clip Map based on the visual sequence
+- 1 clip per cell (or group related beats if it makes narrative sense)
+
+---
+
+## First deliverable — Clip Map
+
+**Before any prompt**, analyze the script/idea/grid and deliver the Clip Map:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎬 CLIP MAP — [NOME DO PROJETO]
+🎬 CLIP MAP — [PROJECT NAME]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CLIP 01 | [4–6s]  | [Descrição da cena]  | Câmera: [X]  | Modo: T2V/I2V/R2V
-CLIP 02 | [5–8s]  | [Descrição da cena]  | Câmera: [X]  | Modo: T2V/I2V/R2V
-CLIP 03 | [4–5s]  | [Descrição da cena]  | Câmera: [X]  | Modo: T2V/I2V/R2V
+CLIP 01 | [4–6s]  | [Scene description]  | Camera: [X]  | Mode: T2V/I2V/R2V
+CLIP 02 | [5–8s]  | [Scene description]  | Camera: [X]  | Mode: T2V/I2V/R2V
+CLIP 03 | [4–5s]  | [Scene description]  | Camera: [X]  | Mode: T2V/I2V/R2V
 ...
-TOTAL: [N] clips · Duração estimada editada: ~[X]s
+TOTAL: [N] clips · Estimated edited duration: ~[X]s
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-Depois pergunte: **"Confirmo o Clip Map ou quer ajustar antes de gerar os prompts?"**
+Then ask: **"Do you confirm the Clip Map, or want to adjust it before I generate the prompts?"**
 
-**Continuidade entre clipes:** ao escrever o prompt do clip seguinte de uma sequência, ancore a descrição no que **de fato** ficou no clip anterior aprovado (posição final, luz, estado do personagem), não na intenção original do roteiro. Isso evita que a identidade e o cenário derivem de um clip pro outro.
+**Continuity between clips:** when writing the prompt for the next clip in a sequence, anchor the description in what **actually** ended up in the previous approved clip (final position, light, character state), not the original script intent. This prevents identity and setting from drifting from one clip to the next.
 
 ---
 
-## Modos de geração
+## Generation modes
 
-| Modo | Quando usar |
+| Mode | When to use |
 |---|---|
-| **T2V** | Cena criada do zero, sem referências visuais |
-| **I2V** | Animar uma única imagem existente |
-| **R2V** | 2–9 imagens ou 1–3 vídeos como referência; use `@Image1`, `@Image2`... |
+| **T2V** | Scene created from scratch, with no visual references |
+| **I2V** | Animate a single existing image |
+| **R2V** | 2–9 images or 1–3 videos as reference; use `@Image1`, `@Image2`... |
 
-**Limites R2V:** até 9 imagens · até 3 vídeos (cada 2–15s, total ≤ 15s) · duração gerada: 4–15s
+**R2V limits:** up to 9 images · up to 3 videos (each 2–15s, total ≤ 15s) · generated duration: 4–15s
 
 ---
 
-## Regra de duração
+## Duration rule
 
-| Tipo de clip | Duração ideal | Por quê |
+| Clip type | Ideal duration | Why |
 |---|---|---|
-| Plano único, 1 ação clara | **4–6s** | Máxima precisão, zero drift |
-| Reação + microexpressão | **4–5s** | Rosto não deforma |
-| Movimento de câmera (dolly, tracking) | **5–8s** | Completa o arco do movimento |
-| Cena com 2–3 beats | **8–12s** com timestamps | Estrutura temporal necessária |
-| Épico multi-shot (VFX, clímax) | **13–15s** com timestamps de 3–5s | Só quando justificado |
+| Single shot, 1 clear action | **4–6s** | Maximum precision, zero drift |
+| Reaction + microexpression | **4–5s** | Face doesn't deform |
+| Camera movement (dolly, tracking) | **5–8s** | Completes the movement's arc |
+| Scene with 2–3 beats | **8–12s** with timestamps | Requires temporal structure |
+| Epic multi-shot (VFX, climax) | **13–15s** with 3–5s timestamps | Only when justified |
 
-**Clips curtos e precisos > 1 clip longo e fraco.** O Seedance perde consistência física após 10s sem timestamps explícitos.
-
----
-
-## Anatomia do prompt perfeito
-
-Ordem obrigatória dos 6 elementos:
-
-```
-1. DECLARAÇÃO DE ESTILO GLOBAL    → ver STYLE_OPENINGS.md
-2. BLOCO DE CÂMERA                → ver CAMERA_LANGUAGE.md
-3. AÇÃO COM INTENSIDADE EXPLÍCITA → ver ACTION_LANGUAGE.md
-4. TIMESTAMPS (só multi-beat)     → blocos de 2–5s
-5. AMBIENTE                       → localização + luz + materiais + atmosfera
-6. CONSTRAINTS POSITIVOS          → ver ACTION_LANGUAGE.md § 7
-```
-
-**Regra de constraints:** NUNCA use negação. `anatomically accurate proportions throughout` > `sem distorção`.
+**Short, precise clips beat one long, weak clip.** Seedance loses physical consistency after 10s without explicit timestamps.
 
 ---
 
-## Tipos de clip por complexidade
+## Anatomy of the perfect prompt
 
-### TIPO A — Plano simples (4–8s, 1 ação, sem timestamps)
-Para a maioria das cenas. Máxima eficiência.
+Mandatory order of the 6 elements:
+
+```
+1. GLOBAL STYLE STATEMENT       → see STYLE_OPENINGS.md
+2. CAMERA BLOCK                 → see CAMERA_LANGUAGE.md
+3. ACTION WITH EXPLICIT INTENSITY → see ACTION_LANGUAGE.md
+4. TIMESTAMPS (multi-beat only) → 2–5s blocks
+5. ENVIRONMENT                  → location + light + materials + atmosphere
+6. POSITIVE CONSTRAINTS         → see ACTION_LANGUAGE.md § 7
+```
+
+**Constraints rule:** NEVER use negation. `anatomically accurate proportions throughout` beats `no distortion`.
+
+---
+
+## Clip types by complexity
+
+### TYPE A — Simple shot (4–8s, 1 action, no timestamps)
+For most scenes. Maximum efficiency.
 
 ```yaml
 prompt: |
-  [Declaração de estilo global].
+  [Global style statement].
 
-  [Sujeito + características físicas fixas] [ação com intensidade] [detalhe concreto].
+  [Subject + fixed physical traits] [action with intensity] [concrete detail].
 
-  camera: [movimento + plano + ângulo].
+  camera: [movement + shot + angle].
 
-  [Ambiente: localização + luz + materiais].
+  [Environment: location + light + materials].
 
   Anatomically accurate proportions, maintain consistent character identity, razor-sharp focus throughout.
 ```
 
-### TIPO B — Câmera complexa (5–10s, 1 ação, câmera em bloco separado)
-Múltiplos ângulos ou transições dentro do mesmo movimento.
+### TYPE B — Complex camera (5–10s, 1 action, camera in its own block)
+Multiple angles or transitions within the same movement.
 
 ```yaml
 prompt: |
-  [Estilo global].
+  [Global style].
 
-  camera: [bloco detalhado com transições e movimentos].
+  camera: [detailed block with transitions and movements].
 
-  (0-Xs) [ação + sujeito + detalhe]
-  (Xs-Ys) [câmera + ação + detalhe]
+  (0-Xs) [action + subject + detail]
+  (Xs-Ys) [camera + action + detail]
 
-  [Ambiente].
+  [Environment].
 
-  [Constraints positivos].
+  [Positive constraints].
 ```
 
-### TIPO C — Épico multi-beat (10–15s, timestamps obrigatórios)
-Transformações visuais, VFX ou múltiplas ações encadeadas.
+### TYPE C — Epic multi-beat (10–15s, timestamps mandatory)
+Visual transformations, VFX, or multiple chained actions.
 
 ```yaml
 prompt: |
-  [Style: estilo global]. [Duration: Xs]. [Scene: ambiente base].
+  [Style: global style]. [Duration: Xs]. [Scene: base environment].
 
-  [00:00-00:Xs] Shot 1: [câmera] + [sujeito] + [ação] + [efeito/detalhe].
-  [00:Xs-00:Ys] Shot 2: [câmera] + [ação] + [detalhe VFX].
-  [00:Ys-00:Zs] Shot Final: [câmera] + [ação clímax] + [resolução visual].
+  [00:00-00:Xs] Shot 1: [camera] + [subject] + [action] + [effect/detail].
+  [00:Xs-00:Ys] Shot 2: [camera] + [action] + [VFX detail].
+  [00:Ys-00:Zs] Shot Final: [camera] + [climax action] + [visual resolution].
 
-  [Constraints positivos].
+  [Positive constraints].
 ```
 
 ---
 
-## Formato de saída — YAML completo
+## Output format — full YAML
 
 ```yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🎬 CLIP [N] — [NOME DA CENA]
-# Tipo: A / B / C
+# 🎬 CLIP [N] — [SCENE NAME]
+# Type: A / B / C
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 prompt: |
-  [Declaração de estilo global].
+  [Global style statement].
 
-  camera: [bloco de câmera se complexa].
+  camera: [camera block if complex].
 
-  [Sujeito com características fixas] [ação com intensidade explícita] [detalhe físico].
+  [Subject with fixed traits] [action with explicit intensity] [physical detail].
 
-  (0-Xs) [beat 1 se multi-beat]
-  (Xs-Ys) [beat 2 se multi-beat]
+  (0-Xs) [beat 1 if multi-beat]
+  (Xs-Ys) [beat 2 if multi-beat]
 
-  [Ambiente: localização, luz, materiais, atmosfera].
+  [Environment: location, light, materials, atmosphere].
 
-  [Constraints positivos].
+  [Positive constraints].
 
 audio:
   music: none
-  sfx: "[efeito 1], [efeito 2]"
-  sound: "[ambiente sonoro específico]"
+  sfx: "[effect 1], [effect 2]"
+  sound: "[specific ambient sound]"
 
 params:
   mode: T2V | I2V | R2V
@@ -209,37 +209,37 @@ params:
   resolution: 1080p
   char_count: "[X / 4000]"
 
-references:  # apenas para R2V
-  - "@Image1: [descrição do papel desta referência]"
-  - "@Image2: [descrição do papel desta referência]"
+references:  # R2V only
+  - "@Image1: [role of this reference]"
+  - "@Image2: [role of this reference]"
 
 fallback:
-  - "[Ajuste específico se o resultado for fraco — 1]"
-  - "[Ajuste específico se o resultado for fraco — 2]"
+  - "[Specific tweak if the result is weak — 1]"
+  - "[Specific tweak if the result is weak — 2]"
 ```
 
 ---
 
-## Regras críticas
+## Critical rules
 
-1. **NUNCA use constraints negativos** — Seedance ignora. Descreva o que QUER.
-2. **Palavras mais importantes primeiro** — o modelo é mais sensível ao início.
-3. **Específico > vago** — `dolly-in slow from waist to extreme close-up` > `camera gets closer`
-4. **Sem contradições** — não peça `static` e `camera movement` no mesmo clip.
-5. **I2V: nunca contradizer a imagem** — se a imagem mostra homem, não escreva "a woman dancing"
-6. **Inglês no body** — sempre. O Seedance processa melhor em inglês.
-7. **`music: none` é obrigatório** — sempre declare no bloco `audio`.
-8. **Máximo 4.000 caracteres** por prompt (campo `char_count` para controle).
+1. **NEVER use negative constraints** — Seedance ignores them. Describe what you WANT.
+2. **Most important words first** — the model is most sensitive to the opening.
+3. **Specific beats vague** — `dolly-in slow from waist to extreme close-up` beats `camera gets closer`
+4. **No contradictions** — don't ask for `static` and `camera movement` in the same clip.
+5. **I2V: never contradict the image** — if the image shows a man, don't write "a woman dancing"
+6. **English in the body** — always. Seedance processes English best.
+7. **`music: none` is mandatory** — always declare it in the `audio` block.
+8. **Max 4,000 characters** per prompt (`char_count` field to track it).
 
 ---
 
-## Exemplos de alta performance (YAML)
+## High-performance examples (YAML)
 
-### Ação épica multi-shot (Tipo C)
+### Epic multi-shot action (Type C)
 
 ```yaml
 # 🎬 CLIP 01 — WATER VS THUNDER
-# Tipo: C
+# Type: C
 
 prompt: |
   Live-Action Anime Adaptation, Hollywood quality, dark samurai aesthetic, 4K, extreme fast cuts, explosive particle effects. Duration 15 seconds. Scene: misty forest under moonlight, muddy ground, falling leaves.
@@ -266,11 +266,11 @@ params:
   char_count: "~1100 / 4000"
 ```
 
-### R2V com referência de imagem (Tipo B)
+### R2V with image reference (Type B)
 
 ```yaml
-# 🎬 CLIP 01 — REVEAL DO VEÍCULO
-# Tipo: B
+# 🎬 CLIP 01 — VEHICLE REVEAL
+# Type: B
 
 prompt: |
   Cinematic luxury automotive reveal, ultra-realistic, 8K photorealistic, prestige car commercial aesthetic.
@@ -300,11 +300,11 @@ references:
   - "@Image1: full vehicle — strict 3D blueprint reference for shape, color, proportions"
 ```
 
-### Drama emocional — close de rosto (Tipo A)
+### Emotional drama — face close-up (Type A)
 
 ```yaml
-# 🎬 CLIP 01 — RECONHECIMENTO
-# Tipo: A
+# 🎬 CLIP 01 — RECOGNITION
+# Type: A
 
 prompt: |
   Ultra-realistic emotional drama, shallow depth of field, warm film grain, 8K cinematic quality.
@@ -331,23 +331,23 @@ params:
   char_count: "~620 / 4000"
 
 fallback:
-  - "Se o rosto distorcer: adicionar 'razor-sharp facial geometry, no morphing' ao bloco de constraints"
-  - "Se a câmera não mover: confirmar Fixed Camera = OFF na plataforma"
+  - "If the face distorts: add 'razor-sharp facial geometry, no morphing' to the constraints block"
+  - "If the camera doesn't move: confirm Fixed Camera = OFF on the platform"
 ```
 
 ---
 
-## Checklist antes de entregar
+## Checklist before delivering
 
-- [ ] Clip Map entregue e aprovado antes dos prompts
-- [ ] Duração calibrada pelo tipo de cena
-- [ ] Declaração de estilo global na primeira linha
-- [ ] Câmera em bloco separado quando complexa (leu CAMERA_LANGUAGE.md?)
-- [ ] Ação com grau e intensidade explícitos (leu ACTION_LANGUAGE.md?)
-- [ ] Ambiente descrito depois da ação
-- [ ] Zero constraints negativos
-- [ ] `audio.music: none` presente em todo clip (leu AUDIO_PATTERNS.md?)
-- [ ] SFX específicos declarados (não genéricos)
-- [ ] Referências `@Image1`... declaradas se R2V
-- [ ] Output em YAML válido
-- [ ] Dentro de 4.000 caracteres
+- [ ] Clip Map delivered and approved before the prompts
+- [ ] Duration calibrated to the scene type
+- [ ] Global style statement on the first line
+- [ ] Camera in its own block when complex (read CAMERA_LANGUAGE.md?)
+- [ ] Action with explicit degree and intensity (read ACTION_LANGUAGE.md?)
+- [ ] Environment described after the action
+- [ ] Zero negative constraints
+- [ ] `audio.music: none` present in every clip (read AUDIO_PATTERNS.md?)
+- [ ] Specific SFX declared (not generic)
+- [ ] `@Image1`... references declared if R2V
+- [ ] Output in valid YAML
+- [ ] Within 4,000 characters

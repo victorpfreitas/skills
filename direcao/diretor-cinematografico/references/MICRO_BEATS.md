@@ -1,169 +1,169 @@
-# Micro-Beats — Catálogo de Performance de Ator
+# Micro-Beats — Actor Performance Catalog
 
-**Nunca deixe uma emoção genérica num prompt.** Toda direção emocional deve se decompor em movimentos musculares específicos, respiração, olhos e pele. Esta é a maior diferença entre um prompt Seedance que produz "vídeo de AI" e um que produz performance de verdade.
-
----
-
-## 1. A regra base
-
-Quando o usuário (ou o roteiro) escreve "o personagem fica [emoção genérica]" — pare. Decomponha. Se não conseguir decompor com confiança, ofereça variantes ao usuário.
-
-Exemplo para "surpreso":
-
-> *Qual tipo de surpresa?*
-> *(a) Surpresa leve positiva — sobrancelhas levemente levantadas, lábios entreabridos, pupilas dilatam por 0.3s, inspiração suave pelo nariz. Sem movimentos extras.*
-> *(b) Surpresa-choque — inspiração brusca pela boca, olhos arregalados, corpo congela no lugar, mão sobe involuntariamente ao peito.*
-> *(c) Surpresa-descrença — piscar lento, cabeça inclina levemente, lábios se fecham, só uma sobrancelha sobe.*
-> *(d) Surpresa-alegria — olhos acendem (catchlight), sorriso constrói gradualmente, ombros relaxam.*
-> *Qual serve?*
-
-Mesma abordagem para "tenso", "triste", "bravo", "apavorado", "pensativo", "apaixonado" — todo adjetivo genérico tem 3–5 realizações físicas distintas.
+**Never leave a generic emotion in a prompt.** Every emotional direction must be broken down into specific muscle movements, breathing, eyes, and skin. This is the biggest difference between a Seedance prompt that produces "AI video" and one that produces a real performance.
 
 ---
 
-## 2. Catálogo por emoção
+## 1. The base rule
 
-### Raiva / determinação / fúria
+When the user (or the screenplay) writes "the character becomes [generic emotion]" — stop. Break it down. If you can't break it down with confidence, offer variants to the user.
 
-```
-- Músculo masseter (mandíbula) visivelmente pulsando através da pele
-- Veia carótida no pescoço visível
-- Veias temporais afloram
-- Narinas expandem nas palavras com ênfase
-- Pupilas contraem (focus tightening)
-- Canto externo dos olhos se fecha (intensidade genuína, não squinting barato)
-- No pico não pisca
-- Micro-suor nas têmporas / nariz
-```
+Example for "surprised":
 
-### Ansiedade / nervosismo
+> *What kind of surprise?*
+> *(a) Mild positive surprise — eyebrows slightly raised, lips part, pupils dilate for 0.3s, soft inhale through the nose. No extra movements.*
+> *(b) Shock-surprise — sharp inhale through the mouth, eyes wide, body freezes in place, hand rises involuntarily to the chest.*
+> *(c) Disbelief-surprise — slow blink, head tilts slightly, lips close, only one eyebrow rises.*
+> *(d) Joy-surprise — eyes light up (catchlight), smile builds gradually, shoulders relax.*
+> *Which one fits?*
 
-```
-- Um gole visível na garganta (visible swallow)
-- Uma inspiração curta e rasa antes da fala (quick nasal inhale)
-- Língua umedece o lábio inferior seco
-- Lábio inferior levemente recolhido
-- Capilares das bochechas ficam vermelhos
-- Pupilas dilatam nas palavras-chave
-- ⚠️ Sem choro, a não ser que o roteiro especifique
-```
+Use the same approach for "tense," "sad," "angry," "terrified," "pensive," "in love" — every generic adjective has 3–5 distinct physical realizations.
 
-### Tristeza / vulnerabilidade (sem lágrimas)
+---
+
+## 2. Catalog by emotion
+
+### Anger / determination / fury
 
 ```
-- Canto externo dos olhos cai
-- Olhos úmidos com catchlight — mas ⚠️ sem escorrer, sem piscar lágrimas
-- Centro das sobrancelhas franzido (corrugator muscle)
-- Lábios com leve tremor
-- Cabeça levemente baixa
+- Masseter muscle (jaw) visibly pulsing through the skin
+- Carotid vein visible in the neck
+- Temporal veins surface
+- Nostrils flare on emphasized words
+- Pupils contract (focus tightening)
+- Outer corner of the eyes narrows (genuine intensity, not cheap squinting)
+- No blinking at the peak
+- Micro-sweat at the temples / nose
 ```
 
-### Controle / calma / superioridade
+### Anxiety / nervousness
 
 ```
-- Respiração lenta e uniforme (contrasta com oponente tenso)
-- Dedos / braços relaxados
-- Piscar lento e uniforme (slow blink)
-- Queixo levemente erguido (chin lift)
-- Sorriso Duchenne — rugas finas no canto externo dos olhos. ⚠️ Constrói gradualmente, não começa já completo
+- One visible swallow in the throat
+- One short, shallow inhale before speaking (quick nasal inhale)
+- Tongue wets the dry lower lip
+- Lower lip slightly retracted
+- Cheek capillaries flush red
+- Pupils dilate on key words
+- ⚠️ No crying unless the script specifies it
 ```
 
-### Peso / esgotamento
+### Sadness / vulnerability (without tears)
 
 ```
-- Ombros baixos e pesados (heavy shoulders)
-- Cabeça levemente caída
-- Respiração profunda e lenta
-- Voz mais grave e abafada que o normal
-- Cabeça inclina levemente ao responder (5–15°)
+- Outer corner of the eyes drops
+- Eyes moist with catchlight — but ⚠️ no streaming, no crying blink
+- Center of the eyebrows furrowed (corrugator muscle)
+- Slight lip tremor
+- Head slightly lowered
 ```
 
-### Choque / freeze
+### Control / calm / superiority
 
 ```
-- No início do plano — corpo congela por 0.3–0.5 seg, sem nenhum movimento
-- Pupilas dilatam no instante do congelamento
-- Lábios se entreabrem levemente mas sem som
-- Uma inspiração nasal brusca e atrasada após o freeze
-- Olhos travados na fonte do choque — sem piscar, sem desviar o olhar
+- Slow, even breathing (contrasts with a tense opponent)
+- Relaxed fingers / arms
+- Slow, even blink (slow blink)
+- Chin slightly raised (chin lift)
+- Duchenne smile — fine wrinkles at the outer corner of the eyes. ⚠️ Builds gradually, never starts fully formed
 ```
 
-### Emoção suprimida (a mais difícil — resistência física)
+### Weight / exhaustion
 
 ```
-- Ele está tentando segurar — cada músculo da face lutando contra a emoção que sobe
-- Músculo zigomático se contrai lentamente
-- Um gole tardio e forçado na garganta
-- Olhos gradualmente úmidos, lacrimais acumulam fazendo os olhos brilhar — mas lágrima não cai
-- Uma inspiração lenta, funda, controlada — tórax visivelmente se expande
-- Mandíbula treme uma vez — imediatamente recolhida
+- Low, heavy shoulders (heavy shoulders)
+- Head slightly drooping
+- Deep, slow breathing
+- Voice lower and more muffled than usual
+- Head tilts slightly when answering (5–15°)
 ```
 
-### Variantes de surpresa
+### Shock / freeze
 
-**Leve positiva:**
 ```
-- Sobrancelhas levemente erguidas
-- Lábios entreabridos
-- Pupilas dilatam por ~0.3 seg
-- Uma inspiração suave pelo nariz
-- Sem movimentos extras
-```
-
-**Choque:**
-```
-- Inspiração brusca pela boca (sharp mouth inhale)
-- Olhos arregalados, pupilas dilatadas
-- Corpo congela no lugar
-- Uma mão sobe involuntariamente ao peito
-- Lábios entreabridos sem som
+- At the start of the shot — body freezes for 0.3–0.5 sec, no movement at all
+- Pupils dilate at the moment of freezing
+- Lips part slightly but without sound
+- One delayed, sharp nasal inhale after the freeze
+- Eyes locked on the source of the shock — no blinking, no looking away
 ```
 
-**Descrença:**
+### Suppressed emotion (the hardest — physical resistance)
+
 ```
-- Um piscar lento
-- Cabeça inclina levemente
-- Lábios fechados e tensos
-- Só uma sobrancelha sobe
-- Olhar travado na fonte
+- They're trying to hold it back — every facial muscle fighting the rising emotion
+- Zygomatic muscle contracts slowly
+- A late, forced swallow in the throat
+- Eyes gradually moisten, tear ducts build up making the eyes shine — but no tear falls
+- One slow, deep, controlled inhale — chest visibly expands
+- Jaw trembles once — immediately restrained
 ```
 
-**Surpresa + alegria:**
+### Surprise variants
+
+**Mild positive:**
 ```
-- Olhos acendem (catchlight se intensifica)
-- Sorriso constrói gradualmente — ⚠️ não começa já completo
-- Ombros relaxam e caem
-- Uma expiração leve
+- Eyebrows slightly raised
+- Lips part
+- Pupils dilate for ~0.3 sec
+- One soft inhale through the nose
+- No extra movements
+```
+
+**Shock:**
+```
+- Sharp inhale through the mouth (sharp mouth inhale)
+- Eyes wide, pupils dilated
+- Body freezes in place
+- One hand rises involuntarily to the chest
+- Lips part without sound
+```
+
+**Disbelief:**
+```
+- One slow blink
+- Head tilts slightly
+- Lips closed and tense
+- Only one eyebrow rises
+- Gaze locked on the source
+```
+
+**Surprise + joy:**
+```
+- Eyes light up (catchlight intensifies)
+- Smile builds gradually — ⚠️ never starts fully formed
+- Shoulders relax and drop
+- One light exhale
 ```
 
 ---
 
-## 3. Arco emocional dentro de um único plano
+## 3. Emotional arc within a single shot
 
-Quando a emoção muda dentro de um take contínuo, escreva como sequência numerada de beats com indicadores musculares/respiração/olhos por beat:
+When the emotion changes within a continuous take, write it as a numbered sequence of beats with muscle/breathing/eye indicators per beat:
 
 ```
-① Início — [emoção A] — [indicadores musculares específicos]
-② Transição — [gatilho do evento] — [quais músculos relaxam / tensionam]
-③ Próxima fase — [emoção B] — [novos indicadores]
+① Start — [emotion A] — [specific muscle indicators]
+② Transition — [triggering event] — [which muscles relax / tense]
+③ Next phase — [emotion B] — [new indicators]
 ④ ...
-⑦ Final — [emoção final] — [indicadores finais]
+⑦ End — [final emotion] — [final indicators]
 ```
 
-Declare também o que **deve permanecer visível no rosto** ao longo do arco (sobrancelhas, mandíbula, respiração, olhos).
+Also state what **should stay visible on the face** throughout the arc (eyebrows, jaw, breathing, eyes).
 
-Amarre cada beat numerado à fase correspondente da câmera (ver CAMERA_EMOTION.md §2).
+Tie each numbered beat to the corresponding camera phase (see CAMERA_EMOTION.md §2).
 
 ---
 
-## 4. Diálogo e timing
+## 4. Dialogue and timing
 
-Cada linha falada recebe:
-- **Pre-line beat** (o que acontece antes da primeira palavra): gole, inspiração, passar a língua no lábio, mudança de postura
-- **Durante a fala**: quais palavras são enfatizadas via narinas, entonação, pupilas
-- **Post-line beat**: ~0.5 seg de respiração retida antes do próximo movimento, depois liberação
+Each spoken line gets:
+- **Pre-line beat** (what happens before the first word): swallow, inhale, tongue over the lip, posture shift
+- **During the line**: which words get emphasized via nostrils, intonation, pupils
+- **Post-line beat**: ~0.5 sec of held breath before the next movement, then release
 
-Exemplo:
+Example:
 ```
 Pre-line: one quick nasal inhale, visible throat swallow.
 Line: "Don't ask me again." — emphasis on "again", nostrils flare on that word.
@@ -172,32 +172,32 @@ Post-line: hold gaze on other character for 0.5 sec — then slowly look away.
 
 ---
 
-## 5. Personagens desfocados em bokeh
+## 5. Characters out of focus in bokeh
 
-Se o personagem focal está em foco e outros estão desfocados — **eles não estão estáticos**. Especifique:
-- Para onde estão apontando a cabeça e o olhar
-- Micro-movimentos de ombros e cabeça
-- Reação nos momentos-chave (mesmo em bokeh)
-- Offset de timing claro (ex: "Personagem A vira a cabeça primeiro; 0.4 seg depois, B; mais 0.4 seg, C")
+If the focal character is in focus and others are defocused — **they are not static**. Specify:
+- Where their head and gaze are pointing
+- Micro-movements of shoulders and head
+- Reaction at key moments (even while in bokeh)
+- Clear timing offset (e.g. "Character A turns their head first; 0.4 sec later, B; 0.4 sec after that, C")
 
-Três personagens nunca sincronizam perfeitamente — sempre escalonar por 0.3–0.5 seg.
-
----
-
-## 6. Proibido em performance
-
-- ❌ "Fica parado falando" — sempre há micro-movimentos
-- ❌ Caretas exageradas / over-mugging
-- ❌ "Olha pro teto" para pensar — nomear uma direção de olhar específica
-- ❌ Lágrimas por padrão — só se o roteiro especifica
-- ❌ Sincronização perfeita entre múltiplos personagens — sempre escalonar
-- ❌ "Parece tenso" / "parece feliz" — sempre decompor em músculos, respiração, olhos
+Three characters never sync perfectly — always stagger by 0.3–0.5 sec.
 
 ---
 
-## 7. O teste anti-AI
+## 6. Forbidden in performance direction
 
-Antes de entregar qualquer prompt, leia a seção de performance e pergunte:
-> *Isso poderia vir de um template de prompt de AI? Ou parece anotações de um diretor que assistiu o ator ensaiar?*
+- ❌ "Just stands there talking" — there are always micro-movements
+- ❌ Exaggerated grimaces / over-mugging
+- ❌ "Looks at the ceiling" to think — name a specific gaze direction
+- ❌ Tears by default — only if the script specifies them
+- ❌ Perfect sync between multiple characters — always stagger
+- ❌ "Looks tense" / "looks happy" — always break it down into muscles, breathing, eyes
 
-Se parecer template, reescreva. Os micro-beats devem parecer de uma performance específica, não de um checklist.
+---
+
+## 7. The anti-AI test
+
+Before delivering any prompt, read the performance section and ask:
+> *Could this have come from an AI prompt template? Or does it read like the notes of a director who watched the actor rehearse?*
+
+If it reads like a template, rewrite it. The micro-beats should feel like a specific performance, not a checklist.

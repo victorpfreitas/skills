@@ -1,34 +1,34 @@
-# Por que as escolhas visuais funcionam
+# Why the visual choices work
 
-As tabelas do `SKILL.md` (enquadramento, câmera, movimento, lente, luz) dizem qual efeito cada escolha produz. Este arquivo explica a lógica por trás, pra quando a cena pedir algo que não está em nenhuma tabela e for preciso derivar a escolha certa em vez de procurar um exemplo pronto.
+The tables in `SKILL.md` (framing, camera, movement, lens, light) tell you what effect each choice produces. This file explains the logic behind them, for when a scene calls for something that isn't in any of the tables and you need to derive the right choice instead of hunting for a ready-made example.
 
-## 1. Ângulo de câmera imita hierarquia física real
+## 1. Camera angle mimics real physical hierarchy
 
-Olhar de baixo pra cima é a experiência de quem está em posição inferior vendo alguém em posição de poder, algo aprendido desde a infância. É por isso que low angle comunica poder sem precisar de nenhum outro elemento na cena: o espectador reconhece a hierarquia pela posição da câmera, não pelo conteúdo do quadro.
+Looking up at someone is the experience of being in a lower position looking at someone in a position of power — something learned since childhood. That's why a low angle communicates power without needing any other element in the scene: the viewer recognizes the hierarchy from the camera's position, not from the content of the frame.
 
-## 2. Espaço negativo e enquadramento imitam a experiência subjetiva da emoção
+## 2. Negative space and framing mimic the subjective experience of emotion
 
-Isolamento sente-se como espaço vazio ao redor, ansiedade sente-se como falta de espaço. Por isso espaço negativo comunica solidão e enquadramento apertado comunica tensão: a composição reproduz fisicamente a sensação que a emoção já provoca no corpo.
+Isolation feels like empty space around you; anxiety feels like a lack of space. That's why negative space communicates loneliness and tight framing communicates tension: the composition physically reproduces the sensation the emotion already causes in the body.
 
-## 3. Profundidade de campo rasa imita a atenção humana sob emoção intensa
+## 3. Shallow depth of field mimics human attention under intense emotion
 
-Em pânico ou êxtase, a atenção filtra o entorno e foca só no estímulo central. Uma lente com bokeh forte (85mm+) faz o mesmo com o quadro: isola o sujeito do fundo. É por isso que close-ups emocionais pedem lente longa e rasa, não só "chegar perto" da cena.
+In panic or ecstasy, attention filters out the surroundings and locks onto the central stimulus alone. A lens with heavy bokeh (85mm+) does the same thing to the frame: it isolates the subject from the background. That's why emotional close-ups call for a long, shallow lens, not just "getting close" to the scene.
 
-## 4. Movimento de câmera imita o corpo do observador
+## 4. Camera movement mimics the observer's body
 
-Handheld comunica que existe alguém ali, fisicamente, correndo o mesmo risco da cena. Dolly suave comunica um observador onisciente e calmo. Orbit comunica exame e contemplação de algo (ou alguém) que merece ser visto de todos os ângulos. A pergunta pra escolher o movimento certo não é "qual fica bonito", é "quem está segurando essa câmera e por quê".
+Handheld communicates that someone is there, physically, taking the same risk as the scene. A smooth dolly communicates a calm, omniscient observer. An orbit communicates examination and contemplation of something (or someone) that deserves to be seen from every angle. The question for choosing the right movement isn't "what looks nice" — it's "who is holding this camera, and why."
 
-## 5. Luz direcional imita a física real da cena
+## 5. Directional light mimics the real physics of the scene
 
-Luz motivada (vem de uma fonte visível ou implícita na cena) é aceita pelo espectador sem que ele perceba "efeito de iluminação". Luz não motivada é lida como estilização. É por isso que "practical lights only" comunica realismo cru: o espectador não consegue apontar de onde vem a luz artificialmente, então aceita a cena como real.
+Motivated light (coming from a visible or implied source in the scene) is accepted by the viewer without them noticing a "lighting effect." Unmotivated light reads as stylization. That's why "practical lights only" communicates raw realism: the viewer can't point to where the light is artificially coming from, so they accept the scene as real.
 
-## 6. Simetria comunica controle porque quebra a assimetria natural do mundo
+## 6. Symmetry communicates control because it breaks the world's natural asymmetry
 
-O olho espera leve assimetria, é como o mundo real é. Simetria perfeita é lida como "alguém está controlando isso" mesmo antes de qualquer outra informação da cena. É por isso que Kubrick e Wes Anderson usam simetria pra comunicar obsessão, artificialidade ou controle institucional, não beleza neutra.
+The eye expects slight asymmetry — that's how the real world looks. Perfect symmetry reads as "someone is controlling this" even before any other information from the scene comes in. That's why Kubrick and Wes Anderson use symmetry to communicate obsession, artificiality, or institutional control, not neutral beauty.
 
-## Quando o resultado gerado não bate com a decupagem
+## When the generated result doesn't match the shot breakdown
 
-Se o vídeo gerado (Seedance, Veo, Nano Banana etc.) não reproduziu a intenção da decupagem, o problema normalmente não está na leitura da cena, está na tradução decupagem → prompt. Antes de refazer a decupagem do zero:
+If the generated video (Seedance, Veo, Nano Banana, etc.) didn't reproduce the intent of the shot breakdown, the problem usually isn't in how the scene was read — it's in the breakdown → prompt translation. Before redoing the breakdown from scratch:
 
-1. Confira se o handoff seguiu a Seção 7 do `SKILL.md` à risca (emoção em micro-beats, não adjetivo; movimento em vocabulário Seedance, nunca `zoom`; constraints sempre positivos).
-2. Consulte `references/TROUBLESHOOTING.md` e `references/RETAKE_PROTOCOL.md` do `seedance-prompter`, é lá que mora o diagnóstico de por que a geração saiu errada, não aqui.
+1. Check whether the handoff followed Section 7 of `SKILL.md` to the letter (emotion as micro-beats, not adjectives; movement in Seedance vocabulary, never `zoom`; constraints always positive).
+2. Consult the `references/TROUBLESHOOTING.md` and `references/RETAKE_PROTOCOL.md` files of the `seedance-prompter` skill — that's where the diagnosis for why the generation came out wrong lives, not here.

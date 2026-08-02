@@ -1,41 +1,41 @@
-# Protocolo de retake — Seedance 2.5
+# Retake Protocol — Seedance 2.5
 
-O `TROUBLESHOOTING.md` diz o que corrigir quando algo sai errado. Este arquivo é sobre como decidir a próxima tentativa quando o resultado não é perfeito nem lixo — o caso mais comum em produção real.
-
----
-
-## 1. Vereditos de triagem
-
-A cada take, escolha um:
-
-- **Manter.** O objetivo principal da cena/estágio foi atingido, nada fatal sobrando.
-- **Corrigir na pós.** O problema é de cor, texto, som ou corte — resolve fora do modelo.
-- **Editar sem regenerar.** Use o workflow de **Video Editing** (`VIDEO_EDITING.md`) em vez de regerar do zero — o 2.5 foi desenhado exatamente pra esse caso: composição boa, só um elemento (objeto, fundo, áudio) precisa mudar.
-- **Estender em vez de regenerar tudo.** Se só o final (ou início) da cena está errado e o resto está bom, use **Video Extension** (`VIDEO_EXTENSION_AND_TRANSITIONS.md`) a partir do último frame bom, em vez de descartar o take inteiro.
-- **Re-roll.** Mesmo prompt, seed nova. Use quando o problema parece variância de amostragem, não erro estrutural do prompt.
-- **Reescrever.** A mesma falha se repete em takes diferentes. O problema é no prompt, não na sorte da geração. Volte ao `MODEL_MECHANICS.md` e ao `TROUBLESHOOTING.md` pra diagnosticar antes de tentar de novo.
-
-**Diferença em relação ao 2.0:** no 2.0 não havia como editar ou estender um take já gerado — a única saída era re-roll ou reescrever do zero. No 2.5, antes de descartar um take imperfeito, pergunte-se se **Video Editing** ou **Video Extension** resolvem o problema pontual sem perder o que já ficou bom.
+`TROUBLESHOOTING.md` says what to fix when something goes wrong. This file is about how to decide the next attempt when the result is neither perfect nor garbage — the most common case in real production.
 
 ---
 
-## 2. Regra de uma variável por retake
+## 1. Triage verdicts
 
-Mude uma coisa por vez: uma cláusula do prompt, OU a seed, OU o workflow (T2V/R2V/Editing/Extension), OU uma referência. Nunca várias ao mesmo tempo. Mudar tudo junto tira a possibilidade de saber o que resolveu (ou piorou) o resultado.
+For each take, choose one:
+
+- **Keep.** The scene/stage's main goal was achieved, nothing fatal left over.
+- **Fix in post.** The problem is color, text, sound, or cut — resolve it outside the model.
+- **Edit without regenerating.** Use the **Video Editing** workflow (`VIDEO_EDITING.md`) instead of regenerating from scratch — 2.5 was designed exactly for this case: good composition, only one element (object, background, audio) needs to change.
+- **Extend instead of regenerating everything.** If only the end (or start) of the scene is wrong and the rest is good, use **Video Extension** (`VIDEO_EXTENSION_AND_TRANSITIONS.md`) starting from the last good frame, instead of discarding the whole take.
+- **Re-roll.** Same prompt, new seed. Use when the problem looks like sampling variance, not a structural prompt error.
+- **Rewrite.** The same failure repeats across different takes. The problem is in the prompt, not in generation luck. Go back to `MODEL_MECHANICS.md` and `TROUBLESHOOTING.md` to diagnose before trying again.
+
+**Difference relative to 2.0:** in 2.0 there was no way to edit or extend an already-generated take — the only options were re-roll or rewriting from scratch. In 2.5, before discarding an imperfect take, ask yourself whether **Video Editing** or **Video Extension** solves the specific problem without losing what already worked.
 
 ---
 
-## 3. Orçamento de tentativas
+## 2. One-variable-per-retake rule
 
-Defina quantas tentativas fazem sentido antes de começar (referência: 3–5 takes por clip/estágio; sobe pra 6–10 tentativas se estiver operando acima das faixas recomendadas de referência — ver `PARAMETERS_AND_LIMITS.md` §1). Se passar da metade do orçamento sem progresso na mesma falha, pare de repetir a mesma estratégia. Troque de abordagem: outro workflow, quebrar a cena em estágios menores, ou reescrever o prompt do zero em vez do quinto re-roll.
-
-Duas falhas iguais em takes seguidos já é sinal pra reescrever, não pra tentar um terceiro re-roll.
+Change one thing at a time: one prompt clause, OR the seed, OR the workflow (T2V/R2V/Editing/Extension), OR one reference. Never several at once. Changing everything together removes any way of knowing what fixed (or worsened) the result.
 
 ---
 
-## 4. Retake em vídeo longo/multi-estágio
+## 3. Attempt budget
 
-Quando um vídeo de 30–180s falha num estágio específico:
-- Não reescreva o vídeo inteiro. Isole qual estágio quebrou e ajuste só o `Primary event`/`End state` daquele estágio.
-- Se o problema é drift de identidade entre estágios, confirme primeiro que o bloco `[Maintain Consistency]` está presente e específico o suficiente — esse costuma ser o ponto de falha antes de ser variância de amostragem.
-- Considere gerar o estágio problemático como um clip separado (T2V/R2V) e depois usar **Video Extension** pra conectar, em vez de regenerar os 180s inteiros.
+Decide how many attempts make sense before starting (reference: 3–5 takes per clip/stage; rises to 6–10 attempts if operating above the recommended reference ranges — see `PARAMETERS_AND_LIMITS.md` §1). If you pass the halfway point of the budget without progress on the same failure, stop repeating the same strategy. Switch approach: a different workflow, break the scene into smaller stages, or rewrite the prompt from scratch instead of a fifth re-roll.
+
+Two identical failures in consecutive takes is already a signal to rewrite, not to try a third re-roll.
+
+---
+
+## 4. Retakes in long/multi-stage video
+
+When a 30–180s video fails at a specific stage:
+- Don't rewrite the whole video. Isolate which stage broke and adjust only that stage's `Primary event`/`End state`.
+- If the problem is identity drift between stages, first confirm that the `[Maintain Consistency]` block is present and specific enough — this is usually the point of failure before it's sampling variance.
+- Consider generating the problematic stage as a separate clip (T2V/R2V) and then using **Video Extension** to connect it, instead of regenerating the full 180s.

@@ -1,39 +1,39 @@
 # Troubleshooting: Seedance 2.0
 
-Problemas recorrentes de produção real e a correção direta pra cada um. Consulte quando o resultado sair fraco antes de reescrever o prompt do zero.
+Recurring real-production problems and the direct fix for each. Check this before rewriting the prompt from scratch when a result comes out weak.
 
-## Rosto distorcendo ou deformando
+## Face distorting or deforming
 
-- Adicione `razor-sharp facial geometry, no morphing` no bloco de constraints.
-- Se o clip tem microexpressão (rosto muda de expressão), reduza a duração pra 4-5s. Rosto deforma mais em clipes longos com muita mudança de expressão.
+- Add `razor-sharp facial geometry, no morphing` to the constraints block.
+- If the clip has a microexpression (face changing expression), reduce the duration to 4-5s. Faces deform more in longer clips with heavy expression change.
 
-## Câmera não se move mesmo pedindo movimento
+## Camera not moving even though movement was requested
 
-- Confirme `fixed_camera: false` em `params`.
-- Coloque o movimento de câmera logo no início do bloco `camera:`, não no meio da descrição da ação.
+- Confirm `fixed_camera: false` in `params`.
+- Put the camera movement right at the start of the `camera:` block, not in the middle of the action description.
 
-## Drift de identidade entre clipes de uma sequência
+## Identity drift between clips in a sequence
 
-- Sintoma: personagem muda sutilmente de rosto, roupa ou proporção entre um clip e o próximo da mesma cena.
-- Ancore a descrição do clip seguinte no estado real do clip anterior aprovado (ver "Continuidade entre clipes" no `SKILL.md`), não na intenção original.
-- Em R2V, repita a mesma tag de referência (`@Image1`) em todos os clipes que precisam manter a mesma identidade.
+- Symptom: the character subtly changes face, clothing, or proportions from one clip to the next in the same scene.
+- Anchor the next clip's description in the actual state of the previous approved clip (see "Continuity between clips" in `SKILL.md`), not the original intent.
+- In R2V, repeat the same reference tag (`@Image1`) in every clip that needs to keep the same identity.
 
-## Física ou proporção quebrando em cenas de ação/VFX
+## Physics or proportions breaking in action/VFX scenes
 
-- Adicione `anatomically accurate proportions throughout` no final do prompt.
-- Quebre a ação em timestamps (Tipo B ou C) em vez de descrever tudo num bloco só. O modelo perde consistência física em clipes longos sem timestamps explícitos.
+- Add `anatomically accurate proportions throughout` at the end of the prompt.
+- Break the action into timestamps (Type B or C) instead of describing everything in one block. The model loses physical consistency in long clips without explicit timestamps.
 
-## I2V contradizendo a imagem de referência
+## I2V contradicting the reference image
 
-- Releia a imagem antes de escrever: gênero, roupa, cenário e objeto precisam bater com o que já está na imagem.
-- Nunca descreva algo que a imagem já contradiz (ex.: imagem mostra homem, prompt descreve mulher).
+- Re-read the image before writing: gender, clothing, setting, and object need to match what's already in the image.
+- Never describe something the image already contradicts (e.g., image shows a man, prompt describes a woman).
 
-## Prompt ignorado ou parcialmente atendido
+## Prompt ignored or partially followed
 
-- Confirme que não há constraints negativos (`sem`, `no`, `not`). Seedance ignora negação, descreva o que quer no positivo.
-- Confirme que as palavras mais importantes estão no início do prompt, não enterradas no meio de uma frase longa.
+- Confirm there are no negative constraints (`no`, `not`, `without`). Seedance ignores negation — describe what you want in the positive.
+- Confirm the most important words are at the start of the prompt, not buried in the middle of a long sentence.
 
-## Áudio genérico ou ausente
+## Generic or missing audio
 
-- SFX genéricos (`ambient sound`) tendem a sair fracos. Troque por SFX específicos do que está na cena (`water roar`, `metallic ring`, `ground explosion`).
-- Confirme que `audio.music: none` está declarado. Sem isso, o modelo às vezes injeta trilha não pedida.
+- Generic SFX (`ambient sound`) tend to come out weak. Replace with SFX specific to what's in the scene (`water roar`, `metallic ring`, `ground explosion`).
+- Confirm `audio.music: none` is declared. Without it, the model sometimes injects an unrequested score.

@@ -1,27 +1,27 @@
-# Video Extension e Seamless Transitions — Seedance 2.5
+# Video Extension and Seamless Transitions — Seedance 2.5
 
-**Leia este arquivo para estender um vídeo além do início/fim, ou para criar uma transição contínua entre dois vídeos distintos.** Nenhum dos dois existe no Seedance 2.0.
-
----
-
-## PARTE 1 — Video Extension
-
-Extensão cria conteúdo além da fronteira de um vídeo fonte. O aspect ratio é sempre herdado automaticamente do vídeo fonte (não configurável); a duração da extensão é configurável (ver `PARAMETERS_AND_LIMITS.md` §4).
-
-**Regra central:** alinhe o frame de fronteira ANTES de descrever o conteúdo novo.
-- Extensão **forward** (depois do vídeo original) — o primeiro frame da extensão continua o último frame do vídeo fonte.
-- Extensão **backward** (antes do vídeo original) — o último frame da extensão conecta com o primeiro frame do vídeo fonte.
-
-Além do frame de fronteira, verifique se personagens, props, fundo e eventos do segmento estendido estão corretos.
-
-### Limites (via interface Dreamina)
-- Só vídeos originais com menos de 30s são elegíveis pra extensão.
-- Cada operação de extensão suporta 4–30s adicionais.
-- Extensão é **aninhável** ("nesting-style"): pode estender o resultado já estendido de novo, desde que o total ainda esteja dentro de 30s antes de cada nova operação. No limite: um vídeo original de 30s + extensão de 30s = até 60s num único fluxo.
+**Read this file to extend a video beyond its start/end, or to create a seamless transition between two distinct videos.** Neither exists in Seedance 2.0.
 
 ---
 
-### 1. Extensão Forward — template básico
+## PART 1 — Video Extension
+
+Extension creates content beyond the boundary of a source video. Aspect ratio is always automatically inherited from the source video (not configurable); extension duration is configurable (see `PARAMETERS_AND_LIMITS.md` §4).
+
+**Core rule:** align the boundary frame BEFORE describing the new content.
+- **Forward** extension (after the original video) — the extension's first frame continues from the source video's last frame.
+- **Backward** extension (before the original video) — the extension's last frame connects to the source video's first frame.
+
+Beyond the boundary frame, verify that the extended segment's characters, props, background, and events are correct.
+
+### Limits (via Dreamina interface)
+- Only source videos under 30s are eligible for extension.
+- Each extension operation supports 4–30s of additional content.
+- Extension is **nestable** ("nesting-style"): you can extend an already-extended result again, as long as the total is still within 30s before each new operation. At the limit: a 30s original video + 30s extension = up to 60s in a single flow.
+
+---
+
+### 1. Forward Extension — basic template
 
 ```
 @Video 1 is the source video to extend forward.
@@ -33,7 +33,7 @@ Throughout the extension, maintain continuity in <character identity and clothin
 Keep each subject as the same continuous instance throughout: do not duplicate or split it, and keep the person's appearance or the object's number of parts stable.
 ```
 
-### Exemplo
+### Example
 ```
 @Video 1 is the source video to extend forward.
 Extend @Video 1 forward. The first frame of the extended segment directly continues from the last frame of @Video 1. Maintain the same locked-off medium shot, the orange paper airplane's position and orientation, the classroom-window background, the afternoon lighting, and its movement toward the right side of the frame.
@@ -41,8 +41,8 @@ Extend @Video 1 forward. The first frame of the extended segment directly contin
 Then, the orange paper airplane continues gliding toward the right and exits the frame while the white curtain beside the window sways slightly. Keep the camera and classroom background in the state established by the source video's last frame.
 ```
 
-### Com referências adicionais
-Defina o papel de cada material extra primeiro, e deixe claro que o vídeo fonte controla a fronteira da extensão — novas referências podem suplementar personagens/props/áudio, mas não podem sobrepor o controle do último frame sobre a imagem de abertura da extensão.
+### With additional references
+Define each extra material's role first, and make clear that the source video controls the extension's boundary — new references can supplement characters/props/audio, but cannot override the last frame's control over the extension's opening image.
 ```
 @Image 1 defines <Character A>'s facial features.
 @Image 2 defines <Character A>'s clothing.
@@ -54,9 +54,9 @@ Then, <Character A uses the key prop to complete a new action or event>.
 
 ---
 
-### 2. Extensão Backward — template básico
+### 2. Backward Extension — basic template
 
-Primeiro descreva o que acontece **antes** do vídeo fonte começar, depois defina o primeiro frame do vídeo fonte como o end state explícito do segmento estendido. Escrever só "conecte com o vídeo fonte" pode introduzir personagens/efeitos tarde demais ou fazer a imagem mudar de novo depois de alcançar o estado alvo.
+First describe what happens **before** the source video starts, then define the source video's first frame as the extended segment's explicit end state. Writing only "connect with the source video" can introduce characters/effects too late or make the image change again after reaching the target state.
 
 ```
 @Video 1 is the source video to extend backward.
@@ -68,7 +68,7 @@ Throughout the extension, maintain continuity in <character identity and clothin
 Keep each subject as the same continuous instance throughout: do not duplicate or split it, and keep the person's appearance or the object's number of parts stable.
 ```
 
-### Exemplo
+### Example
 ```
 @Video 1 is the source video to extend backward.
 Extend @Video 1 backward. Before the source video begins, show an empty establishing shot of the same glass greenhouse. Morning mist drifts slowly near the floor, the overhead shade rises gradually, and no people are present yet.
@@ -76,27 +76,27 @@ Extend @Video 1 backward. Before the source video begins, show an empty establis
 The last frame of the extended segment naturally connects to the first frame of @Video 1. Match the greenhouse's central aisle, planting tables on both sides, glass frame, soft morning light, and locked-off wide composition. At the end, the shade is fully raised, the aisle is empty, and the leaves still sway slightly.
 ```
 
-### Com referências adicionais
-Declare cada material e diga explicitamente quais materiais devem aparecer **só depois** que o vídeo fonte começa — reduz o risco de personagens/props/efeitos posteriores entrarem cedo demais no segmento anterior.
+### With additional references
+Declare each material and explicitly state which materials should appear **only after** the source video begins — this reduces the risk of later characters/props/effects entering too early in the preceding segment.
 ```
 @Image 4 defines the gray workwear of two <Exhibition Assistants>.
 [...]
 <Materials that should appear only after the source video begins> must not appear early in the backward extension.
 ```
 
-Boundary frames se conectam naturalmente no nível visual — isso não significa pixel-idêntico. Revise os dois lados da fronteira e o segmento estendido completo.
+Boundary frames connect naturally at the visual level — this doesn't mean pixel-identical. Review both sides of the boundary and the full extended segment.
 
 ---
 
-## PARTE 2 — Seamless Video Transitions (entre DOIS vídeos)
+## PART 2 — Seamless Video Transitions (between TWO videos)
 
-Diferente de extensão (que trabalha em UM vídeo), transição sem costura gera conteúdo de ponte contínuo **entre dois vídeos distintos** já existentes.
+Unlike extension (which works on ONE video), seamless transition generates continuous bridging content **between two distinct, already-existing videos**.
 
 ```
 Before Video → After Video → Trigger Action → Camera Movement → Visual Transformation → Arrival State → Audio
 ```
 
-### Template básico
+### Basic template
 ```
 @Video 1 is the before-transition clip. Use its <ending subject, action, composition, camera direction, and audio>.
 @Video 2 is the after-transition clip. Use its <opening subject, composition, camera direction, and audio>.
@@ -109,7 +109,7 @@ The transition ends naturally at @Video 2's opening composition, preserving cont
 Audio transitions smoothly from <before audio> to <after audio>.
 ```
 
-### Exemplo
+### Example
 ```
 @Video 1 is the before-transition clip. Use its rainy night street, red umbrella, slow push-in, and rain sound.
 @Video 2 is the after-transition clip. Use its circular gallery skylight, upward camera movement, and quiet interior reverberation.
@@ -120,43 +120,43 @@ The transition ends naturally at @Video 2's upward-looking opening composition, 
 The rain gradually fades into footsteps reverberating inside the gallery.
 ```
 
-### Métodos de transição e o que especificar
+### Transition methods and what to specify
 
-| Método | O que especificar |
+| Method | What to specify |
 |---|---|
-| Dive / movimento reverso | Direção da câmera, mudança de velocidade, quando a próxima cena começa |
-| Rotação de personagem | Pose, direção de rotação, como roupa/fundo mudam continuamente |
-| Oclusão de primeiro plano | Quando o objeto de primeiro plano preenche o frame e a composição que segue |
-| Morph de objeto | Formas correspondentes, materiais, e o processo de transformação |
-| Push/pull ou mudança de foco | Movimento de câmera, alvo de foco, relação espacial contínua |
+| Dive / reverse motion | Camera direction, speed change, when the next scene begins |
+| Character rotation | Pose, rotation direction, how clothing/background change continuously |
+| Foreground occlusion | When the foreground object fills the frame and the composition that follows |
+| Object morph | Corresponding shapes, materials, and the transformation process |
+| Push/pull or focus shift | Camera movement, focus target, continuous spatial relationship |
 
-**Meta da transição sem costura é continuidade visual e sonora** — o prompt pode pedir para preservar o conteúdo primário dos dois vídeos fonte, mas a ponte gerada não é um corte pixel-idêntico.
+**The goal of a seamless transition is visual and sound continuity** — the prompt can ask to preserve the primary content of the two source videos, but the generated bridge is not a pixel-identical cut.
 
 ---
 
-## PARTE 3 — Tipos de corte/transição dentro de um clip (referência de biblioteca)
+## PART 3 — Cut/transition types within a clip (library reference)
 
-Use essa tabela tanto para cortes dentro de um mesmo prompt (`CAMERA_AND_CINEMATOGRAPHY.md` §5) quanto para guiar o "trigger action" de uma seamless transition entre dois vídeos.
+Use this table both for cuts within a single prompt (`CAMERA_AND_CINEMATOGRAPHY.md` §5) and to guide the "trigger action" of a seamless transition between two videos.
 
-| Tipo | O que é | Quando usar |
+| Type | What it is | When to use |
 |---|---|---|
-| **Natural shot switching** | Como um corte seco, mas exige "sensação de respiração" e duração coordenada — não é hard cut abrupto | Maioria das narrativas convencionais |
-| **Fade in/fade out** | Imagem escurece/clareia totalmente entre planos | Início/fim de vídeo, passagem de tempo |
-| **Stacking (dissolve)** | Uma imagem vai ficando transparente enquanto a outra surge, sobrepondo por 1–2s | Memória, sonho, passagem lenta de tempo, transição lírica |
-| **White flash / black flash** | Tela pisca branco/preto e corta pra próxima cena | Impacto visual, sincronizado com batida/som, alta energia |
-| **Erase** | Imagem B "empurra"/apaga a imagem A a partir de uma direção, como porta deslizante | Estilo retrô, mudança óbvia de local |
-| **Mask transition** | Câmera avança e é bloqueada por um objeto (parede, costas, pilar), tela fica preta, próxima cena revelada ao puxar da escuridão | Salto espacial/dimensional |
-| **Similar object transition** | Último frame de um plano é extremamente similar em forma/contorno/cor ao primeiro frame do próximo | Montagem — ex.: lua cheia vira espuma de café circular |
+| **Natural shot switching** | Like a hard cut, but requires a "sense of breathing" and coordinated duration — not an abrupt hard cut | Most conventional narratives |
+| **Fade in/fade out** | Image darkens/lightens fully between shots | Video start/end, passage of time |
+| **Stacking (dissolve)** | One image gradually becomes transparent as the other emerges, overlapping for 1–2s | Memory, dream, slow passage of time, lyrical transition |
+| **White flash / black flash** | Screen flashes white/black and cuts to the next scene | Visual impact, synced with a beat/sound, high energy |
+| **Erase** | Image B "pushes"/wipes away image A from one direction, like a sliding door | Retro style, obvious location change |
+| **Mask transition** | Camera advances and is blocked by an object (wall, back, pillar), screen goes black, next scene is revealed pulling out of the darkness | Spatial/dimensional jump |
+| **Similar object transition** | The last frame of one shot is extremely similar in shape/outline/color to the first frame of the next | Montage — e.g. full moon becomes circular coffee foam |
 
-Cada tipo tem a mesma fórmula: `[Transition Type Guide] + [Basic constraint requirement] + [Cutting/transition logic requirement]` — declare o tipo, a coordenação de respiração/duração, e o resultado de composição esperado.
+Each type follows the same formula: `[Transition Type Guide] + [Basic constraint requirement] + [Cutting/transition logic requirement]` — declare the type, the breathing/duration coordination, and the expected compositional result.
 
 ---
 
 ## Checklist
 
-- [ ] Extension: frame de fronteira alinhado ANTES de descrever conteúdo novo
-- [ ] Extension: aspect ratio não configurado manualmente (herdado do vídeo fonte)
-- [ ] Extension backward: materiais que só devem aparecer após o vídeo fonte estão marcados como tal
-- [ ] Transition: os dois vídeos (`@Video 1`/`@Video 2`) têm papel de "before"/"after" declarado
-- [ ] Transition: ação de gatilho, movimento de câmera e estado de chegada estão todos descritos
-- [ ] Não prometi resultado pixel-idêntico — apenas continuidade visual/sonora
+- [ ] Extension: boundary frame aligned BEFORE describing new content
+- [ ] Extension: aspect ratio not manually configured (inherited from the source video)
+- [ ] Backward extension: materials that should only appear after the source video are marked as such
+- [ ] Transition: both videos (`@Video 1`/`@Video 2`) have a declared "before"/"after" role
+- [ ] Transition: trigger action, camera movement, and arrival state are all described
+- [ ] Didn't promise a pixel-identical result — only visual/sound continuity

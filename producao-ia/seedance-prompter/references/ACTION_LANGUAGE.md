@@ -1,116 +1,116 @@
-# Action Language — Intensidade e Precisão
+# Action Language — Intensity and Precision
 
-**Leia este arquivo quando precisar descrever ações de personagens, expressões e movimento físico.**
+**Read this file when you need to describe character actions, expressions, and physical movement.**
 
-O Seedance **não infere grau**. A diferença entre "corre" e `launches forward at maximum velocity, legs alternating furiously` é a diferença entre um vídeo vago e um vídeo cinematográfico.
-
----
-
-## Princípio central
-
-**Especificidade física > abstração emocional**
-
-O Seedance processa instrução muscular, não sentimento. "Triste" não gera nada útil. "Jaw tightens, lower lip barely suppressed, eyes fill without blinking" gera microexpressão de cinema.
+Seedance **does not infer degree**. The difference between "runs" and `launches forward at maximum velocity, legs alternating furiously` is the difference between a vague video and a cinematic one.
 
 ---
 
-## 1. Ações de movimento — de vago para preciso
+## Core principle
 
-| Vago | Preciso |
+**Physical specificity beats emotional abstraction**
+
+Seedance processes muscular instruction, not sentiment. "Sad" generates nothing useful. "Jaw tightens, lower lip barely suppressed, eyes fill without blinking" generates a cinematic microexpression.
+
+---
+
+## 1. Movement actions — from vague to precise
+
+| Vague | Precise |
 |---|---|
-| `corre` | `launches forward at maximum velocity, legs alternating furiously, arms driving hard` |
-| `anda` | `moves at deliberate measured pace, each step landing with controlled weight` |
-| `para` | `halts abruptly — body absorbs the stop, forward momentum redistributed through bent knees` |
-| `cai` | `collapses forward in slow motion, arms failing to react in time, knees buckling first` |
-| `levanta` | `rises from ground using both hands first, then straightens torso slowly against weight` |
-| `vira` | `pivots 180 degrees on left heel, coat trailing half a beat behind the turn` |
-| `pula` | `explodes upward from flat feet — maximum vertical extension — hang at apex for 0.3s` |
-| `arrasta` | `drags left foot slightly behind right with each step, weight heavy, reluctant motion` |
+| `runs` | `launches forward at maximum velocity, legs alternating furiously, arms driving hard` |
+| `walks` | `moves at deliberate measured pace, each step landing with controlled weight` |
+| `stops` | `halts abruptly — body absorbs the stop, forward momentum redistributed through bent knees` |
+| `falls` | `collapses forward in slow motion, arms failing to react in time, knees buckling first` |
+| `gets up` | `rises from ground using both hands first, then straightens torso slowly against weight` |
+| `turns` | `pivots 180 degrees on left heel, coat trailing half a beat behind the turn` |
+| `jumps` | `explodes upward from flat feet — maximum vertical extension — hang at apex for 0.3s` |
+| `drags feet` | `drags left foot slightly behind right with each step, weight heavy, reluctant motion` |
 
 ---
 
-## 2. Ações de câmera de mão / gestos
+## 2. Hand actions / gestures
 
-| Ação | Descrição precisa |
+| Action | Precise description |
 |---|---|
-| `apanha algo` | `reaches forward 40 degrees, fingers extending fully before contact, grip deliberate` |
-| `empurra` | `drives palm forward into surface with full body weight behind the movement` |
-| `abre porta` | `grips handle, pulls toward body — door opens to 90 degrees, body follows through the frame` |
-| `olha para cima` | `tilts head back 25 degrees, gaze rising from horizon to ceiling plane` |
-| `olha para baixo` | `drops chin toward chest, eyes tracking downward without moving the torso` |
-| `gesticula` | `right hand cuts horizontal arc at chest level, palm facing down, controlled emphasis` |
+| `picks something up` | `reaches forward 40 degrees, fingers extending fully before contact, grip deliberate` |
+| `pushes` | `drives palm forward into surface with full body weight behind the movement` |
+| `opens a door` | `grips handle, pulls toward body — door opens to 90 degrees, body follows through the frame` |
+| `looks up` | `tilts head back 25 degrees, gaze rising from horizon to ceiling plane` |
+| `looks down` | `drops chin toward chest, eyes tracking downward without moving the torso` |
+| `gestures` | `right hand cuts horizontal arc at chest level, palm facing down, controlled emphasis` |
 
 ---
 
-## 3. Microexpressões faciais — catálogo
+## 3. Facial microexpressions — catalog
 
-Sempre escreva em inglês no prompt. Sempre especifique músculo/região.
+Always write these in English in the prompt. Always specify the muscle/region.
 
-### Tensão / raiva controlada
+### Tension / controlled anger
 ```
 jaw tightens visibly, teeth nearly clenched, nostrils flare on exhale, eyes narrow 10 degrees
 ```
 
-### Reconhecimento / realization
+### Recognition / realization
 ```
 eyes widen 15%, pupils dilate slightly, brows lift asymmetrically — left higher than right
 ```
 
-### Tristeza suprimida
+### Suppressed sadness
 ```
 lower lip barely suppressed, chin muscle tightens, eyes fill without blinking, gaze drops slightly
 ```
 
-### Choque / freeze
+### Shock / freeze
 ```
 face goes completely still — all micro-movement ceases — 0.5 second total freeze before any reaction begins
 ```
 
-### Alívio / release
+### Relief / release
 ```
 shoulders drop 3cm, jaw unclenches, exhale visible through slightly parted lips, eyes soften
 ```
 
-### Desconfiança / suspeita
+### Distrust / suspicion
 ```
 head tilts 5 degrees right, one eyebrow lowers while the other stays level, lips press together
 ```
 
-### Determinação
+### Determination
 ```
 chin drops 5 degrees, eyes fix on target without blinking, jaw set, exhale through nose only
 ```
 
-### Prazer / satisfação
+### Pleasure / satisfaction
 ```
 lips curve at corners — asymmetric smile, left side 2cm higher — eyes crinkle at outer edges
 ```
 
-### Medo (dissimulado)
+### Concealed fear
 ```
 rapid swallow, throat moves visibly, eyes hold steady but blink rate increases to every 1.5 seconds
 ```
 
-### Emoção contida
+### Contained emotion
 ```
 face maintains composure — but breath comes slightly faster, chest rises more than usual, hands still
 ```
 
 ---
 
-## 4. Linguagem de performance
+## 4. Performance language
 
-Para cenas de ator (não ação), use blocos de **beats numerados**:
+For actor scenes (not action), use **numbered beat** blocks:
 
 ```
-① [beat 1 — estado inicial]
-② [beat 2 — primeiro estímulo / reação]
-③ [beat 3 — processamento interno]
-④ [beat 4 — decisão / ponto de virada]
-⑤ [beat 5 — resolução / novo estado]
+① [beat 1 — initial state]
+② [beat 2 — first stimulus / reaction]
+③ [beat 3 — internal processing]
+④ [beat 4 — decision / turning point]
+⑤ [beat 5 — resolution / new state]
 ```
 
-Exemplo real:
+Real example:
 ```
 ① Roko holds the photograph with both hands, still, studying it without expression.
 ② His right thumb moves slowly across the faces in the photo — barely perceptible.
@@ -121,47 +121,47 @@ Exemplo real:
 
 ---
 
-## 5. Qualificadores de velocidade e intensidade
+## 5. Speed and intensity qualifiers
 
 ```
-at maximum velocity          → velocidade máxima
-at deliberate pace           → lento mas intencional
-barely perceptible           → movimento mínimo, quase invisível
-imperceptible drift          → drift de câmera/personagem quase zero
-furiously                    → máxima energia muscular
-controlled                   → força + precisão, sem desperdício
-explosive                    → energia instantânea do zero
+at maximum velocity          → top speed
+at deliberate pace           → slow but intentional
+barely perceptible           → minimal, near-invisible motion
+imperceptible drift          → camera/character drift near zero
+furiously                    → maximum muscular energy
+controlled                   → force + precision, no wasted motion
+explosive                    → instant energy from zero
 ```
 
 ---
 
-## 6. Descrição de personagem — como fixar identidade
+## 6. Character description — how to lock identity
 
-O Seedance perde consistência de personagem sem âncoras físicas explícitas. Sempre declare em cada clip que usa o personagem:
+Seedance loses character consistency without explicit physical anchors. Always state, in every clip that uses the character:
 
 ```
-[personagem]: [nome/função], [características físicas fixas — cabelo, roupa, traços marcantes], [postura/energia]
+[character]: [name/role], [fixed physical traits — hair, clothing, distinctive features], [posture/energy]
 ```
 
-Exemplos:
+Examples:
 ```
 A young man in a grey wool coat — short dark hair, slight stubble, narrow jaw.
 A woman in red qipao — dark hair pinned up, gold earrings, composed posture.
 A samurai in green-and-black checkered haori — young, mid-length tied hair, katana at left hip.
 ```
 
-**Regra para I2V:** nunca contradiga o personagem da imagem. Se a imagem mostra homem, o prompt é homem.
+**Rule for I2V:** never contradict the character in the image. If the image shows a man, the prompt is a man.
 
 ---
 
-## 7. Constraints positivos — como declarar sem negação
+## 7. Positive constraints — how to state without negation
 
-| Problema | Constraint positivo |
+| Problem | Positive constraint |
 |---|---|
-| Rosto deformando | `anatomically accurate facial proportions throughout` |
-| Roupa mudando | `maintain exact wardrobe consistency across all frames` |
-| Foco perdendo | `razor-sharp subject focus, crisp facial detail throughout` |
-| Texto aparecendo | `clean frame, no overlays, no watermarks, no subtitles` |
-| Personagem drift | `maintain consistent facial features and identity throughout` |
-| Distorção de lente | `no barrel distortion, no fisheye, straight lines throughout` |
-| Mãos deformando | `anatomically correct hand geometry, natural finger positioning` |
+| Face deforming | `anatomically accurate facial proportions throughout` |
+| Clothing changing | `maintain exact wardrobe consistency across all frames` |
+| Focus drifting | `razor-sharp subject focus, crisp facial detail throughout` |
+| Text appearing | `clean frame, no overlays, no watermarks, no subtitles` |
+| Character drift | `maintain consistent facial features and identity throughout` |
+| Lens distortion | `no barrel distortion, no fisheye, straight lines throughout` |
+| Hands deforming | `anatomically correct hand geometry, natural finger positioning` |

@@ -1,9 +1,9 @@
-# Roteiro
+# Screenwriting
 
-Skills de escrita: roteiro, escaleta e cena, construídos em conjunto com quem está pedindo em vez de entregues prontos de uma vez.
+Writing skills: script, outline, and scene, built together with whoever is asking rather than delivered pre-finished all at once.
 
-Ponto de partida de qualquer projeto: o que sai daqui alimenta direção e produção IA.
+Starting point for any project: what comes out of here feeds direction and AI production.
 
-| Skill | O que faz |
+| Skill | What it does |
 | --- | --- |
-| [`roteirista-interativo`](./roteirista-interativo) | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
+| [`roteirista-interativo`](./roteirista-interativo) | A screenwriter that builds a script, outline, or scene together with you, block by block, asking before writing each part. |

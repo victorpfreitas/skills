@@ -1,27 +1,27 @@
-# Por que as regras funcionam
+# Why the rules work
 
-As "Regras críticas" do `SKILL.md` dizem o quê fazer. Este arquivo explica o porquê, pra quando o caso não estiver coberto pelos exemplos e for preciso derivar a solução em vez de copiar um padrão pronto.
+The "Critical rules" in `SKILL.md` say what to do. This file explains why, for when a case isn't covered by the examples and the solution needs to be derived instead of copied from a ready-made pattern.
 
-## 1. Atenção é um recurso finito
+## 1. Attention is a finite resource
 
-Cada palavra do prompt compete por uma quantidade limitada de influência sobre o resultado. As primeiras palavras dominam; o que vem depois pesa cada vez menos. É por isso que a regra de ouro do `SKILL.md` (palavras no início pesam mais) existe: não é estilo, é como o modelo aloca atenção.
+Every word in the prompt competes for a limited amount of influence over the result. The first words dominate; what comes after carries progressively less weight. That's why the golden rule in `SKILL.md` (words at the start carry more weight) exists: it's not a style choice, it's how the model allocates attention.
 
-## 2. Negação ativa em vez de excluir
+## 2. Active negation instead of exclusion
 
-Dizer "sem sangue" ainda evoca o conceito de sangue no modelo. Negação é gramática fraca em volta de uma ativação forte. Por isso a regra de nunca usar constraints negativos: descreva o que quer que apareça, não o que não quer. A exceção é o campo `fallback`/constraint declarado fora do corpo do prompt, que o Seedance trata como parâmetro, não como texto descritivo.
+Saying "no blood" still evokes the concept of blood in the model. Negation is weak grammar wrapped around a strong activation. That's why the rule against negative constraints exists: describe what you want to appear, not what you don't want. The exception is the `fallback`/constraint field declared outside the prompt body, which Seedance treats as a parameter, not as descriptive text.
 
-## 3. Erros de identidade se acumulam entre frames
+## 3. Identity errors compound across frames
 
-Cada frame gerado a partir do anterior herda e amplifica pequenos erros do frame de origem. Um clip longo sem timestamps deixa esse erro compor sem controle. É por isso que clipes curtos e precisos vencem um clip longo só: menos frames de recomposição, menos chance de drift.
+Each frame generated from the previous one inherits and amplifies small errors from the source frame. A long clip without timestamps lets that error compound unchecked. That's why short, precise clips beat one long clip: fewer recomposition frames, less chance of drift.
 
-## 4. Referências pesam mais que texto
+## 4. References carry more weight than text
 
-Uma imagem ou vídeo de referência carrega mais informação por "token" do que uma frase descrevendo a mesma coisa. Reescrever em texto o que a referência já mostra cria uma instrução concorrente, não reforço. Descreva na referência só o que ela não consegue mostrar sozinha (o papel dela na cena, não a aparência que ela já define).
+An image or video reference carries more information per "token" than a sentence describing the same thing. Rewriting in text what the reference already shows creates a competing instruction, not reinforcement. In the reference description, describe only what it can't show on its own (its role in the scene, not the appearance it already defines).
 
-## 5. Detalhe de uma região escala com o espaço que ela ocupa no frame
+## 5. Detail in a region scales with the space it occupies in the frame
 
-Um rosto ocupando 10% do frame recebe proporcionalmente menos "orçamento" de detalhe do que um rosto em close-up. É por isso que microexpressão e reação de rosto pedem enquadramento mais fechado: não é só estética, é o único jeito de garantir fidelidade de detalhe.
+A face occupying 10% of the frame gets proportionally less "detail budget" than a face in close-up. That's why microexpression and facial reaction call for a tighter frame: it's not just aesthetics, it's the only way to guarantee detail fidelity.
 
-## 6. Áudio e vídeo são gerados juntos
+## 6. Audio and video are generated together
 
-O som não é adicionado depois da imagem, os dois nascem do mesmo processo. Nomear o som com precisão ancora o timing da cena tanto quanto a descrição visual. Diálogo exige enquadramento estável, porque o modelo resolve imagem e fonema ao mesmo tempo.
+Sound isn't added after the image — both are born from the same process. Naming the sound precisely anchors the scene's timing just as much as the visual description does. Dialogue requires a stable frame, because the model resolves image and phoneme at the same time.

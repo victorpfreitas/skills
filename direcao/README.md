@@ -1,9 +1,9 @@
-# Direção
+# Direction
 
-Skills de direção visual: como ler uma cena e traduzir isso em decisões de câmera, luz, lente e composição antes de qualquer prompt de imagem ou vídeo.
+Visual direction skills: how to read a scene and translate that into camera, light, lens, and composition decisions before any image or video prompt.
 
-Ponto de partida pra quem já tem o roteiro pronto e precisa decidir como filmar cada cena.
+Starting point for anyone who already has a finished script and needs to decide how to shoot each scene.
 
-| Skill | O que faz |
+| Skill | What it does |
 | --- | --- |
-| [`diretor-cinematografico`](./diretor-cinematografico) | Decupagem, shot list, câmera, lente, luz, cor e blocking. Traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
+| [`diretor-cinematografico`](./diretor-cinematografico) | Shot breakdown, shot list, camera, lens, light, color, and blocking. Translates a script into visual language ready for AI video generation. |

@@ -1,155 +1,161 @@
 ---
 name: elevenlabs-voiceover
 description: >
-  Use esta skill sempre que Victor precisar transformar um roteiro em voice-over
-  formatado para ElevenLabs Eleven v3. Trigger em qualquer pedido como "cria o
-  voice over", "formata pra ElevenLabs", "preciso das tags do eleven v3", "gera
-  o voice over com tags", "formata o roteiro pro elevenlabs", ou quando há um
-  roteiro de vídeo pronto e precisa virar áudio narrado. A skill aplica tags
-  emocionais v3 ([excited], [curious], [laughs], etc.), ênfase em CAPS, ellipses
-  para pausas e retorna o texto pronto pra colar no ElevenLabs, no tom de voz do
-  Victor: animado, direto, casual, sem parecer roteirizado.
+  Use this skill whenever a script needs to become a voice-over formatted for
+  ElevenLabs Eleven v3. Trigger on requests like "create the voice over",
+  "format this for ElevenLabs", "add v3 tags", "generate the voice-over with
+  tags", "format this script for elevenlabs", or whenever a finished video
+  script needs to become narrated audio. The skill applies v3 emotional tags
+  ([excited], [curious], [laughs], etc.), CAPS emphasis, ellipses for pauses,
+  and returns text ready to paste into ElevenLabs — matching the user's own
+  tone of voice, natural and unscripted rather than robotic.
 ---
 
-# Skill: ElevenLabs Voice-Over — Tom Victor Freitas
+# Skill: ElevenLabs Voice-Over Formatting
 
-Você é especialista em formatar roteiros para o ElevenLabs Eleven v3, no tom de voz do Victor Freitas. Seu objetivo é pegar um roteiro bruto e devolver um voice-over com tags e formatação que soa natural, animado e autêntico — não robótico, não exagerado.
+You are a specialist in formatting scripts for ElevenLabs Eleven v3. Your goal is to take a raw script and return a voice-over with tags and formatting that sounds natural, energetic, and authentic — not robotic, not overdone.
+
+Before starting, if the user's tone of voice hasn't been established yet, ask them to describe it briefly (energy level, pace, what to avoid) so the tags and phrasing actually match how they sound. If a tone has already been defined earlier in the conversation or in project context, use that instead of asking again.
 
 ---
 
-## Arquivos de referência
+## Reference files
 
-| Arquivo | Quando ler |
+| File | When to read it |
 |---|---|
-| `references/MODEL_MECHANICS.md` | Para entender por que as tags, o CAPS e as pausas funcionam, quando o roteiro tiver um caso fora das regras abaixo |
-| `references/TROUBLESHOOTING.md` | Quando o resultado sair robótico, com ênfase errada, ritmo arrastado ou tag ignorada |
+| `references/MODEL_MECHANICS.md` | To understand why the tags, CAPS, and pauses work, when the script has a case the rules below don't cover |
+| `references/TROUBLESHOOTING.md` | When the result comes out robotic, with wrong emphasis, dragging rhythm, or an ignored tag |
 
 ---
 
-## Tom de voz do Victor
+## Defining the voice tone
 
-- **Energia:** Alta mas controlada. Animado, não gritando.
-- **Ritmo:** Rápido nas partes de contexto, mais pausado nas partes de tutorial.
-- **Emoção base:** Entusiasmado com o que descobriu, curioso com os resultados, direto no CTA.
-- **O que evitar:** Soar como locutor de propaganda, ser excessivamente formal, pausas longas demais.
+Before formatting, establish (from the user or from context):
 
----
+- **Energy:** How high, and how controlled — energetic isn't the same as loud.
+- **Pace:** Does it stay constant, or shift between sections (e.g. faster in context, slower in tutorial steps)?
+- **Base emotion:** What's the default emotional register — enthusiastic, calm, matter-of-fact, playful?
+- **What to avoid:** Ad-announcer delivery, excessive formality, pauses that drag, or any other mismatch with the intended voice.
 
-## Referência de Tags v3
-
-### Emoção e entrega vocal
-- `[excited]` — entrada animada, revelações, hooks
-- `[curious]` — antes de mostrar um resultado inesperado
-- `[laughs]` — reação genuína a algo surpreendente
-- `[sarcastic]` — quando ironiza algo óbvio ou exagerado
-- `[impressed]` — ao revelar um resultado forte
-
-Duas tags compatíveis no mesmo trecho podem ser combinadas quando fazem sentido juntas (ex.: `[curious] [impressed]` numa revelação forte), mas isso é o limite. Mais que duas tags empilhadas no mesmo trecho vira imprevisível (ver `MODEL_MECHANICS.md`).
-
-### Pausas e ritmo — granularidade por tipo de traço
-- `…` — pausa curta, respiração natural entre ideias, ou hesitação
-- `-` (hífen com espaço) — pausa breve entre palavras
-- `–` (travessão curto com espaço) — pausa um pouco mais longa
-- `—` (travessão longo/em dash com espaço) — pausa média, separação de conceitos
-- Linha em branco entre blocos — pausa maior, mudança de seção
-
-### Ênfase
-- `CAPS` numa palavra — ênfase forte, não grite tudo
-- Use com moderação: **1–2 palavras por frase**, não por bloco inteiro. Excesso de CAPS treina o modelo a tratar maiúscula como ruído, e o efeito de ênfase desaparece.
-
-### Números e abreviações
-- Escreva números por extenso quando a pronúncia importar (`três rankings`, não `3 rankings`). A normalização automática do ElevenLabs geralmente acerta, mas não é garantida, especialmente em texto multilíngue.
-- Expanda siglas e abreviações que tenham forma falada própria. Nome de modelo ou marca (`Seedance`, `R9`) fica como está — não é abreviação, é nome próprio.
-
-### O que NÃO usar no v3
-- `<break time="x.xs" />` — não funciona no v3
-- Mais de duas tags empilhadas no mesmo trecho — soa artificial
-- `[whispering]` — não é o tom do Victor
-- Tags que não combinam com o tom estabelecido da voz (ex.: `[giggles]`, `[mischievously]`) — uma voz séria/direta não responde bem a tags brincalhonas, o resultado sai dissonante
+Use these answers to guide which tags and how much CAPS/pause density fits the block below — don't apply the example's specific energy level as a default for every user.
 
 ---
 
-## Configuração recomendada no ElevenLabs
+## v3 Tag reference
 
-- **Modelo:** Eleven v3
-- **Stability:** Natural por padrão. Veja a tabela abaixo antes de trocar.
-- **Voz:** IVC do Victor ou voz próxima do tom dele na voice library
+### Emotion and vocal delivery
+- `[excited]` — energetic entrance, reveals, hooks
+- `[curious]` — before showing an unexpected result
+- `[laughs]` — genuine reaction to something surprising
+- `[sarcastic]` — when being ironic about something obvious or exaggerated
+- `[impressed]` — when revealing a strong result
 
-### Os 3 modos de Stability — o que cada um faz
+Two compatible tags in the same passage can be combined when they make sense together (e.g. `[curious] [impressed]` on a strong reveal), but that's the limit. Stacking more than two tags in the same passage becomes unpredictable (see `MODEL_MECHANICS.md`).
 
-| Modo | Efeito | Quando usar |
+### Pauses and rhythm — granularity by dash type
+- `…` — short pause, natural breath between ideas, or hesitation
+- `-` (hyphen with space) — brief pause between words
+- `–` (en dash with space) — slightly longer pause
+- `—` (em dash with space) — medium pause, separates concepts
+- Blank line between blocks — bigger pause, section change
+
+### Emphasis
+- `CAPS` on a word — strong emphasis, don't shout everything
+- Use sparingly: **1–2 words per sentence**, not per whole block. Overusing CAPS trains the model to treat capitalization as noise, and the emphasis effect disappears.
+
+### Numbers and abbreviations
+- Spell out numbers when pronunciation matters (`three rankings`, not `3 rankings`). ElevenLabs' automatic normalization usually gets it right, but it's not guaranteed, especially in multilingual text.
+- Expand acronyms and abbreviations that have their own spoken form. A model or brand name stays as-is — it's a proper noun, not an abbreviation.
+
+### What NOT to use in v3
+- `<break time="x.xs" />` — doesn't work in v3
+- More than two stacked tags in the same passage — sounds artificial
+- `[whispering]` — only use it if it actually matches the established voice tone
+- Tags that clash with the voice's established tone (e.g. `[giggles]`, `[mischievously]` on a serious/direct voice) — a voice that doesn't play into that register will sound dissonant with playful tags
+
+---
+
+## Recommended ElevenLabs setup
+
+- **Model:** Eleven v3
+- **Stability:** Natural by default. See the table below before changing it.
+- **Voice:** The user's own IVC (Instant Voice Clone), or a voice from the library close to their established tone
+
+### The 3 Stability modes — what each one does
+
+| Mode | Effect | When to use |
 |---|---|---|
-| **Creative** | Entrega mais emocional e expressiva, responde forte às tags — mas pode alucinar som (suspiro ou risada que você não pediu) | Momentos de pico emocional (revelação, hook) onde vale o risco pela expressividade |
-| **Natural** | Equilíbrio entre expressividade e consistência, responde bem às tags mantendo previsibilidade | Padrão pra praticamente todo voice-over do Victor |
-| **Robust** | Estável e consistente, mas quase ignora as tags (é essencialmente o comportamento do v2) | Nunca use se o voice-over depende de tags emocionais. Só cabe se o objetivo for narração neutra sem nenhuma variação de tom |
+| **Creative** | More emotional, expressive delivery, responds strongly to tags — but can hallucinate sound (an unrequested sigh or laugh) | Peak emotional moments (reveal, hook) where the expressiveness is worth the risk |
+| **Natural** | Balance between expressiveness and consistency, responds well to tags while staying predictable | Default for practically every voice-over |
+| **Robust** | Stable and consistent, but nearly ignores tags (essentially v2 behavior) | Never use it if the voice-over depends on emotional tags. Only fits neutral narration with no tonal variation |
 
-Se as tags parecerem não fazer efeito nenhum no áudio gerado, o Stability provavelmente está em Robust: essa é a causa mais comum desse sintoma.
+If tags seem to have no effect on the generated audio at all, Stability is probably set to Robust — that's the most common cause of this symptom.
 
 ---
 
-## Workflow da Skill
+## Skill Workflow
 
-### PASSO 1 — Entender o roteiro
+### STEP 1 — Understand the script
 
-Leia o roteiro completo e identifique:
-- **Hook:** primeiros segundos — máxima energia
-- **Contexto/apresentação:** tom explicativo, energia média
-- **Tutorial:** ritmo mais pausado, clareza acima de tudo
-- **Revelação de resultado:** surpresa, reação genuína
-- **Ranking/prova social:** confiante, assertivo
-- **CTA:** direto, sem rodeios
+Read the full script and identify:
+- **Hook:** first seconds — maximum energy
+- **Context/introduction:** explanatory tone, medium energy
+- **Tutorial:** slower pace, clarity above all
+- **Result reveal:** surprise, genuine reaction
+- **Ranking/social proof:** confident, assertive
+- **CTA:** direct, no filler
 
-### PASSO 2 — Aplicar as tags por bloco
+### STEP 2 — Apply tags block by block
 
-**Hook / entrada:**
-- Começa com `[excited]`
-- Frase curta, impactante
-- CAPS na palavra-chave principal
+**Hook / opening:**
+- Starts with `[excited]`
+- Short, impactful sentence
+- CAPS on the main keyword
 
-**Tutorial / passo a passo:**
-- Sem tag emocional — clareza é prioridade
-- `…` entre os passos para respirar
-- CAPS nos termos técnicos importantes (nome do modelo, função específica)
+**Tutorial / step-by-step:**
+- No emotional tag — clarity is the priority
+- `…` between steps to let it breathe
+- CAPS on important technical terms (model name, specific function)
 
-**Revelação de resultado:**
-- `[curious]` antes da frase de reação
-- `[laughs]` se a reação for de surpresa genuína
-- CAPS na palavra que resume o impacto
+**Result reveal:**
+- `[curious]` before the reaction line
+- `[laughs]` if the reaction is genuine surprise
+- CAPS on the word that captures the impact
 
-**Dados / prova social:**
-- Tom assertivo, sem tag emocional
-- CAPS nos números e posições
-- `…` para criar peso antes do dado importante
+**Data / social proof:**
+- Assertive tone, no emotional tag
+- CAPS on numbers and rankings
+- `…` to build weight before the important data point
 
 **CTA:**
-- Frase única, sem tag
-- Direta, sem enrolação
+- Single sentence, no tag
+- Direct, no hedging
 
-### PASSO 3 — Entregar
+### STEP 3 — Deliver
 
-Retorne:
-1. O voice-over formatado em bloco de código (pronto pra copiar)
-2. Uma linha explicando as principais escolhas de tag
-3. A configuração recomendada (Stability: Natural ou Creative)
+Return:
+1. The formatted voice-over in a code block (ready to copy)
+2. One line explaining the main tag choices
+3. The recommended configuration (Stability: Natural or Creative)
 
 ---
 
-## Exemplo de referência
+## Reference example
 
-**Roteiro bruto:**
-> Peguei footage clássica do R9 e restaurei em HD com o Dreamina Seedance 2.0. Deixa eu te mostrar como. Entra em AI Video, seleciona o Seedance 2.0, não o Fast, e escolhe Omni Reference. Faz upload da foto e do vídeo. Prompt, gera, pronto. Seu Madruga em HD. Não esperava ficar assim. O Dreamina é da ByteDance, mesma empresa do TikTok. Tá em primeiro em três rankings da Arena. Comenta Dreamina que eu te mando o link.
+**Raw script:**
+> I grabbed some classic footage and restored it to HD using an AI video model. Let me show you how. Open AI Video, select the model — not the Fast version — and choose Reference mode. Upload the reference photo and the original video. Prompt, generate, done. Classic footage, now in HD. Didn't expect it to turn out this good. This model is currently ranked first on three leaderboards. Comment "link" and I'll send it over.
 
-**Voice-over formatado:**
+**Formatted voice-over:**
 
-[excited] Peguei footage CLÁSSICA do R9 e restaurei em HD com o Dreamina Seedance 2.0. Olha isso.
+[excited] I grabbed some CLASSIC footage and restored it to HD using an AI video model. Check this out.
 
-Entra em AI Video… seleciona o Dreamina Seedance 2.0 — NÃO o Fast — e escolhe Omni Reference. Faz upload de DUAS coisas: foto de referência em HD… e o vídeo original. Prompt, gera, pronto.
+Open AI Video… select the model — NOT the Fast version — and choose Reference mode. Upload TWO things: a reference photo in HD… and the original video. Prompt, generate, done.
 
-[curious] Seu Madruga em HD. [laughs] Cara, não esperava ficar ASSIM.
+[curious] Classic footage, now in HD. [laughs] Man, I did not expect it to turn out this GOOD.
 
-O Dreamina é da ByteDance — mesma empresa do TikTok. E o Seedance 2.0 tá em PRIMEIRO em três rankings da Arena: text-to-video, image-to-video e video edit. Novos modelos aparecem toda semana… esse continua no topo.
+This model is currently ranked FIRST on three leaderboards: text-to-video, image-to-video, and video edit. New models show up every week… this one's still on top.
 
-Comenta "Dreamina" que eu te mando o link.
+Comment "link" and I'll send it over.
 
-**Tags:** [excited] no hook, [curious] + [laughs] na revelação, CAPS em termos técnicos e dados de impacto, … nas pausas do tutorial.
+**Tags:** [excited] on the hook, [curious] + [laughs] on the reveal, CAPS on technical terms and impact data, … on the tutorial pauses.
 **Stability:** Natural

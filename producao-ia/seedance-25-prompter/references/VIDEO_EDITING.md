@@ -1,18 +1,18 @@
-# Video Editing — Editar um Vídeo Já Existente
+# Video Editing — Editing an Already-Existing Video
 
-**Leia este arquivo quando o usuário já tem um vídeo gerado (ou real) e quer modificar algo nele, sem regerar do zero.** Isso não existe no Seedance 2.0.
-
----
-
-## 1. Regra central: defina o "sole editing master"
-
-Antes de qualquer coisa, defina o vídeo fonte como a **única autoridade de edição** — ele é quem controla personagens, cena, ações, composição, movimento de câmera, oclusões, áudio e ordem de eventos, exceto onde o prompt explicitamente pede mudança.
-
-O output preserva automaticamente aspect ratio e aproximadamente a duração do vídeo de entrada — **nenhum dos dois é configurável separadamente** nesse workflow (ver `PARAMETERS_AND_LIMITS.md` §4). O processamento de frame de entrada pode gerar diferença de até ~0.3s, geralmente por causa do tratamento de frames de transição — o conteúdo geral e a ordem dos eventos permanecem substancialmente inalterados.
+**Read this file when the user already has a generated (or real) video and wants to modify something in it, without regenerating from scratch.** This doesn't exist in Seedance 2.0.
 
 ---
 
-## 2. Padrão geral de edição
+## 1. Core rule: define the "sole editing master"
+
+Before anything else, define the source video as the **sole editing authority** — it controls characters, scene, actions, composition, camera movement, occlusions, audio, and event order, except where the prompt explicitly requests a change.
+
+The output automatically preserves the input video's aspect ratio and approximately its duration — **neither is configurable separately** in this workflow (see `PARAMETERS_AND_LIMITS.md` §4). Input frame processing can produce a difference of up to ~0.3s, usually due to how transition frames are handled — the overall content and event order remain substantially unchanged.
+
+---
+
+## 2. General editing pattern
 
 ```
 [Edit Goal]
@@ -31,7 +31,7 @@ Modify only <object, region, time range, or audio category>.
 Keep <visual content, motion, audio, and timing relationships that must not change> from @Video 1.
 ```
 
-### Exemplo (mudança de luz numa região/tempo específico)
+### Example (light change in a specific region/time)
 ```
 [Edit Goal]
 Edit @Video 1. Only from 4-7 seconds, change the cool blue light on the right wall to warm orange light.
@@ -48,7 +48,7 @@ Keep the character's identity, clothing, expression, position, motion, room stru
 
 ---
 
-## 3. Substituição de sujeito (subject replacement)
+## 3. Subject replacement
 
 ```
 [Edit Goal]
@@ -69,7 +69,7 @@ Modify only <specific object and area>. The entire video contains <number> targe
 Except for the object or area explicitly modified above, keep all other people, props, scene content, camera movements, cuts, and event order from @Video 1 unchanged.
 ```
 
-### Exemplo
+### Example
 ```
 [Edit Goal]
 Edit @Video 1. Replace only the yellow folding desk lamp with the white folding desk lamp in @Image 1.
@@ -89,7 +89,7 @@ The white folding desk lamp inherits every appearance, lamp-arm rotation, hand o
 
 ---
 
-## 4. Substituição de fundo (background replacement — inclui green screen)
+## 4. Background replacement (including green screen)
 
 ```
 [Edit Goal]
@@ -108,7 +108,7 @@ Modify only <background outside the subject's silhouette>. Do not modify <subjec
 Keep the character actions and occlusion relationships from @Video 1. Except for the object or area explicitly modified above, keep all other people, props, scene content, camera movements, cuts, and event order from @Video 1 unchanged.
 ```
 
-### Exemplo
+### Example
 ```
 @Video 1 is the sole editing master. It defines the people, actions, composition, camera treatment, and event order.
 @Image 1 provides only the spatial layout, depth of field, ambient color, and lighting direction of a daylit glass greenhouse. Do not use the people in the image.
@@ -116,13 +116,13 @@ Replace only the light gray background outside the person's silhouette in @Video
 Keep the person's identity, facial features, hairstyle, clothing, expression, position, size, and arm-raising motion from @Video 1.
 ```
 
-Essa mesma lógica cobre **edição de green screen** (capacidade nova do 2.5): o "background outside the subject's silhouette" é exatamente o que se troca por chroma key / composição em pós.
+This same logic covers **green-screen editing** (a new 2.5 capability): the "background outside the subject's silhouette" is exactly what gets swapped for chroma key / post-production compositing.
 
 ---
 
-## 5. Edição de áudio
+## 5. Audio editing
 
-Diálogo, idioma, timbre, música e SFX podem ser editados separadamente. Declare o falante/categoria de som, a mudança pretendida, e o que precisa permanecer inalterado.
+Dialogue, language, timbre, music, and SFX can be edited separately. Declare the speaker/sound category, the intended change, and what must remain unchanged.
 
 ```
 Edit @Video 1. Remove only the original background music. Keep the character dialogue, lip sync, ambience, and action sound effects; preserve the visuals, camera treatment, and editing rhythm from @Video 1.
@@ -130,26 +130,26 @@ Edit @Video 1. Remove only the original background music. Keep the character dia
 Edit @Video 1. Change <Presenter>'s spoken language to natural American English while preserving the dialogue content and speaking times. Keep all other character voices, background music, ambience, and visuals from @Video 1.
 ```
 
-Essa é a capacidade oficial de "separação/remoção de BGM": pedir remoção de música mantendo voz e demais elementos (legenda inclusa) do vídeo original.
+This is the official "BGM separation/removal" capability: requesting music removal while keeping voice and the rest of the original video's elements (subtitles included).
 
 ---
 
-## 6. Smart Edit / Edit with Marks (interface, não prompt puro)
+## 6. Smart Edit / Edit with Marks (interface, not pure prompting)
 
-No app Dreamina, há dois modos de entrada pra este mesmo tipo de edição:
+In the Dreamina app, there are two input modes for this same kind of editing:
 
-- **Smart Edit** — descreve a edição só em texto, sem marcação visual na tela.
-- **Edit with Marks / Video Editing (pós-geração)** — o usuário desenha marcação (caixa, seta, ponto) sobre o frame indicando a área, depois escreve o prompt de edição. Isso gera automaticamente um label de timestamp (`⏱️00:00 Video Frame Labeling`) que se soma à instrução de texto.
+- **Smart Edit** — describes the edit in text only, with no visual marking on screen.
+- **Edit with Marks / Video Editing (post-generation)** — the user draws a marking (box, arrow, point) over the frame indicating the area, then writes the edit prompt. This automatically generates a timestamp label (`⏱️00:00 Video Frame Labeling`) that's added to the text instruction.
 
-Ambos usam os mesmos princípios de prompt acima (sole editing master, edit scope, content to preserve) — a marcação visual só substitui a necessidade de descrever a região em palavras.
+Both use the same prompting principles above (sole editing master, edit scope, content to preserve) — the visual marking just replaces the need to describe the region in words.
 
 ---
 
 ## 7. Checklist
 
-- [ ] `[Source Video Role]` declara @Video 1 como sole editing master
-- [ ] `[Edit Scope]` restringe explicitamente o que muda — nunca deixe implícito
-- [ ] `[Content to Preserve]` lista o que NÃO pode mudar
-- [ ] Se há referência de imagem/áudio alvo, papel dela está isolado ("do not use background/other objects")
-- [ ] Não tentei configurar aspect ratio/duração separadamente — sei que estão travados no vídeo fonte
-- [ ] Para substituição de objeto: usei `[Timeline Inheritance]` pra herdar timing/path/velocidade do objeto original
+- [ ] `[Source Video Role]` declares @Video 1 as sole editing master
+- [ ] `[Edit Scope]` explicitly restricts what changes — never leave it implicit
+- [ ] `[Content to Preserve]` lists what must NOT change
+- [ ] If there's a target image/audio reference, its role is isolated ("do not use background/other objects")
+- [ ] Aspect ratio/duration weren't manually configured — they're known to be locked to the source video
+- [ ] For object replacement: used `[Timeline Inheritance]` to inherit timing/path/speed from the original object

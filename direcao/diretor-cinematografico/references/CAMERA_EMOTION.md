@@ -1,25 +1,25 @@
 # Camera–Emotion Sync
 
-**A câmera é o duplo emocional do personagem focal.** Movimento de câmera, lente e duração devem ser escolhidos pela emoção do personagem — não pelo que parece "cinematográfico". Raiva recebe handheld nervoso. Calma recebe respiração suave. Choque congela. Esta é a regra mais violada em AI video — corrija explicitamente em cada prompt.
+**The camera is the focal character's emotional double.** Camera movement, lens, and duration should be chosen based on the character's emotion — not on what looks "cinematic." Anger gets nervous handheld. Calm gets smooth breathing. Shock freezes. This is the most commonly broken rule in AI video — correct it explicitly in every prompt.
 
 ---
 
-## 1. Mapa movimento × emoção
+## 1. Movement × emotion map
 
-| Emoção do personagem focal | Tipo de câmera | Como escrever no prompt (EN) |
+| Focal character's emotion | Camera type | How to write it in the prompt (EN) |
 |---|---|---|
-| **Raiva / tensão / no limite** | Handheld breathing, **jittery, unstable** — broken breath rhythm, visible vertical/horizontal twitches | `CAMERA: HANDHELD. Nervous breathing jitter — irregular vertical/horizontal micro-shakes. NO stabilizer.` |
-| **Calma / controle / confiança** | Handheld breathing, **smooth** — steady breath, regular micro-amplitude | `CAMERA: HANDHELD. Smooth, controlled breathing motion — barely perceptible regular micro-drift. NO stabilizer.` |
-| **Tristeza / vulnerabilidade** | Handheld, **slow, low** — lower breath frequency, slight downward drift | `CAMERA: LOW HANDHELD. Slow breathing rhythm, gentle downward drift. Weighted, heavy quality.` |
-| **Choque / revelação** | Static + slow push-in ou pull-out — freeze no início, depois movimento muito lento | `CAMERA: STATIC. Holds completely still for 0.5 sec — then extremely slow push-in. Total movement under 15cm.` |
-| **Ação** | 60fps, 180° shutter — movimento claro, motion blur dentro do range do shutter | `CAMERA: 60fps, 180° shutter. Clean motion blur, no ghosting beyond shutter range.` |
-| **Beat final / veredicto** | Top-shot freeze 0.3–0.5 sec — diretamente de cima, tempo congela | `CAMERA: STRICT TOP SHOT. 0.3–0.5 sec freeze frame. All subjects frozen. Time stops.` |
+| **Anger / tension / at the edge** | Handheld breathing, **jittery, unstable** — broken breath rhythm, visible vertical/horizontal twitches | `CAMERA: HANDHELD. Nervous breathing jitter — irregular vertical/horizontal micro-shakes. NO stabilizer.` |
+| **Calm / control / confidence** | Handheld breathing, **smooth** — steady breath, regular micro-amplitude | `CAMERA: HANDHELD. Smooth, controlled breathing motion — barely perceptible regular micro-drift. NO stabilizer.` |
+| **Sadness / vulnerability** | Handheld, **slow, low** — lower breath frequency, slight downward drift | `CAMERA: LOW HANDHELD. Slow breathing rhythm, gentle downward drift. Weighted, heavy quality.` |
+| **Shock / revelation** | Static + slow push-in or pull-out — freeze at the start, then very slow movement | `CAMERA: STATIC. Holds completely still for 0.5 sec — then extremely slow push-in. Total movement under 15cm.` |
+| **Action** | 60fps, 180° shutter — clear movement, motion blur within the shutter range | `CAMERA: 60fps, 180° shutter. Clean motion blur, no ghosting beyond shutter range.` |
+| **Final beat / verdict** | Top-shot freeze 0.3–0.5 sec — directly overhead, time freezes | `CAMERA: STRICT TOP SHOT. 0.3–0.5 sec freeze frame. All subjects frozen. Time stops.` |
 
 ---
 
-## 2. Arcos emocionais dentro de um único plano
+## 2. Emotional arcs within a single shot
 
-Se a emoção **muda** ao longo de um take contínuo (ex: personagem vai de raiva → controle), a câmera muda de forma síncrona. Escreva em fases explícitas, amarradas aos beats numerados do ator:
+If the emotion **changes** over the course of a continuous take (e.g. character moves from anger → control), the camera changes in sync. Write it as explicit phases, tied to the actor's numbered beats:
 
 ```
 CAMERA — beats ①②: nervous handheld, jittery irregular breathing shake.
@@ -29,27 +29,27 @@ CAMERA — beats ③④: handheld gradually stabilizes — amplitude shrinks, rh
 CAMERA — beats ⑤⑥⑦: smooth controlled breathing only — barely visible micro-drift.
 ```
 
-Cada fase da câmera deve corresponder a um beat numerado de atuação (① ② ③...) para que o modelo saiba quando transicionar.
+Each camera phase should correspond to a numbered performance beat (① ② ③...) so the model knows exactly when to transition.
 
 ---
 
-## 3. Seleção de lente
+## 3. Lens selection
 
-| Uso | Lente | Abertura |
+| Use | Lens | Aperture |
 |---|---|---|
-| Close-up emocional extremo (testa ao queixo preenche o quadro) | **85mm** ou **100mm** | F1.4 |
-| Diálogo mid-shot, two-shot | **50mm** | F2.0 – F2.8 |
-| Wide / estabelecimento | **35mm** | F4 – F5.6 |
-| Insert / detalhe de objeto | **50mm** ou **85mm** com foco travado no objeto | F1.4 |
-| Macro (poros, gotas, tecido) | **45mm macro** | F2.8 |
+| Extreme emotional close-up (forehead to chin fills the frame) | **85mm** or **100mm** | F1.4 |
+| Dialogue mid-shot, two-shot | **50mm** | F2.0 – F2.8 |
+| Wide / establishing | **35mm** | F4 – F5.6 |
+| Insert / object detail | **50mm** or **85mm** with focus locked on the object | F1.4 |
+| Macro (pores, drops, fabric) | **45mm macro** | F2.8 |
 
-**Proibir distorção óptica** em todo prompt que usa lente wide ou rápida:
+**Forbid optical distortion** in every prompt that uses a wide or fast lens:
 ```
 No barrel distortion, no pincushion distortion, no fisheye effect, no wide-angle warping.
 Straight lines must be straight. Frame geometry must be clean.
 ```
 
-**Bokeh / shallow DOF** para inserts emocionais — usar F1.4 e travar foco:
+**Bokeh / shallow DOF** for emotional inserts — use F1.4 and lock the focus:
 ```
 ⚠️ Focus plane strictly locked on [object/character] — NO focus drift, NO rack focus, NO autofocus jump.
 ```
@@ -58,31 +58,31 @@ Straight lines must be straight. Frame geometry must be clean.
 
 ## 4. Dolly / track moves
 
-Para dolly muito lento (insert / close-up de objeto), especifique **distância e tempo exatos**:
+For very slow dolly moves (insert / object close-up), specify the **exact distance and time**:
 ```
 Total camera movement across the entire Xs: approximately 10–15cm only.
 Speed slow enough to be barely perceptible. NO zoom. NO sudden push or pull.
 ```
 
-Nunca escreva `zoom`. Sempre escreva movimento físico de câmera (`dolly`, `track`, `crane`, `push-in`, `pull-out`).
+Never write `zoom`. Always write a physical camera movement (`dolly`, `track`, `crane`, `push-in`, `pull-out`).
 
 ---
 
-## 5. Regras de duração de plano
+## 5. Shot duration rules
 
-| Tipo de plano | Duração |
+| Shot type | Duration |
 |---|---|
-| Flash establishing (split-second wide) | **0.3 – 0.5 seg** (fração de segundo, NÃO 1 segundo) |
-| Uma linha de diálogo, duração média | **3 – 7 seg** |
-| Reação sem palavras (com arco emocional) | **5 – 10 seg** |
-| Insert / wide / freeze | **0.3 – 2 seg** |
-| Close-up emocional com arco completo (5–7 beats) | **8 – 15 seg** |
+| Flash establishing (split-second wide) | **0.3 – 0.5 sec** (a fraction of a second, NOT 1 second) |
+| One line of dialogue, average duration | **3 – 7 sec** |
+| Wordless reaction (with an emotional arc) | **5 – 10 sec** |
+| Insert / wide / freeze | **0.3 – 2 sec** |
+| Emotional close-up with a full arc (5–7 beats) | **8 – 15 sec** |
 
 ---
 
-## 6. Templates copy-paste
+## 6. Copy-paste templates
 
-### 6.1 — Extreme tight close-up de diálogo (85mm, F1.4)
+### 6.1 — Extreme tight dialogue close-up (85mm, F1.4)
 
 ```
 LENS: 85mm (or 100mm) telephoto. F1.4 shallow DOF.
@@ -92,7 +92,7 @@ Camera actively follows character's face — any subtle turn, lift, or drop, cam
 BACKGROUND: Completely defocused into soft color blobs and bokeh highlights.
 ```
 
-### 6.2 — Insert em objeto (foco travado)
+### 6.2 — Object insert (locked focus)
 
 ```
 LENS: 50mm or 85mm prime. F1.4 shallow DOF.
@@ -110,7 +110,7 @@ LENS: 35mm wide. Wide shot / establishing shot.
 ACTION: [moment] — then immediate hard cut to next shot. No transition, no fade, no hold.
 ```
 
-### 6.4 — Top-shot freeze final
+### 6.4 — Final top-shot freeze
 
 ```
 CAMERA: Strict top-shot, directly overhead.
@@ -119,9 +119,9 @@ CAMERA: Strict top-shot, directly overhead.
 
 ---
 
-## 7. Movimentos proibidos
+## 7. Forbidden movements
 
-- `NO zoom` — movimento físico de câmera apenas
-- `NO stabilizer` quando handheld — breathing deve ser visível
+- `NO zoom` — physical camera movement only
+- `NO stabilizer` when handheld — breathing should be visible
 - `NO shake besides intentional handheld breathing`
-- `NO over-movement` — se o roteiro é íntimo, a câmera é íntima
+- `NO over-movement` — if the scene is intimate, the camera is intimate

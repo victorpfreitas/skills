@@ -2,18 +2,18 @@
 
 ## Specs
 
-- **Aspect ratio:** 3:1 a 1:3
-- **Resolução:** 2K nativa, 4K em beta
-- **Referências:** até 16 imagens, com boa transferência de personagem, marca e material entre edições
-- **Forças:** texto/tipografia quase perfeita, layout limpo, mockup de UI, composição de produto, edição cirúrgica, lote de imagens coerentes
+- **Aspect ratio:** 3:1 to 1:3
+- **Resolution:** 2K native, 4K in beta
+- **References:** up to 16 images, with good character, brand, and material transfer across edits
+- **Strengths:** near-perfect text/typography, clean layout, UI mockups, product composition, surgical editing, coherent image batches
 
-## Diferencial 1: texto de altíssima fidelidade
+## Strength 1: high-fidelity text
 
-Renderiza texto com ~95-99% de acurácia em múltiplos scripts, incluindo títulos longos, parágrafos densos e rótulos pequenos de embalagem/UI. É o mais forte dos três nisso, prefira GPT Image 2 sempre que o pedido tiver texto extenso ou legibilidade crítica (placa de loja, capa de produto, slide, infográfico).
+Renders text with ~95-99% accuracy across multiple scripts, including long headlines, dense paragraphs, and small packaging/UI labels. It's the strongest of the three at this — prefer GPT Image 2 whenever the request has extensive text or critical legibility (storefront sign, product cover, slide, infographic).
 
-## Diferencial 2: lote de imagens coerentes
+## Strength 2: coherent image batches
 
-Gera até 8 imagens coerentes a partir de um único prompt, com continuidade de personagem e objeto entre elas. É um mecanismo diferente do grid-em-um-prompt-só do Nano Banana: aqui são imagens separadas de uma série, não painéis de uma imagem única.
+Generates up to 8 coherent images from a single prompt, with character and object continuity across them. This is a different mechanism from Nano Banana's single-prompt grid: here you get separate images from a series, not panels of a single image.
 
 ```
 Generate a coherent set of 4 images of the same young chef in a white 
@@ -24,22 +24,22 @@ directly at camera, arms crossed. Same lighting setup and color grade
 across the set: warm tungsten kitchen light, shallow depth of field.
 ```
 
-## Diferencial 3: edição com alta estabilidade de pixel
+## Strength 3: high pixel-stability editing
 
-Ao editar uma imagem existente, muda só a região pedida e mantém o resto do frame estável, sem o restante "regenerar" junto. Bom pra ajuste fino em asset já aprovado (trocar só um produto, só um texto, só uma cor) sem risco de a composição inteira mudar de novo.
+When editing an existing image, it changes only the requested region and keeps the rest of the frame stable, without the remainder "regenerating" along with it. Good for fine-tuning an already-approved asset (swap only a product, only a text, only a color) without risking the whole composition shifting again.
 
-## Thinking Mode (lado criativo, sem busca externa)
+## Thinking Mode (creative side, no external search)
 
-Antes de renderizar, o modelo raciocina sobre composição, contagem de objetos, luz e restrições. Isso reduz reroll em briefings com muitas instruções simultâneas (ex.: "3 pessoas, 2 delas sentadas, uma de pé atrás, cada uma segurando um objeto diferente, luz vindo de duas fontes"). Esta skill usa só esse lado de seguir instrução complexa. O Thinking Mode também suporta busca na web pra conteúdo fact-grounded (infográfico com dado real), o que fica fora do escopo desta skill.
+Before rendering, the model reasons about composition, object count, light, and constraints. This reduces rerolls on briefs with many simultaneous instructions (e.g., "3 people, 2 of them seated, one standing behind, each holding a different object, light coming from two sources"). This skill only uses that complex-instruction-following side. Thinking Mode also supports web search for fact-grounded content (an infographic with real data), which is out of scope for this skill.
 
-## Onde usar
+## Where to use it
 
-- Texto/tipografia extenso ou crítico (placa, capa, slide, embalagem)
-- Mockup de UI e composição de produto densa em elementos
-- Série de imagens com continuidade de personagem (lote de até 8)
-- Frame pronto pra virar vídeo: um still gerado aqui pode entrar direto como referência no modo I2V do `seedance-prompter`
+- Extensive or critical text/typography (sign, cover, slide, packaging)
+- UI mockups and element-dense product composition
+- Image series with character continuity (batch of up to 8)
+- A frame ready to become video: a still generated here can go straight in as a reference for the `seedance-prompter`'s I2V mode
 
-## Exemplo forte: mockup de UI com texto denso
+## Strong example: UI mockup with dense text
 
 ```
 Generate a clean mobile app UI mockup, fintech dashboard screen, minimalist 

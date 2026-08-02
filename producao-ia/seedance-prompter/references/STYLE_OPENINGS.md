@@ -1,57 +1,57 @@
-# Style Openings — Declarações de Estilo Global
+# Style Openings — Global Style Statements
 
-**Leia este arquivo para construir a primeira linha de qualquer prompt Seedance.**
+**Read this file to build the first line of any Seedance prompt.**
 
-A declaração de estilo é a instrução de maior peso no prompt — o Seedance ancora toda a geração nela. Nunca pule.
-
----
-
-## Estrutura obrigatória
-
-```
-[Estilo cinematográfico], [resolução/qualidade], [tom visual], [referência de diretor ou obra].
-```
+The style statement is the highest-weight instruction in the prompt — Seedance anchors the entire generation on it. Never skip it.
 
 ---
 
-## Biblioteca de aberturas por estética
+## Mandatory structure
 
-### Cinema épico / Sci-Fi
+```
+[Cinematic style], [resolution/quality], [visual tone], [director or work reference].
+```
+
+---
+
+## Opening library by aesthetic
+
+### Epic cinema / Sci-Fi
 ```
 Cinematic epic science fiction, anamorphic 2.39:1, vast negative space, cold blue-grey palette, Villeneuve aesthetic.
 Sci-fi cinematic blockbuster, neon-lit megacity, volumetric fog, anamorphic lens flares, Blade Runner 2049 visual language.
 Dark epic fantasy, 8K IMAX quality, mythological weight, cold silver and deep crimson, Peter Jackson scale.
 ```
 
-### Thriller / Noir / Tensão
+### Thriller / Noir / Tension
 ```
 Low-key cinematic thriller, chiaroscuro lighting, Fincher-esque cool desaturation, film grain texture, 4K.
 Neo-noir psychological thriller, high contrast shadows, amber and deep blue palette, Park Chan-wook visual tension.
 Urban crime drama, gritty realism, wet asphalt reflections, available-light cinematography, Michael Mann aesthetic.
 ```
 
-### Ação / Adrenalina
+### Action / Adrenaline
 ```
 High-energy urban action sequence, ultra-realistic, wet asphalt neon reflections, photorealistic, Fast and Furious energy.
 Cinematic street racing, night exterior, hard practical lighting, speed ramps, explosive particle VFX, 4K.
 Live-action anime adaptation, Hollywood quality, dark samurai aesthetic, extreme fast cuts, explosive particle effects.
 ```
 
-### Drama emocional / Íntimo
+### Emotional / Intimate drama
 ```
 Ultra-realistic emotional drama, shallow depth of field, warm film grain, natural light, 8K cinematic quality.
 Intimate character study, available light, 35mm grain, desaturated warm palette, Barry Jenkins visual intimacy.
 Contemporary drama, handheld documentary realism, soft naturalistic light, Dardenne Brothers aesthetic.
 ```
 
-### Fantasia / VFX pesado
+### Fantasy / Heavy VFX
 ```
 Hollywood Haute Couture Fantasy blockbuster, 8K ultra-clear, photorealistic Unreal Engine 5 fluid rendering.
 Epic fantasy VFX, practical-effects feel combined with digital precision, warm amber and deep blue contrast.
 Surrealism meets hyperrealism, Megalophobia scale, Hollywood VFX realism, ultra-realistic lighting physics.
 ```
 
-### Luxo / Publicidade
+### Luxury / Advertising
 ```
 Cinematic luxury automotive reveal, ultra-realistic, 8K photorealistic, prestige car commercial aesthetic.
 High-fashion editorial, ultra-crisp 8K, cold white and gold palette, Helmut Newton tension, luxury brand aesthetic.
@@ -65,21 +65,21 @@ Supernatural thriller, desaturated cold palette, negative space oppression, Ari 
 Found footage aesthetic, degraded digital grain, unstable frame, diegetic camera logic.
 ```
 
-### Documental / Gritty
+### Documentary / Gritty
 ```
 Gritty handheld 35mm film aesthetic, natural grain, raw documentary feel, available light only.
 Cinema vérité, observational realism, no artificial light, imperfect framing, Wiseman documentary grammar.
 ```
 
-### Publicidade Brasileira / Drama Urbano
+### Urban drama / regional realism
 ```
-Urban Brazilian drama, golden-hour warm palette, concrete and light interplay, Walter Salles visual realism.
-Contemporary São Paulo thriller, rain-soaked urban environment, neon and brutalism, high contrast practical lights.
+Urban drama, golden-hour warm palette, concrete and light interplay, Walter Salles visual realism.
+Contemporary urban thriller, rain-soaked environment, neon and brutalism, high contrast practical lights.
 ```
 
 ---
 
-## Qualificadores de qualidade — use à vontade
+## Quality qualifiers — use freely
 
 ```
 4K film texture
@@ -95,9 +95,9 @@ Unreal Engine 5 rendering quality
 
 ---
 
-## Referências de diretores / obras — ancoragem visual
+## Director / work references — visual anchoring
 
-| Referência | Sinal visual |
+| Reference | Visual signal |
 |---|---|
 | Fincher | Cool desaturation, precise symmetry, dark tension, amber-teal grade |
 | Villeneuve | Vast negative space, cold palette, mythological weight, minimal dialogue |
@@ -107,28 +107,28 @@ Unreal Engine 5 rendering quality
 | Deakins | Practical sources only, chiaroscuro, shadow precision |
 | Nolan | IMAX scale, temporal complexity, cold blue, practical-forward |
 | Mann | Neon-soaked urban exteriors, digital grain, kinetic realism |
-| Walter Salles | Brazilian heat, golden palette, social texture |
+| Walter Salles | Warm heat, golden palette, social texture |
 
 ---
 
-## Como combinar — exemplos reais de alta performance
+## How to combine — real high-performance examples
 
 ```
 Cinematic street racing sequence at night, ultra-realistic, Fast and Furious inspired energy, photorealistic lighting.
 ```
-→ Ação noturna com referência conhecida de energia visual.
+→ Nighttime action with a well-known visual-energy reference.
 
 ```
 Low-key cinematic thriller, chiaroscuro lighting, Fincher-esque color grade, 4K film texture.
 ```
-→ Thriller sem muito movimento — peso visual da luz.
+→ Low-movement thriller — visual weight carried by the lighting.
 
 ```
 Hollywood Haute Couture Fantasy blockbuster, 8K ultra-clear, Photorealistic, Unreal Engine 5 fluid rendering.
 ```
-→ Fantasy heavy VFX — âncora em qualidade técnica.
+→ VFX-heavy fantasy — anchored in technical quality.
 
 ```
 Ultra-realistic emotional drama, shallow depth of field, warm film grain, 8K cinematic quality.
 ```
-→ Drama íntimo — foco em performance e luz natural.
+→ Intimate drama — focus on performance and natural light.
