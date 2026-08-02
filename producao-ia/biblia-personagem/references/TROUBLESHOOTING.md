@@ -32,17 +32,17 @@ Symptom → likely cause → fix. Consult before trying again with the same prom
 ### The character is consistent in a still image, but diverges once turned into video
 
 **Likely cause:** the reference syntax used in the video prompt doesn't match Seedance's convention, or the CHARACTER BLOCK was left out because the reference image alone was assumed to be enough.
-**Fix:** see `CONSISTENCIA_MULTIMODELO.md` — include the full CHARACTER BLOCK even when a reference image already exists via `@Image1`.
+**Fix:** see `MULTIMODEL_CONSISTENCY.md` — include the full CHARACTER BLOCK even when a reference image already exists via `@Image1`.
 
 ### Progressive drift across a sequence of clips
 
 **Likely cause:** each new clip was anchored on the character's original intent, not on the observed state from the last approved clip (final pose, accessory position).
-**Fix:** describe the next clip based on the previous clip's final frame, not the CHARACTER BLOCK in isolation — see the continuity note in `CONSISTENCIA_MULTIMODELO.md`.
+**Fix:** describe the next clip based on the previous clip's final frame, not the CHARACTER BLOCK in isolation — see the continuity note in `MULTIMODEL_CONSISTENCY.md`.
 
 ### A narrative prop or location (with text) came out with wrong/illegible text
 
 **Likely cause:** the exact text wasn't declared in quotes in the prop/location sheet — a vague description like "a newspaper headline" leaves the model free to invent the text.
-**Fix:** always quote the exact text in the prop's catalogue entry (see `CENARIOS_PROPS.md`), including language when relevant (this avoids, for example, characters from the wrong language accidentally showing up).
+**Fix:** always quote the exact text in the prop's catalogue entry (see `SCENES_PROPS.md`), including language when relevant (this avoids, for example, characters from the wrong language accidentally showing up).
 
 ### The character looks good in stills, but "presence"/posture changes from scene to scene
 

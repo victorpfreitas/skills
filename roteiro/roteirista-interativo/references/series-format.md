@@ -24,10 +24,10 @@ flash of a memory eraser]
 
 WORLD RULES: [see worldbuilding.md -- these don't change between episodes]
 
-FIXED CHARACTER SHEET: [see personagem.md -- the protagonist who runs
+FIXED CHARACTER SHEET: [see character.md -- the protagonist who runs
 through the series]
 
-TONE SIGNATURE: [see dialogo-tom.md -- the three locked answers]
+TONE SIGNATURE: [see dialogue-tone.md -- the three locked answers]
 ```
 
 After that, when starting a new episode, **don't repeat the foundation
@@ -50,7 +50,7 @@ which entity/case, which setting, which episode-specific callback prop.
   system)
 - Whether the protagonist understands or stays oblivious to the irony of the
   situation (an intentional variation already agreed on for this series --
-  see dialogo-tom.md)
+  see dialogue-tone.md)
 ```
 
 ---

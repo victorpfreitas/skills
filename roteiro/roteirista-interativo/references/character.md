@@ -78,7 +78,7 @@ for the project:
 - Last question, more open-ended: "when things get tight, does their flaw
   make the situation worse, or do they accidentally get it right without
   meaning to?" — this defines whether the character is the type who "fails
-  and learns" or "fails and survives by luck/irony" (see dialogo-tom.md for
+  and learns" or "fails and survives by luck/irony" (see dialogue-tone.md for
   how this connects to the story's overall tone)
 
 ---

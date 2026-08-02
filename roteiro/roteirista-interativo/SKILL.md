@@ -38,12 +38,12 @@ to break the story into blocks — they feed the options you'll offer later:
 
 | File | When to consult it |
 |---|---|
-| `references/personagem.md` | The project has a new character to create (a series' fixed protagonist, or the central character of a short) |
+| `references/character.md` | The project has a new character to create (a series' fixed protagonist, or the central character of a short) |
 | `references/worldbuilding.md` | There's a fantastical/institutional/sci-fi element with rules that need to stay consistent across scenes or episodes |
-| `references/cenarios-props.md` | Whenever you're deciding where a scene happens and what objects appear in it — includes the "prop with a callback" logic |
-| `references/pesquisa-real.md` | The story is anchored in a real case, a documented legend, or a historical event |
-| `references/dialogo-tom.md` | Always, at the start of any new project — locks the "tone signature" before the first block |
-| `references/formato-serie.md` | The project is a series/anthology with a repeatable per-episode formula |
+| `references/settings-props.md` | Whenever you're deciding where a scene happens and what objects appear in it — includes the "prop with a callback" logic |
+| `references/real-research.md` | The story is anchored in a real case, a documented legend, or a historical event |
+| `references/dialogue-tone.md` | Always, at the start of any new project — locks the "tone signature" before the first block |
+| `references/series-format.md` | The project is a series/anthology with a repeatable per-episode formula |
 | `references/TROUBLESHOOTING.md` | The rhythm of questions has stalled (monosyllabic answers, repetitive options, wanting to go back) |
 
 You don't need to read all of them on every project — read only the ones the
@@ -69,11 +69,11 @@ blocks.
 settle the foundation first — in this order, skipping whatever doesn't apply:
 
 ```
-1. Tone (references/dialogo-tom.md) -- the three tone-signature questions
-2. Character (references/personagem.md) -- if there's a new character to create
+1. Tone (references/dialogue-tone.md) -- the three tone-signature questions
+2. Character (references/character.md) -- if there's a new character to create
 3. World (references/worldbuilding.md) -- if there's a fantastical/institutional element
-4. Real-world research (references/pesquisa-real.md) -- if the story has a documented basis
-5. Setting/props (references/cenarios-props.md) -- always, before Block 1
+4. Real-world research (references/real-research.md) -- if the story has a documented basis
+5. Setting/props (references/settings-props.md) -- always, before Block 1
 ```
 
 Jumping straight into the blocks without settling the foundation is the most
@@ -81,7 +81,7 @@ common mistake — it produces generic outline options because there are no
 internal rules to constrain the alternatives being offered. If the project
 continues something already established (e.g., a new episode of a series
 with a locked formula), cite the already-recorded summary (see
-`references/formato-serie.md`) instead of repeating these questions.
+`references/series-format.md`) instead of repeating these questions.
 
 ---
 
@@ -190,7 +190,7 @@ production prompts.
 ## 6. Series/anthology format (when applicable)
 
 If the project is a series with a fixed per-episode formula (e.g., a
-procedural anthology format), consult `references/formato-serie.md` as soon
+procedural anthology format), consult `references/series-format.md` as soon
 as the pilot is locked — it covers how to separate the series' fixed formula
 from what varies per episode, how to keep a living case bank, and when to
 propose a variation on the formula after several episodes.

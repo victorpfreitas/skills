@@ -19,7 +19,7 @@ appearing only when the plot needs it.
 ```
 1. Is the space real or fictional? If real (a city, a neighborhood, a type
    of place), does it have a documented basis (a real case, a local legend,
-   a specific texture) worth researching? -- see pesquisa-real.md
+   a specific texture) worth researching? -- see real-research.md
 2. Is the space neutral, or does it already carry tension before anything
    happens? (a vacant lot at night is already different from a meeting room)
 3. Does the space change over the course of the story, or stay the same
