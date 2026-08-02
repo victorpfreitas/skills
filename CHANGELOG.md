@@ -3,6 +3,7 @@
 ## v0.5 (2026-08-02)
 
 - Adiciona **`seedance-25-prompter`** em `producao-ia/`, skill nova e separada de `seedance-prompter` (2.0) para o Dreamina Seedance 2.5. O 2.5 diverge estruturalmente do 2.0 — sintaxe nova de prompt (`()`/`<>`/`{}`/`【】`), negative prompts passam de proibidos para recomendados, limites de referência sobem de 9 imagens/3 vídeos para até 50 materiais, e surgem workflows sem equivalente no 2.0 (video editing, video extension, seamless transitions entre vídeos, blockout, vídeo longo nativo de 30–180s). `seedance-prompter` (2.0) permanece intocado. Inclui 12 reference files extraídos dos guias oficiais ByteDance/Dreamina.
+- Adiciona **`README.en.md`**, tradução em inglês do README, com link cruzado no topo dos dois arquivos. As skills continuam só em português — é a primeira etapa de um possível repositório bilíngue.
 
 ## v0.4 (2026-07-26)
 
