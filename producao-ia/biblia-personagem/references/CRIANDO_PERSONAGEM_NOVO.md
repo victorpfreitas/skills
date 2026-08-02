@@ -1,49 +1,51 @@
-# Criando um Personagem Novo do Zero
+# Creating a New Character From Scratch
 
-Quando Victor traz só uma ideia solta ("preciso de um mascote pra campanha X", "quero um agente fixo pra série"), a identidade visual nasce em rodadas curtas — a mesma lógica de perguntar-antes-de-escrever do `roteirista-interativo`, aplicada ao visual em vez do texto. Nunca decidir tudo de uma vez e entregar um character sheet fechado sem checar cada camada com o Victor.
+When the user brings only a loose idea ("I need a mascot for campaign X", "I want a recurring agent for a series"), the visual identity is built in short rounds — the same ask-before-writing logic that `roteirista-interativo` uses for text, applied here to the visual instead. Never decide everything at once and hand over a closed character sheet without checking each layer with the user.
 
 ---
 
-## A ordem importa
+## Order matters
 
-Cada camada restringe a próxima, então a ordem evita perguntas abertas demais:
+Each layer constrains the next, so this order avoids overly open-ended questions:
 
 ```
-1. Função        -- por que esse personagem existe (mascote de marca, protagonista
-                     fixo de série, avatar de host)?
-2. Silhueta       -- forma geral reconhecível a distância/em miniatura, antes de
-                     qualquer detalhe (humano realista? proporção estilizada?
-                     mascote com prop vestível como o keycap da Livelo?)
-3. Traço inegociável -- o ÚNICO elemento que precisa sobreviver a toda geração,
-                     mesmo que tudo em volta mude (um símbolo, uma cor exclusiva,
-                     uma proporção incomum, um objeto que ele sempre carrega)
-4. Sistema de cor/variantes -- se vai ter mais de uma versão (par masculino/
-                     feminino, traje de trabalho/lazer), decidir agora o código
-                     de cor que distingue cada variante
-5. Nome e tag     -- nome do personagem + a tag técnica (@NOME_PERSONAGEM) que
-                     vai aparecer em todo prompt daqui pra frente
+1. Function     -- why this character exists (brand mascot, recurring series
+                   protagonist, host avatar)?
+2. Silhouette   -- overall shape recognizable at a distance/in miniature,
+                   before any detail (realistic human? stylized proportion?
+                   mascot with a wearable prop, like a keycap-shaped costume?)
+3. Non-negotiable trait -- the ONE element that must survive every
+                   generation, even if everything around it changes (a
+                   symbol, an exclusive color, an unusual proportion, an
+                   object it always carries)
+4. Color/variant system -- if there will be more than one version (male/
+                   female pair, work outfit/leisure outfit), decide now the
+                   color code that distinguishes each variant
+5. Name and tag -- the character's name + the technical tag
+                   (@CHARACTER_NAME) that will appear in every prompt from
+                   here on
 ```
 
-## Por que "traço inegociável" vem antes do resto
+## Why "non-negotiable trait" comes before everything else
 
-É o elemento mais fácil de perder numa geração nova — se ele não for nomeado explicitamente e repetido em todo prompt, o modelo troca ele por algo genérico assim que a cena muda (ângulo de câmera diferente, cenário diferente, variante diferente). Exemplos de traço inegociável forte: o símbolo Livelo sempre em alto-relevo 3D nunca impresso; um tom de pele/textura de material exclusivo; uma proporção de corpo que não é humana padrão. Um traço fraco é aquele que pode ser descrito de várias formas sem perder a identidade ("uma roupa legal") — isso não segura consistência.
+It's the easiest element to lose in a new generation — if it isn't explicitly named and repeated in every prompt, the model swaps it for something generic as soon as the scene changes (different camera angle, different location, different variant). Examples of a strong non-negotiable trait: a brand symbol always in raised 3D relief, never printed flat; an exclusive skin tone/material texture; a body proportion that isn't standard-human. A weak trait is one that can be described in many ways without losing the identity ("a cool outfit") — that doesn't hold consistency.
 
-## Silhueta antes de detalhe
+## Silhouette before detail
 
-Pergunte primeiro pela forma reconhecível numa silhueta (contorno preto, sem detalhe interno) — se o personagem só é reconhecível pelo detalhe fino (textura de tecido, cor exata), ele não sobrevive a variações de luz/ângulo entre gerações. Um bom teste: "se eu tirar a cor e mostrar só o contorno, ainda dá pra saber que é esse personagem?".
+Ask first for the shape recognizable as a silhouette (black outline, no internal detail) — if the character is only recognizable by fine detail (fabric texture, exact color), it won't survive light/angle variation between generations. A good test: "if I strip the color and show only the outline, can you still tell it's this character?".
 
-## Sistema de variantes — decidir o código antes de criar a segunda versão
+## Variant system — decide the code before creating the second version
 
-Se o personagem vai ter mais de uma versão (ex.: par masculino/feminino, traje de cada estação/cenário), decida agora:
-- O que é **compartilhado** entre todas as variantes (a base que nunca muda).
-- O que **muda por variante** (cor, acessório, cenário típico) e como isso fica visualmente óbvio (ex.: toda variante "resort" descalça e com acessório de praia).
+If the character will have more than one version (e.g. a male/female pair, an outfit per season/location), decide now:
+- What is **shared** across all variants (the base that never changes).
+- What **changes per variant** (color, accessory, typical location) and how that reads as visually obvious (e.g. every "resort" variant is barefoot with a beach accessory).
 
-Sem esse código definido antes, cada variante nova vira uma decisão isolada e a família de personagens perde coesão.
+Without that code defined up front, every new variant becomes an isolated decision and the character family loses cohesion.
 
-## Nome e tag
+## Name and tag
 
-A tag técnica (`@NOME_PERSONAGEM`, em maiúsculas, sem espaço) é o que entra em todo prompt — decida ela junto com o nome comum, não depois. Convenção recomendada: `@[FUNÇÃO_OU_NOME]_[VARIANTE_SE_HOUVER]`, ex. `@CHAR_PONTO`, `@AGENTE_MIB_BR`.
+The technical tag (`@CHARACTER_NAME`, uppercase, no spaces) is what goes into every prompt — decide it alongside the common name, not afterward. Recommended convention: `@[FUNCTION_OR_NAME]_[VARIANT_IF_ANY]`, e.g. `@CHAR_PONTO`, `@AGENTE_MIB_BR`.
 
-## Depois do briefing
+## After the briefing
 
-Assim que as 5 camadas estiverem fechadas, escreva o CHARACTER BLOCK formal (`CHARACTER_BLOCK_TEMPLATE.md`) e gere a primeira imagem de referência via `image-prompter` — essa imagem aprovada vira a fonte de verdade visual pra toda geração futura.
+Once the 5 layers are locked, write the formal CHARACTER BLOCK (`CHARACTER_BLOCK_TEMPLATE.md`) and generate the first reference image via `image-prompter` — that approved image becomes the visual source of truth for every future generation.

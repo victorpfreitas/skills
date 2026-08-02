@@ -1,100 +1,100 @@
 ---
 name: seedance-25-prompter
 description: >
-  Seedance 2.5 Master Prompter — use this skill whenever the user wants to generate, edit, extend, or transition AI video using Dreamina Seedance 2.5 (NOT 2.0). Trigger on "seedance 2.5", "sd2.5", explicit mentions of 2.5-only features (long video 30-180s, video extension, video editing/smart edit, seamless transition between two videos, blockout/white model, storyboard grid, one-click video, multi-reference profile), or when the user's request needs more than 9 reference images / 3 reference videos / 15s duration (2.0's ceiling). Also trigger for "edita esse vídeo", "estende esse vídeo", "transição entre esses dois vídeos", "remove a música de fundo desse vídeo mantendo a voz", "troca o fundo desse vídeo", "storyboard em grid pro Seedance", "vídeo longo de X minutos com Seedance", or any description of editing/extending/transitioning EXISTING video content rather than generating a fresh clip. If the user doesn't specify a version and their request fits comfortably in 2.0's simpler single-clip T2V/I2V/R2V workflow, prefer the `seedance-prompter` skill instead — use this skill when the task specifically needs a 2.5-only capability.
+  Seedance 2.5 Master Prompter — use this skill whenever the user wants to generate, edit, extend, or transition AI video using Dreamina Seedance 2.5 (NOT 2.0). Trigger on "seedance 2.5", "sd2.5", explicit mentions of 2.5-only features (long video 30-180s, video extension, video editing/smart edit, seamless transition between two videos, blockout/white model, storyboard grid, one-click video, multi-reference profile), or when the user's request needs more than 9 reference images / 3 reference videos / 15s duration (2.0's ceiling). Also trigger for "edit this video", "extend this video", "transition between these two videos", "remove the background music from this video but keep the voice", "swap the background of this video", "storyboard grid for Seedance", "long video of X minutes with Seedance", or any description of editing/extending/transitioning EXISTING video content rather than generating a fresh clip. If the user doesn't specify a version and their request fits comfortably in 2.0's simpler single-clip T2V/I2V/R2V workflow, prefer the `seedance-prompter` skill instead — use this skill when the task specifically needs a 2.5-only capability.
 ---
 
 # Seedance 2.5 — Master Prompter
 
-Você é um **Engenheiro de Prompts especialista em Dreamina Seedance 2.5**. O 2.5 não é um ajuste incremental do 2.0 — é um modelo com sintaxe própria, limites de referência muito maiores, e capacidades (edição de vídeo existente, extensão, transição entre dois vídeos, blockout, vídeo longo nativo) que o 2.0 não tem.
+You are a **Prompt Engineer specialized in Dreamina Seedance 2.5**. 2.5 is not an incremental tweak of 2.0 — it's a model with its own syntax, much larger reference limits, and capabilities (editing existing video, extension, transition between two videos, blockout, native long video) that 2.0 doesn't have.
 
-> **Se o pedido é um clip único, sem referência, sem edição de vídeo existente, e cabe em 15s** → considere a skill `seedance-prompter` (2.0) em vez desta. Use esta skill quando o 2.5 trouxer algo que o 2.0 não resolve: mais de 9 imagens/3 vídeos de referência, editar um vídeo já gerado, estender além do frame original, fazer transição entre dois vídeos, vídeo de 30–180s numa geração só, ou controle por blockout/storyboard.
+> **If the request is a single clip, no reference, no editing of existing video, and fits within 15s** → consider the `seedance-prompter` skill (2.0) instead of this one. Use this skill when 2.5 brings something 2.0 can't handle: more than 9 reference images/3 reference videos, editing an already-generated video, extending beyond the original frame, transitioning between two videos, 30–180s video in a single generation, or blockout/storyboard control.
 
-> **Mudança de regra mais importante em relação ao 2.0:** no 2.5, **negative prompts funcionam e são recomendados**. Todo exemplo oficial do guia usa um bloco `[Negative Prompts]` explícito. Isso inverte a regra crítica do skill 2.0 ("nunca use negação"). Ver `references/PROMPT_FORMULA_AND_SYNTAX.md` §4.
+> **Most important rule change relative to 2.0:** in 2.5, **negative prompts work and are recommended**. Every official example in the guide uses an explicit `[Negative Prompts]` block. This reverses the critical rule from the 2.0 skill ("never use negation"). See `references/PROMPT_FORMULA_AND_SYNTAX.md` §4.
 
 ---
 
-## Arquivos de referência
+## Reference files
 
-Leia o arquivo relevante conforme a tarefa que está construindo — não carregue todos de uma vez.
+Read the relevant file according to the task you're building — don't load all of them at once.
 
-| Arquivo | Quando ler |
+| File | When to read |
 |---|---|
-| `references/PROMPT_FORMULA_AND_SYNTAX.md` | Sempre no início: fórmula central do prompt, sintaxe especial `()`/`<>`/`{}`/`【】`, negative prompts, checklist |
-| `references/PARAMETERS_AND_LIMITS.md` | Antes de definir modo, duração, aspect ratio ou quantidade de referências — tabelas de limites 2.0 vs 2.5 |
-| `references/CHARACTER_AND_STYLE.md` | Para descrever personagens realistas (fórmula por dimensão) e declarações de estilo/abertura |
-| `references/CAMERA_AND_CINEMATOGRAPHY.md` | Para o bloco de câmera — movimentos, termos cinematográficos populares, câmera × emoção |
-| `references/EMOTIONAL_PERFORMANCE.md` | Para atuação/microexpressão — como converter emoção abstrata em cue observável |
-| `references/MULTI_REFERENCE.md` | Quando há 2+ personagens/props/cenas de referência — mapeamento, subject profile, seleção por cena |
-| `references/LONG_VIDEO_AND_TIMESTAMPS.md` | Para vídeos de 30s+ com stages, ou vídeo longo nativo (30–180s), ou controle de timestamp preciso |
-| `references/VIDEO_EDITING.md` | Para editar um vídeo já existente: Smart Edit, troca de sujeito/fundo, edição de áudio, green screen |
-| `references/VIDEO_EXTENSION_AND_TRANSITIONS.md` | Para estender um vídeo (forward/backward) ou criar transição contínua entre dois vídeos |
-| `references/KEYFRAMES_STORYBOARD_BLOCKOUT.md` | Para first/last frame, múltiplos keyframes, grid de storyboard, referência de blockout (coarse/fine), one-click video |
-| `references/TROUBLESHOOTING.md` | Quando o resultado sair fraco — checklist de diagnóstico e limitações conhecidas do 2.5 |
-| `references/MODEL_MECHANICS.md` | Para entender **por que** as regras existem quando o caso não está coberto pelos exemplos |
-| `references/RETAKE_PROTOCOL.md` | Para decidir a próxima tentativa quando o resultado não é perfeito nem lixo |
+| `references/PROMPT_FORMULA_AND_SYNTAX.md` | Always at the start: core prompt formula, special syntax `()`/`<>`/`{}`/`【】`, negative prompts, checklist |
+| `references/PARAMETERS_AND_LIMITS.md` | Before setting mode, duration, aspect ratio, or reference count — 2.0 vs 2.5 limit tables |
+| `references/CHARACTER_AND_STYLE.md` | For describing realistic characters (formula by dimension) and style/opening statements |
+| `references/CAMERA_AND_CINEMATOGRAPHY.md` | For the camera block — movements, popular cinematography terms, camera × emotion |
+| `references/EMOTIONAL_PERFORMANCE.md` | For acting/micro-expression — how to convert abstract emotion into an observable cue |
+| `references/MULTI_REFERENCE.md` | When there are 2+ reference characters/props/scenes — mapping, subject profile, per-scene selection |
+| `references/LONG_VIDEO_AND_TIMESTAMPS.md` | For videos of 30s+ with stages, or native long video (30–180s), or precise timestamp control |
+| `references/VIDEO_EDITING.md` | For editing an already-existing video: Smart Edit, subject/background swap, audio editing, green screen |
+| `references/VIDEO_EXTENSION_AND_TRANSITIONS.md` | For extending a video (forward/backward) or creating a seamless transition between two videos |
+| `references/KEYFRAMES_STORYBOARD_BLOCKOUT.md` | For first/last frame, multiple keyframes, storyboard grid, blockout reference (coarse/fine), one-click video |
+| `references/TROUBLESHOOTING.md` | When the result comes out weak — diagnostic checklist and known 2.5 limitations |
+| `references/MODEL_MECHANICS.md` | To understand **why** the rules exist when the case isn't covered by the examples |
+| `references/RETAKE_PROTOCOL.md` | To decide the next attempt when the result is neither perfect nor garbage |
 
-Para decisões de câmera × emoção ou estilo de diretor de referência mais profundas, use a skill `diretor-cinematografico` antes de voltar aqui pra gerar o prompt final.
+For deeper camera × emotion decisions or reference-director style, use the `diretor-cinematografico` skill before coming back here to generate the final prompt.
 
 ---
 
-## Passo 1 — Identifique o tipo de tarefa
+## Step 1 — Identify the task type
 
-O 2.5 tem workflows diferentes conforme o que o usuário já tem em mãos. Pergunte-se antes de escrever qualquer prompt:
+2.5 has different workflows depending on what the user already has in hand. Ask yourself before writing any prompt:
 
-| O usuário tem... | Workflow |
+| The user has... | Workflow |
 |---|---|
-| Só uma ideia/roteiro, nenhuma referência | Geração T2V padrão — `PROMPT_FORMULA_AND_SYNTAX.md` |
-| Imagens/vídeos/áudios de personagens, props, cenas | R2V com mapeamento — `MULTI_REFERENCE.md` |
-| Um vídeo já gerado que quer modificar (troca objeto, fundo, remove música, muda ângulo) | Video Editing — `VIDEO_EDITING.md` |
-| Um vídeo já gerado que quer continuar além do início/fim | Video Extension — `VIDEO_EXTENSION_AND_TRANSITIONS.md` |
-| Dois vídeos que precisam se conectar sem corte | Seamless Transition — `VIDEO_EXTENSION_AND_TRANSITIONS.md` |
-| Um roteiro/enredo de 30s a 180s | Long Video / Stages — `LONG_VIDEO_AND_TIMESTAMPS.md` |
-| Uma grade de storyboard, um vídeo blockout/white model, ou várias imagens soltas pra virar um vídeo só | `KEYFRAMES_STORYBOARD_BLOCKOUT.md` |
-| Imagem de primeiro e último frame | First/last frame — `KEYFRAMES_STORYBOARD_BLOCKOUT.md` |
+| Only an idea/script, no reference | Standard T2V generation — `PROMPT_FORMULA_AND_SYNTAX.md` |
+| Images/videos/audio of characters, props, scenes | R2V with mapping — `MULTI_REFERENCE.md` |
+| An already-generated video they want to modify (swap object, background, remove music, change angle) | Video Editing — `VIDEO_EDITING.md` |
+| An already-generated video they want to continue beyond the start/end | Video Extension — `VIDEO_EXTENSION_AND_TRANSITIONS.md` |
+| Two videos that need to connect without a cut | Seamless Transition — `VIDEO_EXTENSION_AND_TRANSITIONS.md` |
+| A 30s–180s script/plot | Long Video / Stages — `LONG_VIDEO_AND_TIMESTAMPS.md` |
+| A storyboard grid, a blockout/white-model video, or several loose images to turn into one video | `KEYFRAMES_STORYBOARD_BLOCKOUT.md` |
+| First and last frame images | First/last frame — `KEYFRAMES_STORYBOARD_BLOCKOUT.md` |
 
-Vários workflows podem se combinar (ex.: vídeo longo com multi-referência). Leia os arquivos relevantes em conjunto.
+Several workflows can combine (e.g., long video with multi-reference). Read the relevant files together.
 
 ---
 
-## Passo 2 — Clip Map (para geração multi-clip)
+## Step 2 — Clip Map (for multi-clip generation)
 
-Quando o pedido envolve mais de um clip editado depois no editor (não vídeo longo nativo nem stages dentro do mesmo clip), entregue primeiro o mapa antes de qualquer prompt:
+When the request involves more than one clip edited together afterward (not native long video or stages within the same clip), deliver the map first before any prompt:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎬 CLIP MAP — [NOME DO PROJETO] (Seedance 2.5)
+🎬 CLIP MAP — [PROJECT NAME] (Seedance 2.5)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CLIP 01 | [Xs] | [Descrição] | Workflow: [T2V/R2V/Editing/Extension/...]
-CLIP 02 | [Xs] | [Descrição] | Workflow: [X]
+CLIP 01 | [Xs] | [Description] | Workflow: [T2V/R2V/Editing/Extension/...]
+CLIP 02 | [Xs] | [Description] | Workflow: [X]
 ...
-TOTAL: [N] clips · Duração estimada: ~[X]s
+TOTAL: [N] clips · Estimated duration: ~[X]s
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-Pergunte: **"Confirmo o Clip Map ou quer ajustar antes de gerar os prompts?"**
+Ask: **"Do you confirm the Clip Map, or want to adjust it before I generate the prompts?"**
 
-Para vídeo longo nativo (30–180s) ou vídeo de 30s com stages, não há Clip Map — é uma geração única. Vá direto para `LONG_VIDEO_AND_TIMESTAMPS.md`.
-
----
-
-## Passo 3 — Antes de escrever: leia a intenção da cena
-
-Antes de montar o prompt, identifique a função dramática da cena: o que muda do início pro fim, e o que precisa ficar visível pra essa mudança se provar. Isso vale tanto pra um clip de 5s quanto pra um stage de um vídeo de 30s.
-
-- **Pedido genérico:** "plano cinematográfico de uma mulher lendo uma carta, emocionante"
-- **Prompt dirigido:** ela baixa a carta e as mãos ficam paradas enquanto a câmera faz um push-in lento; luz de janela suave atrás dela mantém o rosto neutro. A ficha cai nas mãos paradas, não numa palavra.
-
-A diferença não é adjetivo a mais — é decidir **um** beat visível por estágio e o movimento de câmera que serve a ele.
+For native long video (30–180s) or a 30s video with stages, there is no Clip Map — it's a single generation. Go straight to `LONG_VIDEO_AND_TIMESTAMPS.md`.
 
 ---
 
-## Passo 4 — Monte o prompt
+## Step 3 — Before writing: read the intent of the scene
 
-Estrutura central (natural language, não YAML — o 2.5 é treinado em prompt corrido com labels entre colchetes, não em blocos estruturados como o pipeline do 2.0):
+Before assembling the prompt, identify the scene's dramatic function: what changes from beginning to end, and what needs to stay visible for that change to prove itself. This applies whether it's a 5s clip or a stage in a 30s video.
+
+- **Generic request:** "cinematic shot of a woman reading a letter, emotional"
+- **Directed prompt:** she lowers the letter and her hands go still while the camera does a slow push-in; soft window light behind her keeps her face neutral. The realization lands in the still hands, not in a word.
+
+The difference isn't extra adjectives — it's deciding **one** visible beat per stage and the camera move that serves it.
+
+---
+
+## Step 4 — Assemble the prompt
+
+Core structure (natural language, not YAML — 2.5 is trained on running prompt text with bracketed labels, not structured blocks like the 2.0 pipeline):
 
 ```
-[Reference Role Declaration — se houver @Image/@Video/@Audio]
+[Reference Role Declaration — if @Image/@Video/@Audio are present]
 [Subject] performs [primary action or event] in [scene and environment].
 The visuals feature [visual style].
 Use [shot size, camera angle, camera movement, or cuts].
@@ -102,32 +102,32 @@ Audio includes [dialogue, ambience, sound effects, or music].
 [Negative Prompts]: No X, no Y, no Z.
 ```
 
-Detalhe cada elemento nos arquivos de referência correspondentes. Depois do corpo do prompt, anexe um bloco de metadados de produção (não faz parte do prompt em si, é rastreio interno):
+Detail each element in the corresponding reference files. After the prompt body, append a production metadata block (not part of the prompt itself, it's internal tracking):
 
 ```yaml
 params:
   workflow: T2V | R2V | Video Editing | Video Extension | Seamless Transition | Long Video | Storyboard | Blockout
   duration: Xs
-  aspect_ratio: "16:9 | 9:16 | 21:9 | 1:1"  # ou "locked to source" se editing/extension/first-frame
+  aspect_ratio: "16:9 | 9:16 | 21:9 | 1:1"  # or "locked to source" if editing/extension/first-frame
   resolution: 480p | 720p
-  char_count: "[X / limite da plataforma]"
+  char_count: "[X / platform limit]"
 
-references:  # se houver
-  - "@Image1: [papel desta referência]"
-  - "@Video1: [papel desta referência]"
+references:  # if any
+  - "@Image1: [role of this reference]"
+  - "@Video1: [role of this reference]"
 ```
 
 ---
 
-## Checklist antes de entregar
+## Checklist before delivering
 
-- [ ] Identifiquei o workflow certo (Passo 1) antes de escrever
-- [ ] Clip Map entregue e aprovado, se multi-clip
-- [ ] Cada referência (`@Image`/`@Video`/`@Audio`) tem papel declarado explicitamente — nunca deixe o modelo inferir
-- [ ] Cada personagem/prop/cena distinto está nomeado e vinculado a uma referência (ver `MULTI_REFERENCE.md`)
-- [ ] Bloco `[Negative Prompts]` presente quando fizer sentido (2.5, ao contrário do 2.0, usa isso ativamente)
-- [ ] Sintaxe especial usada quando precisar de precisão: `()` música, `<>` SFX, `{}` diálogo, `【】` legenda
-- [ ] Aspect ratio/duração respeitam as travas automáticas de editing/extension/first-last-frame (`PARAMETERS_AND_LIMITS.md`)
-- [ ] Timestamps usados só quando há handoff crítico — não para forçar frequência de ações
-- [ ] Emoções abstratas acompanhadas de cue observável (`EMOTIONAL_PERFORMANCE.md`)
-- [ ] Dentro do limite de caracteres da plataforma
+- [ ] Identified the right workflow (Step 1) before writing
+- [ ] Clip Map delivered and approved, if multi-clip
+- [ ] Every reference (`@Image`/`@Video`/`@Audio`) has an explicitly declared role — never let the model infer
+- [ ] Every distinct character/prop/scene is named and linked to a reference (see `MULTI_REFERENCE.md`)
+- [ ] `[Negative Prompts]` block present when it makes sense (2.5, unlike 2.0, uses this actively)
+- [ ] Special syntax used when precision is needed: `()` music, `<>` SFX, `{}` dialogue, `【】` subtitle
+- [ ] Aspect ratio/duration respect the automatic locks for editing/extension/first-last-frame (`PARAMETERS_AND_LIMITS.md`)
+- [ ] Timestamps used only when there's a critical handoff — not to force the frequency of actions
+- [ ] Abstract emotions accompanied by an observable cue (`EMOTIONAL_PERFORMANCE.md`)
+- [ ] Within the platform's character limit

@@ -1,50 +1,50 @@
-# Troubleshooting — Personagem Saindo Diferente
+# Troubleshooting — Character Coming Out Different
 
-Sintoma → causa provável → correção. Consulte antes de tentar de novo com o mesmo prompt.
+Symptom → likely cause → fix. Consult before trying again with the same prompt.
 
 ---
 
-### Personagem parece "quase" o mesmo, mas algo está sutilmente errado
+### The character looks "almost" the same, but something is subtly off
 
-**Causa provável:** o CHARACTER BLOCK foi resumido ou parafraseado em vez de colado word-for-word.
-**Correção:** volte ao bloco original na bíblia e cole exatamente como está escrito, sem tentar "resumir pra ficar mais natural" — a variação de texto é o que abre espaço pro modelo reinterpretar.
+**Likely cause:** the CHARACTER BLOCK was summarized or paraphrased instead of pasted word-for-word.
+**Fix:** go back to the original block in the bible and paste it exactly as written, without trying to "shorten it to sound more natural" — text variation is what opens room for the model to reinterpret.
 
-### Traço distintivo (símbolo, cicatriz, marca) sumiu ou ficou fraco
+### Distinguishing trait (symbol, scar, mark) disappeared or got weaker
 
-**Causa provável:** o traço foi descrito sem ênfase suficiente, ou está descrito só uma vez no meio de um parágrafo longo.
-**Correção:** isole o traço numa frase própria, em CAPS ou com "CRITICAL", e repita a exigência no fechamento do prompt (ex.: "Do not omit the scar", "Do not make the symbol flat").
+**Likely cause:** the trait was described without enough emphasis, or is only mentioned once in the middle of a long paragraph.
+**Fix:** isolate the trait in its own sentence, in CAPS or with "CRITICAL", and repeat the requirement in the prompt's closing line (e.g. "Do not omit the scar", "Do not make the symbol flat").
 
-### Elemento 3D/em relevo saiu chapado ou impresso
+### A 3D/relief element came out flat or printed
 
-**Causa provável:** a descrição não especificou o acabamento físico (relevo, sombra própria, highlight especular) — só descreveu a forma/cor.
-**Correção:** declare explicitamente "in high physical 3D relief, casts its own shadow, has specular highlight" — sem isso o modelo tende a tratar qualquer marca/símbolo como padrão impresso na superfície.
+**Likely cause:** the description didn't specify the physical finish (relief, self-shadowing, specular highlight) — it only described shape/color.
+**Fix:** explicitly declare "in high physical 3D relief, casts its own shadow, has specular highlight" — without this the model tends to treat any mark/symbol as a flat printed pattern on the surface.
 
-### Vista traseira do personagem mostra algo errado
+### The character's back view shows something wrong
 
-**Causa provável:** a bíblia não documentou a vista traseira, e o modelo assumiu uma genérica.
-**Correção:** adicionar uma seção explícita "BACK FACE"/vista traseira ao CHARACTER BLOCK sempre que o personagem tiver chance de aparecer de costas (ver `CHARACTER_BLOCK_TEMPLATE.md`).
+**Likely cause:** the bible didn't document the back view, so the model assumed a generic one.
+**Fix:** add an explicit "BACK FACE"/back view section to the CHARACTER BLOCK whenever the character has a chance of appearing from behind (see `CHARACTER_BLOCK_TEMPLATE.md`).
 
-### Variante A saiu com traço de variante B (cores/acessórios trocados)
+### Variant A came out with variant B's trait (colors/accessories swapped)
 
-**Causa provável:** as variantes foram descritas do zero em vez de herdar o bloco base — sem um bloco base compartilhado explícito, cada variante é uma "nova invenção" e detalhes vazam entre elas.
-**Correção:** reescreva as variantes no formato "same base construction as @TAG_BASE" + só a diferença específica (ver seção "Variantes" em `CHARACTER_BLOCK_TEMPLATE.md`).
+**Likely cause:** the variants were described from scratch instead of inheriting the base block — without an explicit shared base block, every variant is a "new invention" and details leak between them.
+**Fix:** rewrite the variants in the "same base construction as @BASE_TAG" format + only the variant-specific difference (see the "Variants" section in `CHARACTER_BLOCK_TEMPLATE.md`).
 
-### Personagem consistente numa imagem, mas diverge ao virar vídeo
+### The character is consistent in a still image, but diverges once turned into video
 
-**Causa provável:** a sintaxe de referência usada no prompt de vídeo não bate com a convenção do Seedance, ou o CHARACTER BLOCK foi omitido achando que a imagem de referência bastava sozinha.
-**Correção:** ver `CONSISTENCIA_MULTIMODELO.md` — inclua o CHARACTER BLOCK completo mesmo quando já há imagem de referência via `@Image1`.
+**Likely cause:** the reference syntax used in the video prompt doesn't match Seedance's convention, or the CHARACTER BLOCK was left out because the reference image alone was assumed to be enough.
+**Fix:** see `CONSISTENCIA_MULTIMODELO.md` — include the full CHARACTER BLOCK even when a reference image already exists via `@Image1`.
 
-### Drift progressivo ao longo de uma sequência de clipes
+### Progressive drift across a sequence of clips
 
-**Causa provável:** cada clipe novo foi ancorado na intenção original do personagem, não no estado observado no último clipe aprovado (pose final, posição de acessório).
-**Correção:** descreva o próximo clipe a partir do frame final do clipe anterior, não do CHARACTER BLOCK isolado — ver nota de continuidade em `CONSISTENCIA_MULTIMODELO.md`.
+**Likely cause:** each new clip was anchored on the character's original intent, not on the observed state from the last approved clip (final pose, accessory position).
+**Fix:** describe the next clip based on the previous clip's final frame, not the CHARACTER BLOCK in isolation — see the continuity note in `CONSISTENCIA_MULTIMODELO.md`.
 
-### Prop ou cenário narrativo (com texto) saiu com texto errado/ilegível
+### A narrative prop or location (with text) came out with wrong/illegible text
 
-**Causa provável:** o texto exato não foi declarado entre aspas na ficha do prop/cenário — descrição vaga tipo "uma manchete de jornal" deixa o modelo inventar o texto.
-**Correção:** sempre citar o texto exato entre aspas na catalogação do prop (ver `CENARIOS_PROPS.md`), incluindo idioma quando for relevante (evita, por exemplo, caracteres do idioma errado aparecendo por engano).
+**Likely cause:** the exact text wasn't declared in quotes in the prop/location sheet — a vague description like "a newspaper headline" leaves the model free to invent the text.
+**Fix:** always quote the exact text in the prop's catalogue entry (see `CENARIOS_PROPS.md`), including language when relevant (this avoids, for example, characters from the wrong language accidentally showing up).
 
-### Personagem sai bem em still, mas a "presença"/postura muda de cena pra cena
+### The character looks good in stills, but "presence"/posture changes from scene to scene
 
-**Causa provável:** a bíblia documentou só o visual estático (rosto, roupa) e não uma pista de postura/movimento.
-**Correção:** para personagens que aparecem em vídeo, adicionar uma linha de "voice/posture cue" no CHARACTER BLOCK (ver Exemplo 2 em `CHARACTER_BLOCK_TEMPLATE.md`) — não precisa ser extensa, só o suficiente pra ancorar como ele se move/porta por padrão.
+**Likely cause:** the bible only documented the static visual (face, outfit) and not a posture/movement cue.
+**Fix:** for characters that appear in video, add a "voice/posture cue" line to the CHARACTER BLOCK (see Example 2 in `CHARACTER_BLOCK_TEMPLATE.md`) — it doesn't need to be long, just enough to anchor how they move/carry themselves by default.
