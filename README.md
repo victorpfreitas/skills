@@ -34,6 +34,7 @@ Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex 
 | [`image-prompter`](./producao-ia/image-prompter) | Produção IA | Gera prompts cinematográficos de imagem e decide qual modelo usar entre Nano Banana 2, Seedream 5.0 Pro e GPT Image 2. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
 | [`seedance-25-prompter`](./producao-ia/seedance-25-prompter) | Produção IA | Prompts para o Seedance 2.5: multi-referência (até 50 materiais), edição/extensão/transição de vídeo existente, vídeo longo nativo de 30–180s, blockout e storyboard. |
+| [`minimax-h3-prompter`](./producao-ia/minimax-h3-prompter) | Produção IA | Prompts no formato nativo do MiniMax H3 (T2VA/I2VA/FL2VA/L2VA/Ref2VA): vídeo com áudio gerado junto, diálogo com lip-sync, clone de voz e edição de vídeo existente. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
 | [`trilha-sonora-prompter`](./producao-ia/trilha-sonora-prompter) | Produção IA | Traduz o tom emocional de uma cena em prompt de trilha pronto pro Suno, com o vidIQ como alternativa direto na conversa. |
 | [`montagem-prompter`](./producao-ia/montagem-prompter) | Produção IA | Decide ritmo de corte, transições, sincronia com a trilha e legenda ao montar os clipes gerados num vídeo final. |
@@ -66,6 +67,9 @@ skills/
     seedance-25-prompter/
       SKILL.md
       references/                      → sintaxe/negative prompts, limites, personagem/estilo, câmera, performance emocional, multi-referência, vídeo longo, edição/extensão/transição de vídeo, keyframes/storyboard/blockout, troubleshooting, mecânica do modelo, retake
+    minimax-h3-prompter/
+      SKILL.md
+      references/                      → sintaxe oficial, modos base, modo Ref2VA, atribuição de referências, direção de áudio, edição de vídeo, troubleshooting, LoRA, skills oficiais da MiniMax
     elevenlabs-voiceover/
       SKILL.md
       references/                      → mecânica do modelo, troubleshooting
