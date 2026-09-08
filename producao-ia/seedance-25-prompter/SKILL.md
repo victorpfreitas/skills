@@ -24,7 +24,7 @@ Read the relevant file according to the task you're building — don't load all 
 | `references/PARAMETERS_AND_LIMITS.md` | Before setting mode, duration, aspect ratio, or reference count — 2.0 vs 2.5 limit tables |
 | `references/CHARACTER_AND_STYLE.md` | For describing realistic characters (formula by dimension) and style/opening statements |
 | `references/CAMERA_AND_CINEMATOGRAPHY.md` | For the camera block — movements, popular cinematography terms, camera × emotion |
-| `references/EMOTIONAL_PERFORMANCE.md` | For acting/micro-expression — how to convert abstract emotion into an observable cue |
+| `references/EMOTIONAL_PERFORMANCE.md` | **Mandatory whenever a living character is in frame** — acting, intention, gaze, micro-expression, anti-mannequin negatives. Not just for "emotional" scenes |
 | `references/MULTI_REFERENCE.md` | When there are 2+ reference characters/props/scenes — mapping, subject profile, per-scene selection |
 | `references/LONG_VIDEO_AND_TIMESTAMPS.md` | For videos of 30s+ with stages, or native long video (30–180s), or precise timestamp control |
 | `references/VIDEO_EDITING.md` | For editing an already-existing video: Smart Edit, subject/background swap, audio editing, green screen |
@@ -89,13 +89,39 @@ The difference isn't extra adjectives — it's deciding **one** visible beat per
 
 ---
 
-## Step 4 — Assemble the prompt
+## Step 4 — The Acting Layer (mandatory when a character is in frame)
+
+**No prompt containing a human, animal, creature or mascot leaves this skill without an acting layer.** A character with beautiful lighting and no intention reads as a mannequin — this is the single most common reason AI clips look lifeless, and it is always a prompt failure, never a model failure.
+
+Before writing the prompt, answer three lines for **each** character on screen — including the one who isn't speaking:
+
+```
+INTENTION — what they want in these seconds, and what's in the way
+GAZE      — where the eyes rest, and the one moment they move (and why)
+BODY      — the involuntary layer: breath, weight, hands, one micro-adjustment
+```
+
+Then translate those into the prompt sentence. Rules that carry over into every prompt:
+
+- **Never write the emotion word alone.** "Sad", "tense", "happy" render as a blank doll. Write the active verb: *trying to leave before her face gives her away*.
+- **Gaze always has a named target.** "Stares into the distance" renders as vacant eyes. Anchor it to an object or a person.
+- **Two body cues, never more.** Breath and hands, or weight and a micro-adjustment. Stacking produces rubbery over-animation.
+- **The listener is acting too.** Reverse and reaction shots die when the non-speaking character is left undirected.
+- **Respect the acting budget:** 3–5s = one beat. 6–10s = two. Don't jam an arc into a short clip.
+- **Always append the anti-mannequin negatives** (`EMOTIONAL_PERFORMANCE.md` §11) — they cut both failure modes at once, dead face *and* overacting.
+
+Full vocabulary, micro-expression catalog, listening register and the symptom→fix diagnosis table are in `references/EMOTIONAL_PERFORMANCE.md`. Read it before writing, not after the first bad generation.
+
+---
+
+## Step 5 — Assemble the prompt
 
 Core structure (natural language, not YAML — 2.5 is trained on running prompt text with bracketed labels, not structured blocks like the 2.0 pipeline):
 
 ```
 [Reference Role Declaration — if @Image/@Video/@Audio are present]
 [Subject] performs [primary action or event] in [scene and environment].
+[Performance] — [intention + gaze target and its one break + two body cues]. Mandatory if a character is in frame.
 The visuals feature [visual style].
 Use [shot size, camera angle, camera movement, or cuts].
 Audio includes [dialogue, ambience, sound effects, or music].
@@ -129,5 +155,9 @@ references:  # if any
 - [ ] Special syntax used when precision is needed: `()` music, `<>` SFX, `{}` dialogue, `【】` subtitle
 - [ ] Aspect ratio/duration respect the automatic locks for editing/extension/first-last-frame (`PARAMETERS_AND_LIMITS.md`)
 - [ ] Timestamps used only when there's a critical handoff — not to force the frequency of actions
-- [ ] Abstract emotions accompanied by an observable cue (`EMOTIONAL_PERFORMANCE.md`)
+- [ ] **Every character in frame has an acting layer: intention, gaze target + break, two body cues (Step 4)**
+- [ ] **No bare emotion words in the prompt — each one converted into an observable cue**
+- [ ] **The non-speaking character/listener is directed, not left as furniture**
+- [ ] **Anti-mannequin negatives appended (`EMOTIONAL_PERFORMANCE.md` §11)**
+- [ ] Acting budget respects the clip duration — one beat for 3–5s, not a whole arc
 - [ ] Within the platform's character limit
