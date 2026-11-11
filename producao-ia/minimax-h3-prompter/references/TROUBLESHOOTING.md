@@ -25,7 +25,6 @@ Before anything else, check the format itself: a missing field, a paraphrased in
 - Check you didn't mean Push In when you wrote Zoom In (body movement vs. focal length) — they render differently
 - Add amplitude and speed only where they're meaningful; spelling out medium/normal adds noise
 - For composite movements, split them across shots or beats rather than stacking them in one sentence
-- If the request is sophisticated, run it through `diretor-cinematografico` before writing the final prompt
 
 ---
 
@@ -111,4 +110,4 @@ Before anything else, check the format itself: a missing field, a paraphrased in
 
 Regenerate varying **one element at a time** (camera only, audio only, one label's marker only) to isolate the cause. Mixing several adjustments into one retry tells you nothing about which one worked.
 
-If the scene needs more than 15 seconds, more than 9 image references, or genuine long-form structure, the constraint is the model, not the prompt — `seedance-25-prompter` covers 30–180 s native long video and larger reference sets.
+If the scene needs more than 15 seconds, more than 9 image references, or genuine long-form structure, the constraint is the model, not the prompt — plan the scene as separate generations and join them in editing.

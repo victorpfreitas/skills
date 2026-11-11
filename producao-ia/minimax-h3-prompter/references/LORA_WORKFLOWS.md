@@ -2,7 +2,7 @@
 
 Beyond pure prompting (Ref2VA with loose references), H3 has a family of LoRA training and generation endpoints on fal.ai. This matters when loose references aren't enough — a character or style that has to repeat consistently across dozens of future generations, without re-uploading reference images every time.
 
-> This file is lighter than the others because it covers ground outside the official prompting guide. It's the natural complement when a project needs the same level of consistency that `biblia-personagem` already provides on the image side.
+> This file is lighter than the others because it covers ground outside the official prompting guide. It's the natural complement when a project needs strong character consistency across generations.
 
 ---
 
@@ -44,4 +44,4 @@ Generating with a LoRA loaded lets the prompt get leaner — identity and style 
 - Keep directing audio explicitly (`AUDIO_DIRECTION.md`) — the LoRA doesn't cover it.
 - The format doesn't change. Mode structure, field names, and notation are the same whether or not a LoRA is loaded.
 
-If the project already uses `biblia-personagem` to document a character, that same character sheet serves as the reference dataset for LoRA training — no need to duplicate the definition work, just reuse it.
+If the project already has a documented character sheet, it can serve as the reference dataset for LoRA training — no need to duplicate the definition work, just reuse it.

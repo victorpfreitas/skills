@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Remove do repositório as 6 skills que passaram a ser vendidas separadamente: `roteirista-interativo`, `diretor-cinematografico`, `biblia-personagem`, `image-prompter`, `seedance-25-prompter` e `montagem-prompter`. As categorias `roteiro/` e `direcao/` ficaram vazias e também saíram; o manifesto do marketplace, os READMEs e as referências cruzadas nas skills restantes foram atualizados. As versões anteriores seguem no histórico do git.
+
 ## v0.8 (2026-08-20)
 
 - Adiciona **`minimax-h3-prompter`** em `producao-ia/`, skill para o MiniMax H3 — o primeiro modelo do repositório que gera **vídeo e áudio juntos, nativamente**, em toda geração. Isso muda o desenho da skill: enquanto `seedance-prompter` exige `music: none` e joga a trilha pro `trilha-sonora-prompter`, aqui o som é dirigido em três camadas dentro do próprio prompt (diegético sincronizado no corpo, ambiente em `overall_soundscape`, trilha em `non_diegetic_music`), e trocar uma camada pela outra é erro de formato, não de gosto.

@@ -22,7 +22,6 @@ retention_analysis:
 
 Note the division of labor: the traits list lives in `subject_definitions`, the body spends its words on what *moves*. When a character has to survive several beats, the combination of image reference plus a written trait list is more robust than either alone — the written traits are what the model falls back on when the frame no longer resembles the reference angle.
 
-For a character recurring across a whole project, `biblia-personagem` produces exactly this trait list once, reusable in every generation.
 
 ---
 

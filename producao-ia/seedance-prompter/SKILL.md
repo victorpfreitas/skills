@@ -1,7 +1,7 @@
 ---
 name: seedance-prompter
 description: >
-  Seedance 2.0 Master Prompter — use this skill whenever the user wants to generate, improve, or craft prompts for Seedance 2.0 AI video generation. Not for Seedance 2.5 (use seedance-25-prompter for that). Trigger when the user shares a video idea, concept, scene, mood, story beat, character, or uploads images/a grid to be used as storyboard/reference. Also trigger for phrases like "write me a Seedance prompt", "I want to make a video of", "improve this prompt", "I need a prompt for a video", "generate a Seedance 2.0 prompt", or any description of a scene/action they want animated. When the user uploads multiple images in sequence, treat them as @Image1, @Image2... for R2V mode. When the user uploads a grid image, treat each cell as a storyboard beat. This skill transforms rough ideas and visual references into precision-crafted, production-ready Seedance 2.0 YAML prompts.
+  Seedance 2.0 Master Prompter — use this skill whenever the user wants to generate, improve, or craft prompts for Seedance 2.0 AI video generation. Trigger when the user shares a video idea, concept, scene, mood, story beat, character, or uploads images/a grid to be used as storyboard/reference. Also trigger for phrases like "write me a Seedance prompt", "I want to make a video of", "improve this prompt", "I need a prompt for a video", "generate a Seedance 2.0 prompt", or any description of a scene/action they want animated. When the user uploads multiple images in sequence, treat them as @Image1, @Image2... for R2V mode. When the user uploads a grid image, treat each cell as a storyboard beat. This skill transforms rough ideas and visual references into precision-crafted, production-ready Seedance 2.0 YAML prompts.
 ---
 
 # Seedance 2.0 — Master Prompter (v3)
@@ -26,7 +26,6 @@ Read the relevant files depending on the prompt you're building:
 | `references/MODEL_MECHANICS.md` | To understand **why** the critical rules exist, when a case isn't covered by the examples |
 | `references/RETAKE_PROTOCOL.md` | To decide the next attempt when the result is neither perfect nor garbage |
 
-For deeper camera × emotion decisions or reference-director style, use the `diretor-cinematografico` skill before coming back here to generate the prompt.
 
 ---
 

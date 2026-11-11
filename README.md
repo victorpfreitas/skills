@@ -4,7 +4,7 @@
 
 <img src=".github/social-preview.png" alt="victorpfreitas/skills">
 
-Este repositório reúne as skills que uso no dia a dia de produção com IA generativa: direção de câmera, roteiro e voz. Cada uma nasceu de um caso real, não de teoria, e só entrou aqui depois de testada em conversa real. São blocos de conhecimento prontos pra plugar na sua LLM de preferência e levar pra qualquer projeto que peça o mesmo nível de controle criativo que eu uso no meu.
+Este repositório reúne as skills que uso no dia a dia de produção com IA generativa: pesquisa, vídeo, música e voz. Cada uma nasceu de um caso real, não de teoria, e só entrou aqui depois de testada em conversa real. São blocos de conhecimento prontos pra plugar na sua LLM de preferência e levar pra qualquer projeto que peça o mesmo nível de controle criativo que eu uso no meu.
 
 ## Sumário
 
@@ -28,18 +28,12 @@ Funciona com qualquer agente que suporte skills em Markdown (Claude Code, Codex 
 
 | Skill | Categoria | O que faz |
 | --- | --- | --- |
-| [`diretor-cinematografico`](./direcao/diretor-cinematografico) | Direção | Decupagem, shot list, câmera, lente, luz, cor e blocking. Traduz roteiro em linguagem visual pronta para geração de vídeo com IA. |
 | [`pesquisa-de-conteudo`](./producao-ia/pesquisa-de-conteudo) | Produção IA | Valida se uma ideia de vídeo tem demanda e sugere um ângulo, antes de roteirizar. |
-| [`biblia-personagem`](./producao-ia/biblia-personagem) | Produção IA | Cria personagem novo ou documenta um já existente numa bíblia de consistência visual entre gerações de imagem/vídeo. |
-| [`image-prompter`](./producao-ia/image-prompter) | Produção IA | Gera prompts cinematográficos de imagem e decide qual modelo usar entre Nano Banana 2, Seedream 5.0 Pro e GPT Image 2. |
 | [`seedance-prompter`](./producao-ia/seedance-prompter) | Produção IA | Transforma ideia, cena ou referência visual em prompts de vídeo prontos para o Seedance 2.0. |
-| [`seedance-25-prompter`](./producao-ia/seedance-25-prompter) | Produção IA | Prompts para o Seedance 2.5: multi-referência (até 50 materiais), edição/extensão/transição de vídeo existente, vídeo longo nativo de 30–180s, blockout e storyboard. |
 | [`minimax-h3-prompter`](./producao-ia/minimax-h3-prompter) | Produção IA | Prompts no formato nativo do MiniMax H3 (T2VA/I2VA/FL2VA/L2VA/Ref2VA): vídeo com áudio gerado junto, diálogo com lip-sync, clone de voz e edição de vídeo existente. |
 | [`elevenlabs-voiceover`](./producao-ia/elevenlabs-voiceover) | Produção IA | Formata roteiro em voice-over com tags emocionais do ElevenLabs Eleven v3, pronto para narração. |
 | [`trilha-sonora-prompter`](./producao-ia/trilha-sonora-prompter) | Produção IA | Traduz o tom emocional de uma cena em prompt de trilha pronto pro Suno, com o vidIQ como alternativa direto na conversa. |
-| [`montagem-prompter`](./producao-ia/montagem-prompter) | Produção IA | Decide ritmo de corte, transições, sincronia com a trilha e legenda ao montar os clipes gerados num vídeo final. |
 | [`thumbnail-titulo-otimizado`](./producao-ia/thumbnail-titulo-otimizado) | Produção IA | Gera e pontua thumbnail e título, fechando o loop gerar → pontuar → ajustar antes de publicar. |
-| [`roteirista-interativo`](./roteiro/roteirista-interativo) | Roteiro | Roteirista que constrói roteiro, escaleta ou cena em conjunto, bloco por bloco, perguntando antes de escrever cada parte. |
 
 ## Estrutura do repositório
 
@@ -48,25 +42,12 @@ Cada categoria agrupa skills que atuam na mesma etapa da produção. Dentro de c
 ```
 skills/
   .claude-plugin/marketplace.json      → manifesto do plugin marketplace
-  direcao/
-    diretor-cinematografico/
-      SKILL.md
-      references/                      → câmera×emoção, diretores, lentes, micro-beats, por que funciona
   producao-ia/
     pesquisa-de-conteudo/
       SKILL.md
-    biblia-personagem/
-      SKILL.md
-      references/                      → criação de personagem novo, template de CHARACTER BLOCK, cenários/props, consistência multimodelo, troubleshooting
-    image-prompter/
-      SKILL.md
-      references/                      → um arquivo por modelo: Nano Banana 2, Seedream 5.0 Pro, GPT Image 2
     seedance-prompter/
       SKILL.md
       references/                      → estilo, câmera, ação, áudio, troubleshooting, mecânica do modelo, retake
-    seedance-25-prompter/
-      SKILL.md
-      references/                      → sintaxe/negative prompts, limites, personagem/estilo, câmera, performance emocional, multi-referência, vídeo longo, edição/extensão/transição de vídeo, keyframes/storyboard/blockout, troubleshooting, mecânica do modelo, retake
     minimax-h3-prompter/
       SKILL.md
       references/                      → sintaxe oficial, modos base, modo Ref2VA, atribuição de referências, direção de áudio, edição de vídeo, troubleshooting, LoRA, skills oficiais da MiniMax
@@ -76,14 +57,8 @@ skills/
     trilha-sonora-prompter/
       SKILL.md
       references/                      → fórmula de style prompt, meta tags de estrutura e campo Exclude do Suno
-    montagem-prompter/
-      SKILL.md
     thumbnail-titulo-otimizado/
       SKILL.md
-  roteiro/
-    roteirista-interativo/
-      SKILL.md
-      references/                      → personagem, diálogo, worldbuilding, cenários, troubleshooting
 ```
 
 ## Como usar

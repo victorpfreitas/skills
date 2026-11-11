@@ -43,4 +43,4 @@ If the track needs a specific vocal that stays consistent across generations (e.
 - [ ] `instrumental` present at the end when there is no vocal.
 - [ ] Exclusion (if any) in the dedicated Exclude field, or at the end of the style prompt — never at the start.
 - [ ] Structure meta tags only when the piece actually has sections/lyrics — a pure background track doesn't need them.
-- [ ] Style prompt BPM/tempo compatible with the already-decided cut rhythm (see `montagem-prompter`), if applicable.
+- [ ] Style prompt BPM/tempo compatible with the already-decided cut rhythm, if applicable.

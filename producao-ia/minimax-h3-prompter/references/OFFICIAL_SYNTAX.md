@@ -51,7 +51,7 @@ The camera pans right with large amplitude at fast speed, revealing the open doo
 The camera holds a static shot as the runner exits the frame.
 ```
 
-Zoom In is not Push In. Zoom changes focal length from a fixed body; Push moves the body through space. They read differently on screen and the model distinguishes them — pick deliberately. For camera × emotion decisions, go to `diretor-cinematografico` before writing the final prompt.
+Zoom In is not Push In. Zoom changes focal length from a fixed body; Push moves the body through space. They read differently on screen and the model distinguishes them — pick deliberately.
 
 ---
 
