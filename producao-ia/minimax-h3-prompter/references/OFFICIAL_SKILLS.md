@@ -31,4 +31,3 @@ Three patterns repeat in every official skill, and they hold outside Hub:
 2. **Approval gates before expensive steps.** Confirm framing, style, and duration on something cheap (a still, a text storyboard) before spending video generations.
 3. **A shot table before prompts.** Per-shot directives with timing, audio cues, and spatial anchors — written and checked as a table — then converted into prompts. Prompting straight from a script is what produces incoherent cuts.
 
-For our own pipeline, `diretor-cinematografico` covers the shot-planning layer, `biblia-personagem` covers the identity lock, and this skill covers the conversion into H3's native format.

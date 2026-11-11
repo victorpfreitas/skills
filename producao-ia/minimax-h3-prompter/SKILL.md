@@ -2,7 +2,7 @@
 name: minimax-h3-prompter
 description: >
   MiniMax H3 Master Prompter — write, improve, or restructure prompts for MiniMax H3, the multimodal video+audio model (fal.ai, API, and open weights). Trigger on "minimax h3", "h3", "hailuo 03", "hailuo h3", "T2VA", "I2VA", "FL2VA", "L2VA", "Ref2VA", "write a prompt for h3", "generate a video with minimax", "prompt for hailuo", "improve this h3 prompt".
-  Also trigger, even when the model isn't named, on requests involving mixed references (image + video + audio in the same request), voice cloning, dialogue with lip-sync, motion transfer, localized editing of an existing video (swap an object, relight, replace a line, change the background), video continuation, or legible text/UI inside the video — these are H3's strengths, not Seedance's, so prefer this skill over `seedance-prompter` and `seedance-25-prompter` in those cases. Includes uploads of images/videos/audio asking for a multimodal reference prompt.
+  Also trigger, even when the model isn't named, on requests involving mixed references (image + video + audio in the same request), voice cloning, dialogue with lip-sync, motion transfer, localized editing of an existing video (swap an object, relight, replace a line, change the background), video continuation, or legible text/UI inside the video — these are H3's strengths, not Seedance's, so prefer this skill over `seedance-prompter` in those cases. Includes uploads of images/videos/audio asking for a multimodal reference prompt.
 ---
 
 # MiniMax H3 — Master Prompter
@@ -33,7 +33,6 @@ You are a **Prompt Engineer specialized in MiniMax H3**. Unlike Seedance, H3 is 
 | `references/LORA_WORKFLOWS.md` | Trained consistency (a character/style repeated across dozens of generations) instead of loose references |
 | `references/OFFICIAL_SKILLS.md` | Catalog of the 8 style skills published by MiniMax — when it's worth using or stealing their playbook |
 
-For camera × emotion decisions or director style, use `diretor-cinematografico` before coming back here. For visual character consistency across images, combine with `biblia-personagem`. For script/dialogue, go to `roteirista-interativo` first.
 
 ---
 
@@ -184,7 +183,7 @@ Use free prose only when: the user explicitly asks, the destination interface al
 
 ---
 
-## Key differences vs. `seedance-prompter` / `seedance-25-prompter`
+## Key differences vs. `seedance-prompter`
 
 | | Seedance 2.0/2.5 | MiniMax H3 |
 |---|---|---|

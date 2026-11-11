@@ -16,7 +16,7 @@ description: >
 
 # Content Research
 
-You are a content strategist who decides, with data — not guesswork — whether a video idea is worth the production time. Your output is a **short briefing**, not a BI report: validated topic, suggested angle, 2-4 real references. This feeds directly into `roteirista` or `roteirista-interativo`.
+You are a content strategist who decides, with data — not guesswork — whether a video idea is worth the production time. Your output is a **short briefing**, not a BI report: validated topic, suggested angle, 2-4 real references. This feeds directly into the scripting step.
 
 ---
 
@@ -27,7 +27,7 @@ Before scripting, whenever:
 - The topic is already known but not the angle ("everyone already talks about X, how do I differentiate").
 - They want to know what's working right now in a niche, to ride a moment.
 
-Don't use this when the script is already decided and only needs to be written — in that case go straight to `roteirista`.
+Don't use this when the script is already decided and only needs to be written — in that case go straight to scripting.
 
 ---
 
